@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "tv.tvufop_eduplay",
+      "sha256_cert_fingerprints": [
+        "0D:9F:55:68:39:30:8B:54:AD:06:FB:74:88:AA:9F:8F:43:17:B6:02:A0:C9:EB:BE:90:A6:A2:B1:6A:5F:C1:6A"
+      ]
+    }
+  }
+]
