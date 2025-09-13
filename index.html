@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>TV UFOP - Eduplay</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      background: #003366;
+      color: white;
+      padding: 20px;
+      margin: 0;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      height: 0;
+      padding-top: 56.25%; /* proporção 16:9 */
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .logos {
+      margin-top: 30px;
+    }
+    .logos img {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>TV UFOP - Eduplay</h1>
+
+  <div class="video-container">
+    <iframe allow="autoplay; fullscreen" allowfullscreen
+      src="https://eduplay.rnp.br/portal/tv/embed/21431">
+    </iframe>
+  </div>
+
+  <div class="logos">
+    <p><img src="images/logo_tvufop_eduplay.png" alt="TV UFOP Eduplay" height="50"></p>
+    <p><img src="images/logo-fundac.png" alt="FUNDAC" height="100"></p>
+    <p><strong>Fundação de Educação, Artes e Cultura</strong></p>
+    <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
+    <p>__________________________</p>
+  </div>
+</body>
+</html>
