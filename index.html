@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>TV UFOP - Eduplay</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TV UFOP — Ao vivo</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="/tvufop/manifest.json" />
+  <meta name="theme-color" content="#000000" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin: 0;
       padding: 0;
+      background: #ffffff;
     }
     h1 {
       background: #003366;
-      color: white;
+      color: #ffffff;
       padding: 20px;
       margin: 0;
+      font-size: 20px;
+      letter-spacing: .3px;
     }
     .video-container {
       position: relative;
@@ -22,38 +31,53 @@
       max-width: 800px;
       margin: 20px auto;
       height: 0;
-      padding-top: 56.25%; /* proporção 16:9 */
+      padding-top: 56.25%; /* 16:9 */
     }
     .video-container iframe {
       position: absolute;
-      top: 0; left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       border: 0;
+      display: block;
     }
     .logos {
-      margin-top: 30px;
+      margin: 30px auto 40px;
+      max-width: 800px;
+      padding: 0 12px;
     }
-    .logos img {
-      margin: 10px;
-    }
+    .logos img { margin: 10px; }
+    .sep { margin: 18px 0; opacity: .3; }
   </style>
 </head>
 <body>
-  <h1>TV UFOP - Eduplay</h1>
+  <h1>TV UFOP — EDUPLAY</h1>
 
   <div class="video-container">
-    <iframe allow="autoplay; fullscreen" allowfullscreen
+    <iframe
+      allow="autoplay; fullscreen"
+      allowfullscreen
       src="https://eduplay.rnp.br/portal/tv/embed/21431">
     </iframe>
   </div>
 
   <div class="logos">
-    <p><img src="images/logo_tvufop_eduplay.png" alt="TV UFOP Eduplay" height="50"></p>
-    <p><img src="images/logo-fundac.png" alt="FUNDAC" height="100"></p>
+    <p><img src="images/logo_tvufop_eduplay.png" alt="TV UFOP Eduplay" height="50" /></p>
+    <p><img src="images/logo-fundac.png" alt="FUNDAC" height="100" /></p>
     <p><strong>Fundação de Educação, Artes e Cultura</strong></p>
     <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
-    <p>__________________________</p>
+    <p class="sep">__________________________</p>
   </div>
+
+  <!-- Registro do Service Worker (após carregar a página) -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker
+          .register('/tvufop/sw.js', { scope: '/tvufop/' })
+          .catch(function (err) { console.log('SW registration failed:', err); });
+      });
+    }
+  </script>
 </body>
 </html>
