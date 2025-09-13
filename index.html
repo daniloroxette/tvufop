@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TV UFOP — EDUPLAY</title>
 
-  <!-- Evitar barra de tradução do Chrome -->
+  <!-- Evitar barra de tradução -->
   <meta name="google" content="notranslate" />
   <meta http-equiv="Content-Language" content="pt-BR" />
 
@@ -14,44 +14,13 @@
   <meta name="theme-color" content="#8A1538" />
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background: #ffffff;
-    }
-    h1 {
-      background: #8A1538; /* bordô */
-      color: #ffffff;
-      padding: 20px;
-      margin: 0;
-      font-size: 20px;
-      letter-spacing: .3px;
-    }
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 20px auto;
-      height: 0;
-      padding-top: 56.25%; /* 16:9 */
-    }
-    .video-container iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-    .logos {
-      margin: 30px auto 40px;
-      max-width: 800px;
-      padding: 0 12px;
-    }
-    .logos img { margin: 10px; }
-    .sep { margin: 18px 0; opacity: .3; }
+    body { font-family: Arial, sans-serif; text-align:center; margin:0; padding:0; background:#fff; }
+    h1 { background:#8A1538; color:#fff; padding:20px; margin:0; font-size:20px; letter-spacing:.3px; }
+    .video-container { position:relative; width:100%; max-width:800px; margin:20px auto; height:0; padding-top:56.25%; }
+    .video-container iframe { position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+    .logos { margin:30px auto 40px; max-width:800px; padding:0 12px; }
+    .logos img { margin:10px; }
+    .sep { margin:18px 0; opacity:.3; }
   </style>
 </head>
 <body class="notranslate">
@@ -59,9 +28,11 @@
 
   <div class="video-container">
     <iframe
-      allow="autoplay; fullscreen"
-      allowfullscreen
-      src="https://eduplay.rnp.br/portal/tv/embed/21431">
+      src="https://eduplay.rnp.br/app/tv/embed/ufop"
+      frameborder="0"
+      scrolling="no"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
     </iframe>
   </div>
 
@@ -73,7 +44,6 @@
     <p class="sep">__________________________</p>
   </div>
 
-  <!-- Registro do Service Worker (após carregar a página) -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
