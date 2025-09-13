@@ -1,55 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-BR" translate="no">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TV UFOP — EDUPLAY</title>
 
-  <!-- Evitar barra de tradução -->
+  <!-- Evitar barra de tradução do Chrome -->
   <meta name="google" content="notranslate" />
-  <meta http-equiv="Content-Language" content="pt-BR" />
+  <meta http-equiv="Content-Language" content="pt-br" />
 
   <!-- PWA -->
   <link rel="manifest" href="/tvufop/manifest.json" />
-  <meta name="theme-color" content="#8A1538" />
+  <meta name="theme-color" content="#8C1B2B" />
 
   <style>
-    body { font-family: Arial, sans-serif; text-align:center; margin:0; padding:0; background:#fff; }
-    h1 { background:#8A1538; color:#fff; padding:20px; margin:0; font-size:20px; letter-spacing:.3px; }
-    .video-container { position:relative; width:100%; max-width:800px; margin:20px auto; height:0; padding-top:56.25%; }
-    .video-container iframe { position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
-    .logos { margin:30px auto 40px; max-width:800px; padding:0 12px; }
-    .logos img { margin:10px; }
-    .sep { margin:18px 0; opacity:.3; }
+    :root { --bordo:#8C1B2B; }
+    *{box-sizing:border-box}
+    body{
+      font-family: Arial, sans-serif;
+      margin:0; padding:0;
+      background:#fff; text-align:center;
+    }
+    h1{
+      margin:0; padding:16px 12px;
+      background:var(--bordo); color:#fff;
+      font-size:20px; letter-spacing:.3px;
+    }
+    /* Apenas centraliza e limita a largura. Mantém 16:9. */
+    .wrap{ width:min(100%, 960px); margin:16px auto; padding:0 8px; }
+    .player{ width:100%; aspect-ratio:16/9; }
+    .player iframe{ width:100%; height:100%; border:0; display:block; }
+
+    .logos{ margin:28px 0 40px; }
+    .logos img{ margin:10px; vertical-align:middle; }
+    .sep{ margin:18px 0; opacity:.3; }
   </style>
 </head>
-<body class="notranslate">
+<body>
   <h1>TV UFOP — EDUPLAY</h1>
 
-  <div class="video-container">
-    <iframe
-      src="https://eduplay.rnp.br/app/tv/embed/ufop"
-      frameborder="0"
-      scrolling="no"
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+  <div class="wrap">
+    <div class="player">
+      <iframe
+        src="https://eduplay.rnp.br/app/tv/embed/ufop"
+        frameborder="0"
+        scrolling="no"
+        allowfullscreen
+        allow="autoplay; fullscreen">
+      </iframe>
+    </div>
+
+    <div class="logos">
+      <p><img src="images/logo_tvufop_eduplay.png" alt="TV UFOP Eduplay" height="50"></p>
+      <p><img src="images/logo-fundac.png" alt="FUNDAC" height="100"></p>
+      <p><strong>Fundação de Educação, Artes e Cultura</strong></p>
+      <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
+      <p class="sep">__________________________</p>
+    </div>
   </div>
 
-  <div class="logos">
-    <p><img src="images/logo_tvufop_eduplay.png" alt="TV UFOP Eduplay" height="50" /></p>
-    <p><img src="images/logo-fundac.png" alt="FUNDAC" height="100" /></p>
-    <p><strong>Fundação de Educação, Artes e Cultura</strong></p>
-    <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
-    <p class="sep">__________________________</p>
-  </div>
-
+  <!-- Service Worker (mantido) -->
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker
-          .register('/tvufop/sw.js', { scope: '/tvufop/' })
-          .catch(function (err) { console.log('SW registration failed:', err); });
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/tvufop/sw.js', { scope: '/tvufop/' })
+          .catch(err => console.log('SW registration failed:', err));
       });
     }
   </script>
