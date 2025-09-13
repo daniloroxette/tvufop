@@ -1,37 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" translate="no">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TV UFOP — Ao vivo</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="/tvufop/manifest.json" />
-  <meta name="theme-color" content="#000000" />
+  <!-- Evitar oferta de tradução do Chrome -->
+  <meta name="google" content="notranslate" />
+  <meta http-equiv="Content-Language" content="pt-BR" />
+
+  <title>TV UFOP — EDUPLAY</title>
+
+  <!-- Cor do navegador / splash do TWA (bordô) -->
+  <meta name="theme-color" content="#8A1538" />
+
+  <!-- PWA (ajuste o caminho se seu site NÃO estiver em /tvufop/) -->
+  <link rel="manifest" href="/tvufop/manifest.json">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+    :root {
+      /* Bordô: ajuste aqui se quiser exatamente o tom do seu logo */
+      --bordo: #8A1538;
+      --texto: #111;
+      --fundo: #ffffff;
+    }
+
+    html, body {
+      background: var(--fundo);
+      color: var(--texto);
       margin: 0;
       padding: 0;
-      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-text-size-adjust: 100%;
     }
-    h1 {
-      background: #003366;
-      color: #ffffff;
-      padding: 20px;
-      margin: 0;
-      font-size: 20px;
-      letter-spacing: .3px;
+
+    /* Cabeçalho (a “barra azul” virou bordô) */
+    header {
+      background: var(--bordo);
+      color: #fff;
+      padding: 14px 16px;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: .5px;
     }
+
+    /* Linha/acento logo abaixo do cabeçalho */
+    .accent {
+      height: 4px;
+      background: var(--bordo);
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
     .video-container {
       position: relative;
       width: 100%;
-      max-width: 800px;
-      margin: 20px auto;
-      height: 0;
       padding-top: 56.25%; /* 16:9 */
+      background: #f3f3f3;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
     }
     .video-container iframe {
       position: absolute;
@@ -41,43 +72,68 @@
       border: 0;
       display: block;
     }
+
     .logos {
-      margin: 30px auto 40px;
-      max-width: 800px;
-      padding: 0 12px;
+      margin: 28px 0 8px;
+      text-align: center;
     }
-    .logos img { margin: 10px; }
-    .sep { margin: 18px 0; opacity: .3; }
+    .logos img {
+      margin: 10px 14px;
+      height: auto;
+      max-width: 100%;
+    }
+
+    .rodape {
+      text-align: center;
+      margin: 14px 0 32px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    hr.fino {
+      width: 50%;
+      margin: 22px auto;
+      border: none;
+      height: 1px;
+      background: #cfcfcf;
+    }
   </style>
-</head>
-<body>
-  <h1>TV UFOP — EDUPLAY</h1>
 
-  <div class="video-container">
-    <iframe
-      allow="autoplay; fullscreen"
-      allowfullscreen
-      src="https://eduplay.rnp.br/portal/tv/embed/21431">
-    </iframe>
-  </div>
-
-  <div class="logos">
-    <p><img src="images/logo_tvufop_eduplay.png" alt="TV UFOP Eduplay" height="50" /></p>
-    <p><img src="images/logo-fundac.png" alt="FUNDAC" height="100" /></p>
-    <p><strong>Fundação de Educação, Artes e Cultura</strong></p>
-    <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
-    <p class="sep">__________________________</p>
-  </div>
-
-  <!-- Registro do Service Worker (após carregar a página) -->
   <script>
+    // Registro do Service Worker (para PWA/TWA)
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker
-          .register('/tvufop/sw.js', { scope: '/tvufop/' })
-          .catch(function (err) { console.log('SW registration failed:', err); });
-      });
+      navigator.serviceWorker.register('/tvufop/sw.js', { scope: '/tvufop/' }).catch(() => {});
     }
   </script>
+</head>
+<body class="notranslate">
+  <header>TV UFOP — EDUPLAY</header>
+  <div class="accent"></div>
+
+  <main class="wrap">
+    <!-- Player (substitua pelo seu embed/fluxo se necessário) -->
+    <div class="video-container" aria-label="Player de vídeo">
+      <iframe
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        src="https://eduplay.rnp.br/portal/tv/embed/21431">
+      </iframe>
+    </div>
+
+    <section class="logos">
+      <p>
+        <img src="images/logo_tvufop_eduplay.png" alt="TV UFOP — Eduplay" height="50">
+      </p>
+      <p>
+        <img src="images/logo-fundac.png" alt="FUNDAC" height="100">
+      </p>
+    </section>
+
+    <section class="rodape">
+      <p><strong>Fundação de Educação, Artes e Cultura</strong></p>
+      <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
+      <hr class="fino">
+    </section>
+  </main>
 </body>
 </html>
