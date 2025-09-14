@@ -19,6 +19,7 @@
   <style>
     :root { --bordo:#8C1B2B; }
     *{box-sizing:border-box}
+    html, body { overflow-x:hidden; }
     body{
       font-family: Arial, sans-serif;
       margin:0; padding:0;
@@ -50,7 +51,11 @@
       width:100%; height:100%;
       border:0; display:block;
       background:#000;
+      overflow:hidden;
     }
+    /* Tentativas para minimizar barras do iframe */
+    .player iframe::-webkit-scrollbar { display:none; }
+
     /* Overlay interno (não bloqueia cliques) */
     .eduplay-overlay{
       position:absolute; inset:0;
@@ -79,6 +84,13 @@
     .logos{ margin:28px 0 40px; }
     .logos img{ margin:10px; vertical-align:middle; }
     .sep{ margin:18px 0; opacity:.3; }
+
+    /* Viewport da EPG rola sozinho e não “vaza” para a página */
+    #epg-viewport{
+      overscroll-behavior: contain;
+      background:#fff;
+      border-radius:12px;
+    }
   </style>
 </head>
 <body>
@@ -94,7 +106,8 @@
         allow="autoplay; encrypted-media; picture-in-picture; autopicture-in-picture; fullscreen"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-        loading="lazy">
+        loading="lazy"
+        scrolling="no">
       </iframe>
 
       <div id="eduplay-overlay" class="eduplay-overlay" role="status" aria-live="polite" aria-busy="true">
@@ -147,11 +160,12 @@
     const epgViewport = document.getElementById('epg-viewport');
     const epgRoot     = document.getElementById('tvufop-epg');
 
-    // estilos do viewport (poderia ir no CSS)
+    // estilos adicionais do viewport (com vírgulas corretas)
     Object.assign(epgViewport.style, {
       maxHeight: 'calc(100vh - var(--header-h,0px) - var(--player-h,0px) - 24px)',
       overflowY: 'auto',
-      borderRadius: '12px'
+      borderRadius: '12px',
+      overscrollBehavior: 'contain'
     });
 
     let done = false;
@@ -203,6 +217,53 @@
   })();
   </script>
 
+  <!-- Cabeçalho da EPG “sticky” dentro do viewport (mantém botão Agora sempre visível) -->
+  <script>
+  (function(){
+    const epgViewport = document.getElementById('epg-viewport');
+    const epgRoot     = document.getElementById('tvufop-epg');
+
+    function stickEpgHeader(){
+      if (!epgRoot) return;
+
+      // Candidatos comuns do cabeçalho da EPG
+      const candidates = epgRoot.querySelectorAll(
+        ':scope > .epg-header, :scope > header, :scope > .header, :scope > .epg-controls, :scope > .controls'
+      );
+
+      let header = null;
+
+      for (const el of candidates){
+        if (el.querySelector('button,[role="button"],input,select') || /agora/i.test(el.textContent||'')){
+          header = el; break;
+        }
+      }
+      if (!header){
+        const btnAgora = Array.from(epgRoot.querySelectorAll('button,[role="button"]'))
+          .find(b => /agora/i.test(b.textContent||''));
+        if (btnAgora) header = btnAgora.closest('*');
+      }
+      if (!header) return;
+
+      Object.assign(header.style, {
+        position: 'sticky',
+        top: '0',
+        zIndex: '2',
+        background: '#fff',
+        paddingTop: '6px',
+        marginTop: '0',
+        boxShadow: '0 1px 0 rgba(0,0,0,.06)'
+      });
+      header.dataset.sticky = 'true';
+    }
+
+    // Executa quando a EPG montar/atualizar e após o load
+    const mo = new MutationObserver(() => stickEpgHeader());
+    mo.observe(epgRoot, { childList: true, subtree: true });
+    window.addEventListener('load', () => setTimeout(stickEpgHeader, 200));
+  })();
+  </script>
+
   <!-- Overlay: lógica de exibição -->
   <script>
   (function(){
@@ -218,7 +279,7 @@
       setTimeout(() => {
         overlay.classList.add('is-hidden');
         overlay.setAttribute('aria-busy', 'false');
-      }, 500); // ajuste se quiser segurar mais o overlay
+      }, 500); // segurar um pouco o overlay
     });
 
     // Se o src do iframe mudar em runtime, volta a exibir overlay
