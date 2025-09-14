@@ -1,27 +1,67 @@
 (function () {
-  // Fonte de dados: arquivo hospedado no próprio GitHub Pages (atualizado pelo Actions)
-  const DATA_URL = 'epg/schedule_now.json';
+  // Candidatos de caminho (todos no mesmo domínio, sem mixed content)
+  const CANDIDATE_URLS = (() => {
+    const base = document.baseURI || location.href;
+    const here = base.replace(/[#?].*$/, '');
+    const root = here.replace(/\/[^/]*$/, '/');          // .../tvufop/
+    return [
+      'epg/schedule_now.json',                           // relativo
+      root + 'epg/schedule_now.json',                    // absoluto no repo
+      '/tvufop/epg/schedule_now.json'                    // caminho fixo
+    ];
+  })();
 
-  // Utils
   const pad = n => String(n).padStart(2, '0');
   const fmtTime = d => `${pad(d.getHours())}:${pad(d.getMinutes())}`;
   const fmtDate = d => `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`;
   const onlyDate = d => new Date(d.getFullYear(), d.getMonth(), d.getDate());
 
-  // UI
+  function extractSchedule(data) {
+    if (Array.isArray(data)) return data;
+    if (data && Array.isArray(data.schedule)) return data.schedule;
+    if (data && Array.isArray(data.items)) return data.items;
+    if (data && Array.isArray(data.programs)) return data.programs;
+    throw new Error('JSON válido, porém sem campo "schedule" (ou lista reconhecida).');
+  }
+
+  async function tryFetch(url) {
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status} em ${url}`);
+    let json;
+    try { json = await res.json(); }
+    catch { throw new Error(`Falha ao interpretar JSON (${url})`); }
+    const schedule = extractSchedule(json);
+    if (!Array.isArray(schedule)) throw new Error('Estrutura inesperada do JSON.');
+    return { url, schedule };
+  }
+
+  async function fetchFirstOk(urls, onProgress) {
+    let lastErr = null;
+    for (const u of urls) {
+      try {
+        onProgress?.(`Carregando: ${u}`);
+        const ok = await tryFetch(u);
+        onProgress?.('');
+        return ok;
+      } catch (e) { lastErr = e; }
+    }
+    throw lastErr || new Error('Nenhum caminho funcionou.');
+  }
+
   function mount(container) {
     if (container.__wired) return; container.__wired = true;
-    container.classList.add('tv-root');
+
     container.innerHTML =
       '<div class="tv-header"><div class="wrap toolbar">'
-      + '<div class="title">TV UFOP — Programação</div>'
-      + '<div class="datebox">'
-      +   '<button class="btn ghost" data-role="prev" title="Dia anterior" aria-label="Dia anterior">◀</button>'
-      +   '<div class="date" data-role="dateLabel">—</div>'
-      +   '<button class="btn ghost" data-role="next" title="Próximo dia" aria-label="Próximo dia">▶</button>'
-      + '</div>'
-      + '<div class="search"><input data-role="q" placeholder="Filtrar por título…"></div>'
-      + '<button class="btn" data-role="reload">Recarregar</button>'
+      +   '<div class="title">TV UFOP — Programação</div>'
+      +   '<div class="datebox">'
+      +     '<button class="btn ghost" data-role="prev" title="Dia anterior" aria-label="Dia anterior">◀</button>'
+      +     '<div class="date" data-role="dateLabel">—</div>'
+      +     '<button class="btn ghost" data-role="next" title="Próximo dia" aria-label="Próximo dia">▶</button>'
+      +   '</div>'
+      +   '<div class="search"><input data-role="q" placeholder="Filtrar por título…"></div>'
+      +   '<button class="btn primary" data-role="nowBtn" title="Ir para o programa em execução">Agora</button>'
+      +   '<button class="btn" data-role="reload">Recarregar</button>'
       + '</div></div>'
       + '<div class="tv-main"><div class="wrap">'
       +   '<div class="status" data-role="status"></div>'
@@ -44,6 +84,7 @@
       next: container.querySelector('[data-role="next"]'),
       q: container.querySelector('[data-role="q"]'),
       reload: container.querySelector('[data-role="reload"]'),
+      nowBtn: container.querySelector('[data-role="nowBtn"]'),
       status: container.querySelector('[data-role="status"]'),
       dlg: container.querySelector('[data-role="dlg"]'),
       dlgTitle: container.querySelector('[data-role="dlgTitle"]'),
@@ -61,18 +102,8 @@
       els.status.style.display = msg ? 'block' : 'none';
     };
 
-    async function fetchJSON() {
-      showStatus('Carregando…');
-      const res = await fetch(DATA_URL, { cache: 'no-store' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-      if (!data || !Array.isArray(data.schedule)) throw new Error('JSON inválido');
-      showStatus('');
-      return data;
-    }
-
-    function hydrate(data) {
-      programs = data.schedule.map(p => {
+    function hydrate(list) {
+      programs = list.map(p => {
         const start = new Date(p.start);
         const stop  = new Date(p.stop);
         return {
@@ -83,16 +114,14 @@
         };
       }).sort((a,b) => a.start - b.start);
 
-      // Dias disponíveis
       const set = new Set(programs.map(p => onlyDate(p.start).toISOString()));
       days = Array.from(set).map(s => new Date(s)).sort((a,b) => a - b);
 
-      // Seleciona hoje se existir; caso contrário, o primeiro
       const todayIso = onlyDate(new Date()).toISOString();
       const idxToday = days.findIndex(d => d.toISOString() === todayIso);
       dayIndex = idxToday >= 0 ? idxToday : 0;
 
-      renderDay(); // ← sem auto-scroll
+      renderDay();
     }
 
     function renderDay() {
@@ -100,6 +129,7 @@
         els.list.innerHTML = '';
         els.empty.hidden = false;
         els.dateLabel.textContent = '—';
+        els.nowBtn.disabled = true;
         return;
       }
       const day = days[dayIndex];
@@ -109,8 +139,10 @@
       const rows = programs.filter(p => p.start >= day && p.start < dayEnd);
       renderList(rows, els.q.value.trim());
 
+      const isToday = onlyDate(new Date()).toISOString() === day.toISOString();
       els.prev.disabled = dayIndex <= 0;
       els.next.disabled = dayIndex >= days.length - 1;
+      els.nowBtn.disabled = !isToday || !els.list.querySelector('.card');
     }
 
     function renderList(rows, query) {
@@ -119,7 +151,7 @@
       const q = (query || '').toLowerCase();
 
       const kept = rows.filter(p => !q || p.title.toLowerCase().includes(q));
-      if (!kept.length) { els.empty.hidden = false; return; } else { els.empty.hidden = true; }
+      els.empty.hidden = kept.length > 0;
 
       const now = new Date();
       let lastHour = -1;
@@ -192,7 +224,41 @@
       if (els.dlg.showModal) els.dlg.showModal(); else els.dlg.setAttribute('open','');
     }
 
-    // Destaque "AGORA" a cada minuto (sem alterar posição/scroll)
+    // Rolagem suave até o programa "de agora" (apenas quando o usuário pedir)
+    function scrollToNow() {
+      const scroller = els.scroller;
+      if (!scroller) return;
+      const now = new Date();
+
+      // 1) Prioriza cartão com .now
+      let target = els.list.querySelector('.card.now');
+
+      // 2) Se não houver, pega o próximo a iniciar (>= agora)
+      if (!target) {
+        const cards = [...els.list.querySelectorAll('.card')];
+        const next = cards
+          .map(c => ({ el: c, st: new Date(c.dataset.start) }))
+          .filter(x => !isNaN(x.st))
+          .sort((a,b) => a.st - b.st)
+          .find(x => x.st >= now);
+        if (next) target = next.el;
+      }
+
+      // 3) Se ainda não houver (ex.: fim do dia), usa o último do dia
+      if (!target) target = els.list.querySelector('.card:last-of-type');
+
+      if (!target) return;
+
+      // Calcula deslocamento relativo ao container rolável, evitando scroll da página
+      const y = target.getBoundingClientRect().top
+              - scroller.getBoundingClientRect().top
+              + scroller.scrollTop - 8; // margem
+      scroller.scrollTo({ top: y, behavior: 'smooth' });
+
+      // Foco visual (sem provocar rolagem extra)
+      target.focus({ preventScroll: true });
+    }
+
     function tickNow() {
       const now = new Date();
       const cards = els.list.querySelectorAll('.card');
@@ -221,13 +287,21 @@
     // Eventos
     els.prev.addEventListener('click', () => { if (dayIndex > 0) { dayIndex--; renderDay(); } });
     els.next.addEventListener('click', () => { if (dayIndex < days.length - 1) { dayIndex++; renderDay(); } });
-    els.q.addEventListener('input', () => { renderDay(); });
+    els.q.addEventListener('input',  () => { renderDay(); });
     els.reload.addEventListener('click', () => { init(); });
+    els.nowBtn.addEventListener('click', () => { scrollToNow(); });
     els.dlg.addEventListener('click', (e) => { if (e.target === els.dlg) els.dlg.close(); });
 
     async function init() {
-      try { const data = await fetchJSON(); hydrate(data); }
-      catch (e) { console.error(e); showStatus('Falha ao carregar a programação.'); }
+      try {
+        const { url, schedule } = await fetchFirstOk(CANDIDATE_URLS, showStatus);
+        hydrate(schedule);
+        console.info('EPG carregado de:', url);
+        showStatus('');
+      } catch (e) {
+        console.error(e);
+        showStatus(`Falha ao carregar a programação. ${e.message || e}`);
+      }
       clearInterval(container.__tick);
       container.__tick = setInterval(tickNow, 60 * 1000);
     }
@@ -241,7 +315,7 @@
       : fn();
   }
   ready(() => {
-    const el = document.getElementById('tvufop-epg');
-    if (el) mount(el);
+    const host = document.getElementById('tvufop-epg');
+    if (host) mount(host);
   });
 })();
