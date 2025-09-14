@@ -17,9 +17,8 @@
   <link rel="stylesheet" href="epg/epg.css">
 
   <style>
-    :root { --bordo:#8C1B2B; --header-h:0px; --player-h:0px; }
+    :root { --bordo:#8C1B2B; }
     *{box-sizing:border-box}
-    html, body { overflow-x:hidden; }
     body{
       font-family: Arial, sans-serif;
       margin:0; padding:0;
@@ -36,26 +35,22 @@
     /* Centraliza e limita a largura. */
     .wrap{ width:min(100%, 960px); margin:16px auto; padding:0 8px; }
 
-    /* PLAYER COM OVERLAY INTERNO (fica fixo logo abaixo do cabeçalho) */
+    /* PLAYER COM OVERLAY INTERNO */
     .player{
-      position: sticky;            /* contexto p/ overlay absoluto */
-      top: var(--header-h);        /* cola logo abaixo do h1 */
-      z-index: 999;
+      position: sticky; /* também serve de contexto p/ overlay absoluto */
       width:100%;
       aspect-ratio:16/9;
       background:#000;
       border-radius:12px;
       overflow:hidden;
+      top: var(--header-h, 0px);
+      z-index: 999;
     }
     .player iframe{
       width:100%; height:100%;
       border:0; display:block;
       background:#000;
-      overflow:hidden;
     }
-    /* Minimiza barras no iframe (efeito pode variar em cross-origin) */
-    .player iframe::-webkit-scrollbar { display:none; }
-
     /* Overlay interno (não bloqueia cliques) */
     .eduplay-overlay{
       position:absolute; inset:0;
@@ -84,14 +79,6 @@
     .logos{ margin:28px 0 40px; }
     .logos img{ margin:10px; vertical-align:middle; }
     .sep{ margin:18px 0; opacity:.3; }
-
-    /* Viewport da EPG rola sozinho e não “vaza” para a página */
-    #epg-viewport{
-      overscroll-behavior: contain;
-      background:#fff;
-      border-radius:12px;
-      /* altura final é definida via JS usando 100svh */
-    }
   </style>
 </head>
 <body>
@@ -107,8 +94,7 @@
         allow="autoplay; encrypted-media; picture-in-picture; autopicture-in-picture; fullscreen"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-        loading="lazy"
-        scrolling="no">
+        loading="lazy">
       </iframe>
 
       <div id="eduplay-overlay" class="eduplay-overlay" role="status" aria-live="polite" aria-busy="true">
@@ -133,126 +119,87 @@
     </div>
   </div>
 
-  <!-- Calcula alturas e define a altura do viewport da EPG -->
+  <!-- Calcula alturas do cabeçalho e do player para layout sticky -->
   <script>
   (function(){
     const header = document.querySelector('h1');
     const player = document.getElementById('eduplay-box');
-    const epgViewport = document.getElementById('epg-viewport');
-
-    function updateLayout(){
+    function updateVars(){
       if (header) {
         document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
       }
       if (player) {
-        document.documentElement.style.setProperty('--player-h', player.getBoundingClientRect().height + 'px');
-      }
-      if (epgViewport) {
-        // usa 100svh p/ considerar barras do mobile (fallback natural se não suportar)
-        epgViewport.style.maxHeight =
-          'calc(100svh - var(--header-h) - var(--player-h) - 24px)';
-        epgViewport.style.overflowY = 'auto';
-        epgViewport.style.WebkitOverflowScrolling = 'touch';
-        epgViewport.style.touchAction = 'pan-y';
+        const r = player.getBoundingClientRect();
+        document.documentElement.style.setProperty('--player-h', r.height + 'px');
       }
     }
-    window.addEventListener('load', updateLayout);
-    window.addEventListener('resize', updateLayout);
-    window.addEventListener('orientationchange', updateLayout);
+    window.addEventListener('load', updateVars);
+    window.addEventListener('resize', updateVars);
   })();
   </script>
 
   <!-- Carrega EPG -->
   <script src="epg/epg.js"></script>
 
-  <!-- EPG: header sticky no viewport e "Agora" no topo do viewport (sem tocar no scroll da página) -->
+  <!-- Rolagem automática do EPG até o item "agora" (sem mexer no scroll da janela) -->
   <script>
   (function(){
     const epgViewport = document.getElementById('epg-viewport');
     const epgRoot     = document.getElementById('tvufop-epg');
 
-    function stickEpgHeader(){
-      if (!epgRoot) return null;
-      const candidates = epgRoot.querySelectorAll(
-        ':scope > .epg-header, :scope > header, :scope > .header, :scope > .epg-controls, :scope > .controls'
-      );
-      let header = null;
-      for (const el of candidates){
-        if (el.querySelector('button,[role="button"],input,select') || /agora/i.test(el.textContent||'')){
-          header = el; break;
-        }
-      }
-      if (!header){
-        const btnAgora = Array.from(epgRoot.querySelectorAll('button,[role="button"]'))
-          .find(b => /agora/i.test(b.textContent||''));
-        if (btnAgora) header = btnAgora.closest('*');
-      }
-      if (!header) return null;
+    // estilos do viewport (poderia ir no CSS)
+    Object.assign(epgViewport.style, {
+      maxHeight: 'calc(100vh - var(--header-h,0px) - var(--player-h,0px) - 24px)',
+      overflowY: 'auto',
+      borderRadius: '12px'
+    });
 
-      Object.assign(header.style, {
-        position: 'sticky',
-        top: '0',
-        zIndex: '2',
-        background: '#fff',
-        paddingTop: '6px',
-        marginTop: '0',
-        boxShadow: '0 1px 0 rgba(0,0,0,.06)'
-      });
-      return header;
-    }
-
+    let done = false;
     function findNow(root){
-      const sels = ['.is-now', '.now', '[data-now="true"]', '[aria-current="true"]', '[data-state~="now"]'];
+      // Tente padrões comuns de marcação do "agora"
+      const sels = [
+        '.is-now', '.now', '[data-now="true"]', '[aria-current="true"]', '[data-state~="now"]'
+      ];
       for (const s of sels){
         const el = root.querySelector(s);
         if (el) return el;
       }
+      // Fallback: procurar por horários HH:MM e escolher o último <= agora
       const items = Array.from(root.querySelectorAll('li, .epg-item, tr, .row, .program, article'))
         .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
       if (!items.length) return null;
 
       const now = new Date();
       const nowMin = now.getHours()*60 + now.getMinutes();
+
       let best = null, bestVal = -1;
       for (const el of items){
         const m = el.textContent.match(/\b(\d{2}):(\d{2})\b/);
         if (!m) continue;
         const t = parseInt(m[1],10)*60 + parseInt(m[2],10);
+        // considera grade que cruza meia-noite
         const val = (t <= nowMin) ? t : (t - 24*60);
         if (val > bestVal){ bestVal = val; best = el; }
       }
       return best;
     }
 
-    function relativeTop(el, container){
-      const e = el.getBoundingClientRect();
-      const c = container.getBoundingClientRect();
-      return (e.top - c.top) + container.scrollTop;
-    }
-
     function scrollToNow(){
-      if (!epgViewport || !epgRoot) return;
-      // garante que não herdou scroll antigo
-      epgViewport.scrollTop = 0;
-
-      const header = stickEpgHeader();
-      const headerH = header ? header.getBoundingClientRect().height : 0;
-
+      if (done || !epgRoot || !epgViewport) return;
       const el = findNow(epgRoot);
-      if (!el) return;
-
-      const top = Math.max(0, relativeTop(el, epgViewport) - headerH - 4);
-      // rola apenas o container da EPG; a página não se mexe
-      epgViewport.scrollTop = top;
+      if (el){
+        // Rolagem só do container, sem animar (não “puxa” foco da página)
+        el.scrollIntoView({block: 'start', inline: 'nearest', behavior: 'auto'});
+        done = true;
+      }
     }
 
-    // Observa a montagem/atualização da EPG e aplica
-    const mo = new MutationObserver(() => {
-      requestAnimationFrame(() => { scrollToNow(); });
-    });
-    mo.observe(epgRoot, { childList: true, subtree: true });
+    // 1) tenta após o load
+    window.addEventListener('load', () => setTimeout(scrollToNow, 250));
 
-    window.addEventListener('load', () => setTimeout(scrollToNow, 300));
+    // 2) observa a montagem do EPG (caso o epg.js preencha via fetch)
+    const mo = new MutationObserver(() => scrollToNow());
+    mo.observe(epgRoot, {childList: true, subtree: true});
   })();
   </script>
 
@@ -263,15 +210,18 @@
     const overlay = document.getElementById('eduplay-overlay');
     if (!iframe || !overlay) return;
 
+    // Mostra overlay ao iniciar
     overlay.classList.remove('is-hidden');
 
+    // Esconde quando o documento do iframe terminar de carregar
     iframe.addEventListener('load', () => {
       setTimeout(() => {
         overlay.classList.add('is-hidden');
         overlay.setAttribute('aria-busy', 'false');
-      }, 500);
+      }, 500); // ajuste se quiser segurar mais o overlay
     });
 
+    // Se o src do iframe mudar em runtime, volta a exibir overlay
     new MutationObserver(muts => {
       for (const m of muts) {
         if (m.type === 'attributes' && m.attributeName === 'src') {
@@ -282,6 +232,7 @@
       }
     }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
 
+    // Fallback: se demorar muito, atualiza a mensagem
     setTimeout(() => {
       if (!overlay.classList.contains('is-hidden')) {
         overlay.querySelector('.msg').textContent = 'Carregando Eduplay… (verifique a conexão)';
