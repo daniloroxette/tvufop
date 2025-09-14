@@ -1,6 +1,6 @@
 /* --- TV UFOP — Programação (estilos essenciais) --- */
 #tvufop-epg {
-  --tv-header-bg: #800020; /* vinho/bordô; ajuste se quiser igualar ao topo do site */
+  --tv-header-bg: #800020; /* vinho/bordô */
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color:#1b1b1b;
 }
@@ -9,14 +9,15 @@
   display:flex;flex-wrap:wrap;gap:8px;align-items:center;
   background:var(--tv-header-bg);color:#fff;border-radius:10px;padding:10px 12px;
 }
-#tvufop-epg .title{font-weight:700;font-size:18px;}
+#tvufop-epg .toolbar .title{font-weight:700;font-size:18px;}
 #tvufop-epg .datebox{margin-left:auto;display:flex;gap:8px;align-items:center;}
 #tvufop-epg .date{font-weight:600;}
 #tvufop-epg .btn{border:0;border-radius:8px;padding:6px 10px;background:#e8e8e8;cursor:pointer}
 #tvufop-epg .btn:hover{background:#dcdcdc}
 #tvufop-epg .btn.ghost{background:transparent;color:#fff;border:1px solid #ffffff33}
 #tvufop-epg .btn.primary{background:#fff;color:#111}
-#tvufop-epg .search input{border:0;border-radius:8px;padding:7px 10px;min-width:230px}
+#tvufop-epg .search{display:flex}
+#tvufop-epg .search input{border:0;border-radius:8px;padding:7px 10px;min-width:200px; width: clamp(160px, 50vw, 320px);}
 #tvufop-epg .status{display:none;margin:10px 0;padding:9px 10px;border-radius:8px;background:#fff3cd;border:1px solid #ffe69c}
 
 #tvufop-epg .scroller{max-height:70vh;overflow:auto;padding-right:6px;margin-top:8px; scroll-behavior:smooth;}
@@ -41,7 +42,7 @@
 #tvufop-epg .when .end{opacity:.7;margin-left:8px}
 
 #tvufop-epg .info{flex:1 1 auto; min-width:0}
-#tvufop-epg .title{font-weight:600}
+#tvufop-epg .card .title{font-weight:600}              /* título dos cartões */
 #tvufop-epg .meta{opacity:.7;font-size:.9em;margin-top:2px}
 #tvufop-epg .badge-now{margin-left:8px;font-size:.75em;background:#0075ff;color:#fff;border-radius:999px;padding:2px 7px;vertical-align:middle}
 
@@ -49,6 +50,15 @@
 #tvufop-epg .modal{display:block;padding:16px}
 #tvufop-epg .m-title{font-weight:700;font-size:18px}
 #tvufop-epg .times{opacity:.8;margin:4px 0 8px}
+
+/* --- Mobile: quebra e centraliza cada linha --- */
+@media (max-width: 520px){
+  #tvufop-epg .toolbar{justify-content:center;text-align:center}
+  #tvufop-epg .toolbar .title{flex:1 1 100%;text-align:center}
+  #tvufop-epg .datebox{margin-left:0;order:2;justify-content:center;width:100%}
+  #tvufop-epg .search{order:3;width:100%;justify-content:center}
+  #tvufop-epg .btn.primary{order:4} /* Agora */
+}
 
 @media (max-width: 480px){
   #tvufop-epg .card{ gap: 8px; }
