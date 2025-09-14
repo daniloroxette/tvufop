@@ -26,10 +26,47 @@
       background:var(--bordo); color:#fff;
       font-size:20px; letter-spacing:.3px;
     }
-    /* Apenas centraliza e limita a largura. Mantém 16:9. */
+    /* Centraliza e limita a largura. */
     .wrap{ width:min(100%, 960px); margin:16px auto; padding:0 8px; }
-    .player{ width:100%; aspect-ratio:16/9; }
-    .player iframe{ width:100%; height:100%; border:0; display:block; }
+
+    /* PLAYER COM OVERLAY INTERNO */
+    .player{
+      position: relative;         /* necessário para o overlay absoluto */
+      width:100%;
+      aspect-ratio:16/9;
+      background:#000;
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .player iframe{
+      width:100%; height:100%;
+      border:0; display:block;
+      background:#000;
+    }
+    /* Overlay interno (não bloqueia cliques) */
+    .eduplay-overlay{
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      pointer-events:none;
+      background: rgba(0,0,0,.55);
+      color:#fff;
+      opacity:1;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+    .eduplay-overlay.is-hidden{ opacity:0; visibility:hidden; }
+    .eduplay-overlay .overlay-content{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 14px; border-radius:12px;
+      background:rgba(0,0,0,.35);
+      backdrop-filter: blur(2px);
+      font-size:1rem;
+    }
+    .eduplay-overlay .spinner{
+      width:16px; height:16px; border-radius:50%;
+      border:2px solid #bbb; border-top-color:#8C1B2B;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     .logos{ margin:28px 0 40px; }
     .logos img{ margin:10px; vertical-align:middle; }
@@ -40,14 +77,24 @@
   <h1>TV UFOP — EDUPLAY</h1>
 
   <div class="wrap">
-    <div class="player">
+    <!-- Player Eduplay com overlay interno -->
+    <div class="player" id="eduplay-box">
       <iframe
+        id="eduplay-iframe"
         src="https://eduplay.rnp.br/app/tv/embed/ufop"
-        frameborder="0"
-        scrolling="no"
+        title="Player Eduplay"
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+        referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-        allow="autoplay; fullscreen">
+        loading="lazy">
       </iframe>
+
+      <div id="eduplay-overlay" class="eduplay-overlay" role="status" aria-live="polite" aria-busy="true">
+        <div class="overlay-content">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="msg">Carregando Eduplay…</span>
+        </div>
+      </div>
     </div>
 
     <div class="logos">
@@ -56,12 +103,51 @@
       <p><strong>Fundação de Educação, Artes e Cultura</strong></p>
       <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
       <p class="sep">__________________________</p>
+
+      <!-- Programação (mantém os arquivos do repositório) -->
       <link rel="stylesheet" href="epg/epg.css">
       <div id="tvufop-epg"></div>
       <script src="epg/epg.js"></script>
-      
     </div>
   </div>
+
+  <!-- Overlay: lógica de exibição -->
+  <script>
+    (function(){
+      const iframe  = document.getElementById('eduplay-iframe');
+      const overlay = document.getElementById('eduplay-overlay');
+      if (!iframe || !overlay) return;
+
+      // Mostra overlay ao iniciar
+      overlay.classList.remove('is-hidden');
+
+      // Esconde quando o documento do iframe terminar de carregar
+      iframe.addEventListener('load', () => {
+        setTimeout(() => {
+          overlay.classList.add('is-hidden');
+          overlay.setAttribute('aria-busy', 'false');
+        }, 500); // ajuste se quiser segurar mais o overlay
+      });
+
+      // Se o src do iframe mudar em runtime, volta a exibir overlay
+      new MutationObserver(muts => {
+        for (const m of muts) {
+          if (m.type === 'attributes' && m.attributeName === 'src') {
+            overlay.querySelector('.msg').textContent = 'Carregando Eduplay…';
+            overlay.classList.remove('is-hidden');
+            overlay.setAttribute('aria-busy', 'true');
+          }
+        }
+      }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
+
+      // Fallback: se demorar muito, atualiza a mensagem
+      setTimeout(() => {
+        if (!overlay.classList.contains('is-hidden')) {
+          overlay.querySelector('.msg').textContent = 'Carregando Eduplay… (verifique a conexão)';
+        }
+      }, 12000);
+    })();
+  </script>
 
   <!-- Service Worker (mantido) -->
   <script>
