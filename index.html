@@ -113,7 +113,7 @@
       <p class="sep">__________________________</p>
     </div>
 
-    <!-- Viewport “pass-through”: sem altura/overflow para não criar scroll externo -->
+    <!-- Container da programação -->
     <div id="epg-viewport" role="region" aria-label="Programação">
       <div id="tvufop-epg"></div>
     </div>
@@ -141,53 +141,77 @@
   <!-- Carrega EPG -->
   <script src="epg/epg.js"></script>
 
-  <!-- EPG: rola somente o container real da EPG; cabeçalho sticky; “Agora” logo abaixo dele -->
+  <!-- EPG – scroll único + header sticky + “Agora” abaixo do header -->
   <script>
   (function(){
     const epgViewport = document.getElementById('epg-viewport');
     const epgRoot     = document.getElementById('tvufop-epg');
 
-    /* 1) GARANTE que o epg-viewport NÃO crie uma barra própria */
+    // O viewport da EPG será o ÚNICO scroll interno abaixo do player
     Object.assign(epgViewport.style, {
-      overflow: 'visible',
-      maxHeight: ''         // remove a altura imposta anteriormente
+      maxHeight: 'calc(100vh - var(--header-h,0px) - var(--player-h,0px) - 24px)',
+      overflowY: 'auto',
+      overscrollBehavior: 'contain',
+      borderRadius: '12px',
+      WebkitOverflowScrolling: 'touch',
+      touchAction: 'pan-y'
     });
 
-    /* 2) Descobre o VERDADEIRO container rolável interno criado pelo epg.js */
-    function getInnerScroller(root){
-      let best = null, bestDelta = 0;
-      const nodes = root.querySelectorAll('*');
+    // Remove QUALQUER scroller interno que o epg.js crie,
+    // para evitar a "segunda barra" de rolagem.
+    function squashInnerScrollers(){
+      const nodes = epgRoot.querySelectorAll('*');
       nodes.forEach(el => {
-        const style = getComputedStyle(el);
-        if (style.display === 'none' || style.visibility === 'hidden') return;
-        // Considera candidato se é de bloco e pode rolar verticalmente
-        const delta = el.scrollHeight - el.clientHeight;
-        if (delta > bestDelta + 4) { // tolerância de 4px
-          best = el; bestDelta = delta;
+        const cs = getComputedStyle(el);
+        const isScrollableY = /(auto|scroll)/.test(cs.overflowY);
+        const hasDelta = el.scrollHeight - el.clientHeight > 4;
+        if (isScrollableY || hasDelta){
+          el.style.overflowY = 'visible';
+          el.style.maxHeight = 'none';
+          if (cs.height !== 'auto' && !el.classList.contains('epg-item')) {
+            el.style.height = 'auto';
+          }
         }
       });
-      return best; // pode ser null se a EPG não criar scroller próprio
     }
 
-    /* 3) Utilitários */
+    // Cabeçalho da EPG sticky dentro do epg-viewport
+    function getEpgHeader(){
+      // Preferência: primeiro filho direto do root
+      const first = epgRoot.firstElementChild;
+      if (first) return first;
+      // Fallbacks
+      return epgRoot.querySelector(':scope > .epg-header, :scope > header, :scope > .header, :scope > .epg-controls, :scope > .controls');
+    }
+    function stickEpgHeader(){
+      const header = getEpgHeader();
+      if (!header) return 0;
+      Object.assign(header.style, {
+        position: 'sticky',
+        top: '0',
+        zIndex: '2',
+        background: '#fff',
+        marginTop: '0'
+      });
+      return header.getBoundingClientRect().height || 0;
+    }
+
+    // Utilitários
     function relTop(el, container){
       const e = el.getBoundingClientRect();
       const c = container.getBoundingClientRect();
       return (e.top - c.top) + container.scrollTop;
     }
-
-    function findFirstItem(root){
-      const candidates = root.querySelectorAll('li, .epg-item, tr, .row, .program, article');
-      return candidates.length ? candidates[0] : null;
+    function findFirstItem(){
+      return epgRoot.querySelector('li, .epg-item, tr, .row, .program, article');
     }
-
-    function findNow(root){
+    function findNow(){
       const sels = ['.is-now', '.now', '[data-now="true"]', '[aria-current="true"]', '[data-state~="now"]'];
       for (const s of sels){
-        const el = root.querySelector(s);
+        const el = epgRoot.querySelector(s);
         if (el) return el;
       }
-      const items = Array.from(root.querySelectorAll('li, .epg-item, tr, .row, .program, article'))
+      const items = Array.from(epgRoot.querySelectorAll('li, .epg-item, tr, .row, .program, article'))
         .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
       if (!items.length) return null;
       const now = new Date();
@@ -203,54 +227,36 @@
       return best;
     }
 
-    /* 4) Torna o cabeçalho da EPG sticky DENTRO do container real */
-    function makeHeaderSticky(scroller){
-      // Cabeçalho costuma ser o primeiro filho visível do root da EPG
-      const header = epgRoot.firstElementChild;
-      if (!header) return;
-      Object.assign(header.style, {
-        position: 'sticky',
-        top: '0',
-        zIndex: '2',
-        background: '#fff'
-      });
-      // como o sticky referencia o ancestral rolável mais próximo,
-      // garantimos que ele seja o próprio 'scroller'.
-      scroller.style.overflowY = 'auto';
-      scroller.style.WebkitOverflowScrolling = 'touch';
-      scroller.style.touchAction = 'pan-y';
-    }
-
-    /* 5) Posiciona “Agora” logo abaixo do cabeçalho, rolando SÓ o scroller real */
     let done = false;
-    function scrollToNow(){
-      if (done || !epgRoot) return;
+    function alignNowBelowHeader(){
+      if (done) return;
 
-      const scroller = getInnerScroller(epgRoot) || epgRoot; // fallback: root
-      makeHeaderSticky(scroller);
+      // Garante somente um scroller (o epg-viewport)
+      squashInnerScrollers();
 
-      // mede o "gap" entre o topo do scroller e o 1º item de programação
-      const prev = scroller.scrollTop;
-      scroller.scrollTop = 0;
-      const firstItem = findFirstItem(epgRoot);
-      const gap = firstItem ? relTop(firstItem, scroller) : 0;
+      const headerH = stickEpgHeader();
+      // Mede o "gap" até o 1º item quando o container está no topo
+      const prev = epgViewport.scrollTop;
+      epgViewport.scrollTop = 0;
+      const firstItem = findFirstItem();
+      const gap = firstItem ? relTop(firstItem, epgViewport) : headerH;
 
-      const nowEl = findNow(epgRoot);
+      const nowEl = findNow();
       if (nowEl){
-        const target = Math.max(0, relTop(nowEl, scroller) - gap);
-        scroller.scrollTop = target; // rola somente o container interno
+        const target = Math.max(0, relTop(nowEl, epgViewport) - gap);
+        epgViewport.scrollTop = target; // rola SÓ o viewport
         done = true;
       }else{
-        scroller.scrollTop = prev;
+        epgViewport.scrollTop = prev; // restaura se não achar
       }
     }
 
-    // Observa a montagem/atualização da EPG
-    const mo = new MutationObserver(() => scrollToNow());
+    // Observa a montagem/atualização do conteúdo da EPG
+    const mo = new MutationObserver(() => alignNowBelowHeader());
     mo.observe(epgRoot, { childList: true, subtree: true });
 
     // Tentativa adicional após o load
-    window.addEventListener('load', () => setTimeout(scrollToNow, 250));
+    window.addEventListener('load', () => setTimeout(alignNowBelowHeader, 250));
   })();
   </script>
 
@@ -261,18 +267,15 @@
     const overlay = document.getElementById('eduplay-overlay');
     if (!iframe || !overlay) return;
 
-    // Mostra overlay ao iniciar
     overlay.classList.remove('is-hidden');
 
-    // Esconde quando o documento do iframe terminar de carregar
     iframe.addEventListener('load', () => {
       setTimeout(() => {
         overlay.classList.add('is-hidden');
         overlay.setAttribute('aria-busy', 'false');
-      }, 500); // segurar um pouco o overlay
+      }, 500);
     });
 
-    // Se o src do iframe mudar em runtime, volta a exibir overlay
     new MutationObserver(muts => {
       for (const m of muts) {
         if (m.type === 'attributes' && m.attributeName === 'src') {
@@ -283,7 +286,6 @@
       }
     }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
 
-    // Fallback: se demorar muito, atualiza a mensagem
     setTimeout(() => {
       if (!overlay.classList.contains('is-hidden')) {
         overlay.querySelector('.msg').textContent = 'Carregando Eduplay… (verifique a conexão)';
