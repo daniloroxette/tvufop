@@ -51,15 +51,46 @@
 #tvufop-epg .m-title{font-weight:700;font-size:18px}
 #tvufop-epg .times{opacity:.8;margin:4px 0 8px}
 
-/* --- Mobile: quebra e centraliza cada linha --- */
-@media (max-width: 520px){
-  #tvufop-epg .toolbar{justify-content:center;text-align:center}
-  #tvufop-epg .toolbar .title{flex:1 1 100%;text-align:center}
-  #tvufop-epg .datebox{margin-left:0;order:2;justify-content:center;width:100%}
-  #tvufop-epg .search{order:3;width:100%;justify-content:center}
-  #tvufop-epg .btn.primary{order:4} /* Agora */
-}
+/* Mobile: exatamente DUAS linhas no cabeçalho */
+@media (max-width: 560px){
+  #tvufop-epg .toolbar{
+    display: grid;
+    grid-template-columns: 1fr auto;      /* linha 1: [Título][Data+setas] */
+    grid-template-rows: auto auto;        /* linha 2: [Busca ][Agora]      */
+    grid-template-areas:
+      "title datebox"
+      "search now";
+    gap: 8px 12px;
+    align-items: center;
+    justify-items: stretch;
+    text-align: initial;
+  }
 
-@media (max-width: 480px){
-  #tvufop-epg .card{ gap: 8px; }
+  #tvufop-epg .toolbar .title{
+    grid-area: title;
+    text-align: left;        /* pode trocar para center se preferir */
+  }
+
+  #tvufop-epg .datebox{
+    grid-area: datebox;
+    margin-left: 0;
+    justify-content: flex-end;  /* data e setas à direita na 1ª linha */
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  #tvufop-epg .search{
+    grid-area: search;
+    width: 100%;
+  }
+  #tvufop-epg .search input{
+    width: 100%;
+    min-width: 0;            /* permite encolher sem quebrar */
+  }
+
+  #tvufop-epg .btn.primary[data-role="nowBtn"]{
+    grid-area: now;
+    justify-self: end;       /* botão “Agora” à direita na 2ª linha */
+  }
 }
