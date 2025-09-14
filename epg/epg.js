@@ -61,7 +61,6 @@
       +   '</div>'
       +   '<div class="search"><input data-role="q" placeholder="Filtrar por título…"></div>'
       +   '<button class="btn primary" data-role="nowBtn" title="Ir para o programa em execução">Agora</button>'
-      +   '<button class="btn" data-role="reload">Recarregar</button>'
       + '</div></div>'
       + '<div class="tv-main"><div class="wrap">'
       +   '<div class="status" data-role="status"></div>'
@@ -83,7 +82,6 @@
       prev: container.querySelector('[data-role="prev"]'),
       next: container.querySelector('[data-role="next"]'),
       q: container.querySelector('[data-role="q"]'),
-      reload: container.querySelector('[data-role="reload"]'),
       nowBtn: container.querySelector('[data-role="nowBtn"]'),
       status: container.querySelector('[data-role="status"]'),
       dlg: container.querySelector('[data-role="dlg"]'),
@@ -117,11 +115,26 @@
       const set = new Set(programs.map(p => onlyDate(p.start).toISOString()));
       days = Array.from(set).map(s => new Date(s)).sort((a,b) => a - b);
 
-      const todayIso = onlyDate(new Date()).toISOString();
-      const idxToday = days.findIndex(d => d.toISOString() === todayIso);
-      dayIndex = idxToday >= 0 ? idxToday : 0;
+      // Seleciona hoje se existir; caso contrário, o primeiro
+      const idxToday = indexForToday();
+      dayIndex = (idxToday >= 0) ? idxToday : 0;
 
       renderDay();
+    }
+
+    function indexForToday() {
+      if (!days.length) return -1;
+      const today = onlyDate(new Date());
+      const exact = days.findIndex(d => d.toISOString() === today.toISOString());
+      if (exact >= 0) return exact;
+
+      // Se não houver hoje, escolhe o dia mais próximo
+      let best = 0, bestDiff = Math.abs(days[0] - today);
+      for (let i = 1; i < days.length; i++) {
+        const diff = Math.abs(days[i] - today);
+        if (diff < bestDiff) { best = i; bestDiff = diff; }
+      }
+      return best;
     }
 
     function renderDay() {
@@ -129,7 +142,6 @@
         els.list.innerHTML = '';
         els.empty.hidden = false;
         els.dateLabel.textContent = '—';
-        els.nowBtn.disabled = true;
         return;
       }
       const day = days[dayIndex];
@@ -139,10 +151,9 @@
       const rows = programs.filter(p => p.start >= day && p.start < dayEnd);
       renderList(rows, els.q.value.trim());
 
-      const isToday = onlyDate(new Date()).toISOString() === day.toISOString();
       els.prev.disabled = dayIndex <= 0;
       els.next.disabled = dayIndex >= days.length - 1;
-      els.nowBtn.disabled = !isToday || !els.list.querySelector('.card');
+      // Agora permanece sempre habilitado; ele leva de volta para hoje quando clicado.
     }
 
     function renderList(rows, query) {
@@ -210,8 +221,10 @@
     }
 
     function openModal(p) {
+      const startS = fmtTime(p.start);
+      const stopS  = fmtTime(p.stop);
       els.dlgTitle.textContent = p.title || '(Sem título)';
-      els.dlgTimes.textContent  = `${fmtTime(p.start)} – ${fmtTime(p.stop)}  •  ${p.duration ?? '–'} min`;
+      els.dlgTimes.textContent  = `${startS} – ${stopS}  •  ${p.duration ?? '–'} min`;
 
       if (p.desc && p.desc.trim()) {
         els.dlgDesc.textContent = p.desc.trim();
@@ -224,7 +237,7 @@
       if (els.dlg.showModal) els.dlg.showModal(); else els.dlg.setAttribute('open','');
     }
 
-    // Rolagem suave até o programa "de agora" (apenas quando o usuário pedir)
+    // Rolagem suave até o programa "de agora"
     function scrollToNow() {
       const scroller = els.scroller;
       if (!scroller) return;
@@ -244,21 +257,18 @@
         if (next) target = next.el;
       }
 
-      // 3) Se ainda não houver (ex.: fim do dia), usa o último do dia
+      // 3) Se ainda não houver (fim do dia), usa o último do dia
       if (!target) target = els.list.querySelector('.card:last-of-type');
-
       if (!target) return;
 
-      // Calcula deslocamento relativo ao container rolável, evitando scroll da página
       const y = target.getBoundingClientRect().top
               - scroller.getBoundingClientRect().top
-              + scroller.scrollTop - 8; // margem
+              + scroller.scrollTop - 8;
       scroller.scrollTo({ top: y, behavior: 'smooth' });
-
-      // Foco visual (sem provocar rolagem extra)
       target.focus({ preventScroll: true });
     }
 
+    // Destaque "AGORA" a cada minuto
     function tickNow() {
       const now = new Date();
       const cards = els.list.querySelectorAll('.card');
@@ -288,8 +298,18 @@
     els.prev.addEventListener('click', () => { if (dayIndex > 0) { dayIndex--; renderDay(); } });
     els.next.addEventListener('click', () => { if (dayIndex < days.length - 1) { dayIndex++; renderDay(); } });
     els.q.addEventListener('input',  () => { renderDay(); });
-    els.reload.addEventListener('click', () => { init(); });
-    els.nowBtn.addEventListener('click', () => { scrollToNow(); });
+
+    // "Agora": volta para hoje (ou dia mais próximo) e rola até o programa em execução
+    els.nowBtn.addEventListener('click', () => {
+      const idx = indexForToday();
+      if (idx >= 0) {
+        dayIndex = idx;
+        renderDay();
+        // Aguarda layout preencher para rolar com precisão
+        requestAnimationFrame(() => scrollToNow());
+      }
+    });
+
     els.dlg.addEventListener('click', (e) => { if (e.target === els.dlg) els.dlg.close(); });
 
     async function init() {
