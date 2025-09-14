@@ -1,26 +1,39 @@
 /* --- TV UFOP — Programação (estilos essenciais) --- */
-#tvufop-epg { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#1b1b1b; }
+#tvufop-epg {
+  --tv-header-bg: #800020; /* vinho/bordô; ajuste se quiser igualar ao topo do site */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:#1b1b1b;
+}
 #tvufop-epg .wrap{max-width:1080px;margin:0 auto;padding:12px;}
-#tvufop-epg .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:#111;color:#fff;border-radius:10px;padding:10px 12px;}
+#tvufop-epg .toolbar{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  background:var(--tv-header-bg);color:#fff;border-radius:10px;padding:10px 12px;
+}
 #tvufop-epg .title{font-weight:700;font-size:18px;}
 #tvufop-epg .datebox{margin-left:auto;display:flex;gap:8px;align-items:center;}
 #tvufop-epg .date{font-weight:600;}
 #tvufop-epg .btn{border:0;border-radius:8px;padding:6px 10px;background:#e8e8e8;cursor:pointer}
 #tvufop-epg .btn:hover{background:#dcdcdc}
-#tvufop-epg .btn.ghost{background:transparent;color:#fff;border:1px solid #444}
+#tvufop-epg .btn.ghost{background:transparent;color:#fff;border:1px solid #ffffff33}
+#tvufop-epg .btn.primary{background:#fff;color:#111}
 #tvufop-epg .search input{border:0;border-radius:8px;padding:7px 10px;min-width:230px}
 #tvufop-epg .status{display:none;margin:10px 0;padding:9px 10px;border-radius:8px;background:#fff3cd;border:1px solid #ffe69c}
 
-#tvufop-epg .scroller{max-height:70vh;overflow:auto;padding-right:6px;margin-top:8px}
+#tvufop-epg .scroller{max-height:70vh;overflow:auto;padding-right:6px;margin-top:8px; scroll-behavior:smooth;}
 
-#tvufop-epg .hour-sep{position:sticky;top:0;background:#f6f6f6;border:1px solid #eee;border-left:3px solid #111;border-radius:8px;margin:10px 0 6px;padding:4px 8px;font-weight:700;width:max-content}
+#tvufop-epg .hour-sep{
+  position:sticky;top:0;background:#f6f6f6;border:1px solid #eee;border-left:3px solid #111;
+  border-radius:8px;margin:10px 0 6px;padding:4px 8px;font-weight:700;width:max-content
+}
 
-#tvufop-epg .card{display:flex;gap:12px;align-items:center;border:1px solid #e9e9e9;border-radius:12px;padding:10px 12px;margin:6px 0;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.03); cursor:pointer}
+#tvufop-epg .card{
+  display:flex;gap:12px;align-items:center;border:1px solid #e9e9e9;border-radius:12px;
+  padding:10px 12px;margin:6px 0;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.03); cursor:pointer
+}
 #tvufop-epg .card:hover{background:#fafafa}
 #tvufop-epg .card.now{border-color:#cfe6ff;background:#f1f8ff}
 
 #tvufop-epg .when{
-  /* faixa responsiva: mínimo 56px, máximo 88px conforme a largura */
   min-width: clamp(56px, 7.5vw, 88px);
   width: auto;
   font-variant-numeric: tabular-nums;
