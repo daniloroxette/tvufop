@@ -140,133 +140,133 @@
   <!-- Carrega EPG -->
   <script src="epg/epg.js"></script>
 
-  <!-- EPG – scroll único no #epg-viewport; cabeçalho sticky; “Agora” funcional -->
-  <script>
-  (function(){
-    const viewport = document.getElementById('epg-viewport');
-    const root     = document.getElementById('tvufop-epg');
+  <!-- EPG – scroll único no #epg-viewport; cabeçalho sticky; “Agora” funcional c/ offset -->
+<script>
+(function(){
+  const viewport = document.getElementById('epg-viewport');
+  const root     = document.getElementById('tvufop-epg');
 
-    // ÚNICO scroll abaixo do player (usa 100svh para mobile)
-    Object.assign(viewport.style, {
-      maxHeight: 'calc(100svh - var(--header-h,0px) - var(--player-h,0px) - 28px)',
-      overflowY: 'auto',
-      overscrollBehavior: 'contain',
-      borderRadius: '12px',
-      WebkitOverflowScrolling: 'touch',
-      touchAction: 'pan-y'
+  // ÚNICO scroll abaixo do player (usa 100svh para mobile)
+  Object.assign(viewport.style, {
+    maxHeight: 'calc(100svh - var(--header-h,0px) - var(--player-h,0px) - 28px)',
+    overflowY: 'auto',
+    overscrollBehavior: 'contain',
+    borderRadius: '12px',
+    WebkitOverflowScrolling: 'touch',
+    touchAction: 'pan-y'
+  });
+
+  // margem extra para não ficar oculto sob o header
+  const SAFE_OFFSET = 12; // px
+
+  // ajuda em alinhamentos (ajustado depois com a medida real)
+  viewport.style.scrollPaddingTop = (48 + SAFE_OFFSET) + 'px';
+
+  // -------- utilidades --------
+  const q  = (sel, el=root) => el.querySelector(sel);
+  const qa = (sel, el=root) => Array.from(el.querySelectorAll(sel));
+  const relTop = (el, container=viewport) => {
+    const e = el.getBoundingClientRect();
+    const c = container.getBoundingClientRect();
+    return (e.top - c.top) + container.scrollTop;
+  };
+
+  function firstItem(){
+    return q('li, .epg-item, tr, .row, .program, article');
+  }
+  function findNow(){
+    const sels = ['.is-now','.now','[data-now="true"]','[aria-current="true"]','[data-state~="now"]'];
+    for (const s of sels){ const el = q(s); if (el) return el; }
+    const items = qa('li, .epg-item, tr, .row, .program, article')
+      .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
+    if (!items.length) return null;
+    const now = new Date();
+    const nowMin = now.getHours()*60 + now.getMinutes();
+    let best=null, bestVal=-1;
+    for (const el of items){
+      const m = el.textContent.match(/\b(\d{2}):(\d{2})\b/);
+      if (!m) continue;
+      const t = (+m[1])*60 + (+m[2]);
+      const val = (t<=nowMin)? t : (t-1440);
+      if (val>bestVal){bestVal=val; best=el;}
+    }
+    return best;
+  }
+
+  // Cabeçalho sticky (primeiro filho direto)
+  function stickHeader(){
+    const header = root.firstElementChild;
+    if (!header) return 0;
+    Object.assign(header.style, {
+      position: 'sticky',
+      top: '0',
+      zIndex: '2',
+      background: '#fff'
     });
+    return header.getBoundingClientRect().height || 0;
+  }
 
-    // Ajuda o navegador a alinhar itens abaixo do cabeçalho sticky
-    viewport.style.scrollPaddingTop = '48px'; // ajustado dinamicamente depois
+  // mede a folga efetiva do cabeçalho e adiciona a margem de segurança
+  function effectiveGap(){
+    const prev = viewport.scrollTop;
+    viewport.scrollTop = 0; // mede com o header totalmente visível
+    const first = firstItem();
+    const headerGap = first ? relTop(first) : 0;
+    viewport.scrollTop = prev;
 
-    // -------- utilidades --------
-    const q = (sel, el=root) => el.querySelector(sel);
-    const qa = (sel, el=root) => Array.from(el.querySelectorAll(sel));
-    const relTop = (el, container=viewport) => {
-      const e = el.getBoundingClientRect();
-      const c = container.getBoundingClientRect();
-      return (e.top - c.top) + container.scrollTop;
-    };
+    const gap = Math.max(0, headerGap + SAFE_OFFSET);
+    viewport.style.scrollPaddingTop = gap + 'px';
+    return gap;
+  }
 
-    function firstItem(){
-      return q('li, .epg-item, tr, .row, .program, article');
-    }
-    function findNow(){
-      const sels = ['.is-now','.now','[data-now="true"]','[aria-current="true"]','[data-state~="now"]'];
-      for (const s of sels){ const el = q(s); if (el) return el; }
-      const items = qa('li, .epg-item, tr, .row, .program, article')
-        .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
-      if (!items.length) return null;
-      const now = new Date();
-      const nowMin = now.getHours()*60 + now.getMinutes();
-      let best=null, bestVal=-1;
-      for (const el of items){
-        const m = el.textContent.match(/\b(\d{2}):(\d{2})\b/);
-        if (!m) continue;
-        const t = (+m[1])*60 + (+m[2]);
-        const val = (t<=nowMin)? t : (t-1440);
-        if (val>bestVal){bestVal=val; best=el;}
-      }
-      return best;
-    }
+  function scrollToNow(opts={smooth:false}){
+    const nowEl = findNow();
+    if (!nowEl) return;
+    stickHeader();
+    const gap = effectiveGap();
+    const target = Math.max(0, relTop(nowEl) - gap);
+    viewport.scrollTo({ top: target, behavior: opts.smooth ? 'smooth':'auto' });
+  }
 
-    // Cabeçalho sticky (primeiro filho direto)
-    function stickHeader(){
-      const header = root.firstElementChild;
-      if (!header) return 0;
-      Object.assign(header.style, {
-        position: 'sticky',
-        top: '0',
-        zIndex: '2',
-        background: '#fff'
-      });
-      return header.getBoundingClientRect().height || 0;
-    }
-
-    // Mede a folga real do cabeçalho (topo do 1º item quando scrollTop=0)
-    function measureGap(){
-      const prev = viewport.scrollTop;
-      viewport.scrollTop = 0;
-      const first = firstItem();
-      const gap = first ? relTop(first) : 0;
-      viewport.scrollTop = prev;
-      viewport.style.scrollPaddingTop = gap + 'px'; // ajuda em alinhamentos
-      return gap;
-    }
-
-    function scrollToNow(opts={smooth:false}){
-      const nowEl = findNow();
-      if (!nowEl) return;
-      const gap = measureGap();     // altura efetiva do cabeçalho da EPG
-      const target = Math.max(0, relTop(nowEl) - gap);
-      viewport.scrollTo({ top: target, behavior: opts.smooth ? 'smooth':'auto' });
-    }
-
-    // Mantém só um scroller: remove qualquer overflow interno que a EPG gere
-    function squashInnerScrollers(){
-      qa('*').forEach(el => {
-        const cs = getComputedStyle(el);
-        if (/(auto|scroll)/.test(cs.overflowY)) el.style.overflowY = 'visible';
-        if (cs.maxHeight && cs.maxHeight !== 'none') el.style.maxHeight = 'none';
-      });
-    }
-
-    // Auto-alinha “Agora” após montar; não move o scroll da página
-    let done = false;
-    function initAlign(){
-      if (done) return;
-      squashInnerScrollers();
-      stickHeader();
-      // Dá um frame para layout estabilizar e mede o gap real
-      requestAnimationFrame(() => {
-        measureGap();
-        scrollToNow({smooth:false});
-        done = true;
-      });
-    }
-
-    // “Agora” funcional (delegação)
-    viewport.addEventListener('click', (ev) => {
-      const btn = ev.target.closest('button,[role="button"],a');
-      if (!btn) return;
-      if (/agora/i.test(btn.textContent || '')) {
-        ev.preventDefault();
-        scrollToNow({smooth:true});
-      }
+  // Remove scroll interno que a EPG porventura crie
+  function squashInnerScrollers(){
+    qa('*').forEach(el => {
+      const cs = getComputedStyle(el);
+      if (/(auto|scroll)/.test(cs.overflowY)) el.style.overflowY = 'visible';
+      if (cs.maxHeight && cs.maxHeight !== 'none') el.style.maxHeight = 'none';
     });
+  }
 
-    // Observa a montagem/atualização da EPG
-    const mo = new MutationObserver(() => initAlign());
-    mo.observe(root, { childList:true, subtree:true });
-
-    window.addEventListener('load', initAlign);
-    window.addEventListener('resize', () => {
-      // Recalibra em rotações/zoom
-      done = false;
-      initAlign();
+  // Auto-alinha “Agora” após montar; não move o scroll da página
+  let done = false;
+  function initAlign(){
+    if (done) return;
+    squashInnerScrollers();
+    stickHeader();
+    requestAnimationFrame(() => {
+      scrollToNow({smooth:false});
+      done = true;
     });
-  })();
-  </script>
+  }
+
+  // “Agora” funcional (delegação)
+  viewport.addEventListener('click', (ev) => {
+    const btn = ev.target.closest('button,[role="button"],a');
+    if (!btn) return;
+    if (/agora/i.test(btn.textContent || '')) {
+      ev.preventDefault();
+      scrollToNow({smooth:true});
+    }
+  });
+
+  // Observa a montagem/atualização da EPG
+  const mo = new MutationObserver(() => initAlign());
+  mo.observe(root, { childList:true, subtree:true });
+
+  window.addEventListener('load', initAlign);
+  window.addEventListener('resize', () => { done = false; initAlign(); });
+})();
+</script>
 
   <!-- Overlay: lógica de exibição -->
   <script>
