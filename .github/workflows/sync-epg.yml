@@ -1,0 +1,40 @@
+name: Sync EPG to Pages
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/60 * * * *"   # a cada 60 minutos
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # necessário para commitar
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch EPG (JSON + XML)
+        run: |
+          set -e
+          mkdir -p epg
+          # Baixa do seu servidor (HTTP no runner não causa mixed content)
+          curl -fsSL --retry 3 http://200.239.167.116/epg/schedule_now.json -o epg/schedule_now.json.new
+          curl -fsSL --retry 3 http://200.239.167.116/epg/epg_tvufop.xml   -o epg/epg_tvufop.xml.new
+          # Checagem básica de tamanho > 0 antes de ativar
+          [ -s epg/schedule_now.json.new ]
+          [ -s epg/epg_tvufop.xml.new ]
+          mv epg/schedule_now.json.new epg/schedule_now.json
+          mv epg/epg_tvufop.xml.new   epg/epg_tvufop.xml
+
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain epg/schedule_now.json epg/epg_tvufop.xml)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add epg/schedule_now.json epg/epg_tvufop.xml
+            git commit -m "Update EPG (CI)"
+            git push
+          else
+            echo "Sem alterações"
+          fi
