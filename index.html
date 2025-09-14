@@ -141,7 +141,7 @@
   <!-- Carrega EPG -->
   <script src="epg/epg.js"></script>
 
-  <!-- Rolagem automática do EPG até o item "agora" (sem mexer no scroll da janela) -->
+  <!-- Rolagem automática do EPG até o item "agora" (sem mexer no scroll da página) -->
   <script>
   (function(){
     const epgViewport = document.getElementById('epg-viewport');
@@ -155,8 +155,8 @@
     });
 
     let done = false;
+
     function findNow(root){
-      // Tente padrões comuns de marcação do "agora"
       const sels = [
         '.is-now', '.now', '[data-now="true"]', '[aria-current="true"]', '[data-state~="now"]'
       ];
@@ -164,7 +164,6 @@
         const el = root.querySelector(s);
         if (el) return el;
       }
-      // Fallback: procurar por horários HH:MM e escolher o último <= agora
       const items = Array.from(root.querySelectorAll('li, .epg-item, tr, .row, .program, article'))
         .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
       if (!items.length) return null;
@@ -177,19 +176,26 @@
         const m = el.textContent.match(/\b(\d{2}):(\d{2})\b/);
         if (!m) continue;
         const t = parseInt(m[1],10)*60 + parseInt(m[2],10);
-        // considera grade que cruza meia-noite
         const val = (t <= nowMin) ? t : (t - 24*60);
         if (val > bestVal){ bestVal = val; best = el; }
       }
       return best;
     }
 
+    // calcula o topo relativo do elemento dentro do container rolável
+    function relativeTop(el, container){
+      const e = el.getBoundingClientRect();
+      const c = container.getBoundingClientRect();
+      return (e.top - c.top) + container.scrollTop;
+    }
+
     function scrollToNow(){
       if (done || !epgRoot || !epgViewport) return;
       const el = findNow(epgRoot);
       if (el){
-        // Rolagem só do container, sem animar (não “puxa” foco da página)
-        el.scrollIntoView({block: 'start', inline: 'nearest', behavior: 'auto'});
+        const top = Math.max(0, relativeTop(el, epgViewport));
+        // rola APENAS o container da EPG; a página não se mexe
+        epgViewport.scrollTo({ top, behavior: 'auto' });
         done = true;
       }
     }
