@@ -141,13 +141,13 @@
   <!-- Carrega EPG -->
   <script src="epg/epg.js"></script>
 
-  <!-- EPG: header sticky no viewport e "Agora" abaixo dele, rolando só o container -->
+  <!-- EPG: header sticky no viewport e "Agora" alinhado abaixo dele, rolando só o container -->
   <script>
   (function(){
     const epgViewport = document.getElementById('epg-viewport');
     const epgRoot     = document.getElementById('tvufop-epg');
 
-    /* viewport interno rolável (sem mexer na página) */
+    // viewport interno rolável (sem mexer na página)
     Object.assign(epgViewport.style, {
       maxHeight: 'calc(100vh - var(--header-h,0px) - var(--player-h,0px) - 24px)',
       overflowY: 'auto',
@@ -156,17 +156,16 @@
 
     let done = false;
 
-    // HEADER DA EPG STICKY (pega o primeiro bloco gerado dentro de #tvufop-epg)
-    function stickEpgHeader(){
-      const headerBlock = epgRoot.firstElementChild;
-      if (!headerBlock) return 0;
-      Object.assign(headerBlock.style, {
+    // Primeiro filho da EPG vira o "cabeçalho" e fica sticky dentro do viewport
+    function makeHeaderSticky(){
+      const first = epgRoot.firstElementChild;
+      if (!first) return;
+      Object.assign(first.style, {
         position: 'sticky',
         top: '0',
         zIndex: '2',
         background: '#fff'
       });
-      return headerBlock.getBoundingClientRect().height || 0;
     }
 
     function findNow(root){
@@ -195,32 +194,47 @@
       return best;
     }
 
-    function relativeTop(el, container){
+    // calcula posição relativa ao container rolável
+    function relTop(el, container){
       const e = el.getBoundingClientRect();
       const c = container.getBoundingClientRect();
       return (e.top - c.top) + container.scrollTop;
     }
 
+    // encontra o "primeiro item de programação" (primeiro card/linha após o cabeçalho)
+    function findFirstItem(root){
+      const candidates = root.querySelectorAll('li, .epg-item, tr, .row, .program, article');
+      return candidates.length ? candidates[0] : null;
+    }
+
     function scrollToNow(){
       if (done || !epgRoot || !epgViewport) return;
 
-      // aplica sticky no cabeçalho e mede sua altura
-      const headerH = stickEpgHeader();
+      // Garante header sticky e mede a "folga" (topo do primeiro item quando scrollTop=0)
+      makeHeaderSticky();
 
-      const el = findNow(epgRoot);
-      if (el){
-        // posiciona o item “Agora” logo abaixo do cabeçalho da EPG
-        const target = Math.max(0, relativeTop(el, epgViewport) - headerH);
-        epgViewport.scrollTo({ top: target, behavior: 'auto' });
+      const prev = epgViewport.scrollTop;
+      epgViewport.scrollTop = 0; // mede com o cabeçalho totalmente visível
+
+      const firstItem = findFirstItem(epgRoot);
+      const gap = firstItem ? relTop(firstItem, epgViewport) : 0;
+
+      const nowEl = findNow(epgRoot);
+      if (nowEl){
+        const target = Math.max(0, relTop(nowEl, epgViewport) - gap);
+        epgViewport.scrollTop = target;     // rola apenas o container
         done = true;
+      }else{
+        // restaura caso não tenha encontrado nada
+        epgViewport.scrollTop = prev;
       }
     }
 
-    // Aguarda a EPG montar (caso epg.js preencha via fetch)
+    // Observa a montagem da EPG
     const mo = new MutationObserver(() => scrollToNow());
     mo.observe(epgRoot, {childList: true, subtree: true});
 
-    // Tentativa adicional após o load
+    // Tentativa após o load
     window.addEventListener('load', () => setTimeout(scrollToNow, 250));
   })();
   </script>
@@ -240,7 +254,7 @@
       setTimeout(() => {
         overlay.classList.add('is-hidden');
         overlay.setAttribute('aria-busy', 'false');
-      }, 500); // ajuste se quiser segurar mais o overlay
+      }, 500);
     });
 
     // Se o src do iframe mudar em runtime, volta a exibir overlay
