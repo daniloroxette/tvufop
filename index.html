@@ -9,9 +9,12 @@
   <meta name="google" content="notranslate" />
   <meta http-equiv="Content-Language" content="pt-br" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="/tvufop/manifest.json" />
+  <!-- PWA (caminho relativo para funcionar com domínio raiz) -->
+  <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#8C1B2B" />
+
+  <!-- EPG CSS -->
+  <link rel="stylesheet" href="epg/epg.css">
 
   <style>
     :root { --bordo:#8C1B2B; }
@@ -25,18 +28,23 @@
       margin:0; padding:16px 12px;
       background:var(--bordo); color:#fff;
       font-size:20px; letter-spacing:.3px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     /* Centraliza e limita a largura. */
     .wrap{ width:min(100%, 960px); margin:16px auto; padding:0 8px; }
 
     /* PLAYER COM OVERLAY INTERNO */
     .player{
-      position: relative;         /* necessário para o overlay absoluto */
+      position: sticky; /* também serve de contexto p/ overlay absoluto */
       width:100%;
       aspect-ratio:16/9;
       background:#000;
       border-radius:12px;
       overflow:hidden;
+      top: var(--header-h, 0px);
+      z-index: 999;
     }
     .player iframe{
       width:100%; height:100%;
@@ -83,7 +91,7 @@
         id="eduplay-iframe"
         src="https://eduplay.rnp.br/app/tv/embed/ufop"
         title="Player Eduplay"
-        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+        allow="autoplay; encrypted-media; picture-in-picture; autopicture-in-picture; fullscreen"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
         loading="lazy">
@@ -103,60 +111,144 @@
       <p><strong>Fundação de Educação, Artes e Cultura</strong></p>
       <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
       <p class="sep">__________________________</p>
+    </div>
 
-      <!-- Programação (mantém os arquivos do repositório) -->
-      <link rel="stylesheet" href="epg/epg.css">
+    <!-- Viewport rolável só da programação -->
+    <div id="epg-viewport" role="region" aria-label="Programação">
       <div id="tvufop-epg"></div>
-      <script src="epg/epg.js"></script>
     </div>
   </div>
 
-  <!-- Overlay: lógica de exibição -->
+  <!-- Calcula alturas do cabeçalho e do player para layout sticky -->
   <script>
-    (function(){
-      const iframe  = document.getElementById('eduplay-iframe');
-      const overlay = document.getElementById('eduplay-overlay');
-      if (!iframe || !overlay) return;
-
-      // Mostra overlay ao iniciar
-      overlay.classList.remove('is-hidden');
-
-      // Esconde quando o documento do iframe terminar de carregar
-      iframe.addEventListener('load', () => {
-        setTimeout(() => {
-          overlay.classList.add('is-hidden');
-          overlay.setAttribute('aria-busy', 'false');
-        }, 500); // ajuste se quiser segurar mais o overlay
-      });
-
-      // Se o src do iframe mudar em runtime, volta a exibir overlay
-      new MutationObserver(muts => {
-        for (const m of muts) {
-          if (m.type === 'attributes' && m.attributeName === 'src') {
-            overlay.querySelector('.msg').textContent = 'Carregando Eduplay…';
-            overlay.classList.remove('is-hidden');
-            overlay.setAttribute('aria-busy', 'true');
-          }
-        }
-      }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
-
-      // Fallback: se demorar muito, atualiza a mensagem
-      setTimeout(() => {
-        if (!overlay.classList.contains('is-hidden')) {
-          overlay.querySelector('.msg').textContent = 'Carregando Eduplay… (verifique a conexão)';
-        }
-      }, 12000);
-    })();
+  (function(){
+    const header = document.querySelector('h1');
+    const player = document.getElementById('eduplay-box');
+    function updateVars(){
+      if (header) {
+        document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+      }
+      if (player) {
+        const r = player.getBoundingClientRect();
+        document.documentElement.style.setProperty('--player-h', r.height + 'px');
+      }
+    }
+    window.addEventListener('load', updateVars);
+    window.addEventListener('resize', updateVars);
+  })();
   </script>
 
-  <!-- Service Worker (mantido) -->
+  <!-- Carrega EPG -->
+  <script src="epg/epg.js"></script>
+
+  <!-- Rolagem automática do EPG até o item "agora" (sem mexer no scroll da janela) -->
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/tvufop/sw.js', { scope: '/tvufop/' })
-          .catch(err => console.log('SW registration failed:', err));
-      });
+  (function(){
+    const epgViewport = document.getElementById('epg-viewport');
+    const epgRoot     = document.getElementById('tvufop-epg');
+
+    // estilos do viewport (poderia ir no CSS)
+    Object.assign(epgViewport.style, {
+      maxHeight: 'calc(100vh - var(--header-h,0px) - var(--player-h,0px) - 24px)',
+      overflowY: 'auto',
+      borderRadius: '12px'
+    });
+
+    let done = false;
+    function findNow(root){
+      // Tente padrões comuns de marcação do "agora"
+      const sels = [
+        '.is-now', '.now', '[data-now="true"]', '[aria-current="true"]', '[data-state~="now"]'
+      ];
+      for (const s of sels){
+        const el = root.querySelector(s);
+        if (el) return el;
+      }
+      // Fallback: procurar por horários HH:MM e escolher o último <= agora
+      const items = Array.from(root.querySelectorAll('li, .epg-item, tr, .row, .program, article'))
+        .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
+      if (!items.length) return null;
+
+      const now = new Date();
+      const nowMin = now.getHours()*60 + now.getMinutes();
+
+      let best = null, bestVal = -1;
+      for (const el of items){
+        const m = el.textContent.match(/\b(\d{2}):(\d{2})\b/);
+        if (!m) continue;
+        const t = parseInt(m[1],10)*60 + parseInt(m[2],10);
+        // considera grade que cruza meia-noite
+        const val = (t <= nowMin) ? t : (t - 24*60);
+        if (val > bestVal){ bestVal = val; best = el; }
+      }
+      return best;
     }
+
+    function scrollToNow(){
+      if (done || !epgRoot || !epgViewport) return;
+      const el = findNow(epgRoot);
+      if (el){
+        // Rolagem só do container, sem animar (não “puxa” foco da página)
+        el.scrollIntoView({block: 'start', inline: 'nearest', behavior: 'auto'});
+        done = true;
+      }
+    }
+
+    // 1) tenta após o load
+    window.addEventListener('load', () => setTimeout(scrollToNow, 250));
+
+    // 2) observa a montagem do EPG (caso o epg.js preencha via fetch)
+    const mo = new MutationObserver(() => scrollToNow());
+    mo.observe(epgRoot, {childList: true, subtree: true});
+  })();
+  </script>
+
+  <!-- Overlay: lógica de exibição -->
+  <script>
+  (function(){
+    const iframe  = document.getElementById('eduplay-iframe');
+    const overlay = document.getElementById('eduplay-overlay');
+    if (!iframe || !overlay) return;
+
+    // Mostra overlay ao iniciar
+    overlay.classList.remove('is-hidden');
+
+    // Esconde quando o documento do iframe terminar de carregar
+    iframe.addEventListener('load', () => {
+      setTimeout(() => {
+        overlay.classList.add('is-hidden');
+        overlay.setAttribute('aria-busy', 'false');
+      }, 500); // ajuste se quiser segurar mais o overlay
+    });
+
+    // Se o src do iframe mudar em runtime, volta a exibir overlay
+    new MutationObserver(muts => {
+      for (const m of muts) {
+        if (m.type === 'attributes' && m.attributeName === 'src') {
+          overlay.querySelector('.msg').textContent = 'Carregando Eduplay…';
+          overlay.classList.remove('is-hidden');
+          overlay.setAttribute('aria-busy', 'true');
+        }
+      }
+    }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
+
+    // Fallback: se demorar muito, atualiza a mensagem
+    setTimeout(() => {
+      if (!overlay.classList.contains('is-hidden')) {
+        overlay.querySelector('.msg').textContent = 'Carregando Eduplay… (verifique a conexão)';
+      }
+    }, 12000);
+  })();
+  </script>
+
+  <!-- Service Worker (caminho relativo) -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js', { scope: './' })
+        .catch(err => console.log('SW registration failed:', err));
+    });
+  }
   </script>
 </body>
 </html>
