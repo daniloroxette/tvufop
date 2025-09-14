@@ -38,7 +38,7 @@
 
     /* PLAYER COM OVERLAY INTERNO */
     .player{
-      position: sticky; /* também serve de contexto p/ overlay absoluto */
+      position: sticky; /* contexto p/ overlay absoluto */
       width:100%;
       aspect-ratio:16/9;
       background:#000;
@@ -53,7 +53,7 @@
       background:#000;
       overflow:hidden;
     }
-    /* Tentativas para minimizar barras do iframe */
+    /* Minimizar barras no iframe (nem sempre tem efeito em cross-origin) */
     .player iframe::-webkit-scrollbar { display:none; }
 
     /* Overlay interno (não bloqueia cliques) */
@@ -90,6 +90,7 @@
       overscroll-behavior: contain;
       background:#fff;
       border-radius:12px;
+      /* max-height é definida via JS usando as variáveis --header-h e --player-h */
     }
   </style>
 </head>
@@ -154,85 +155,34 @@
   <!-- Carrega EPG -->
   <script src="epg/epg.js"></script>
 
-  <!-- Rolagem automática do EPG até o item "agora" (sem mexer no scroll da janela) -->
+  <!-- Lógica da EPG: evita rolar a página, fixa header interno e leva "Agora" ao topo do viewport -->
   <script>
   (function(){
+    const initialDocY = window.scrollY || document.documentElement.scrollTop || 0;
     const epgViewport = document.getElementById('epg-viewport');
     const epgRoot     = document.getElementById('tvufop-epg');
 
-    // estilos adicionais do viewport (com vírgulas corretas)
-    Object.assign(epgViewport.style, {
-      maxHeight: 'calc(100vh - var(--header-h,0px) - var(--player-h,0px) - 24px)',
-      overflowY: 'auto',
-      borderRadius: '12px',
-      overscrollBehavior: 'contain'
-    });
-
-    let done = false;
-    function findNow(root){
-      // Tente padrões comuns de marcação do "agora"
-      const sels = [
-        '.is-now', '.now', '[data-now="true"]', '[aria-current="true"]', '[data-state~="now"]'
-      ];
-      for (const s of sels){
-        const el = root.querySelector(s);
-        if (el) return el;
-      }
-      // Fallback: procurar por horários HH:MM e escolher o último <= agora
-      const items = Array.from(root.querySelectorAll('li, .epg-item, tr, .row, .program, article'))
-        .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
-      if (!items.length) return null;
-
-      const now = new Date();
-      const nowMin = now.getHours()*60 + now.getMinutes();
-
-      let best = null, bestVal = -1;
-      for (const el of items){
-        const m = el.textContent.match(/\b(\d{2}):(\d{2})\b/);
-        if (!m) continue;
-        const t = parseInt(m[1],10)*60 + parseInt(m[2],10);
-        // considera grade que cruza meia-noite
-        const val = (t <= nowMin) ? t : (t - 24*60);
-        if (val > bestVal){ bestVal = val; best = el; }
-      }
-      return best;
+    // Garante que o viewport tenha as propriedades certas (scroll interno)
+    function ensureViewportStyle(){
+      if (!epgViewport) return;
+      Object.assign(epgViewport.style, {
+        maxHeight: 'calc(100vh - var(--header-h,0px) - var(--player-h,0px) - 24px)',
+        overflowY: 'auto',
+        borderRadius: '12px',
+        overscrollBehavior: 'contain',
+        WebkitOverflowScrolling: 'touch',
+        touchAction: 'pan-y'
+      });
     }
+    ensureViewportStyle();
 
-    function scrollToNow(){
-      if (done || !epgRoot || !epgViewport) return;
-      const el = findNow(epgRoot);
-      if (el){
-        // Rolagem só do container, sem animar (não “puxa” foco da página)
-        el.scrollIntoView({block: 'start', inline: 'nearest', behavior: 'auto'});
-        done = true;
-      }
-    }
-
-    // 1) tenta após o load
-    window.addEventListener('load', () => setTimeout(scrollToNow, 250));
-
-    // 2) observa a montagem do EPG (caso o epg.js preencha via fetch)
-    const mo = new MutationObserver(() => scrollToNow());
-    mo.observe(epgRoot, {childList: true, subtree: true});
-  })();
-  </script>
-
-  <!-- Cabeçalho da EPG “sticky” dentro do viewport (mantém botão Agora sempre visível) -->
-  <script>
-  (function(){
-    const epgViewport = document.getElementById('epg-viewport');
-    const epgRoot     = document.getElementById('tvufop-epg');
-
+    // Fixa o cabeçalho da EPG dentro do viewport (mantém "Agora" sempre visível)
     function stickEpgHeader(){
       if (!epgRoot) return;
-
-      // Candidatos comuns do cabeçalho da EPG
       const candidates = epgRoot.querySelectorAll(
         ':scope > .epg-header, :scope > header, :scope > .header, :scope > .epg-controls, :scope > .controls'
       );
-
       let header = null;
-
       for (const el of candidates){
         if (el.querySelector('button,[role="button"],input,select') || /agora/i.test(el.textContent||'')){
           header = el; break;
@@ -254,13 +204,96 @@
         marginTop: '0',
         boxShadow: '0 1px 0 rgba(0,0,0,.06)'
       });
-      header.dataset.sticky = 'true';
     }
 
-    // Executa quando a EPG montar/atualizar e após o load
-    const mo = new MutationObserver(() => stickEpgHeader());
+    // Localiza o item "agora"
+    function findNow(root){
+      const sels = ['.is-now', '.now', '[data-now="true"]', '[aria-current="true"]', '[data-state~="now"]'];
+      for (const s of sels){
+        const el = root.querySelector(s);
+        if (el) return el;
+      }
+      // Fallback: último horário <= agora
+      const items = Array.from(root.querySelectorAll('li, .epg-item, tr, .row, .program, article'))
+        .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
+      if (!items.length) return null;
+      const now = new Date();
+      const nowMin = now.getHours()*60 + now.getMinutes();
+      let best = null, bestVal = -1;
+      for (const el of items){
+        const m = el.textContent.match(/\b(\d{2}):(\d{2})\b/);
+        if (!m) continue;
+        const t = parseInt(m[1],10)*60 + parseInt(m[2],10);
+        const val = (t <= nowMin) ? t : (t - 24*60);
+        if (val > bestVal){ bestVal = val; best = el; }
+      }
+      return best;
+    }
+
+    // Utilitário: posição relativa ao container rolável
+    function relativeTop(el, container){
+      const e = el.getBoundingClientRect();
+      const c = container.getBoundingClientRect();
+      return (e.top - c.top) + container.scrollTop;
+    }
+
+    // Evita que um eventual autofocus/focus do EPG "puxe" a página
+    let focusGuardArmed = true;
+    const killAutofocus = new MutationObserver(() => {
+      epgRoot.querySelectorAll('input[autofocus], [autofocus]').forEach(el => el.removeAttribute('autofocus'));
+    });
+    killAutofocus.observe(epgRoot, {subtree:true, childList:true, attributes:true, attributeFilter:['autofocus']});
+
+    function onFocusIn(e){
+      if (focusGuardArmed && epgRoot.contains(e.target)) {
+        if (typeof e.target.blur === 'function') e.target.blur();
+        // restaura a posição do documento se tiver mexido
+        window.scrollTo({top: initialDocY, left: 0});
+      }
+    }
+    document.addEventListener('focusin', onFocusIn, true);
+    // Desarma o guard após a fase inicial
+    setTimeout(() => {
+      focusGuardArmed = false;
+      document.removeEventListener('focusin', onFocusIn, true);
+    }, 2000);
+
+    // Rolagem do viewport até o item "agora" (sem tocar no scroll da página)
+    let scrolled = false;
+    function scrollToNow(){
+      if (scrolled || !epgViewport || !epgRoot) return;
+
+      // Só faz sentido se o viewport for realmente rolável
+      if (epgViewport.scrollHeight <= epgViewport.clientHeight) return;
+
+      const el = findNow(epgRoot);
+      if (!el) return;
+
+      // Considera a altura do cabeçalho fixo da EPG (se houver)
+      const headerCand = epgRoot.querySelector(':scope > .epg-header, :scope > header, :scope > .header, :scope > .epg-controls, :scope > .controls');
+      const headerH = headerCand ? headerCand.getBoundingClientRect().height : 0;
+
+      const top = Math.max(0, relativeTop(el, epgViewport) - headerH);
+      epgViewport.scrollTo({ top, behavior: 'auto' });
+
+      // Garante que o documento permaneça na posição inicial
+      window.scrollTo({ top: initialDocY, left: 0 });
+      scrolled = true;
+    }
+
+    // Observa a montagem/atualização da EPG
+    const mo = new MutationObserver(() => {
+      stickEpgHeader();
+      // espera um frame p/ aplicar altura/estilos antes de rolar
+      requestAnimationFrame(scrollToNow);
+    });
     mo.observe(epgRoot, { childList: true, subtree: true });
-    window.addEventListener('load', () => setTimeout(stickEpgHeader, 200));
+
+    // Tenta novamente após o load (caso a EPG já esteja pronta)
+    window.addEventListener('load', () => {
+      ensureViewportStyle();
+      setTimeout(() => { stickEpgHeader(); scrollToNow(); }, 300);
+    });
   })();
   </script>
 
@@ -271,18 +304,15 @@
     const overlay = document.getElementById('eduplay-overlay');
     if (!iframe || !overlay) return;
 
-    // Mostra overlay ao iniciar
     overlay.classList.remove('is-hidden');
 
-    // Esconde quando o documento do iframe terminar de carregar
     iframe.addEventListener('load', () => {
       setTimeout(() => {
         overlay.classList.add('is-hidden');
         overlay.setAttribute('aria-busy', 'false');
-      }, 500); // segurar um pouco o overlay
+      }, 500);
     });
 
-    // Se o src do iframe mudar em runtime, volta a exibir overlay
     new MutationObserver(muts => {
       for (const m of muts) {
         if (m.type === 'attributes' && m.attributeName === 'src') {
@@ -293,7 +323,6 @@
       }
     }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
 
-    // Fallback: se demorar muito, atualiza a mensagem
     setTimeout(() => {
       if (!overlay.classList.contains('is-hidden')) {
         overlay.querySelector('.msg').textContent = 'Carregando Eduplay… (verifique a conexão)';
