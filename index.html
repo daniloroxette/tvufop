@@ -37,13 +37,14 @@
 
     /* PLAYER COM OVERLAY INTERNO */
     .player{
-    position: relative;        /* <— não-sticky evita o bug de “primeiro toque” */
-    width:100%;
-    aspect-ratio:16/9;
-    background:#000;
-    border-radius:12px;
-    overflow:hidden;
-    z-index: 1;
+      position: sticky;
+      width:100%;
+      aspect-ratio:16/9;
+      background:#000;
+      border-radius:12px;
+      overflow:hidden;
+      top: var(--header-h, 0px);
+      z-index: 999;
     }
     .player iframe{
       width:100%; height:100%;
