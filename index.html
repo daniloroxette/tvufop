@@ -37,14 +37,13 @@
 
     /* PLAYER COM OVERLAY INTERNO */
     .player{
-      position: sticky; /* também serve de contexto p/ overlay absoluto */
-      width:100%;
-      aspect-ratio:16/9;
-      background:#000;
-      border-radius:12px;
-      overflow:hidden;
-      top: var(--header-h, 0px);
-      z-index: 999;
+    position: relative;        /* <— não-sticky evita o bug de “primeiro toque” */
+    width:100%;
+    aspect-ratio:16/9;
+    background:#000;
+    border-radius:12px;
+    overflow:hidden;
+    z-index: 1;
     }
     .player iframe{
       width:100%; height:100%;
@@ -91,10 +90,10 @@
         id="eduplay-iframe"
         src="https://eduplay.rnp.br/app/tv/embed/ufop"
         title="Player Eduplay"
-        allow="autoplay; encrypted-media; picture-in-picture; autopicture-in-picture; fullscreen"
+        allow="autoplay *; fullscreen *; picture-in-picture *; encrypted-media *"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-        loading="lazy">
+        tabindex="0">
       </iframe>
 
       <div id="eduplay-overlay" class="eduplay-overlay" role="status" aria-live="polite" aria-busy="true">
