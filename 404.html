@@ -15,33 +15,32 @@
     <h1>Redirecionando…</h1>
     <p>Se não avançar sozinho, use o botão abaixo.</p>
     <p><button id="go">Abrir TV&nbsp;UFOP</button></p>
-    <p><a id="link" href="#">Clique aqui</a></p>
+    <p><a id="link" href="https://daniloroxette.github.io/tvufop/">Clique aqui</a></p>
   </div>
 
 <script>
 (function(){
-  // Descobre o primeiro segmento do caminho (ex.: /tvufop/…)
-  var segs = location.pathname.split('/').filter(Boolean);
-  var repo = segs.length ? ('/' + segs[0] + '/') : '/';
-  // Em GitHub Pages do projeto, queremos /tvufop/
-  // Se no futuro virar domínio próprio na raiz, repo vira "/"
-  if (repo.toLowerCase() === '/404.html/') repo = '/';
+  // URL canônica no GitHub Pages
+  var GH = "https://daniloroxette.github.io/tvufop/";
 
-  var target = location.origin + repo;
-
-  function go() {
-    try { location.replace(target); }
-    catch(_) { location.href = target; }
+  function go(){
+    try { window.top.location.replace(GH); }
+    catch(_) {
+      try { window.location.replace(GH); }
+      catch(__) { window.location.href = GH; }
+    }
   }
 
-  // Tenta de imediato
+  // tenta imediatamente
   go();
-
-  // Fallbacks (iOS standalone às vezes bloqueia o primeiro redirect)
-  document.getElementById('go').addEventListener('click', go);
-  var a = document.getElementById('link'); a.href = target; a.addEventListener('click', go);
-  // Nova tentativa automática após 1,5 s
+  // tenta de novo após 1,5s (modo standalone do iOS às vezes ignora a 1ª troca)
   setTimeout(go, 1500);
+
+  // botões/links de fallback
+  document.getElementById('go').addEventListener('click', go);
+  document.getElementById('link').addEventListener('click', function(e){
+    e.preventDefault(); go();
+  });
 })();
 </script>
 </body>
