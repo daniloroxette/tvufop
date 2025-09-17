@@ -1,5 +1,39 @@
-<!doctype html><html lang="pt-BR"><meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=./">
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Redirecionando…</title>
-<p>Se não redirecionar automaticamente, <a href="./">clique aqui</a>.</p>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;display:grid;place-items:center;height:100vh}
+  .box{max-width:520px;padding:24px;text-align:center}
+  button{padding:10px 14px;border:0;border-radius:10px;background:#222;color:#fff;cursor:pointer}
+</style>
+<body>
+  <div class="box">
+    <h1>Redirecionando…</h1>
+    <p>Se não avançar sozinho, use o botão abaixo.</p>
+    <p><button id="go">Abrir TV&nbsp;UFOP</button></p>
+  </div>
+
+<script>
+(function(){
+  // Descobre o primeiro segmento do caminho (/tvufop/…)
+  var segs   = location.pathname.split('/').filter(Boolean);
+  var repo   = segs.length ? ('/' + segs[0] + '/') : '/';
+  var target = location.origin + repo;
+
+  function go() {
+    try { location.replace(target); }
+    catch(_) { location.href = target; }
+  }
+
+  // Tenta imediatamente
+  go();
+
+  // Botão de fallback
+  document.getElementById('go').addEventListener('click', go);
+})();
+</script>
+</body>
 </html>
