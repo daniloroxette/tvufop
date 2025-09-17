@@ -11,6 +11,12 @@
       "src": "/tvufop/images/logo_tvufop_eduplay.png",
       "sizes": "192x192",
       "type": "image/png"
+    },
+    {
+      "src": "/tvufop/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
