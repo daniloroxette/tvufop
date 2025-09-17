@@ -8,19 +8,25 @@
   body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;display:grid;place-items:center;height:100vh}
   .box{max-width:520px;padding:24px;text-align:center}
   button{padding:10px 14px;border:0;border-radius:10px;background:#222;color:#fff;cursor:pointer}
+  a{color:#222}
 </style>
 <body>
   <div class="box">
     <h1>Redirecionando…</h1>
     <p>Se não avançar sozinho, use o botão abaixo.</p>
     <p><button id="go">Abrir TV&nbsp;UFOP</button></p>
+    <p><a id="link" href="#">Clique aqui</a></p>
   </div>
 
 <script>
 (function(){
-  // Descobre o primeiro segmento do caminho (/tvufop/…)
-  var segs   = location.pathname.split('/').filter(Boolean);
-  var repo   = segs.length ? ('/' + segs[0] + '/') : '/';
+  // Descobre o primeiro segmento do caminho (ex.: /tvufop/…)
+  var segs = location.pathname.split('/').filter(Boolean);
+  var repo = segs.length ? ('/' + segs[0] + '/') : '/';
+  // Em GitHub Pages do projeto, queremos /tvufop/
+  // Se no futuro virar domínio próprio na raiz, repo vira "/"
+  if (repo.toLowerCase() === '/404.html/') repo = '/';
+
   var target = location.origin + repo;
 
   function go() {
@@ -28,11 +34,14 @@
     catch(_) { location.href = target; }
   }
 
-  // Tenta imediatamente
+  // Tenta de imediato
   go();
 
-  // Botão de fallback
+  // Fallbacks (iOS standalone às vezes bloqueia o primeiro redirect)
   document.getElementById('go').addEventListener('click', go);
+  var a = document.getElementById('link'); a.href = target; a.addEventListener('click', go);
+  // Nova tentativa automática após 1,5 s
+  setTimeout(go, 1500);
 })();
 </script>
 </body>
