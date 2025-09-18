@@ -1,13 +1,13 @@
 {
-  "generated_at": "2025-09-18T01:27:01.520992-03:00",
+  "generated_at": "2025-09-18T02:20:01.997347-03:00",
   "schedule": [
     {
       "start": "2025-09-18T00:00:01-03:00",
       "stop": "2025-09-18T00:17:27-03:00",
-      "title": "A CAVERNA DE PETRA - EP11 - UMA MÃE (IM)PERFEITA",
+      "title": "A CAVERNA DE PETRA I EPISÓDIO 11",
       "desc": "",
       "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/A%20CAVERNA%20DE%20PETRA%20I%20EPIS%C3%93DIO%2011.jpg"
+      "thumb": ""
     },
     {
       "start": "2025-09-18T00:17:27-03:00",
@@ -139,27 +139,11 @@
     },
     {
       "start": "2025-09-18T02:00:30-03:00",
-      "stop": "2025-09-18T02:16:29-03:00",
-      "title": "POVO DO LIVRO - EP4 - WELLINGTON DE MELLO",
-      "desc": "",
-      "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/POVO%20DO%20LIVRO%20I%20EPIS%C3%93DIO%2004%20I%20BLOCO%201.jpg"
-    },
-    {
-      "start": "2025-09-18T02:16:29-03:00",
-      "stop": "2025-09-18T02:18:59-03:00",
-      "title": "SE LIGA AÍ - LITERATURA - DOIS IRMÃOS, DE MILTON HATOUM",
-      "desc": "",
-      "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20DOIS%20IRM%C3%83OS%2C%20DE%20MILTON%20HATOUM.jpg"
-    },
-    {
-      "start": "2025-09-18T02:18:59-03:00",
       "stop": "2025-09-18T02:29:40-03:00",
       "title": "POVO DO LIVRO - EP4 - WELLINGTON DE MELLO",
       "desc": "",
       "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/POVO%20DO%20LIVRO%20I%20EPIS%C3%93DIO%2004%20I%20BLOCO%202.jpg"
+      "thumb": "http://200.239.167.116/epg/POVO%20DO%20LIVRO%20I%20EPIS%C3%93DIO%2004%20I%20BLOCO%201.jpg"
     },
     {
       "start": "2025-09-18T02:29:40-03:00",
@@ -411,27 +395,11 @@
     },
     {
       "start": "2025-09-18T08:30:56-03:00",
-      "stop": "2025-09-18T08:40:44-03:00",
-      "title": "TURMA DA ROBÓTICA - EP8 - MÃO NA MASSA",
-      "desc": "",
-      "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/TURMA%20DA%20ROB%C3%93TICA%20I%20T1%20I%20EP%2008%20I%20BLOCO%2001.jpg"
-    },
-    {
-      "start": "2025-09-18T08:40:44-03:00",
-      "stop": "2025-09-18T08:49:54-03:00",
-      "title": "TURMA DA ROBÓTICA - EP8 - MÃO NA MASSA",
-      "desc": "",
-      "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/TURMA%20DA%20ROB%C3%93TICA%20I%20T1%20I%20EP%2008%20I%20BLOCO%2002.jpg"
-    },
-    {
-      "start": "2025-09-18T08:49:54-03:00",
       "stop": "2025-09-18T09:00:28-03:00",
       "title": "TURMA DA ROBÓTICA - EP8 - MÃO NA MASSA",
       "desc": "",
       "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/TURMA%20DA%20ROB%C3%93TICA%20I%20T1%20I%20EP%2008%20I%20BLOCO%2003.jpg"
+      "thumb": "http://200.239.167.116/epg/TURMA%20DA%20ROB%C3%93TICA%20I%20T1%20I%20EP%2008%20I%20BLOCO%2001.jpg"
     },
     {
       "start": "2025-09-18T09:00:28-03:00",
@@ -604,10 +572,10 @@
     {
       "start": "2025-09-18T12:00:01-03:00",
       "stop": "2025-09-18T12:17:27-03:00",
-      "title": "A CAVERNA DE PETRA - EP11 - UMA MÃE (IM)PERFEITA",
+      "title": "A CAVERNA DE PETRA I EPISÓDIO 11",
       "desc": "",
       "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/A%20CAVERNA%20DE%20PETRA%20I%20EPIS%C3%93DIO%2011.jpg"
+      "thumb": ""
     },
     {
       "start": "2025-09-18T12:17:27-03:00",
@@ -739,27 +707,11 @@
     },
     {
       "start": "2025-09-18T14:00:30-03:00",
-      "stop": "2025-09-18T14:16:29-03:00",
-      "title": "POVO DO LIVRO - EP4 - WELLINGTON DE MELLO",
-      "desc": "",
-      "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/POVO%20DO%20LIVRO%20I%20EPIS%C3%93DIO%2004%20I%20BLOCO%201.jpg"
-    },
-    {
-      "start": "2025-09-18T14:16:29-03:00",
-      "stop": "2025-09-18T14:18:59-03:00",
-      "title": "SE LIGA AÍ - LITERATURA - DOIS IRMÃOS, DE MILTON HATOUM",
-      "desc": "",
-      "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20DOIS%20IRM%C3%83OS%2C%20DE%20MILTON%20HATOUM.jpg"
-    },
-    {
-      "start": "2025-09-18T14:18:59-03:00",
       "stop": "2025-09-18T14:29:40-03:00",
       "title": "POVO DO LIVRO - EP4 - WELLINGTON DE MELLO",
       "desc": "",
       "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/POVO%20DO%20LIVRO%20I%20EPIS%C3%93DIO%2004%20I%20BLOCO%202.jpg"
+      "thumb": "http://200.239.167.116/epg/POVO%20DO%20LIVRO%20I%20EPIS%C3%93DIO%2004%20I%20BLOCO%201.jpg"
     },
     {
       "start": "2025-09-18T14:29:40-03:00",
@@ -1011,27 +963,11 @@
     },
     {
       "start": "2025-09-18T20:30:56-03:00",
-      "stop": "2025-09-18T20:40:44-03:00",
-      "title": "TURMA DA ROBÓTICA - EP8 - MÃO NA MASSA",
-      "desc": "",
-      "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/TURMA%20DA%20ROB%C3%93TICA%20I%20T1%20I%20EP%2008%20I%20BLOCO%2001.jpg"
-    },
-    {
-      "start": "2025-09-18T20:40:44-03:00",
-      "stop": "2025-09-18T20:49:54-03:00",
-      "title": "TURMA DA ROBÓTICA - EP8 - MÃO NA MASSA",
-      "desc": "",
-      "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/TURMA%20DA%20ROB%C3%93TICA%20I%20T1%20I%20EP%2008%20I%20BLOCO%2002.jpg"
-    },
-    {
-      "start": "2025-09-18T20:49:54-03:00",
       "stop": "2025-09-18T21:00:28-03:00",
       "title": "TURMA DA ROBÓTICA - EP8 - MÃO NA MASSA",
       "desc": "",
       "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/TURMA%20DA%20ROB%C3%93TICA%20I%20T1%20I%20EP%2008%20I%20BLOCO%2003.jpg"
+      "thumb": "http://200.239.167.116/epg/TURMA%20DA%20ROB%C3%93TICA%20I%20T1%20I%20EP%2008%20I%20BLOCO%2001.jpg"
     },
     {
       "start": "2025-09-18T21:00:28-03:00",
