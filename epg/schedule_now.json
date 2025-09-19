@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-09-18T20:19:01.201531-03:00",
+  "generated_at": "2025-09-18T22:47:01.809849-03:00",
   "schedule": [
     {
       "start": "2025-09-18T00:00:01-03:00",
@@ -364,10 +364,10 @@
     {
       "start": "2025-09-18T08:00:24-03:00",
       "stop": "2025-09-18T08:06:47-03:00",
-      "title": "EU TAMBÉM SOU PATRIMÔNIO (2014) - MARIA GLICERIA",
+      "title": "EU TAMBÉM SOU PATRIMÔNIO I DONA GLICERIA",
       "desc": "",
       "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/EU%20TAMB%C3%89M%20SOU%20PATRIM%C3%94NIO%20I%20DONA%20GLICERIA.jpg"
+      "thumb": ""
     },
     {
       "start": "2025-09-18T08:06:47-03:00",
@@ -932,10 +932,10 @@
     {
       "start": "2025-09-18T20:00:24-03:00",
       "stop": "2025-09-18T20:06:47-03:00",
-      "title": "EU TAMBÉM SOU PATRIMÔNIO (2014) - MARIA GLICERIA",
+      "title": "EU TAMBÉM SOU PATRIMÔNIO I DONA GLICERIA",
       "desc": "",
       "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/EU%20TAMB%C3%89M%20SOU%20PATRIM%C3%94NIO%20I%20DONA%20GLICERIA.jpg"
+      "thumb": ""
     },
     {
       "start": "2025-09-18T20:06:47-03:00",
@@ -1603,118 +1603,118 @@
     },
     {
       "start": "2025-09-19T09:56:38-03:00",
-      "stop": "2025-09-19T10:00:35-03:00",
+      "stop": "2025-09-19T10:00:19-03:00",
       "title": "MAIS UFOP I PÓS-GRADUAÇÃO EM QUÍMICA",
       "desc": "",
       "rating": "Livre",
       "thumb": ""
     },
     {
-      "start": "2025-09-19T10:00:35-03:00",
-      "stop": "2025-09-19T10:22:44-03:00",
-      "title": "FIGLI DEL LAVORO - EP1 - RECOMEÇO",
+      "start": "2025-09-19T10:00:19-03:00",
+      "stop": "2025-09-19T10:22:37-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP2 - JÚLIA E LÉO",
       "desc": "",
       "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/FIGLI%20DEL%20LAVORO%20I%20EP.%201%20-%20RECOMECO.jpg"
+      "thumb": ""
     },
     {
-      "start": "2025-09-19T10:22:44-03:00",
-      "stop": "2025-09-19T10:25:41-03:00",
+      "start": "2025-09-19T10:22:37-03:00",
+      "stop": "2025-09-19T10:25:34-03:00",
       "title": "MUTATIS MUTANDIS - ENTREVISTA LUISA CARDOSO",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20LUISA%20CARDOSO.jpg"
     },
     {
-      "start": "2025-09-19T10:25:41-03:00",
-      "stop": "2025-09-19T10:31:16-03:00",
+      "start": "2025-09-19T10:25:34-03:00",
+      "stop": "2025-09-19T10:29:56-03:00",
       "title": "MAIS UFOP I PÓS-GRADUAÇÃO EM ECONOMIA APLICADA",
       "desc": "",
       "rating": "Livre",
       "thumb": ""
     },
     {
-      "start": "2025-09-19T10:31:16-03:00",
-      "stop": "2025-09-19T11:00:13-03:00",
+      "start": "2025-09-19T10:29:56-03:00",
+      "stop": "2025-09-19T11:00:06-03:00",
       "title": "VEM VER - EP 13 - SERRAS II",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/VEM%20VER%20-%20EPIS%C3%93DIO%2013%20-%20SERRAS%20II%20.jpg"
     },
     {
-      "start": "2025-09-19T11:00:13-03:00",
-      "stop": "2025-09-19T11:04:19-03:00",
+      "start": "2025-09-19T11:00:06-03:00",
+      "stop": "2025-09-19T11:04:12-03:00",
       "title": "BOLETIM - MARIANA RECEBE 3ª FEIRA LITERÁRIA",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20TERCEIRA%20FLIMARI%20MARIANA.jpg"
     },
     {
-      "start": "2025-09-19T11:04:19-03:00",
-      "stop": "2025-09-19T11:07:10-03:00",
+      "start": "2025-09-19T11:04:12-03:00",
+      "stop": "2025-09-19T11:07:03-03:00",
       "title": "MAIS UFOP I FILOSOFIA",
       "desc": "",
       "rating": "Livre",
       "thumb": ""
     },
     {
-      "start": "2025-09-19T11:07:10-03:00",
-      "stop": "2025-09-19T11:15:17-03:00",
+      "start": "2025-09-19T11:07:03-03:00",
+      "stop": "2025-09-19T11:15:10-03:00",
       "title": "REPORTAGEM - PROJETO INCULTEC UFOP",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20PROJETO%20INCULTEC%20UFOP.jpg"
     },
     {
-      "start": "2025-09-19T11:15:17-03:00",
-      "stop": "2025-09-19T11:18:27-03:00",
+      "start": "2025-09-19T11:15:10-03:00",
+      "stop": "2025-09-19T11:18:20-03:00",
       "title": "A CENA MUDA (2015) - EP4 - CORTANDO CEBOLA",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/A%20CENA%20MUDA%20I%20CORTADOR%20CEBOLA.jpg"
     },
     {
-      "start": "2025-09-19T11:18:27-03:00",
-      "stop": "2025-09-19T11:23:15-03:00",
+      "start": "2025-09-19T11:18:20-03:00",
+      "stop": "2025-09-19T11:23:08-03:00",
       "title": "FIU - COLETIVOS - PROJETO SOMA",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/FIU%20-%20COLETIVOS%20-PROJETO%20SOMA.jpg"
     },
     {
-      "start": "2025-09-19T11:23:15-03:00",
-      "stop": "2025-09-19T11:26:12-03:00",
+      "start": "2025-09-19T11:23:08-03:00",
+      "stop": "2025-09-19T11:26:05-03:00",
       "title": "SE LIGA AÍ I LITERATURA - REVISTA LÉSBI",
       "desc": "",
       "rating": "Livre",
       "thumb": ""
     },
     {
-      "start": "2025-09-19T11:26:12-03:00",
-      "stop": "2025-09-19T11:29:42-03:00",
+      "start": "2025-09-19T11:26:05-03:00",
+      "stop": "2025-09-19T11:29:35-03:00",
       "title": "MAMBEMBE (2013) - DO ACASO DA RUA",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/MAMBEMBE%20I%20DO%20ACASO%20DA%20RUA.jpg"
     },
     {
-      "start": "2025-09-19T11:29:42-03:00",
-      "stop": "2025-09-19T11:47:20-03:00",
+      "start": "2025-09-19T11:29:35-03:00",
+      "stop": "2025-09-19T11:47:14-03:00",
       "title": "CONGADEIROS (2018) - EP2 - ORIGENS DO CONGADO",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/CONGADEIROS%20I%20EPIS%C3%93DIO%202.jpg"
     },
     {
-      "start": "2025-09-19T11:47:20-03:00",
-      "stop": "2025-09-19T11:51:49-03:00",
+      "start": "2025-09-19T11:47:14-03:00",
+      "stop": "2025-09-19T11:51:42-03:00",
       "title": "UFOP EXPLICA I TRANSFOBIA, REPRESENTATIVIDADE E O FENÔMENO DA TOKENIZAÇÃO",
       "desc": "",
       "rating": "Livre",
       "thumb": ""
     },
     {
-      "start": "2025-09-19T11:51:49-03:00",
+      "start": "2025-09-19T11:51:42-03:00",
       "stop": "2025-09-19T11:59:00-03:00",
       "title": "UFOP EM CASA - CIA. BEM-TE-VI UXA, A BRUXA",
       "desc": "",
@@ -2187,118 +2187,118 @@
     },
     {
       "start": "2025-09-19T21:56:38-03:00",
-      "stop": "2025-09-19T22:00:35-03:00",
+      "stop": "2025-09-19T22:00:19-03:00",
       "title": "MAIS UFOP I PÓS-GRADUAÇÃO EM QUÍMICA",
       "desc": "",
       "rating": "Livre",
       "thumb": ""
     },
     {
-      "start": "2025-09-19T22:00:35-03:00",
-      "stop": "2025-09-19T22:22:44-03:00",
-      "title": "FIGLI DEL LAVORO - EP1 - RECOMEÇO",
+      "start": "2025-09-19T22:00:19-03:00",
+      "stop": "2025-09-19T22:22:37-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP2 - JÚLIA E LÉO",
       "desc": "",
       "rating": "Livre",
-      "thumb": "http://200.239.167.116/epg/FIGLI%20DEL%20LAVORO%20I%20EP.%201%20-%20RECOMECO.jpg"
+      "thumb": ""
     },
     {
-      "start": "2025-09-19T22:22:44-03:00",
-      "stop": "2025-09-19T22:25:41-03:00",
+      "start": "2025-09-19T22:22:37-03:00",
+      "stop": "2025-09-19T22:25:34-03:00",
       "title": "MUTATIS MUTANDIS - ENTREVISTA LUISA CARDOSO",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20LUISA%20CARDOSO.jpg"
     },
     {
-      "start": "2025-09-19T22:25:41-03:00",
-      "stop": "2025-09-19T22:31:16-03:00",
+      "start": "2025-09-19T22:25:34-03:00",
+      "stop": "2025-09-19T22:29:56-03:00",
       "title": "MAIS UFOP I PÓS-GRADUAÇÃO EM ECONOMIA APLICADA",
       "desc": "",
       "rating": "Livre",
       "thumb": ""
     },
     {
-      "start": "2025-09-19T22:31:16-03:00",
-      "stop": "2025-09-19T23:00:13-03:00",
+      "start": "2025-09-19T22:29:56-03:00",
+      "stop": "2025-09-19T23:00:06-03:00",
       "title": "VEM VER - EP 13 - SERRAS II",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/VEM%20VER%20-%20EPIS%C3%93DIO%2013%20-%20SERRAS%20II%20.jpg"
     },
     {
-      "start": "2025-09-19T23:00:13-03:00",
-      "stop": "2025-09-19T23:04:19-03:00",
+      "start": "2025-09-19T23:00:06-03:00",
+      "stop": "2025-09-19T23:04:12-03:00",
       "title": "BOLETIM - MARIANA RECEBE 3ª FEIRA LITERÁRIA",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20TERCEIRA%20FLIMARI%20MARIANA.jpg"
     },
     {
-      "start": "2025-09-19T23:04:19-03:00",
-      "stop": "2025-09-19T23:07:10-03:00",
+      "start": "2025-09-19T23:04:12-03:00",
+      "stop": "2025-09-19T23:07:03-03:00",
       "title": "MAIS UFOP I FILOSOFIA",
       "desc": "",
       "rating": "Livre",
       "thumb": ""
     },
     {
-      "start": "2025-09-19T23:07:10-03:00",
-      "stop": "2025-09-19T23:15:17-03:00",
+      "start": "2025-09-19T23:07:03-03:00",
+      "stop": "2025-09-19T23:15:10-03:00",
       "title": "REPORTAGEM - PROJETO INCULTEC UFOP",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20PROJETO%20INCULTEC%20UFOP.jpg"
     },
     {
-      "start": "2025-09-19T23:15:17-03:00",
-      "stop": "2025-09-19T23:18:27-03:00",
+      "start": "2025-09-19T23:15:10-03:00",
+      "stop": "2025-09-19T23:18:20-03:00",
       "title": "A CENA MUDA (2015) - EP4 - CORTANDO CEBOLA",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/A%20CENA%20MUDA%20I%20CORTADOR%20CEBOLA.jpg"
     },
     {
-      "start": "2025-09-19T23:18:27-03:00",
-      "stop": "2025-09-19T23:23:15-03:00",
+      "start": "2025-09-19T23:18:20-03:00",
+      "stop": "2025-09-19T23:23:08-03:00",
       "title": "FIU - COLETIVOS - PROJETO SOMA",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/FIU%20-%20COLETIVOS%20-PROJETO%20SOMA.jpg"
     },
     {
-      "start": "2025-09-19T23:23:15-03:00",
-      "stop": "2025-09-19T23:26:12-03:00",
+      "start": "2025-09-19T23:23:08-03:00",
+      "stop": "2025-09-19T23:26:05-03:00",
       "title": "SE LIGA AÍ I LITERATURA - REVISTA LÉSBI",
       "desc": "",
       "rating": "Livre",
       "thumb": ""
     },
     {
-      "start": "2025-09-19T23:26:12-03:00",
-      "stop": "2025-09-19T23:29:42-03:00",
+      "start": "2025-09-19T23:26:05-03:00",
+      "stop": "2025-09-19T23:29:35-03:00",
       "title": "MAMBEMBE (2013) - DO ACASO DA RUA",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/MAMBEMBE%20I%20DO%20ACASO%20DA%20RUA.jpg"
     },
     {
-      "start": "2025-09-19T23:29:42-03:00",
-      "stop": "2025-09-19T23:47:20-03:00",
+      "start": "2025-09-19T23:29:35-03:00",
+      "stop": "2025-09-19T23:47:14-03:00",
       "title": "CONGADEIROS (2018) - EP2 - ORIGENS DO CONGADO",
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/CONGADEIROS%20I%20EPIS%C3%93DIO%202.jpg"
     },
     {
-      "start": "2025-09-19T23:47:20-03:00",
-      "stop": "2025-09-19T23:51:49-03:00",
+      "start": "2025-09-19T23:47:14-03:00",
+      "stop": "2025-09-19T23:51:42-03:00",
       "title": "UFOP EXPLICA I TRANSFOBIA, REPRESENTATIVIDADE E O FENÔMENO DA TOKENIZAÇÃO",
       "desc": "",
       "rating": "Livre",
       "thumb": ""
     },
     {
-      "start": "2025-09-19T23:51:49-03:00",
+      "start": "2025-09-19T23:51:42-03:00",
       "stop": "2025-09-19T23:59:00-03:00",
       "title": "UFOP EM CASA - CIA. BEM-TE-VI UXA, A BRUXA",
       "desc": "",
