@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-09-19T08:19:01.357455-03:00",
+  "generated_at": "2025-09-19T09:47:01.947314-03:00",
   "schedule": [
     {
       "start": "2025-09-19T00:00:01-03:00",
@@ -1168,6 +1168,1142 @@
       "desc": "",
       "rating": "Livre",
       "thumb": "http://200.239.167.116/epg/UFOP%20EM%20CASA%20I%20CIA%20BEM-TE-VI%20UXA%2C%20A%20BRUXA%20E%20O%20ELEFANTINHOZINHOZINHOZINHO.jpg"
+    },
+    {
+      "start": "2025-09-22T00:00:01-03:00",
+      "stop": "2025-09-22T00:12:43-03:00",
+      "title": "CANAL DA HISTÓRIA I CARLOS LACERDA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T00:12:43-03:00",
+      "stop": "2025-09-22T00:15:40-03:00",
+      "title": "FIU - COLETIVOS - PERIACTOI",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/FIU%20-%20COLETIVOS%20-%20PERIACTOI.jpg"
+    },
+    {
+      "start": "2025-09-22T00:15:40-03:00",
+      "stop": "2025-09-22T00:22:41-03:00",
+      "title": "SE LIGA AÍ I PERSONALIDADES FEMININAS, HELOÍSA FERNANDES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T00:22:41-03:00",
+      "stop": "2025-09-22T00:30:41-03:00",
+      "title": "UFOP EM CASA - URBANIDADES MARIANENSES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/UFOP%20EM%20CASA%20I%20URBANIDADES%20MARIANENSES.jpg"
+    },
+    {
+      "start": "2025-09-22T00:30:41-03:00",
+      "stop": "2025-09-22T00:48:44-03:00",
+      "title": "PERIPATÉTICOS (2013) - EP7 - O RISO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PERIPATETICOS%20I%20O%20RISO.jpg"
+    },
+    {
+      "start": "2025-09-22T00:48:44-03:00",
+      "stop": "2025-09-22T00:51:14-03:00",
+      "title": "POÉTICAS DO CORPO - TANGO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20TANGO.jpg"
+    },
+    {
+      "start": "2025-09-22T00:51:14-03:00",
+      "stop": "2025-09-22T01:00:04-03:00",
+      "title": "MAIS UFOP I PÓS GRADUAÇÃO EM FÍSICA DE MATERIAIS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T01:00:04-03:00",
+      "stop": "2025-09-22T01:05:48-03:00",
+      "title": "BOLETIM - SAÚDE MENTAL É FOCO DO SETEMBRO AMARELO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20SA%C3%9ADE%20MENTAL%20%C3%89%20FOCO%20DO%20SETEMBRO%20AMARELO.jpg"
+    },
+    {
+      "start": "2025-09-22T01:05:48-03:00",
+      "stop": "2025-09-22T01:14:04-03:00",
+      "title": "REPORTAGEM - DESAPARECIMENTOS NA REGIÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20DESAPARECIMENTOS%20REGI%C3%83O%20INCONFIDENTES.jpg"
+    },
+    {
+      "start": "2025-09-22T01:14:04-03:00",
+      "stop": "2025-09-22T01:17:35-03:00",
+      "title": "MAIS UFOP CEAD - PEDAGOGIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T01:17:35-03:00",
+      "stop": "2025-09-22T01:30:21-03:00",
+      "title": "ENTREVISTA - ECA DIGITAL E A PROTEÇÃO NA INTERNET",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/ENTREVISTA%20-%20ECA%20DIGITAL%20E%20A%20PROTE%C3%87%C3%83O%20NA%20INTERNET.jpg"
+    },
+    {
+      "start": "2025-09-22T01:30:21-03:00",
+      "stop": "2025-09-22T01:42:29-03:00",
+      "title": "PÉ DA LETRA I NEM QUE A VACA TUSSA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T01:42:29-03:00",
+      "stop": "2025-09-22T01:45:25-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA ELAINE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20ELAINE.jpg"
+    },
+    {
+      "start": "2025-09-22T01:45:25-03:00",
+      "stop": "2025-09-22T01:48:55-03:00",
+      "title": "QUE CORPO É ESSE I T1 I EPISÓDIO 2",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T01:48:55-03:00",
+      "stop": "2025-09-22T01:52:04-03:00",
+      "title": "MAIS UFOP CEAD - GEOGRAFIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T01:52:04-03:00",
+      "stop": "2025-09-22T01:54:30-03:00",
+      "title": "ANIVERSÁRIO TV UFOP - MARCO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/ANIVERS%C3%81RIO%20TV%2024%20I%205%20MARCO.jpg"
+    },
+    {
+      "start": "2025-09-22T01:54:30-03:00",
+      "stop": "2025-09-22T02:00:25-03:00",
+      "title": "UFOP EXPLICA I TRANSFOBIA PROPOSTAS DE POLÍTICAS AFIRMATIVAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T02:00:25-03:00",
+      "stop": "2025-09-22T02:51:39-03:00",
+      "title": "ESCOLAS INOVADORAS - HIGH TECH HIGH (ESTADOS UNIDOS)",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/ESCOLAS%20INOVADORAS%20I%20HIGH%20TECH%20HIGH%20%28ESTADOS%20UNIDOS%29.jpg"
+    },
+    {
+      "start": "2025-09-22T02:51:39-03:00",
+      "stop": "2025-09-22T02:53:41-03:00",
+      "title": "MAMBEMBE (2013) - DA COMUNIDADE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/MAMBEMBE%20I%20DA%20COMUNIDADE.jpg"
+    },
+    {
+      "start": "2025-09-22T02:53:41-03:00",
+      "stop": "2025-09-22T03:00:15-03:00",
+      "title": "UFOP EXPLICA I A IMPORTÂNCIA DO BOLSA FAMÍLIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T03:00:15-03:00",
+      "stop": "2025-09-22T03:07:55-03:00",
+      "title": "BOLETIM - UFOP DIVULGA VAGAS DE MESTRADO EM LETRAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20EDITAL%20P%C3%93SLETRAS%20UFOP.jpg"
+    },
+    {
+      "start": "2025-09-22T03:07:55-03:00",
+      "stop": "2025-09-22T03:17:04-03:00",
+      "title": "REPORTAGEM - FIM DO TERMO DE CESSÃO DO CINE VILA RICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20FIM%20DO%20TERMO%20DE%20CESS%C3%83O%20DO%20CINE%20VILA%20RICA.jpg"
+    },
+    {
+      "start": "2025-09-22T03:17:04-03:00",
+      "stop": "2025-09-22T03:45:20-03:00",
+      "title": "VOZES DO CARIRI (2023) - EP4 - BREJO SANTO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/VOZES%20DO%20CARIRI%20-%20EP4%20-%20BLOCO%201.jpg"
+    },
+    {
+      "start": "2025-09-22T03:45:20-03:00",
+      "stop": "2025-09-22T04:00:43-03:00",
+      "title": "MINHA VOZ, MINHA VEZ (2018) - DU VELOSO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/MINHA%20VOZ%2C%20MINHA%20VEZ%20I%20DU%20VELOSO.jpg"
+    },
+    {
+      "start": "2025-09-22T04:00:43-03:00",
+      "stop": "2025-09-22T04:57:43-03:00",
+      "title": "SALA DE CONVIDADOS - PERDA DA BIODIVERSIDADE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/SALA%20DE%20CONVIDADOS%20I%20MUDAN%C3%87AS%20NO%20CLIMA%20E%20PERDA%20DA%20BIODIVERSIDADE.jpg"
+    },
+    {
+      "start": "2025-09-22T04:57:43-03:00",
+      "stop": "2025-09-22T05:00:14-03:00",
+      "title": "MAIS UFOP I MATEMÁTICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T05:00:14-03:00",
+      "stop": "2025-09-22T05:03:13-03:00",
+      "title": "BOLETIM - PRÊMIO PARABÉNS PROFESSOR",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20PR%C3%8AMIO%20PARAB%C3%89NS%20PROFESSOR.jpg"
+    },
+    {
+      "start": "2025-09-22T05:03:13-03:00",
+      "stop": "2025-09-22T05:07:11-03:00",
+      "title": "MAIS UFOP I PÓS-GRADUAÇÃO EM NANOTECNOLOGIA FARMACÊUTICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T05:07:11-03:00",
+      "stop": "2025-09-22T05:15:42-03:00",
+      "title": "REPORTAGEM - PROJETO INCULTEC UFOP",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20PROJETO%20INCULTEC%20UFOP.jpg"
+    },
+    {
+      "start": "2025-09-22T05:15:42-03:00",
+      "stop": "2025-09-22T05:29:58-03:00",
+      "title": "UNIVERSO CULTURA - CERAMISTA FLÁVIA GUIMARÃES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/UNIVERSO%20CULTURA%20-%20CERAMISTA%20FL%C3%81VIA%20GUIMAR%C3%83ES%20.jpg"
+    },
+    {
+      "start": "2025-09-22T05:29:58-03:00",
+      "stop": "2025-09-22T06:00:34-03:00",
+      "title": "INCLUSÃO PARA VALER - EP 04",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/INCLUS%C3%83O%20PARA%20VALER%20-%20EP%2004.jpg"
+    },
+    {
+      "start": "2025-09-22T06:00:34-03:00",
+      "stop": "2025-09-22T06:22:34-03:00",
+      "title": "O SUMIÇO DE SANTO ANTÔNIO - EP5",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/O%20SUMI%C3%87O%20DE%20SANTO%20ANT%C3%94NIO%20-%20EPIS%C3%93DIO%2005.jpg"
+    },
+    {
+      "start": "2025-09-22T06:22:34-03:00",
+      "stop": "2025-09-22T06:29:27-03:00",
+      "title": "UFOP EXPLICA I O QUE É CALOR",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T06:29:27-03:00",
+      "stop": "2025-09-22T07:00:09-03:00",
+      "title": "ALMANAQUE SAÚDE I DROGAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T07:00:09-03:00",
+      "stop": "2025-09-22T07:05:20-03:00",
+      "title": "BOLETIM - CADASTRO DOS ARTESÃOS DE MARIANA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20CADASTRO%20ARTES%C3%83OS%20MARIANA.jpg"
+    },
+    {
+      "start": "2025-09-22T07:05:20-03:00",
+      "stop": "2025-09-22T07:09:08-03:00",
+      "title": "MAIS UFOP I ENGENHARIA DE PRODUÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T07:09:08-03:00",
+      "stop": "2025-09-22T07:15:22-03:00",
+      "title": "REPORTAGEM - UFOP OFERECE REFORÇO ESCOLAR GRATUITO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20UFOP%20OFERECE%20REFOR%C3%87O%20ESCOLAR%20GRATUITO.jpg"
+    },
+    {
+      "start": "2025-09-22T07:15:22-03:00",
+      "stop": "2025-09-22T07:20:44-03:00",
+      "title": "A CENA MUDA (2015) - EP1 - GUARDADOR DE REBANHOS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/A%20CENA%20MUDA%20I%20GUARDADOR%20DE%20REBANHOS.jpg"
+    },
+    {
+      "start": "2025-09-22T07:20:44-03:00",
+      "stop": "2025-09-22T07:24:47-03:00",
+      "title": "UFOP EM CASA - GUSTAVO SOUZA E ANDREIA BAL",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%2021.jpg"
+    },
+    {
+      "start": "2025-09-22T07:24:47-03:00",
+      "stop": "2025-09-22T07:30:04-03:00",
+      "title": "SE LIGA AÍ I PERSONALIDADES FEMININAS - DUHIGÓ",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T07:30:04-03:00",
+      "stop": "2025-09-22T07:48:52-03:00",
+      "title": "VEREDAS (2018) - EP1 - BACIA DO CUSTÓDIO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/VEREDAS%20I%20BACIA%20DO%20CUST%C3%93DIO.jpg"
+    },
+    {
+      "start": "2025-09-22T07:48:52-03:00",
+      "stop": "2025-09-22T08:00:15-03:00",
+      "title": "UFOP EXPLICA - ALIMENTOS LIGHT, DIET E ZERO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T08:00:15-03:00",
+      "stop": "2025-09-22T08:09:33-03:00",
+      "title": "SABOR DE MEMÓRIA I MONGE RYOSEN",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T08:09:33-03:00",
+      "stop": "2025-09-22T08:29:38-03:00",
+      "title": "UFOP EM CASA - LIBERDADE DA CIDADE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/UFOP%20EM%20CASA%20I%20LIBERDADE%20DA%20CIDADE.jpg"
+    },
+    {
+      "start": "2025-09-22T08:29:38-03:00",
+      "stop": "2025-09-22T08:41:29-03:00",
+      "title": "CONCERTOS DIDÁTICOS (2017) - COCHICHANDO E SONOROSO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/CONCERTOS%20DID%C3%81TICOS%20I%20COCHICHANDO%20E%20SONOROSO.jpg"
+    },
+    {
+      "start": "2025-09-22T08:41:29-03:00",
+      "stop": "2025-09-22T08:43:59-03:00",
+      "title": "SE LIGA AÍ I JAQUELINE GOMES DE JESUS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T08:43:59-03:00",
+      "stop": "2025-09-22T08:48:17-03:00",
+      "title": "POÉTICAS DO CORPO - DANÇA TEATRO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20DAN%C3%87A%20TEATRO.jpg"
+    },
+    {
+      "start": "2025-09-22T08:48:17-03:00",
+      "stop": "2025-09-22T08:53:40-03:00",
+      "title": "UFOP EXPLICA SAÚDE - AUTOCONFIANÇA E AUTOESTIMA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T08:53:40-03:00",
+      "stop": "2025-09-22T08:56:32-03:00",
+      "title": "MAIS UFOP I FILOSOFIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T08:56:32-03:00",
+      "stop": "2025-09-22T09:00:11-03:00",
+      "title": "PARE PERCEBA ESCUTE - ANTIMACHISTA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PARE%20PERCEBA%20ESCUTE%20I%20ANTIMACHISTA.jpg"
+    },
+    {
+      "start": "2025-09-22T09:00:11-03:00",
+      "stop": "2025-09-22T09:08:24-03:00",
+      "title": "BOLETIM - SETEMBRO VERDE: DIREITOS A PcDs",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20SETEMBRO%20VERDE%20DIREITOS%20A%20PcDs.jpg"
+    },
+    {
+      "start": "2025-09-22T09:08:24-03:00",
+      "stop": "2025-09-22T09:15:12-03:00",
+      "title": "REPORTAGEM - ATUAÇÃO DO LAPAC DA UFOP",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20ATUA%C3%87%C3%83O%20DO%20LAPAC%20DA%20UFOP.jpg"
+    },
+    {
+      "start": "2025-09-22T09:15:12-03:00",
+      "stop": "2025-09-22T09:21:37-03:00",
+      "title": "DIA D (2024) - EP2 - HPV",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/DIA%20D%20I%20HPV.jpg"
+    },
+    {
+      "start": "2025-09-22T09:21:37-03:00",
+      "stop": "2025-09-22T09:26:02-03:00",
+      "title": "POÉTICAS DO CORPO - CONTATO IMPROVISAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20CONTATO%20IMPROVISA%C3%87%C3%83O.jpg"
+    },
+    {
+      "start": "2025-09-22T09:26:02-03:00",
+      "stop": "2025-09-22T09:29:51-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO - EP2",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20I%202%20.jpg"
+    },
+    {
+      "start": "2025-09-22T09:29:51-03:00",
+      "stop": "2025-09-22T09:41:18-03:00",
+      "title": "PORTUGUÊS DAQUI, PORTUGUÊS DE LÁ I UAI É WHY QUÊ!! PORQUÊ!",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T09:41:18-03:00",
+      "stop": "2025-09-22T09:44:04-03:00",
+      "title": "UFOP EM CASA - THAIZ CANTASINI, ANDREA BAZAN",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%2019.jpg"
+    },
+    {
+      "start": "2025-09-22T09:44:04-03:00",
+      "stop": "2025-09-22T09:46:24-03:00",
+      "title": "DIORAMA (2012) - ENGENHEIRO CORREA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/DIORAMA%20I%20ENGENHEIRO%20CORREA.jpg"
+    },
+    {
+      "start": "2025-09-22T09:46:24-03:00",
+      "stop": "2025-09-22T09:48:51-03:00",
+      "title": "MAIS UFOP I ENGENHARIA DE CONTROLE E AUTOMAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T09:48:51-03:00",
+      "stop": "2025-09-22T10:00:30-03:00",
+      "title": "UFOP EXPLICA I O FENÔMENO DO DESAPARECIMENTO DE PESSOAS AUMENTA A CADA DIA NO BRASIL",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T10:00:30-03:00",
+      "stop": "2025-09-22T10:20:48-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP2 - JÚLIA E LÉO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T10:20:48-03:00",
+      "stop": "2025-09-22T10:24:40-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA NINA CAETANO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20NINA%20CAETANO.jpg"
+    },
+    {
+      "start": "2025-09-22T10:24:40-03:00",
+      "stop": "2025-09-22T10:29:15-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO - EP4",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20-%204%20.jpg"
+    },
+    {
+      "start": "2025-09-22T10:29:15-03:00",
+      "stop": "2025-09-22T11:00:23-03:00",
+      "title": "VEM VER - EP 14 - TURISMO DE AVENTURA E TURISMO RE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/VEM%20VER%20-%20EPIS%C3%93DIO%2014%20-%20TURISMO%20DE%20AVENTURA%20E%20TURISMO%20RELIGIOSO.jpg"
+    },
+    {
+      "start": "2025-09-22T11:00:23-03:00",
+      "stop": "2025-09-22T11:07:54-03:00",
+      "title": "BOLETIM - SEMINÁRIO DESTACA DOAÇÃO DE ÓRGÃOS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20SEMIN%C3%81RIO%20DESTACA%20DOA%C3%87%C3%83O%20DE%20%C3%93RG%C3%83OS.jpg"
+    },
+    {
+      "start": "2025-09-22T11:07:54-03:00",
+      "stop": "2025-09-22T11:15:33-03:00",
+      "title": "REPORTAGEM - FIM DO TERMO DE CESSÃO DO CINE VILA RICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20FIM%20DO%20TERMO%20DE%20CESS%C3%83O%20DO%20CINE%20VILA%20RICA.jpg"
+    },
+    {
+      "start": "2025-09-22T11:15:33-03:00",
+      "stop": "2025-09-22T11:34:17-03:00",
+      "title": "IAGORA ENTREVISTA - INOVAÇÃO EM EDUCAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/IAGORA%20ENTREVISTA%20I%20INOVA%C3%87%C3%83O%20EM%20EDUCA%C3%87%C3%83O%20COM%20TECNOLOGIAS%20DIGITAIS%20%20%28BLOCO%201%29.jpg"
+    },
+    {
+      "start": "2025-09-22T11:34:17-03:00",
+      "stop": "2025-09-22T11:36:42-03:00",
+      "title": "PARE PERCEBA ESCUTE - ANTIMACHISTA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PARE%20PERCEBA%20ESCUTE%20I%20ANTIMACHISTA.jpg"
+    },
+    {
+      "start": "2025-09-22T11:36:42-03:00",
+      "stop": "2025-09-22T11:40:37-03:00",
+      "title": "SE LIGA AÍ I LITERATURA - VOZES GUARDADAS, DE ELISA LUCINDA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T11:40:37-03:00",
+      "stop": "2025-09-22T11:57:22-03:00",
+      "title": "IAGORA ENTREVISTA - INOVAÇÃO EM EDUCAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/IAGORA%20ENTREVISTA%20I%20INOVA%C3%87%C3%83O%20EM%20EDUCA%C3%87%C3%83O%20COM%20TECNOLOGIAS%20DIGITAIS%20%28BLOCO%2002%29%20.jpg"
+    },
+    {
+      "start": "2025-09-22T11:57:22-03:00",
+      "stop": "2025-09-22T11:59:00-03:00",
+      "title": "MAMBEMBE (2013) - DO ACASO DA RUA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/MAMBEMBE%20I%20DO%20ACASO%20DA%20RUA.jpg"
+    },
+    {
+      "start": "2025-09-22T12:00:01-03:00",
+      "stop": "2025-09-22T12:12:43-03:00",
+      "title": "CANAL DA HISTÓRIA I CARLOS LACERDA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T12:12:43-03:00",
+      "stop": "2025-09-22T12:15:40-03:00",
+      "title": "FIU - COLETIVOS - PERIACTOI",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/FIU%20-%20COLETIVOS%20-%20PERIACTOI.jpg"
+    },
+    {
+      "start": "2025-09-22T12:15:40-03:00",
+      "stop": "2025-09-22T12:22:41-03:00",
+      "title": "SE LIGA AÍ I PERSONALIDADES FEMININAS, HELOÍSA FERNANDES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T12:22:41-03:00",
+      "stop": "2025-09-22T12:30:41-03:00",
+      "title": "UFOP EM CASA - URBANIDADES MARIANENSES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/UFOP%20EM%20CASA%20I%20URBANIDADES%20MARIANENSES.jpg"
+    },
+    {
+      "start": "2025-09-22T12:30:41-03:00",
+      "stop": "2025-09-22T12:48:44-03:00",
+      "title": "PERIPATÉTICOS (2013) - EP7 - O RISO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PERIPATETICOS%20I%20O%20RISO.jpg"
+    },
+    {
+      "start": "2025-09-22T12:48:44-03:00",
+      "stop": "2025-09-22T12:51:14-03:00",
+      "title": "POÉTICAS DO CORPO - TANGO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20TANGO.jpg"
+    },
+    {
+      "start": "2025-09-22T12:51:14-03:00",
+      "stop": "2025-09-22T13:00:04-03:00",
+      "title": "MAIS UFOP I PÓS GRADUAÇÃO EM FÍSICA DE MATERIAIS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T13:00:04-03:00",
+      "stop": "2025-09-22T13:05:48-03:00",
+      "title": "BOLETIM - SAÚDE MENTAL É FOCO DO SETEMBRO AMARELO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20SA%C3%9ADE%20MENTAL%20%C3%89%20FOCO%20DO%20SETEMBRO%20AMARELO.jpg"
+    },
+    {
+      "start": "2025-09-22T13:05:48-03:00",
+      "stop": "2025-09-22T13:14:04-03:00",
+      "title": "REPORTAGEM - DESAPARECIMENTOS NA REGIÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20DESAPARECIMENTOS%20REGI%C3%83O%20INCONFIDENTES.jpg"
+    },
+    {
+      "start": "2025-09-22T13:14:04-03:00",
+      "stop": "2025-09-22T13:17:35-03:00",
+      "title": "MAIS UFOP CEAD - PEDAGOGIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T13:17:35-03:00",
+      "stop": "2025-09-22T13:30:21-03:00",
+      "title": "ENTREVISTA - ECA DIGITAL E A PROTEÇÃO NA INTERNET",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/ENTREVISTA%20-%20ECA%20DIGITAL%20E%20A%20PROTE%C3%87%C3%83O%20NA%20INTERNET.jpg"
+    },
+    {
+      "start": "2025-09-22T13:30:21-03:00",
+      "stop": "2025-09-22T13:42:29-03:00",
+      "title": "PÉ DA LETRA I NEM QUE A VACA TUSSA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T13:42:29-03:00",
+      "stop": "2025-09-22T13:45:25-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA ELAINE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20ELAINE.jpg"
+    },
+    {
+      "start": "2025-09-22T13:45:25-03:00",
+      "stop": "2025-09-22T13:48:55-03:00",
+      "title": "QUE CORPO É ESSE I T1 I EPISÓDIO 2",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T13:48:55-03:00",
+      "stop": "2025-09-22T13:52:04-03:00",
+      "title": "MAIS UFOP CEAD - GEOGRAFIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T13:52:04-03:00",
+      "stop": "2025-09-22T13:54:30-03:00",
+      "title": "ANIVERSÁRIO TV UFOP - MARCO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/ANIVERS%C3%81RIO%20TV%2024%20I%205%20MARCO.jpg"
+    },
+    {
+      "start": "2025-09-22T13:54:30-03:00",
+      "stop": "2025-09-22T14:00:25-03:00",
+      "title": "UFOP EXPLICA I TRANSFOBIA PROPOSTAS DE POLÍTICAS AFIRMATIVAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T14:00:25-03:00",
+      "stop": "2025-09-22T14:51:39-03:00",
+      "title": "ESCOLAS INOVADORAS - HIGH TECH HIGH (ESTADOS UNIDOS)",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/ESCOLAS%20INOVADORAS%20I%20HIGH%20TECH%20HIGH%20%28ESTADOS%20UNIDOS%29.jpg"
+    },
+    {
+      "start": "2025-09-22T14:51:39-03:00",
+      "stop": "2025-09-22T14:53:41-03:00",
+      "title": "MAMBEMBE (2013) - DA COMUNIDADE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/MAMBEMBE%20I%20DA%20COMUNIDADE.jpg"
+    },
+    {
+      "start": "2025-09-22T14:53:41-03:00",
+      "stop": "2025-09-22T15:00:15-03:00",
+      "title": "UFOP EXPLICA I A IMPORTÂNCIA DO BOLSA FAMÍLIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T15:00:15-03:00",
+      "stop": "2025-09-22T15:07:55-03:00",
+      "title": "BOLETIM - UFOP DIVULGA VAGAS DE MESTRADO EM LETRAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20EDITAL%20P%C3%93SLETRAS%20UFOP.jpg"
+    },
+    {
+      "start": "2025-09-22T15:07:55-03:00",
+      "stop": "2025-09-22T15:17:04-03:00",
+      "title": "REPORTAGEM - FIM DO TERMO DE CESSÃO DO CINE VILA RICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20FIM%20DO%20TERMO%20DE%20CESS%C3%83O%20DO%20CINE%20VILA%20RICA.jpg"
+    },
+    {
+      "start": "2025-09-22T15:17:04-03:00",
+      "stop": "2025-09-22T15:45:20-03:00",
+      "title": "VOZES DO CARIRI (2023) - EP4 - BREJO SANTO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/VOZES%20DO%20CARIRI%20-%20EP4%20-%20BLOCO%201.jpg"
+    },
+    {
+      "start": "2025-09-22T15:45:20-03:00",
+      "stop": "2025-09-22T16:00:43-03:00",
+      "title": "MINHA VOZ, MINHA VEZ (2018) - DU VELOSO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/MINHA%20VOZ%2C%20MINHA%20VEZ%20I%20DU%20VELOSO.jpg"
+    },
+    {
+      "start": "2025-09-22T16:00:43-03:00",
+      "stop": "2025-09-22T16:57:43-03:00",
+      "title": "SALA DE CONVIDADOS - PERDA DA BIODIVERSIDADE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/SALA%20DE%20CONVIDADOS%20I%20MUDAN%C3%87AS%20NO%20CLIMA%20E%20PERDA%20DA%20BIODIVERSIDADE.jpg"
+    },
+    {
+      "start": "2025-09-22T16:57:43-03:00",
+      "stop": "2025-09-22T17:00:14-03:00",
+      "title": "MAIS UFOP I MATEMÁTICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T17:00:14-03:00",
+      "stop": "2025-09-22T17:03:13-03:00",
+      "title": "BOLETIM - PRÊMIO PARABÉNS PROFESSOR",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20PR%C3%8AMIO%20PARAB%C3%89NS%20PROFESSOR.jpg"
+    },
+    {
+      "start": "2025-09-22T17:03:13-03:00",
+      "stop": "2025-09-22T17:07:11-03:00",
+      "title": "MAIS UFOP I PÓS-GRADUAÇÃO EM NANOTECNOLOGIA FARMACÊUTICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T17:07:11-03:00",
+      "stop": "2025-09-22T17:15:42-03:00",
+      "title": "REPORTAGEM - PROJETO INCULTEC UFOP",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20PROJETO%20INCULTEC%20UFOP.jpg"
+    },
+    {
+      "start": "2025-09-22T17:15:42-03:00",
+      "stop": "2025-09-22T17:29:58-03:00",
+      "title": "UNIVERSO CULTURA - CERAMISTA FLÁVIA GUIMARÃES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/UNIVERSO%20CULTURA%20-%20CERAMISTA%20FL%C3%81VIA%20GUIMAR%C3%83ES%20.jpg"
+    },
+    {
+      "start": "2025-09-22T17:29:58-03:00",
+      "stop": "2025-09-22T18:00:34-03:00",
+      "title": "INCLUSÃO PARA VALER - EP 04",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/INCLUS%C3%83O%20PARA%20VALER%20-%20EP%2004.jpg"
+    },
+    {
+      "start": "2025-09-22T18:00:34-03:00",
+      "stop": "2025-09-22T18:22:34-03:00",
+      "title": "O SUMIÇO DE SANTO ANTÔNIO - EP5",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/O%20SUMI%C3%87O%20DE%20SANTO%20ANT%C3%94NIO%20-%20EPIS%C3%93DIO%2005.jpg"
+    },
+    {
+      "start": "2025-09-22T18:22:34-03:00",
+      "stop": "2025-09-22T18:29:27-03:00",
+      "title": "UFOP EXPLICA I O QUE É CALOR",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T18:29:27-03:00",
+      "stop": "2025-09-22T19:00:09-03:00",
+      "title": "ALMANAQUE SAÚDE I DROGAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T19:00:09-03:00",
+      "stop": "2025-09-22T19:05:20-03:00",
+      "title": "BOLETIM - CADASTRO DOS ARTESÃOS DE MARIANA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20CADASTRO%20ARTES%C3%83OS%20MARIANA.jpg"
+    },
+    {
+      "start": "2025-09-22T19:05:20-03:00",
+      "stop": "2025-09-22T19:09:08-03:00",
+      "title": "MAIS UFOP I ENGENHARIA DE PRODUÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T19:09:08-03:00",
+      "stop": "2025-09-22T19:15:22-03:00",
+      "title": "REPORTAGEM - UFOP OFERECE REFORÇO ESCOLAR GRATUITO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20UFOP%20OFERECE%20REFOR%C3%87O%20ESCOLAR%20GRATUITO.jpg"
+    },
+    {
+      "start": "2025-09-22T19:15:22-03:00",
+      "stop": "2025-09-22T19:20:44-03:00",
+      "title": "A CENA MUDA (2015) - EP1 - GUARDADOR DE REBANHOS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/A%20CENA%20MUDA%20I%20GUARDADOR%20DE%20REBANHOS.jpg"
+    },
+    {
+      "start": "2025-09-22T19:20:44-03:00",
+      "stop": "2025-09-22T19:24:47-03:00",
+      "title": "UFOP EM CASA - GUSTAVO SOUZA E ANDREIA BAL",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%2021.jpg"
+    },
+    {
+      "start": "2025-09-22T19:24:47-03:00",
+      "stop": "2025-09-22T19:30:04-03:00",
+      "title": "SE LIGA AÍ I PERSONALIDADES FEMININAS - DUHIGÓ",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T19:30:04-03:00",
+      "stop": "2025-09-22T19:48:52-03:00",
+      "title": "VEREDAS (2018) - EP1 - BACIA DO CUSTÓDIO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/VEREDAS%20I%20BACIA%20DO%20CUST%C3%93DIO.jpg"
+    },
+    {
+      "start": "2025-09-22T19:48:52-03:00",
+      "stop": "2025-09-22T20:00:15-03:00",
+      "title": "UFOP EXPLICA - ALIMENTOS LIGHT, DIET E ZERO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T20:00:15-03:00",
+      "stop": "2025-09-22T20:09:33-03:00",
+      "title": "SABOR DE MEMÓRIA I MONGE RYOSEN",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T20:09:33-03:00",
+      "stop": "2025-09-22T20:29:38-03:00",
+      "title": "UFOP EM CASA - LIBERDADE DA CIDADE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/UFOP%20EM%20CASA%20I%20LIBERDADE%20DA%20CIDADE.jpg"
+    },
+    {
+      "start": "2025-09-22T20:29:38-03:00",
+      "stop": "2025-09-22T20:41:29-03:00",
+      "title": "CONCERTOS DIDÁTICOS (2017) - COCHICHANDO E SONOROSO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/CONCERTOS%20DID%C3%81TICOS%20I%20COCHICHANDO%20E%20SONOROSO.jpg"
+    },
+    {
+      "start": "2025-09-22T20:41:29-03:00",
+      "stop": "2025-09-22T20:43:59-03:00",
+      "title": "SE LIGA AÍ I JAQUELINE GOMES DE JESUS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T20:43:59-03:00",
+      "stop": "2025-09-22T20:48:17-03:00",
+      "title": "POÉTICAS DO CORPO - DANÇA TEATRO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20DAN%C3%87A%20TEATRO.jpg"
+    },
+    {
+      "start": "2025-09-22T20:48:17-03:00",
+      "stop": "2025-09-22T20:53:40-03:00",
+      "title": "UFOP EXPLICA SAÚDE - AUTOCONFIANÇA E AUTOESTIMA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T20:53:40-03:00",
+      "stop": "2025-09-22T20:56:32-03:00",
+      "title": "MAIS UFOP I FILOSOFIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T20:56:32-03:00",
+      "stop": "2025-09-22T21:00:11-03:00",
+      "title": "PARE PERCEBA ESCUTE - ANTIMACHISTA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PARE%20PERCEBA%20ESCUTE%20I%20ANTIMACHISTA.jpg"
+    },
+    {
+      "start": "2025-09-22T21:00:11-03:00",
+      "stop": "2025-09-22T21:08:24-03:00",
+      "title": "BOLETIM - SETEMBRO VERDE: DIREITOS A PcDs",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20SETEMBRO%20VERDE%20DIREITOS%20A%20PcDs.jpg"
+    },
+    {
+      "start": "2025-09-22T21:08:24-03:00",
+      "stop": "2025-09-22T21:15:12-03:00",
+      "title": "REPORTAGEM - ATUAÇÃO DO LAPAC DA UFOP",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20ATUA%C3%87%C3%83O%20DO%20LAPAC%20DA%20UFOP.jpg"
+    },
+    {
+      "start": "2025-09-22T21:15:12-03:00",
+      "stop": "2025-09-22T21:21:37-03:00",
+      "title": "DIA D (2024) - EP2 - HPV",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/DIA%20D%20I%20HPV.jpg"
+    },
+    {
+      "start": "2025-09-22T21:21:37-03:00",
+      "stop": "2025-09-22T21:26:02-03:00",
+      "title": "POÉTICAS DO CORPO - CONTATO IMPROVISAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20CONTATO%20IMPROVISA%C3%87%C3%83O.jpg"
+    },
+    {
+      "start": "2025-09-22T21:26:02-03:00",
+      "stop": "2025-09-22T21:29:51-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO - EP2",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20I%202%20.jpg"
+    },
+    {
+      "start": "2025-09-22T21:29:51-03:00",
+      "stop": "2025-09-22T21:41:18-03:00",
+      "title": "PORTUGUÊS DAQUI, PORTUGUÊS DE LÁ I UAI É WHY QUÊ!! PORQUÊ!",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T21:41:18-03:00",
+      "stop": "2025-09-22T21:44:04-03:00",
+      "title": "UFOP EM CASA - THAIZ CANTASINI, ANDREA BAZAN",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%2019.jpg"
+    },
+    {
+      "start": "2025-09-22T21:44:04-03:00",
+      "stop": "2025-09-22T21:46:24-03:00",
+      "title": "DIORAMA (2012) - ENGENHEIRO CORREA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/DIORAMA%20I%20ENGENHEIRO%20CORREA.jpg"
+    },
+    {
+      "start": "2025-09-22T21:46:24-03:00",
+      "stop": "2025-09-22T21:48:51-03:00",
+      "title": "MAIS UFOP I ENGENHARIA DE CONTROLE E AUTOMAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T21:48:51-03:00",
+      "stop": "2025-09-22T22:00:30-03:00",
+      "title": "UFOP EXPLICA I O FENÔMENO DO DESAPARECIMENTO DE PESSOAS AUMENTA A CADA DIA NO BRASIL",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T22:00:30-03:00",
+      "stop": "2025-09-22T22:20:48-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP2 - JÚLIA E LÉO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T22:20:48-03:00",
+      "stop": "2025-09-22T22:24:40-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA NINA CAETANO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20NINA%20CAETANO.jpg"
+    },
+    {
+      "start": "2025-09-22T22:24:40-03:00",
+      "stop": "2025-09-22T22:29:15-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO - EP4",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20-%204%20.jpg"
+    },
+    {
+      "start": "2025-09-22T22:29:15-03:00",
+      "stop": "2025-09-22T23:00:23-03:00",
+      "title": "VEM VER - EP 14 - TURISMO DE AVENTURA E TURISMO RE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/VEM%20VER%20-%20EPIS%C3%93DIO%2014%20-%20TURISMO%20DE%20AVENTURA%20E%20TURISMO%20RELIGIOSO.jpg"
+    },
+    {
+      "start": "2025-09-22T23:00:23-03:00",
+      "stop": "2025-09-22T23:07:54-03:00",
+      "title": "BOLETIM - SEMINÁRIO DESTACA DOAÇÃO DE ÓRGÃOS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/BOLETIM%20-%20SEMIN%C3%81RIO%20DESTACA%20DOA%C3%87%C3%83O%20DE%20%C3%93RG%C3%83OS.jpg"
+    },
+    {
+      "start": "2025-09-22T23:07:54-03:00",
+      "stop": "2025-09-22T23:15:33-03:00",
+      "title": "REPORTAGEM - FIM DO TERMO DE CESSÃO DO CINE VILA RICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/REPORTAGEM%20-%20FIM%20DO%20TERMO%20DE%20CESS%C3%83O%20DO%20CINE%20VILA%20RICA.jpg"
+    },
+    {
+      "start": "2025-09-22T23:15:33-03:00",
+      "stop": "2025-09-22T23:34:17-03:00",
+      "title": "IAGORA ENTREVISTA - INOVAÇÃO EM EDUCAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/IAGORA%20ENTREVISTA%20I%20INOVA%C3%87%C3%83O%20EM%20EDUCA%C3%87%C3%83O%20COM%20TECNOLOGIAS%20DIGITAIS%20%20%28BLOCO%201%29.jpg"
+    },
+    {
+      "start": "2025-09-22T23:34:17-03:00",
+      "stop": "2025-09-22T23:36:42-03:00",
+      "title": "PARE PERCEBA ESCUTE - ANTIMACHISTA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/PARE%20PERCEBA%20ESCUTE%20I%20ANTIMACHISTA.jpg"
+    },
+    {
+      "start": "2025-09-22T23:36:42-03:00",
+      "stop": "2025-09-22T23:40:37-03:00",
+      "title": "SE LIGA AÍ I LITERATURA - VOZES GUARDADAS, DE ELISA LUCINDA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-09-22T23:40:37-03:00",
+      "stop": "2025-09-22T23:57:22-03:00",
+      "title": "IAGORA ENTREVISTA - INOVAÇÃO EM EDUCAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/IAGORA%20ENTREVISTA%20I%20INOVA%C3%87%C3%83O%20EM%20EDUCA%C3%87%C3%83O%20COM%20TECNOLOGIAS%20DIGITAIS%20%28BLOCO%2002%29%20.jpg"
+    },
+    {
+      "start": "2025-09-22T23:57:22-03:00",
+      "stop": "2025-09-22T23:59:00-03:00",
+      "title": "MAMBEMBE (2013) - DO ACASO DA RUA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "http://200.239.167.116/epg/MAMBEMBE%20I%20DO%20ACASO%20DA%20RUA.jpg"
     }
   ]
 }
