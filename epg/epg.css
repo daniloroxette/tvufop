@@ -94,3 +94,25 @@
     justify-self: end;       /* botão “Agora” à direita na 2ª linha */
   }
 }
+/* Thumb e layout interno do modal */
+#tvufop-epg .m-row{
+  display:flex; gap:16px; align-items:flex-start;
+}
+#tvufop-epg .m-thumb{
+  flex:0 0 auto;
+  width: clamp(140px, 26vw, 220px);
+  aspect-ratio: 89 / 50;         /* mesma proporção ~445x250 */
+  object-fit: cover;
+  border-radius:10px;
+  border:1px solid #eee;
+  background:#f3f3f3;
+}
+#tvufop-epg .m-col{flex:1 1 auto; min-width:0}
+#tvufop-epg .desc{margin-top:8px; line-height:1.35}
+
+/* Em telas muito estreitas, empilha */
+@media (max-width:460px){
+  #tvufop-epg .m-row{flex-direction:column; align-items:stretch}
+  #tvufop-epg .m-thumb{width:100%; aspect-ratio: 89 / 50;}
+}
+
