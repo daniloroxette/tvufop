@@ -1,4 +1,3 @@
-<script>
 (function () {
   // --- URLs em ordem de preferência (HTTPS no servidor, depois cópias locais do Pages) ---
   function candidateUrls() {
@@ -278,4 +277,3 @@
     const host=document.getElementById('tvufop-epg'); if(host) mount(host);
   }
 })();
-</script>
