@@ -1,12 +1,21 @@
+<script>
 (function () {
-  const CANDIDATE_URLS = (() => {
+  // --- URLs em ordem de preferência (HTTPS no servidor, depois cópias locais do Pages) ---
+  function candidateUrls() {
     const base = document.baseURI || location.href;
-    const here = base.replace(/[#?].*$/, '');
-    const root = here.replace(/\/[^/]*$/, '/');
-    return ['epg/schedule_now.json', root + 'epg/schedule_now.json', '/tvufop/epg/schedule_now.json'];
-  })();
+    const here = base.replace(/[#?].*$/, "");
+    const root = here.replace(/\/[^/]*$/, "/");
+    const uniq = new Set([
+      "https://app.tvufop.com.br/epg/schedule_now.json",
+      location.origin + "/epg/schedule_now.json",
+      "epg/schedule_now.json",
+      root + "epg/schedule_now.json",
+      "/tvufop/epg/schedule_now.json",
+    ]);
+    return Array.from(uniq.values());
+  }
 
-  const pad = n => String(n).padStart(2, '0');
+  const pad = n => String(n).padStart(2, "0");
   const fmtTime = d => `${pad(d.getHours())}:${pad(d.getMinutes())}`;
   const fmtDate = d => `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`;
   const onlyDate = d => new Date(d.getFullYear(), d.getMonth(), d.getDate());
@@ -18,26 +27,36 @@
     if (data && Array.isArray(data.programs)) return data.programs;
     throw new Error('JSON válido, porém sem campo "schedule" (ou lista reconhecida).');
   }
+
   async function tryFetch(url){
-    const res = await fetch(url, {cache:'no-store'});
-    if(!res.ok) throw new Error(`HTTP ${res.status} em ${url}`);
-    let json; try{ json = await res.json(); } catch { throw new Error(`Falha ao interpretar JSON (${url})`); }
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status} em ${url}`);
+    let json;
+    try { json = await res.json(); }
+    catch { throw new Error(`Falha ao interpretar JSON (${url})`); }
     const schedule = extractSchedule(json);
-    if(!Array.isArray(schedule)) throw new Error('Estrutura inesperada do JSON.');
-    return {url, schedule};
+    if (!Array.isArray(schedule)) throw new Error("Estrutura inesperada do JSON.");
+    return { url, schedule };
   }
+
   async function fetchFirstOk(urls, onProgress){
-    let lastErr=null;
+    let lastErr = null;
     for (const u of urls){
-      try{ onProgress?.(`Carregando: ${u}`); const ok=await tryFetch(u); onProgress?.(''); return ok; }
-      catch(e){ lastErr=e; }
+      try{
+        onProgress?.(`Carregando: ${u}`);
+        const ok = await tryFetch(u);
+        onProgress?.("");
+        return ok;
+      }catch(e){ lastErr = e; }
     }
-    throw lastErr || new Error('Nenhum caminho funcionou.');
+    throw lastErr || new Error("Nenhum caminho funcionou.");
   }
 
   function mount(container){
-    if (container.__wired) return; container.__wired = true;
+    if (container.__wired) return;
+    container.__wired = true;
 
+    // Modal já com área para thumb (imagem à esquerda)
     container.innerHTML =
       '<div class="tv-header"><div class="wrap toolbar">'
       +   '<div class="title">Programação</div>'
@@ -57,9 +76,14 @@
       +   '</div>'
       + '</div></div>'
       + '<dialog data-role="dlg"><div class="modal">'
-      +   '<div class="m-title" data-role="dlgTitle">—</div>'
-      +   '<div class="times" data-role="dlgTimes">—</div>'
-      +   '<div class="desc" data-role="dlgDesc" style="display:none"></div>'
+      +   '<div class="m-row">'
+      +     '<img class="m-thumb" data-role="dlgThumb" alt="" />'
+      +     '<div class="m-col">'
+      +       '<div class="m-title" data-role="dlgTitle">—</div>'
+      +       '<div class="times" data-role="dlgTimes">—</div>'
+      +       '<div class="desc" data-role="dlgDesc" style="display:none"></div>'
+      +     '</div>'
+      +   '</div>'
       + '</div></dialog>';
 
     const els = {
@@ -75,34 +99,45 @@
       dlgTitle: container.querySelector('[data-role="dlgTitle"]'),
       dlgTimes: container.querySelector('[data-role="dlgTimes"]'),
       dlgDesc: container.querySelector('[data-role="dlgDesc"]'),
-      scroller: container.querySelector('.scroller')
+      dlgThumb: container.querySelector('[data-role="dlgThumb"]'),
+      scroller: container.querySelector('.scroller'),
     };
 
     let programs=[], days=[], dayIndex=0;
 
-    const showStatus = (m)=>{ els.status.textContent=m||''; els.status.style.display = m ? 'block' : 'none'; };
+    const showStatus = (m)=>{ els.status.textContent = m || ""; els.status.style.display = m ? "block" : "none"; };
 
     function hydrate(list){
       programs = list.map(p=>{
-        const start=new Date(p.start), stop=new Date(p.stop);
-        return {start, stop, title:(p.title||'').trim(), desc:(p.desc||'').trim(),
-          duration: Number.isFinite(stop-start)? Math.round((stop-start)/60000):null};
-      }).sort((a,b)=>a.start-b.start);
+        const start = new Date(p.start), stop = new Date(p.stop);
+        return {
+          start, stop,
+          title: (p.title || "").trim(),
+          desc: (p.desc || "").trim(),
+          rating: (p.rating || "").trim(),
+          thumb: (p.thumb || "").trim(),
+          duration: Number.isFinite(stop - start) ? Math.round((stop - start) / 60000) : null
+        };
+      }).sort((a,b)=>a.start - b.start);
 
-      const set=new Set(programs.map(p=>onlyDate(p.start).toISOString()));
-      days = Array.from(set).map(s=>new Date(s)).sort((a,b)=>a-b);
+      const set = new Set(programs.map(p => onlyDate(p.start).toISOString()));
+      days = Array.from(set).map(s => new Date(s)).sort((a,b)=>a - b);
 
-      const idxToday=indexForToday(); dayIndex = (idxToday>=0)? idxToday : 0;
+      const idxToday = indexForToday();
+      dayIndex = (idxToday >= 0) ? idxToday : 0;
       renderDay();
     }
 
     function indexForToday(){
-      if(!days.length) return -1;
-      const today=onlyDate(new Date());
-      const exact=days.findIndex(d=>d.toISOString()===today.toISOString());
-      if(exact>=0) return exact;
-      let best=0, bestDiff=Math.abs(days[0]-today);
-      for(let i=1;i<days.length;i++){ const diff=Math.abs(days[i]-today); if(diff<bestDiff){best=i;bestDiff=diff;} }
+      if (!days.length) return -1;
+      const today = onlyDate(new Date());
+      const exact = days.findIndex(d => d.toISOString() === today.toISOString());
+      if (exact >= 0) return exact;
+      let best = 0, bestDiff = Math.abs(days[0] - today);
+      for (let i=1;i<days.length;i++){
+        const diff = Math.abs(days[i] - today);
+        if (diff < bestDiff){ best = i; bestDiff = diff; }
+      }
       return best;
     }
 
@@ -110,19 +145,20 @@
       if(!days.length){
         els.list.innerHTML=''; els.empty.hidden=false; els.dateLabel.textContent='—'; return;
       }
-      const day=days[dayIndex]; els.dateLabel.textContent=fmtDate(day);
-      const dayEnd=new Date(day); dayEnd.setDate(day.getDate()+1);
-      const rows=programs.filter(p=>p.start>=day && p.start<dayEnd);
+      const day = days[dayIndex];
+      els.dateLabel.textContent = fmtDate(day);
+      const dayEnd = new Date(day); dayEnd.setDate(day.getDate()+1);
+      const rows = programs.filter(p => p.start >= day && p.start < dayEnd);
       renderList(rows, els.q.value.trim());
-      els.prev.disabled = dayIndex<=0;
-      els.next.disabled = dayIndex>=days.length-1;
+      els.prev.disabled = dayIndex <= 0;
+      els.next.disabled = dayIndex >= days.length - 1;
     }
 
     function renderList(rows, query){
       const list=els.list; list.innerHTML='';
       const q=(query||'').toLowerCase();
-      const kept=rows.filter(p=>!q||p.title.toLowerCase().includes(q));
-      els.empty.hidden = kept.length>0;
+      const kept = rows.filter(p => !q || p.title.toLowerCase().includes(q));
+      els.empty.hidden = kept.length > 0;
 
       const now=new Date(); let lastHour=-1;
       kept.forEach(p=>{
@@ -142,6 +178,7 @@
         const title=document.createElement('div'); title.className='title'; title.textContent=p.title||'(Sem título)';
         const meta=document.createElement('div'); meta.className='meta'; meta.textContent=`${p.duration ?? '–'} min`;
         info.appendChild(title); info.appendChild(meta);
+
         card.appendChild(when); card.appendChild(info);
 
         if(now>=p.start && now<p.stop){
@@ -153,11 +190,28 @@
     }
 
     function openModal(p){
-      els.dlgTitle.textContent=p.title||'(Sem título)';
-      els.dlgTimes.textContent=`${fmtTime(p.start)} – ${fmtTime(p.stop)}  •  ${p.duration ?? '–'} min`;
-      if(p.desc && p.desc.trim()){ els.dlgDesc.textContent=p.desc.trim(); els.dlgDesc.style.display='block'; }
-      else { els.dlgDesc.textContent=''; els.dlgDesc.style.display='none'; }
-      if(els.dlg.showModal) els.dlg.showModal(); else els.dlg.setAttribute('open','');
+      // Thumb (exibe/oculta)
+      if (p.thumb){
+        els.dlgThumb.src = p.thumb;
+        els.dlgThumb.alt = p.title || "";
+        els.dlgThumb.style.display = "";
+      } else {
+        els.dlgThumb.removeAttribute("src");
+        els.dlgThumb.alt = "";
+        els.dlgThumb.style.display = "none";
+      }
+
+      els.dlgTitle.textContent = p.title || "(Sem título)";
+      const rating = p.rating ? `  •  ${p.rating}` : "";
+      els.dlgTimes.textContent = `${fmtTime(p.start)} – ${fmtTime(p.stop)}  •  ${p.duration ?? '–'} min${rating}`;
+      if (p.desc && p.desc.trim()){
+        els.dlgDesc.textContent = p.desc.trim();
+        els.dlgDesc.style.display = "block";
+      } else {
+        els.dlgDesc.textContent = "";
+        els.dlgDesc.style.display = "none";
+      }
+      if (els.dlg.showModal) els.dlg.showModal(); else els.dlg.setAttribute('open','');
     }
 
     function scrollToNow(){
@@ -196,24 +250,32 @@
     els.prev.addEventListener('click', ()=>{ if(dayIndex>0){ dayIndex--; renderDay(); } });
     els.next.addEventListener('click', ()=>{ if(dayIndex<days.length-1){ dayIndex++; renderDay(); } });
     els.q.addEventListener('input',  ()=>{ renderDay(); });
-
-    // "Agora": volta para hoje (ou dia mais próximo) e rola até o programa em execução
     els.nowBtn.addEventListener('click', ()=>{
       const idx=indexForToday();
       if(idx>=0){ dayIndex=idx; renderDay(); requestAnimationFrame(()=>scrollToNow()); }
     });
-
     els.dlg.addEventListener('click', (e)=>{ if(e.target===els.dlg) els.dlg.close(); });
 
     (async function init(){
       try{
-        const {url, schedule}=await fetchFirstOk(CANDIDATE_URLS, showStatus);
-        hydrate(schedule); console.info('EPG de:', url); showStatus('');
-      } catch(e){ console.error(e); showStatus(`Falha ao carregar a programação. ${e.message||e}`); }
+        const {url, schedule}=await fetchFirstOk(candidateUrls(), showStatus);
+        hydrate(schedule);
+        console.info("EPG de:", url);
+        showStatus("");
+      } catch(e){
+        console.error(e);
+        showStatus(`Falha ao carregar a programação. ${e.message||e}`);
+      }
       clearInterval(container.__tick); container.__tick=setInterval(tickNow, 60*1000);
     })();
   }
 
-  (document.readyState==='loading' ? document.addEventListener('DOMContentLoaded', ()=>{ const host=document.getElementById('tvufop-epg'); if(host) mount(host); })
-                                   : (()=>{ const host=document.getElementById('tvufop-epg'); if(host) mount(host); })());
+  if (document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const host=document.getElementById('tvufop-epg'); if(host) mount(host);
+    });
+  } else {
+    const host=document.getElementById('tvufop-epg'); if(host) mount(host);
+  }
 })();
+</script>
