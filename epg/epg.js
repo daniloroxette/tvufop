@@ -1,19 +1,23 @@
 (function () {
-  // --- URLs em ordem de preferência (HTTPS no servidor, depois cópias locais do Pages) ---
+  // ===== Preferências de origem do JSON =====
   function candidateUrls() {
     const base = document.baseURI || location.href;
     const here = base.replace(/[#?].*$/, "");
     const root = here.replace(/\/[^/]*$/, "/");
-    const uniq = new Set([
+
+    // Ordem de prioridade: servidor (mais atual) -> Pages -> raw -> local
+    const arr = [
       "https://app.tvufop.com.br/epg/schedule_now.json",
-      location.origin + "/epg/schedule_now.json",
+      "https://daniloroxette.github.io/tvufop/epg/schedule_now.json",
+      "https://raw.githubusercontent.com/daniloroxette/tvufop/main/epg/schedule_now.json",
       "epg/schedule_now.json",
       root + "epg/schedule_now.json",
-      "/tvufop/epg/schedule_now.json",
-    ]);
-    return Array.from(uniq.values());
+      location.origin + "/epg/schedule_now.json",
+    ];
+    return Array.from(new Set(arr));
   }
 
+  // ===== Utilidades =====
   const pad = n => String(n).padStart(2, "0");
   const fmtTime = d => `${pad(d.getHours())}:${pad(d.getMinutes())}`;
   const fmtDate = d => `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`;
@@ -27,35 +31,105 @@
     throw new Error('JSON válido, porém sem campo "schedule" (ou lista reconhecida).');
   }
 
-  async function tryFetch(url){
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status} em ${url}`);
-    let json;
-    try { json = await res.json(); }
-    catch { throw new Error(`Falha ao interpretar JSON (${url})`); }
-    const schedule = extractSchedule(json);
-    if (!Array.isArray(schedule)) throw new Error("Estrutura inesperada do JSON.");
-    return { url, schedule };
+  // ===== Fetch com prioridade e race =====
+  function fetchWithTimeout(url, ms, opts) {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), ms);
+    return fetch(url, { ...opts, signal: ctrl.signal }).finally(() => clearTimeout(t));
   }
 
-  async function fetchFirstOk(urls, onProgress){
-    let lastErr = null;
-    for (const u of urls){
-      try{
-        onProgress?.(`Carregando: ${u}`);
-        const ok = await tryFetch(u);
-        onProgress?.("");
-        return ok;
-      }catch(e){ lastErr = e; }
+  function firstFulfilled(promises) {
+    return new Promise((resolve, reject) => {
+      let pend = promises.length, lastErr;
+      for (const p of promises) {
+        Promise.resolve(p).then(resolve, e => { lastErr = e; if (--pend === 0) reject(lastErr); });
+      }
+    });
+  }
+
+  // Dispara por prioridade com pequenos atrasos, mas ainda em paralelo.
+  async function fetchScheduleStaggered(urls, onProgress, perUrlTimeoutMs = 2500, overallTimeoutMs = 7000, staggerMs = 220) {
+    onProgress?.("Carregando programação…");
+
+    const overallTimeout = new Promise((_, rej) =>
+      setTimeout(() => rej(new Error("Tempo excedido carregando a programação")), overallTimeoutMs)
+    );
+
+    const attempts = urls.map((u, i) => new Promise((resolve, reject) => {
+      setTimeout(async () => {
+        try {
+          onProgress?.(`Carregando: ${u}`);
+          const res = await fetchWithTimeout(u, perUrlTimeoutMs, { cache: "no-store" });
+          if (!res.ok) throw new Error(`HTTP ${res.status} em ${u}`);
+          const json = await res.json();
+          const schedule = extractSchedule(json);
+          resolve({ url: u, schedule });
+        } catch (e) {
+          reject(new Error(`${u}: ${e.message || e}`));
+        }
+      }, i * staggerMs);
+    }));
+
+    const winner = await firstFulfilled([overallTimeout, ...attempts]);
+    onProgress?.("");
+    return winner;
+  }
+
+  // ===== Loader de thumbs (prioriza GitHub Pages) =====
+  function loadWithImgTimeout(url, ms) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      const to = setTimeout(() => { img.src = ""; reject(new Error("timeout")); }, ms);
+      img.onload = () => { clearTimeout(to); resolve(url); };
+      img.onerror = () => { clearTimeout(to); reject(new Error("error")); };
+      img.referrerPolicy = "no-referrer-when-downgrade";
+      img.src = url;
+    });
+  }
+
+  function stagedImageRace(urls, stepDelay = 600, perUrlTimeout = 3000, overallTimeout = 8000) {
+    const runners = urls.map((u, i) => new Promise((resolve, reject) => {
+      setTimeout(() => {
+        loadWithImgTimeout(u, perUrlTimeout).then(resolve).catch(reject);
+      }, i * stepDelay);
+    }));
+    const kill = new Promise((_, rej) => setTimeout(() => rej(new Error("img overall timeout")), overallTimeout));
+    return firstFulfilled([kill, ...runners]);
+  }
+
+  function loadThumbPreferGithub(originalThumbUrl, imgEl, title) {
+    imgEl.style.display = "none";
+    imgEl.removeAttribute("src");
+    imgEl.alt = title || "";
+
+    // Deriva o nome do arquivo a partir do campo "thumb" do JSON
+    let base = "";
+    if (originalThumbUrl) {
+      const last = originalThumbUrl.split("/").pop() || "";
+      base = (last.split("?")[0] || "").trim();
+      try { base = decodeURIComponent(base); } catch { /* ignore */ }
     }
-    throw lastErr || new Error("Nenhum caminho funcionou.");
+    if (!base) return; // sem nome de arquivo, nada a fazer
+
+    const enc = encodeURIComponent(base);
+
+    // Prioridade: GitHub Pages -> cópia local "thumbs/" -> servidor de origem
+    const candidates = [
+      `https://daniloroxette.github.io/tvufop/thumbs/${enc}`,
+      `thumbs/${enc}`,
+      `https://app.tvufop.com.br/epg/${enc}`
+    ];
+
+    stagedImageRace(candidates)
+      .then(url => { imgEl.src = url; imgEl.decoding = "async"; imgEl.loading = "eager"; imgEl.style.display = ""; })
+      .catch(() => { imgEl.style.display = "none"; });
   }
 
+  // ===== UI =====
   function mount(container){
     if (container.__wired) return;
     container.__wired = true;
 
-    // Modal já com área para thumb (imagem à esquerda)
     container.innerHTML =
       '<div class="tv-header"><div class="wrap toolbar">'
       +   '<div class="title">Programação</div>'
@@ -189,17 +263,10 @@
     }
 
     function openModal(p){
-      // Thumb (exibe/oculta)
-      if (p.thumb){
-        els.dlgThumb.src = p.thumb;
-        els.dlgThumb.alt = p.title || "";
-        els.dlgThumb.style.display = "";
-      } else {
-        els.dlgThumb.removeAttribute("src");
-        els.dlgThumb.alt = "";
-        els.dlgThumb.style.display = "none";
-      }
+      // Thumb: GitHub Pages -> /thumbs -> servidor
+      loadThumbPreferGithub(p.thumb, els.dlgThumb, p.title);
 
+      // Texto
       els.dlgTitle.textContent = p.title || "(Sem título)";
       const rating = p.rating ? `  •  ${p.rating}` : "";
       els.dlgTimes.textContent = `${fmtTime(p.start)} – ${fmtTime(p.stop)}  •  ${p.duration ?? '–'} min${rating}`;
@@ -257,7 +324,7 @@
 
     (async function init(){
       try{
-        const {url, schedule}=await fetchFirstOk(candidateUrls(), showStatus);
+        const {url, schedule}=await fetchScheduleStaggered(candidateUrls(), showStatus);
         hydrate(schedule);
         console.info("EPG de:", url);
         showStatus("");
