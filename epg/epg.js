@@ -1,4 +1,3 @@
-<script>
 (function () {
   // ===== Preferências de origem do JSON =====
   function candidateUrls() {
@@ -355,4 +354,3 @@
     const host=document.getElementById('tvufop-epg'); if(host) mount(host);
   }
 })();
-</script>
