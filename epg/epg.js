@@ -1,3 +1,4 @@
+<script>
 (function () {
   // ===== Preferências de origem do JSON =====
   function candidateUrls() {
@@ -5,10 +6,10 @@
     const here = base.replace(/[#?].*$/, "");
     const root = here.replace(/\/[^/]*$/, "/");
 
-    // Ordem de prioridade: servidor (mais atual) -> Pages -> raw -> local
+    // Prioridade: servidor (mais atual) -> Pages -> raw -> local
     const arr = [
       "https://app.tvufop.com.br/epg/schedule_now.json",
-      "https://daniloroxette.github.io/tvufop/epg/schedule_now.json",
+      "https://tvufop.com.br/epg/schedule_now.json",
       "https://raw.githubusercontent.com/daniloroxette/tvufop/main/epg/schedule_now.json",
       "epg/schedule_now.json",
       root + "epg/schedule_now.json",
@@ -31,7 +32,7 @@
     throw new Error('JSON válido, porém sem campo "schedule" (ou lista reconhecida).');
   }
 
-  // ===== Fetch com prioridade e race =====
+  // ===== Fetch com timeout e corrida =====
   function fetchWithTimeout(url, ms, opts) {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), ms);
@@ -47,9 +48,9 @@
     });
   }
 
-  // Dispara por prioridade com pequenos atrasos, mas ainda em paralelo.
+  // Dispara por prioridade com pequenos atrasos (stagger), mas ainda em paralelo.
   async function fetchScheduleStaggered(urls, onProgress, perUrlTimeoutMs = 2500, overallTimeoutMs = 7000, staggerMs = 220) {
-    onProgress?.("Carregando programação…");
+    onProgress?.(""); // silencioso
 
     const overallTimeout = new Promise((_, rej) =>
       setTimeout(() => rej(new Error("Tempo excedido carregando a programação")), overallTimeoutMs)
@@ -58,7 +59,6 @@
     const attempts = urls.map((u, i) => new Promise((resolve, reject) => {
       setTimeout(async () => {
         try {
-          onProgress?.(`Carregando: ${u}`);
           const res = await fetchWithTimeout(u, perUrlTimeoutMs, { cache: "no-store" });
           if (!res.ok) throw new Error(`HTTP ${res.status} em ${u}`);
           const json = await res.json();
@@ -102,20 +102,20 @@
     imgEl.removeAttribute("src");
     imgEl.alt = title || "";
 
-    // Deriva o nome do arquivo a partir do campo "thumb" do JSON
+    // Nome do arquivo a partir do campo "thumb"
     let base = "";
     if (originalThumbUrl) {
       const last = originalThumbUrl.split("/").pop() || "";
       base = (last.split("?")[0] || "").trim();
       try { base = decodeURIComponent(base); } catch { /* ignore */ }
     }
-    if (!base) return; // sem nome de arquivo, nada a fazer
+    if (!base) return; // sem nome de arquivo
 
     const enc = encodeURIComponent(base);
 
-    // Prioridade: GitHub Pages -> cópia local "thumbs/" -> servidor de origem
+    // Prioridade: GitHub Pages -> cópia local /thumbs -> servidor de origem
     const candidates = [
-      `https://daniloroxette.github.io/tvufop/thumbs/${enc}`,
+      `https://tvufop.com.br/thumbs/${enc}`,
       `thumbs/${enc}`,
       `https://app.tvufop.com.br/epg/${enc}`
     ];
@@ -142,7 +142,7 @@
       +   '<button class="btn primary" data-role="nowBtn" title="Ir para o programa em execução">Agora</button>'
       + '</div></div>'
       + '<div class="tv-main"><div class="wrap">'
-      +   '<div class="status" data-role="status"></div>'
+      +   '<div class="status" data-role="status" style="display:none"></div>'
       +   '<div class="scroller" aria-label="Lista de programas">'
       +     '<div class="list" data-role="list" role="list"></div>'
       +     '<div class="empty" data-role="empty" hidden>Nenhuma entrada para o dia selecionado.</div>'
@@ -178,7 +178,16 @@
 
     let programs=[], days=[], dayIndex=0;
 
-    const showStatus = (m)=>{ els.status.textContent = m || ""; els.status.style.display = m ? "block" : "none"; };
+    // Banner silencioso: só aparece em erro
+    const showStatus = (msg, { error = false } = {}) => {
+      if (!error) { // esconde em qualquer outro caso
+        els.status.textContent = "";
+        els.status.style.display = "none";
+        return;
+      }
+      els.status.textContent = msg || "";
+      els.status.style.display = msg ? "block" : "none";
+    };
 
     function hydrate(list){
       programs = list.map(p=>{
@@ -263,7 +272,7 @@
     }
 
     function openModal(p){
-      // Thumb: GitHub Pages -> /thumbs -> servidor
+      // Thumb: GitHub Pages -> /thumbs (mesmo domínio) -> servidor de origem
       loadThumbPreferGithub(p.thumb, els.dlgThumb, p.title);
 
       // Texto
@@ -328,9 +337,11 @@
         hydrate(schedule);
         console.info("EPG de:", url);
         showStatus("");
+        // remove o banner do DOM para nunca mais aparecer
+        if (els.status && els.status.parentNode) els.status.parentNode.removeChild(els.status);
       } catch(e){
         console.error(e);
-        showStatus(`Falha ao carregar a programação. ${e.message||e}`);
+        showStatus(`Falha ao carregar a programação. ${e.message||e}`, { error: true });
       }
       clearInterval(container.__tick); container.__tick=setInterval(tickNow, 60*1000);
     })();
@@ -344,3 +355,4 @@
     const host=document.getElementById('tvufop-epg'); if(host) mount(host);
   }
 })();
+</script>
