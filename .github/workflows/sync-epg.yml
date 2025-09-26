@@ -3,29 +3,46 @@ name: Sync EPG to Pages
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/240 * * * *"   # a cada 4 horas
+    - cron: "0 13-19 * * 1-5"   # 10h–16h BRT (UTC-3) -> 13h–19h UTC, seg–sex
+
+concurrency:
+  group: sync-epg
+  cancel-in-progress: true
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # necessário para commitar
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch EPG (JSON + XML)
+      - name: Fetch EPG (JSON + XML) com condicional de data
         run: |
-          set -e
+          set -euo pipefail
           mkdir -p epg
-          # Baixa do seu servidor (HTTP no runner não causa mixed content)
-          curl -fsSL --retry 3 http://200.239.167.116/epg/schedule_now.json -o epg/schedule_now.json.new
-          curl -fsSL --retry 3 http://200.239.167.116/epg/epg_tvufop.xml   -o epg/epg_tvufop.xml.new
-          # Checagem básica de tamanho > 0 antes de ativar
-          [ -s epg/schedule_now.json.new ]
-          [ -s epg/epg_tvufop.xml.new ]
-          mv epg/schedule_now.json.new epg/schedule_now.json
-          mv epg/epg_tvufop.xml.new   epg/epg_tvufop.xml
+
+          URL_JSON="http://200.239.167.116/epg/schedule_now.json"
+          URL_XML="http://200.239.167.116/epg/epg_tvufop.xml"
+
+          # Função: baixa somente se o remoto for mais novo que o arquivo local (-z),
+          # preserva a data do servidor (-R), com timeouts e retries.
+          fetch_if_newer () {
+            local url="$1" out="$2"
+            # Baixa para .new; se gerou conteúdo, move por cima do antigo (atômico o suficiente p/ nosso caso)
+            curl -fsS --retry 3 --connect-timeout 10 --max-time 60 -R \
+                 ${out:+-z "$out"} \
+                 -o "${out}.new" "$url" || true
+            if [ -s "${out}.new" ]; then
+              mv -f "${out}.new" "$out"
+            else
+              rm -f "${out}.new" 2>/dev/null || true
+            fi
+          }
+
+          fetch_if_newer "$URL_JSON" "epg/schedule_now.json"
+          fetch_if_newer "$URL_XML"  "epg/epg_tvufop.xml"
 
       - name: Commit if changed
         run: |
