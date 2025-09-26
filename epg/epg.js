@@ -7,7 +7,6 @@
 
     // Prioridade: servidor (mais atual) -> Pages -> raw -> local
     const arr = [
-      "https://app.tvufop.com.br/epg/schedule_now.json",
       "https://tvufop.com.br/epg/schedule_now.json",
       "https://raw.githubusercontent.com/daniloroxette/tvufop/main/epg/schedule_now.json",
       "epg/schedule_now.json",
