@@ -22,9 +22,13 @@
   <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-touch-icon-152.png">
   <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-touch-icon-120.png">
 
+  <!-- (Opcional) Se existir epg/epg.css no projeto, mantenha o link ANTES deste <style> para que as regras abaixo prevaleçam -->
+  <!-- <link rel="stylesheet" href="epg/epg.css"> -->
+
   <style>
     :root { --bordo:#8C1B2B; }
     *{ box-sizing:border-box }
+    html, body{ height:100% }
     body{
       font-family: Arial, sans-serif;
       margin:0; padding:0; background:#fff; text-align:center;
@@ -68,6 +72,7 @@
       --tv-header-bg: #800020; /* vinho/bordô */
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:#1b1b1b;
+      text-align: initial;
     }
     #tvufop-epg .wrap{max-width:1080px;margin:0 auto;padding:12px;}
     #tvufop-epg .toolbar{
@@ -84,7 +89,20 @@
     #tvufop-epg .search{display:flex}
     #tvufop-epg .search input{border:0;border-radius:8px;padding:7px 10px;min-width:200px;width:clamp(160px, 50vw, 320px);}
     #tvufop-epg .status{display:none;margin:10px 0;padding:9px 10px;border-radius:8px;background:#fff3cd;border:1px solid #ffe69c}
-    #tvufop-epg .scroller{max-height:70vh;overflow:auto;padding-right:6px;margin-top:8px;scroll-behavior:smooth;}
+
+    /* ÚNICO CONTÊINER ROLÁVEL DO GUIA: #epg-viewport */
+    #epg-viewport{
+      max-height: calc(100svh - var(--header-h,0px) - var(--player-h,0px) - 28px);
+      overflow: auto;
+      overscroll-behavior: contain;
+      border-radius: 12px;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-y;
+      scroll-behavior: smooth; /* para o clique em “Agora” */
+    }
+    /* Desativa scroller interno para evitar “scroll duplo” */
+    #tvufop-epg .scroller{max-height:none;overflow:visible;margin-top:8px;padding-right:6px}
+
     #tvufop-epg .hour-sep{
       position:sticky;top:0;background:#f6f6f6;border:1px solid #eee;border-left:3px solid #111;
       border-radius:8px;margin:10px 0 6px;padding:4px 8px;font-weight:700;width:max-content
@@ -105,6 +123,7 @@
     #tvufop-epg .modal{display:block;padding:16px}
     #tvufop-epg .m-title{font-weight:700;font-size:18px}
     #tvufop-epg .times{opacity:.8;margin:4px 0 8px}
+
     @media (max-width: 560px){
       #tvufop-epg .toolbar{
         display:grid;
@@ -165,7 +184,7 @@
       <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
     </div>
 
-    <!-- Viewport rolável só da programação -->
+    <!-- Viewport rolável único da programação -->
     <div id="epg-viewport" role="region" aria-label="Programação">
       <div id="tvufop-epg"></div>
     </div>
@@ -182,14 +201,14 @@
           const r = player.getBoundingClientRect();
           document.documentElement.style.setProperty('--player-h', r.height + 'px');
         }
-        document.documentElement.style.setProperty('--gap-top', '6px'); // controla o espaço extra
+        document.documentElement.style.setProperty('--gap-top', '6px');
       }
       window.addEventListener('load', updateVars);
       window.addEventListener('resize', updateVars);
     })();
   </script>
 
-  <!-- ====== EPG (loader + UI) – conteúdo do antigo epg/epg.js ====== -->
+  <!-- ====== EPG (loader + UI) ====== -->
   <script>
     (function () {
       // ===== Preferências de origem do JSON =====
@@ -197,15 +216,13 @@
         const base = document.baseURI || location.href;
         const here = base.replace(/[#?].*$/, "");
         const root = here.replace(/\/[^/]*$/, "/");
-        // Prioridade: servidor (mais atual) -> Pages -> raw -> local
-        const arr = [
+        return Array.from(new Set([
           "https://tvufop.com.br/epg/schedule_now.json",
           "https://raw.githubusercontent.com/daniloroxette/tvufop/main/epg/schedule_now.json",
           "epg/schedule_now.json",
           root + "epg/schedule_now.json",
           location.origin + "/epg/schedule_now.json",
-        ];
-        return Array.from(new Set(arr));
+        ]));
       }
 
       // ===== Utilidades =====
@@ -228,7 +245,6 @@
         const t = setTimeout(() => ctrl.abort(), ms);
         return fetch(url, { ...opts, signal: ctrl.signal }).finally(() => clearTimeout(t));
       }
-
       function firstFulfilled(promises) {
         return new Promise((resolve, reject) => {
           let pend = promises.length, lastErr;
@@ -237,10 +253,7 @@
           }
         });
       }
-
-      // Dispara por prioridade com pequenos atrasos (stagger), mas ainda em paralelo.
-      async function fetchScheduleStaggered(urls, onProgress, perUrlTimeoutMs = 2500, overallTimeoutMs = 7000, staggerMs = 220) {
-        onProgress?.(""); // silencioso
+      async function fetchScheduleStaggered(urls, perUrlTimeoutMs = 2500, overallTimeoutMs = 7000, staggerMs = 220) {
         const overallTimeout = new Promise((_, rej) =>
           setTimeout(() => rej(new Error("Tempo excedido carregando a programação")), overallTimeoutMs)
         );
@@ -257,9 +270,7 @@
             }
           }, i * staggerMs);
         }));
-        const winner = await firstFulfilled([overallTimeout, ...attempts]);
-        onProgress?.("");
-        return winner;
+        return firstFulfilled([overallTimeout, ...attempts]);
       }
 
       // ===== Loader de thumbs (prioriza GitHub Pages) =====
@@ -273,17 +284,13 @@
           img.src = url;
         });
       }
-
       function stagedImageRace(urls, stepDelay = 600, perUrlTimeout = 3000, overallTimeout = 8000) {
         const runners = urls.map((u, i) => new Promise((resolve, reject) => {
-          setTimeout(() => {
-            loadWithImgTimeout(u, perUrlTimeout).then(resolve).catch(reject);
-          }, i * stepDelay);
+          setTimeout(() => { loadWithImgTimeout(u, perUrlTimeout).then(resolve).catch(reject); }, i * stepDelay);
         }));
         const kill = new Promise((_, rej) => setTimeout(() => rej(new Error("img overall timeout")), overallTimeout));
         return firstFulfilled([kill, ...runners]);
       }
-
       function loadThumbPreferGithub(originalThumbUrl, imgEl, title) {
         imgEl.style.display = "none";
         imgEl.removeAttribute("src");
@@ -292,7 +299,7 @@
         if (originalThumbUrl) {
           const last = originalThumbUrl.split("/").pop() || "";
           base = (last.split("?")[0] || "").trim();
-          try { base = decodeURIComponent(base); } catch { /* ignore */ }
+          try { base = decodeURIComponent(base); } catch {}
         }
         if (!base) return;
         const enc = encodeURIComponent(base);
@@ -324,7 +331,7 @@
           + '</div></div>'
           + '<div class="tv-main"><div class="wrap">'
           +   '<div class="status" data-role="status" style="display:none"></div>'
-          +   '<div class="scroller" aria-label="Lista de programas">'
+          +   '<div class="scroller" aria-label="Lista de programas">'   /* NÃO rola; quem rola é o #epg-viewport */
           +     '<div class="list" data-role="list" role="list"></div>'
           +     '<div class="empty" data-role="empty" hidden>Nenhuma entrada para o dia selecionado.</div>'
           +   '</div>'
@@ -354,17 +361,14 @@
           dlgTimes: container.querySelector('[data-role="dlgTimes"]'),
           dlgDesc: container.querySelector('[data-role="dlgDesc"]'),
           dlgThumb: container.querySelector('[data-role="dlgThumb"]'),
-          scroller: container.querySelector('.scroller'),
         };
 
+        const viewport = document.getElementById('epg-viewport'); // scroller único
         let programs=[], days=[], dayIndex=0;
 
+        // Banner de status (erro)
         const showStatus = (msg, { error = false } = {}) => {
-          if (!error) {
-            els.status.textContent = "";
-            els.status.style.display = "none";
-            return;
-          }
+          if (!error) { els.status.textContent = ""; els.status.style.display = "none"; return; }
           els.status.textContent = msg || "";
           els.status.style.display = msg ? "block" : "none";
         };
@@ -455,7 +459,10 @@
           loadThumbPreferGithub(p.thumb, els.dlgThumb, p.title);
           els.dlgTitle.textContent = p.title || "(Sem título)";
           const rating = p.rating ? `  •  ${p.rating}` : "";
-          els.dlgTimes.textContent = `${fmtTime(p.start)} – ${fmtTime(p.stop)}  •  ${p.duration ?? '–'} min${rating}`;
+          const pad2 = v => String(v).padStart(2,'0');
+          const t1 = `${pad2(p.start.getHours())}:${pad2(p.start.getMinutes())}`;
+          const t2 = `${pad2(p.stop.getHours())}:${pad2(p.stop.getMinutes())}`;
+          els.dlgTimes.textContent = `${t1} – ${t2}  •  ${p.duration ?? '–'} min${rating}`;
           if (p.desc && p.desc.trim()){
             els.dlgDesc.textContent = p.desc.trim();
             els.dlgDesc.style.display = "block";
@@ -466,22 +473,56 @@
           if (els.dlg.showModal) els.dlg.showModal(); else els.dlg.setAttribute('open','');
         }
 
-        function scrollToNow(){
-          const scroller=els.scroller; if(!scroller) return;
-          const now=new Date();
-          let target=els.list.querySelector('.card.now');
+        // ====== Sticky do cabeçalho do guia (dentro do #epg-viewport) ======
+        function stickHeader(){
+          const header = container.firstElementChild;
+          if (!header) return 0;
+          Object.assign(header.style, { position: 'sticky', top: '0', zIndex: '2', background: '#fff' });
+          return header.getBoundingClientRect().height || 0;
+        }
+
+        // ====== Cálculo do padding superior efetivo para não cobrir o item ======
+        const SAFE_OFFSET = 125;
+        function firstItem(){ return container.querySelector('li, .epg-item, tr, .row, .program, article, .card'); }
+        function relTop(el, containerEl=viewport){
+          const e = el.getBoundingClientRect();
+          const c = containerEl.getBoundingClientRect();
+          return (e.top - c.top) + containerEl.scrollTop;
+        }
+        function effectiveGap(){
+          const prev = viewport.scrollTop;
+          viewport.scrollTop = 0;
+          const first = firstItem();
+          const headerGap = first ? relTop(first) : 0;
+          viewport.scrollTop = prev;
+          const gap = Math.max(0, headerGap + SAFE_OFFSET);
+          viewport.style.scrollPaddingTop = gap + 'px';
+          return gap;
+        }
+
+        // ====== Rolagem até o “AGORA” no scroller ÚNICO (#epg-viewport) ======
+        function scrollToNow(opts={smooth:false}){
+          const listRoot = els.list;
+          if (!listRoot) return;
+          const now = new Date();
+          let target = listRoot.querySelector('.card.now');
           if(!target){
-            const cards=[...els.list.querySelectorAll('.card')];
+            const cards=[...listRoot.querySelectorAll('.card')];
             const next=cards.map(c=>({el:c, st:new Date(c.dataset.start)})).filter(x=>!isNaN(x.st))
                             .sort((a,b)=>a.st-b.st).find(x=>x.st>=now);
             if(next) target=next.el;
           }
-          if(!target) target=els.list.querySelector('.card:last-of-type');
+          if(!target) target=listRoot.querySelector('.card:last-of-type');
           if(!target) return;
-          const y = target.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop - 8;
-          scroller.scrollTo({top:y, behavior:'smooth'}); target.focus({preventScroll:true});
+
+          stickHeader();
+          const gap = effectiveGap();
+          const y = Math.max(0, relTop(target, viewport) - gap);
+          viewport.scrollTo({ top: y, behavior: opts.smooth ? 'smooth' : 'auto' });
+          target.focus({ preventScroll:true });
         }
 
+        // ====== Atualização do “AGORA” minuto a minuto ======
         function tickNow(){
           const now=new Date();
           els.list.querySelectorAll('.card').forEach(card=>{
@@ -498,19 +539,49 @@
           });
         }
 
+        // ====== Gating por visibilidade ======
+        let allowAutoAlign = false;
+        let alignedOnce = false;
+        const io = new IntersectionObserver(([e]) => {
+          if (e && e.isIntersecting) {
+            allowAutoAlign = true;
+            initAlign();   // alinha quando entra em vista
+            io.disconnect();
+          }
+        }, { root: null, threshold: 0 }); // aciona assim que qualquer parte ficar visível
+        io.observe(viewport);
+
+        function initAlign(force=false){
+          if (alignedOnce && !force) return;
+          if (!allowAutoAlign && !force) return;
+          stickHeader();
+          requestAnimationFrame(() => {
+            scrollToNow({ smooth:false });
+            alignedOnce = true;
+          });
+        }
+
         // Controles
-        els.prev.addEventListener('click', ()=>{ if(dayIndex>0){ dayIndex--; renderDay(); } });
-        els.next.addEventListener('click', ()=>{ if(dayIndex<days.length-1){ dayIndex++; renderDay(); } });
-        els.q.addEventListener('input',  ()=>{ renderDay(); });
-        els.nowBtn.addEventListener('click', ()=>{
-          const idx=indexForToday();
-          if(idx>=0){ dayIndex=idx; renderDay(); requestAnimationFrame(()=>scrollToNow()); }
+        els.prev.addEventListener('click', ()=>{ if(dayIndex>0){ dayIndex--; renderDay(); alignedOnce=false; initAlign(); } });
+        els.next.addEventListener('click', ()=>{ if(dayIndex<days.length-1){ dayIndex++; renderDay(); alignedOnce=false; initAlign(); } });
+        els.q.addEventListener('input',  ()=>{ renderDay(); alignedOnce=false; initAlign(); });
+        container.addEventListener('click', (e)=>{
+          const btn = e.target.closest('[data-role="nowBtn"]');
+          if (!btn) return;
+          allowAutoAlign = true;
+          alignedOnce = false;
+          initAlign(true); // força alinhamento
+          scrollToNow({ smooth:true });
         });
         els.dlg.addEventListener('click', (e)=>{ if(e.target===els.dlg) els.dlg.close(); });
 
+        // Observa mudanças na lista (ex.: carregamento inicial)
+        const mo = new MutationObserver(() => initAlign());
+        mo.observe(container, { childList:true, subtree:true });
+
         (async function init(){
           try{
-            const {url, schedule}=await fetchScheduleStaggered(candidateUrls(), null);
+            const {url, schedule}=await fetchScheduleStaggered(candidateUrls());
             hydrate(schedule);
             console.info("EPG de:", url);
             if (els.status && els.status.parentNode) els.status.parentNode.removeChild(els.status);
@@ -529,141 +600,6 @@
       } else {
         const host=document.getElementById('tvufop-epg'); if(host) mount(host);
       }
-    })();
-  </script>
-
-  <!-- ====== EPG – scroll interno com "gating" por visibilidade ====== -->
-  <script>
-    (function(){
-      const viewport = document.getElementById('epg-viewport');
-      const root     = document.getElementById('tvufop-epg');
-
-      // Estilo do container scrollável do EPG
-      Object.assign(viewport.style, {
-        maxHeight: 'calc(100svh - var(--header-h,0px) - var(--player-h,0px) - 28px)',
-        overflowY: 'auto',
-        overscrollBehavior: 'contain',
-        borderRadius: '12px',
-        WebkitOverflowScrolling: 'touch',
-        touchAction: 'pan-y'
-      });
-
-      const SAFE_OFFSET = 125;
-      viewport.style.scrollPaddingTop = (48 + SAFE_OFFSET) + 'px';
-
-      const q  = (sel, el=root) => el.querySelector(sel);
-      const qa = (sel, el=root) => Array.from(el.querySelectorAll(sel));
-      const relTop = (el, container=viewport) => {
-        const e = el.getBoundingClientRect();
-        const c = container.getBoundingClientRect();
-        return (e.top - c.top) + container.scrollTop;
-      };
-
-      function firstItem(){ return q('li, .epg-item, tr, .row, .program, article'); }
-
-      function findNow(){
-        const sels = ['.is-now','.now','[data-now="true"]','[aria-current="true"]','[data-state~="now"]'];
-        for (const s of sels){ const el = q(s); if (el) return el; }
-        const items = qa('li, .epg-item, tr, .row, .program, article')
-          .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
-        if (!items.length) return null;
-        const now = new Date();
-        const nowMin = now.getHours()*60 + now.getMinutes();
-        let best=null, bestVal=-1;
-        for (const el of items){
-          const m = el.textContent.match(/\b(\d{2}):(\d{2})\b/);
-          if (!m) continue;
-          const t = (+m[1])*60 + (+m[2]);
-          const val = (t<=nowMin)? t : (t-1440);
-          if (val>bestVal){bestVal=val; best=el;}
-        }
-        return best;
-      }
-
-      function stickHeader(){
-        const header = root.firstElementChild;
-        if (!header) return 0;
-        Object.assign(header.style, { position: 'sticky', top: '0', zIndex: '2', background: '#fff' });
-        return header.getBoundingClientRect().height || 0;
-      }
-
-      function effectiveGap(){
-        const prev = viewport.scrollTop;
-        viewport.scrollTop = 0;
-        const first = firstItem();
-        const headerGap = first ? relTop(first) : 0;
-        viewport.scrollTop = prev;
-        const gap = Math.max(0, headerGap + SAFE_OFFSET);
-        viewport.style.scrollPaddingTop = gap + 'px';
-        return gap;
-      }
-
-      function scrollToNow(opts={smooth:false}){
-        const nowEl = findNow();
-        if (!nowEl) return;
-        stickHeader();
-        const gap = effectiveGap();
-        const target = Math.max(0, relTop(nowEl) - gap);
-        viewport.scrollTo({ top: target, behavior: opts.smooth ? 'smooth':'auto' });
-      }
-
-      function squashInnerScrollers(){
-        qa('*').forEach(el => {
-          const cs = getComputedStyle(el);
-          if (/(auto|scroll)/.test(cs.overflowY)) el.style.overflowY = 'visible';
-          if (cs.maxHeight && cs.maxHeight !== 'none') el.style.maxHeight = 'none';
-        });
-      }
-
-      // ====== GATING por visibilidade (IntersectionObserver) ======
-      let allowAutoAlign = false; // libera o auto-align somente quando o guia ficar visível
-      let done = false;           // evita múltiplos alinhamentos automáticos
-
-      const io = new IntersectionObserver((entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting && e.intersectionRatio > 0.15) {
-            allowAutoAlign = true;
-            initAlign();     // alinha uma vez, agora que o guia está à vista
-            io.disconnect(); // não observar mais
-            break;
-          }
-        }
-      }, { root: null, threshold: [0, 0.15, 0.5] });
-
-      io.observe(viewport);
-
-      function initAlign(force = false){
-        if (done) return;
-        if (!force && !allowAutoAlign) return;   // só roda quando visível (ou forçado)
-        squashInnerScrollers();
-        stickHeader();
-        requestAnimationFrame(() => {
-          scrollToNow({ smooth: false });
-          done = true;
-        });
-      }
-
-      // Clique no “Agora” (força alinhamento mesmo que ainda não tenha cruzado o limiar do IO)
-      viewport.addEventListener('click', (ev) => {
-        const btn = ev.target.closest('button,[role="button"],a');
-        if (!btn) return;
-        if (/agora/i.test(btn.textContent || '')) {
-          ev.preventDefault();
-          allowAutoAlign = true;
-          done = false;
-          scrollToNow({ smooth: true });
-        }
-      });
-
-      // Quando a UI do EPG aparecer/atualizar, tenta alinhar (respeitando o gating)
-      const mo = new MutationObserver(() => initAlign());
-      mo.observe(root, { childList: true, subtree: true });
-
-      // Importante: não alinhar no load da página (mantém logomarcas estáticas no topo)
-      // window.addEventListener('load', initAlign);
-
-      // Em resize, se o guia estiver visível, re-alinha
-      window.addEventListener('resize', () => { done = false; initAlign(); });
     })();
   </script>
 
