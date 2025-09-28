@@ -125,18 +125,33 @@
 
     const q  = (sel, el=root) => el.querySelector(sel);
     const qa = (sel, el=root) => Array.from(el.querySelectorAll(sel));
-    const relTop = (el, container=viewport) => {
+
+    // === NOVO: encontra o ancestral rolável real (ex.: .scroller com overflow:auto !important)
+    function getScrollParent(el, stopAt = viewport){
+      let cur = el && el.parentElement;
+      while (cur && cur !== stopAt && cur !== document.body){
+        const cs = getComputedStyle(cur);
+        const canScroll = (/(auto|scroll)/.test(cs.overflowY) || /(auto|scroll)/.test(cs.overflow)) && (cur.scrollHeight > cur.clientHeight + 1);
+        if (canScroll) return cur;
+        cur = cur.parentElement;
+      }
+      // fallback: o próprio #epg-viewport
+      return stopAt;
+    }
+
+    // relTop relativo a um contêiner qualquer (não apenas o viewport)
+    const relTop = (el, container) => {
       const e = el.getBoundingClientRect();
       const c = container.getBoundingClientRect();
       return (e.top - c.top) + container.scrollTop;
     };
 
-    function firstItem(){ return q('li, .epg-item, tr, .row, .program, article'); }
+    function firstItem(){ return q('li, .epg-item, tr, .row, .program, article, .card'); }
 
     function findNow(){
       const sels = ['.is-now','.now','[data-now="true"]','[aria-current="true"]','[data-state~="now"]'];
       for (const s of sels){ const el = q(s); if (el) return el; }
-      const items = qa('li, .epg-item, tr, .row, .program, article')
+      const items = qa('li, .epg-item, tr, .row, .program, article, .card')
         .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
       if (!items.length) return null;
       const now = new Date();
@@ -159,14 +174,15 @@
       return header.getBoundingClientRect().height || 0;
     }
 
-    function effectiveGap(){
-      const prev = viewport.scrollTop;
-      viewport.scrollTop = 0;
+    function effectiveGap(scroller){
+      const prev = scroller.scrollTop;
+      scroller.scrollTop = 0;
       const first = firstItem();
-      const headerGap = first ? relTop(first) : 0;
-      viewport.scrollTop = prev;
+      const headerGap = first ? relTop(first, scroller) : 0;
+      scroller.scrollTop = prev;
       const gap = Math.max(0, headerGap + SAFE_OFFSET);
-      viewport.style.scrollPaddingTop = gap + 'px';
+      // aplica padding só no scroller real
+      scroller.style.scrollPaddingTop = gap + 'px';
       return gap;
     }
 
@@ -174,12 +190,15 @@
       const nowEl = findNow();
       if (!nowEl) return;
       stickHeader();
-      const gap = effectiveGap();
-      const target = Math.max(0, relTop(nowEl) - gap);
-      viewport.scrollTo({ top: target, behavior: opts.smooth ? 'smooth':'auto' });
+
+      const scroller = getScrollParent(nowEl, viewport);   // <<< NOVO: escolhe o contêiner correto
+      const gap = effectiveGap(scroller);
+      const target = Math.max(0, relTop(nowEl, scroller) - gap);
+      scroller.scrollTo({ top: target, behavior: opts.smooth ? 'smooth':'auto' });
     }
 
     function squashInnerScrollers(){
+      // Mantido do seu código. Se o tema usa !important, o getScrollParent cobre o caso.
       qa('*').forEach(el => {
         const cs = getComputedStyle(el);
         if (/(auto|scroll)/.test(cs.overflowY)) el.style.overflowY = 'visible';
@@ -195,6 +214,7 @@
       requestAnimationFrame(() => { scrollToNow({smooth:false}); done = true; });
     }
 
+    // Clique humano OU programático no botão "Agora" continua funcionando
     viewport.addEventListener('click', (ev) => {
       const btn = ev.target.closest('button,[role="button"],a');
       if (!btn) return;
@@ -209,44 +229,6 @@
 
     window.addEventListener('load', initAlign);
     window.addEventListener('resize', () => { done = false; initAlign(); });
-  })();
-  </script>
-
-  <!-- Auto-aciona “Agora” assim que a UI do EPG existir (sem mover mouse, sem dar foco visível, sem trazer o EPG à vista) -->
-  <script>
-  (function(){
-    const root = document.getElementById('tvufop-epg');
-    const viewport = document.getElementById('epg-viewport');
-    if (!root || !viewport) return;
-
-    let fired = false;
-    function tryClickAgora(){
-      if (fired) return;
-      // procura pelo botão “Agora” criado pelo epg.js
-      const btn = root.querySelector('[data-role="nowBtn"], .btn.primary');
-      if (!btn) return;
-
-      // dispara um clique programático (não move o cursor)
-      const prevActive = document.activeElement;
-      btn.dispatchEvent(new MouseEvent('click', { bubbles:true, cancelable:true, view:window }));
-
-      // evita foco residual
-      if (document.activeElement && document.activeElement !== document.body) {
-        document.activeElement.blur?.();
-      }
-      // restaura foco anterior (sem rolar a página)
-      try { prevActive?.focus?.({ preventScroll:true }); } catch {}
-
-      fired = true;
-      obs.disconnect();
-    }
-
-    // Observa o contêiner até o botão existir; clica uma única vez
-    const obs = new MutationObserver(tryClickAgora);
-    obs.observe(root, { childList:true, subtree:true });
-
-    // redundância: tenta também pouco depois do load
-    window.addEventListener('load', () => setTimeout(tryClickAgora, 600));
   })();
   </script>
 
