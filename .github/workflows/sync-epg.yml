@@ -28,11 +28,19 @@ jobs:
           URL_XML="http://200.239.167.116/epg/epg_tvufop.xml"
 
           fetch() {
-            local url="$1" out="$2" tmp="${out}.new"
+            # declarar em linhas separadas p/ não acionar 'unbound variable' com set -u
+            local url
+            url="$1"
+            local out
+            out="$2"
+            local tmp
+            tmp="${out}.new"
+
             echo "::group::Baixando $url"
             curl -fsS -L --retry 3 --connect-timeout 10 --max-time 60 \
                  -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' \
                  -o "$tmp" "$url"
+
             if [ ! -s "$tmp" ]; then
               echo "ERRO: download vazio de $url" >&2
               rm -f "$tmp" || true
@@ -55,9 +63,13 @@ jobs:
       - name: Debug cabeçalhos do servidor (opcional)
         shell: bash
         run: |
-          for U in "http://200.239.167.116/epg/schedule_now.json" "http://200.239.167.116/epg/epg_tvufop.xml"; do
+          set +e
+          for U in \
+            "http://200.239.167.116/epg/schedule_now.json" \
+            "http://200.239.167.116/epg/epg_tvufop.xml"
+          do
             echo "==> HEAD $U"
-            curl -fsSI "$U" | sed -n '1,25p'
+            curl -fsSI "$U" | sed -n '1,25p' || true
           done
 
       - name: Commit if changed
