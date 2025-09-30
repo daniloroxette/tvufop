@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-09-30T14:19:01.262189-03:00",
+  "generated_at": "2025-09-30T15:30:01.843379-03:00",
   "schedule": [
     {
       "start": "2025-09-30T00:00:01-03:00",
@@ -1088,6 +1088,1142 @@
       "desc": "",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/CONHECENDO%20MUSEUS%20I%20MUSEU%20DO%20MILHO.jpg?v=1758287220"
+    },
+    {
+      "start": "2025-10-01T00:00:01-03:00",
+      "stop": "2025-10-01T00:12:15-03:00",
+      "title": "CANAL DA HISTÓRIA - MÁRIO JURUNA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CANAL%20DA%20HIST%C3%93RIA%20I%20M%C3%81RIO%20JURUNA.jpg?v=1758204505"
+    },
+    {
+      "start": "2025-10-01T00:12:15-03:00",
+      "stop": "2025-10-01T00:23:57-03:00",
+      "title": "CURTA - PSIU ISSO AQUI TEM GRAÇA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20PSIU%20ISSO%20AQUI%20TEM%20GRA%C3%87A.jpg?v=1755532137"
+    },
+    {
+      "start": "2025-10-01T00:23:57-03:00",
+      "stop": "2025-10-01T00:30:17-03:00",
+      "title": "UFOP EXPLICA - SEDENTARISMO, COMO EVITAR",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20SEDENTARISMO%2C%20COMO%20EVITAR.jpg?v=1758214275"
+    },
+    {
+      "start": "2025-10-01T00:30:17-03:00",
+      "stop": "2025-10-01T00:48:45-03:00",
+      "title": "PERIPATÉTICOS (2013) - EP8 - A MORTE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PERIPATETICOS%20I%20A%20MORTE.jpg?v=1758736665"
+    },
+    {
+      "start": "2025-10-01T00:48:45-03:00",
+      "stop": "2025-10-01T00:51:08-03:00",
+      "title": "MAIS UFOP - SISTEMAS DE INFORMAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20SISTEMAS%20DE%20INFORMA%C3%87%C3%83O.jpg?v=1758214097"
+    },
+    {
+      "start": "2025-10-01T00:51:08-03:00",
+      "stop": "2025-10-01T00:57:09-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - PRISCILA REZENDE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20PRISCILA%20REZENDE.jpg?v=1758202757"
+    },
+    {
+      "start": "2025-10-01T00:57:09-03:00",
+      "stop": "2025-10-01T01:00:10-03:00",
+      "title": "ANIVERSÁRIO TV UFOP - DU",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ANIVERS%C3%81RIO%20TV%2024%20I%2010%20DU.jpg?v=1756816737"
+    },
+    {
+      "start": "2025-10-01T01:00:10-03:00",
+      "stop": "2025-10-01T01:03:13-03:00",
+      "title": "BOLETIM - SEMANA DE DESENVOLVIMENTO ECONÔMICO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20SEMANA%20DE%20DESENVOLVIMENTO%20ECON%C3%94MICO.jpg?v=1759251695"
+    },
+    {
+      "start": "2025-10-01T01:03:13-03:00",
+      "stop": "2025-10-01T01:05:45-03:00",
+      "title": "MAIS UFOP - FARMÁCIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20FARM%C3%81CIA.jpg?v=1758214088"
+    },
+    {
+      "start": "2025-10-01T01:05:45-03:00",
+      "stop": "2025-10-01T01:09:08-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO - EP2",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20I%202%20.jpg?v=1758813392"
+    },
+    {
+      "start": "2025-10-01T01:09:08-03:00",
+      "stop": "2025-10-01T01:17:35-03:00",
+      "title": "REPORTAGEM - OURO PRETO SEDIA VI COPENE SUDESTE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20OURO%20PRETO%20SEDIA%20VI%20COPENE%20SUDESTE.jpg?v=1759237627"
+    },
+    {
+      "start": "2025-10-01T01:17:35-03:00",
+      "stop": "2025-10-01T01:21:06-03:00",
+      "title": "MAIS UFOP - ENGENHARIA GEOLÓGICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ENGENHARIA%20GEOL%C3%93GICA.jpg?v=1758214086"
+    },
+    {
+      "start": "2025-10-01T01:21:06-03:00",
+      "stop": "2025-10-01T01:30:14-03:00",
+      "title": "REPORTAGEM - HERBÁRIO DA UFOP",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20HERB%C3%81RIO%20UFOP.jpg?v=1756222887"
+    },
+    {
+      "start": "2025-10-01T01:30:14-03:00",
+      "stop": "2025-10-01T01:42:21-03:00",
+      "title": "PÉ DA LETRA (2014) - NEM QUE A VACA TUSSA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/P%C3%89%20DA%20LETRA%20I%20NEM%20QUE%20A%20VACA%20TUSSA.jpg?v=1758202180"
+    },
+    {
+      "start": "2025-10-01T01:42:21-03:00",
+      "stop": "2025-10-01T01:45:02-03:00",
+      "title": "DIORAMA (2012) - ENGENHEIRO CORREA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIORAMA%20I%20ENGENHEIRO%20CORREA.jpg?v=1758807325"
+    },
+    {
+      "start": "2025-10-01T01:45:02-03:00",
+      "stop": "2025-10-01T01:48:37-03:00",
+      "title": "QUE CORPO É ESSE? - MEU CORPO MINHAS REGRAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/QUE%20CORPO%20%C3%89%20ESSE%20I%20T1%20I%20EPIS%C3%93DIO%209.jpg?v=1758203358"
+    },
+    {
+      "start": "2025-10-01T01:48:37-03:00",
+      "stop": "2025-10-01T02:00:22-03:00",
+      "title": "UFOP EXPLICA - ALIMENTOS LIGHT, DIET E ZERO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20ALIMENTOS%20LIGHT%2C%20DIET%20E%20ZERO.jpg?v=1758214264"
+    },
+    {
+      "start": "2025-10-01T02:00:22-03:00",
+      "stop": "2025-10-01T02:52:19-03:00",
+      "title": "ESCOLAS INOVADORAS - RITAHARJU SCHOOL (FINLÂNDIA)",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESCOLAS%20INOVADORAS%20I%20RITAHARJU%20SCHOOL%20%28FINL%C3%82NDIA%29.jpg?v=1758736704"
+    },
+    {
+      "start": "2025-10-01T02:52:19-03:00",
+      "stop": "2025-10-01T02:57:09-03:00",
+      "title": "POÉTICAS DO CORPO - DANÇA TEATRO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20DAN%C3%87A%20TEATRO.jpg?v=1756742211"
+    },
+    {
+      "start": "2025-10-01T02:57:09-03:00",
+      "stop": "2025-10-01T03:00:15-03:00",
+      "title": "UFOP EM CASA - THAIZ CANTASINI E PANMELA RIBEIRO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%206.jpg?v=1753981079"
+    },
+    {
+      "start": "2025-10-01T03:00:15-03:00",
+      "stop": "2025-10-01T03:02:13-03:00",
+      "title": "BOLETIM - EDITAL BOLSA MATERNIDADE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20EDITAL%20BOLSA%20MATERNIDADE.jpg?v=1759251640"
+    },
+    {
+      "start": "2025-10-01T03:02:13-03:00",
+      "stop": "2025-10-01T03:07:09-03:00",
+      "title": "MAIS UFOP - ADMINISTRAÇÃO PÚBLICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ADMINISTRA%C3%87%C3%83O%20P%C3%9ABLICA.jpg?v=1758214082"
+    },
+    {
+      "start": "2025-10-01T03:07:09-03:00",
+      "stop": "2025-10-01T03:15:43-03:00",
+      "title": "REPORTAGEM - PROJETO DA UFOP DE CUIDADOS A IDOSOS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20PROJETO%20UFOP%20IDOSOS.jpg?v=1756728850"
+    },
+    {
+      "start": "2025-10-01T03:15:43-03:00",
+      "stop": "2025-10-01T03:44:33-03:00",
+      "title": "VOZES DO CARIRI (2023) - EP7 - CARIRIAÇU",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VOZES%20DO%20CARIRI%20%282023%29%20-%20EP7%20-%20BLOCO%201.jpg?v=1758736628"
+    },
+    {
+      "start": "2025-10-01T03:44:33-03:00",
+      "stop": "2025-10-01T04:00:28-03:00",
+      "title": "MINHA VOZ, MINHA VEZ (2018) - MÁRCIA VALADARES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MINHA%20VOZ%2C%20MINHA%20VEZ%20I%20M%C3%81RCIA%20VALADARES.jpg?v=1758903579"
+    },
+    {
+      "start": "2025-10-01T04:00:28-03:00",
+      "stop": "2025-10-01T04:47:37-03:00",
+      "title": "ALÉM DOS MUROS (2024) - ARTHUR E RAQUEL",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/AL%C3%89M%20DOS%20MUROS%20I%20ARTHUR%20E%20RAQUEL.jpg?v=1758045481"
+    },
+    {
+      "start": "2025-10-01T04:47:37-03:00",
+      "stop": "2025-10-01T04:56:16-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM DIREITO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20DIREITO.jpg?v=1758903672"
+    },
+    {
+      "start": "2025-10-01T04:56:16-03:00",
+      "stop": "2025-10-01T05:00:09-03:00",
+      "title": "SE LIGA AÍ - ANA ELVIRA WUO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20ANA%20ELVIRA%20WUO.jpg?v=1758202311"
+    },
+    {
+      "start": "2025-10-01T05:00:09-03:00",
+      "stop": "2025-10-01T05:09:49-03:00",
+      "title": "REPORTAGEM - INCULTEC FORTALECE EMPREENDEDORES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20PROJETO%20INCULTEC%20UFOP.jpg?v=1758288784"
+    },
+    {
+      "start": "2025-10-01T05:09:49-03:00",
+      "stop": "2025-10-01T05:15:36-03:00",
+      "title": "BOLETIM - PROJETO CANTO COLETIVO DA UFOP",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PROJETO%20CANTO%20COLETIVO.jpg?v=1758892961"
+    },
+    {
+      "start": "2025-10-01T05:15:36-03:00",
+      "stop": "2025-10-01T05:27:22-03:00",
+      "title": "UNIVERSO CULTURA - ATRIZ BRAMMA BREMMER",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UNIVERSO%20CULTURA%20-%20ATRIZ%20BRAMMA%20BREMMER%20.jpg?v=1742230963"
+    },
+    {
+      "start": "2025-10-01T05:27:22-03:00",
+      "stop": "2025-10-01T05:29:56-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO - EP4",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20-%204%20.jpg?v=1758813393"
+    },
+    {
+      "start": "2025-10-01T05:29:56-03:00",
+      "stop": "2025-10-01T05:44:09-03:00",
+      "title": "VEREDAS (2018) - EP2 - FLORESTA ESTADUAL DO UAIMIÍ",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEREDAS%20I%20FLORESTA%20ESTADUAL%20DO%20UAIMI%C3%8D.jpg?v=1758287739"
+    },
+    {
+      "start": "2025-10-01T05:44:09-03:00",
+      "stop": "2025-10-01T05:53:11-03:00",
+      "title": "UFOP EXPLICA - CRIME DE VILIPÊNDIO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20CRIME%20DE%20VILIP%C3%8ANDIO.jpg?v=1758214266"
+    },
+    {
+      "start": "2025-10-01T05:53:11-03:00",
+      "stop": "2025-10-01T05:55:16-03:00",
+      "title": "MAMBEMBE (2013) - DA APRESENTAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAMBEMBE%20I%20DA%20APRESENTA%C3%87%C3%83O.jpg?v=1758895697"
+    },
+    {
+      "start": "2025-10-01T05:55:16-03:00",
+      "stop": "2025-10-01T06:00:29-03:00",
+      "title": "MAIS UFOP - ARTES CÊNICAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ARTES%20C%C3%8ANICAS.jpg?v=1758214082"
+    },
+    {
+      "start": "2025-10-01T06:00:29-03:00",
+      "stop": "2025-10-01T06:27:39-03:00",
+      "title": "O SUMIÇO DE SANTO ANTÔNIO - EP6",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/O%20SUMI%C3%87O%20DE%20SANTO%20ANT%C3%94NIO%20-%20EPIS%C3%93DIO%2006.jpg?v=1756743255"
+    },
+    {
+      "start": "2025-10-01T06:27:39-03:00",
+      "stop": "2025-10-01T06:31:08-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - MC SOFFIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20MC%20SOFFIA.jpg?v=1758202756"
+    },
+    {
+      "start": "2025-10-01T06:31:08-03:00",
+      "stop": "2025-10-01T06:57:01-03:00",
+      "title": "ALMANAQUE SAÚDE - ALIMENTAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ALMANAQUE%20SA%C3%9ADE%20I%20ALIMENTA%C3%87%C3%83O.jpg?v=1758203779"
+    },
+    {
+      "start": "2025-10-01T06:57:01-03:00",
+      "stop": "2025-10-01T07:00:19-03:00",
+      "title": "MAIS UFOP - MÚSICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20M%C3%9ASICA.jpg?v=1758214090"
+    },
+    {
+      "start": "2025-10-01T07:00:19-03:00",
+      "stop": "2025-10-01T07:12:51-03:00",
+      "title": "ENTREVISTA - ECA DIGITAL E A PROTEÇÃO NA INTERNET",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ENTREVISTA%20-%20ECA%20DIGITAL%20E%20A%20PROTE%C3%87%C3%83O%20NA%20INTERNET.jpg?v=1757593979"
+    },
+    {
+      "start": "2025-10-01T07:12:51-03:00",
+      "stop": "2025-10-01T07:15:30-03:00",
+      "title": "PARE PERCEBA ESCUTE - ANTIMACHISTA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PARE%20PERCEBA%20ESCUTE%20I%20ANTIMACHISTA.jpg?v=1756743174"
+    },
+    {
+      "start": "2025-10-01T07:15:30-03:00",
+      "stop": "2025-10-01T07:21:10-03:00",
+      "title": "MATERNIDADE ATÍPICA - POLITICAS PUBLICAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MATERNIDADE%20ATIPICA%20-%20POLITICAS%20PUBLICAS.jpg?v=1758903174"
+    },
+    {
+      "start": "2025-10-01T07:21:10-03:00",
+      "stop": "2025-10-01T07:25:16-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - O QUE É ENERGIA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20O%20QUE%20%C3%89%20ENERGIA.jpg?v=1758904149"
+    },
+    {
+      "start": "2025-10-01T07:25:16-03:00",
+      "stop": "2025-10-01T07:30:21-03:00",
+      "title": "FOCO DA DENGUE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FOCO%20DA%20DENGUE.jpg?v=1739921752"
+    },
+    {
+      "start": "2025-10-01T07:30:21-03:00",
+      "stop": "2025-10-01T07:53:00-03:00",
+      "title": "NA ESTRADA - ALAKAZAM",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/NA%20ESTRADA%20-%20ALAKAZAM.jpg?v=1748277934"
+    },
+    {
+      "start": "2025-10-01T07:53:00-03:00",
+      "stop": "2025-10-01T08:00:18-03:00",
+      "title": "UFOP EXPLICA - REFORMA TRIBUTÁRIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20REFORMA%20TRIBUT%C3%81RIA.jpg?v=1758214274"
+    },
+    {
+      "start": "2025-10-01T08:00:18-03:00",
+      "stop": "2025-10-01T08:19:16-03:00",
+      "title": "CONGADEIROS (2018) - EP4 - DEVOÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CONGADEIROS%20I%20EPIS%C3%93DIO%204.jpg?v=1758286604"
+    },
+    {
+      "start": "2025-10-01T08:19:16-03:00",
+      "stop": "2025-10-01T08:25:39-03:00",
+      "title": "UFOP EM CASA - CIRO MENDES E THIAGO CALDEIRA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20-%20CIRO%20MENDES%20E%20THIAGO%20CALDEIRA.jpg?v=1756127644"
+    },
+    {
+      "start": "2025-10-01T08:25:39-03:00",
+      "stop": "2025-10-01T08:30:24-03:00",
+      "title": "MAIS UFOP - ENGENHARIA DE PRODUÇÃO JOÃO MONLEVADE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ENGENHARIA%20DE%20PRODU%C3%87%C3%83O%20JM.jpg?v=1758214086"
+    },
+    {
+      "start": "2025-10-01T08:30:24-03:00",
+      "stop": "2025-10-01T08:42:00-03:00",
+      "title": "CONCERTOS DIDÁTICOS (2017) - DESVAIRADA E BAIÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CONCERTOS%20DID%C3%81TICOS%20I%20DESVAIRADA%20E%20BAI%C3%83O%20DE%20LACAN.jpg?v=1758286434"
+    },
+    {
+      "start": "2025-10-01T08:42:00-03:00",
+      "stop": "2025-10-01T08:53:02-03:00",
+      "title": "UFOP EXPLICA - CRIME DE VILIPÊNDIO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20CRIME%20DE%20VILIP%C3%8ANDIO.jpg?v=1758214266"
+    },
+    {
+      "start": "2025-10-01T08:53:02-03:00",
+      "stop": "2025-10-01T09:00:08-03:00",
+      "title": "SE LIGA AÍ - DIRCE THOMAZ",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20DIRCE%20THOMAZ.jpg?v=1758202337"
+    },
+    {
+      "start": "2025-10-01T09:00:08-03:00",
+      "stop": "2025-10-01T09:03:11-03:00",
+      "title": "BOLETIM - SEMANA DE DESENVOLVIMENTO ECONÔMICO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20SEMANA%20DE%20DESENVOLVIMENTO%20ECON%C3%94MICO.jpg?v=1759251695"
+    },
+    {
+      "start": "2025-10-01T09:03:11-03:00",
+      "stop": "2025-10-01T09:07:08-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM FARMA NANOTECNOLOGIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20NANOTECNOLOGIA%20FARMAC%C3%8AUTICA.jpg?v=1758903674"
+    },
+    {
+      "start": "2025-10-01T09:07:08-03:00",
+      "stop": "2025-10-01T09:15:13-03:00",
+      "title": "REPORTAGEM - PROJETO DA UFOP DE CUIDADOS A IDOSOS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20PROJETO%20UFOP%20IDOSOS.jpg?v=1756728850"
+    },
+    {
+      "start": "2025-10-01T09:15:13-03:00",
+      "stop": "2025-10-01T09:19:48-03:00",
+      "title": "DIA D (2024) - EP3 - DIU",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIA%20D%20I%20DIU.jpg?v=1758807063"
+    },
+    {
+      "start": "2025-10-01T09:19:48-03:00",
+      "stop": "2025-10-01T09:29:55-03:00",
+      "title": "UFOP EM CASA - A LUZANDEJA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20A%20LUZANDEJA.jpg?v=1755784424"
+    },
+    {
+      "start": "2025-10-01T09:29:55-03:00",
+      "stop": "2025-10-01T09:43:29-03:00",
+      "title": "PORTUGUÊS DAQUI, PORTUGUÊS DE LÁ - DIVERSIDADE É A NOSSA LÍNGUA II",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PORTUGU%C3%8AS%20DAQUI%2C%20PORTUGU%C3%8AS%20DE%20L%C3%81%20I%20DIVERSIDADE%20%C3%89%20A%20NOSSA%20L%C3%8DNGUA%20II.jpg?v=1758736846"
+    },
+    {
+      "start": "2025-10-01T09:43:29-03:00",
+      "stop": "2025-10-01T10:00:15-03:00",
+      "title": "UFOP EXPLICA - REVISTA RE.LATO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20REVISTA%20RE-LATO.jpg?v=1758214274"
+    },
+    {
+      "start": "2025-10-01T10:00:15-03:00",
+      "stop": "2025-10-01T10:23:29-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP3 - BEN E GRACY",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CLAQU%C3%89TICOS%20%282025%29%20-%20EP3%20-%20BEN%20E%20GRACY.jpg?v=1758215794"
+    },
+    {
+      "start": "2025-10-01T10:23:29-03:00",
+      "stop": "2025-10-01T10:26:03-03:00",
+      "title": "SE LIGA AÍ - NILMA LINO GOMES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20NILMA%20LINO%20GOMES.jpg?v=1758202754"
+    },
+    {
+      "start": "2025-10-01T10:26:03-03:00",
+      "stop": "2025-10-01T10:30:39-03:00",
+      "title": "MAIS UFOP - PÓS GRADUAÇÃO EM INSTRUMENTAÇÃO CONTROLE E AUTOMAÇÃO DE PROCESSOS DE MINERAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S%20GRADUA%C3%87%C3%83O%20EM%20INSTRUMENTA%C3%87%C3%83O%20CONTROLE%20E%20AUTOMA%C3%87%C3%83O%20DE%20PROCESSOS%20DE%20MINERA%C3%87%C3%83O.jpg?v=1758903670"
+    },
+    {
+      "start": "2025-10-01T10:30:39-03:00",
+      "stop": "2025-10-01T10:59:59-03:00",
+      "title": "VEM VER - EP 3 - PARELHAS E CARNAÚBA DOS DANTAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEM%20VER%20-%20EPIS%C3%93DIO%203%20-%20PARELHAS%20E%20CARNA%C3%9ABA%20DOS%20DANTAS.jpg?v=1758736745"
+    },
+    {
+      "start": "2025-10-01T10:59:59-03:00",
+      "stop": "2025-10-01T11:02:42-03:00",
+      "title": "BOLETIM - ABERTA AS INSCRIÇÕES PARA CRECHES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20INSCRI%C3%87%C3%95ES%20CRECHE%20REGI%C3%83O.jpg?v=1758892959"
+    },
+    {
+      "start": "2025-10-01T11:02:42-03:00",
+      "stop": "2025-10-01T11:06:19-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM DIREITO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20DIREITO.jpg?v=1758903672"
+    },
+    {
+      "start": "2025-10-01T11:06:19-03:00",
+      "stop": "2025-10-01T11:12:50-03:00",
+      "title": "BOLETIM - CADASTRO DOS ARTESÃOS DE MARIANA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20CADASTRO%20ARTES%C3%83OS%20MARIANA.jpg?v=1758892960"
+    },
+    {
+      "start": "2025-10-01T11:12:50-03:00",
+      "stop": "2025-10-01T11:15:43-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1756302647"
+    },
+    {
+      "start": "2025-10-01T11:15:43-03:00",
+      "stop": "2025-10-01T11:49:15-03:00",
+      "title": "IAGORA ENTREVISTA - EDUCAÇÃO, IA E IMPACTO SOCIAL",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/IAGORA%20ENTREVISTA%20-%20EDUCA%C3%87%C3%83O%2C%20IA%20E%20O%20IMPACTO%20SOCIAL%20%20%28BLOCO%201%29.jpg?v=1758736550"
+    },
+    {
+      "start": "2025-10-01T11:53:20-03:00",
+      "stop": "2025-10-01T11:57:19-03:00",
+      "title": "ANIVERSÁRIO TV UFOP - DANILO NONATO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ANIVERS%C3%81RIO%20TV%2024%20I%2013%20DANILO%20NONATO.jpg?v=1756816697"
+    },
+    {
+      "start": "2025-10-01T11:57:19-03:00",
+      "stop": "2025-10-01T11:59:00-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1756302647"
+    },
+    {
+      "start": "2025-10-01T12:00:01-03:00",
+      "stop": "2025-10-01T12:12:15-03:00",
+      "title": "CANAL DA HISTÓRIA - MÁRIO JURUNA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CANAL%20DA%20HIST%C3%93RIA%20I%20M%C3%81RIO%20JURUNA.jpg?v=1758204505"
+    },
+    {
+      "start": "2025-10-01T12:12:15-03:00",
+      "stop": "2025-10-01T12:23:57-03:00",
+      "title": "CURTA - PSIU ISSO AQUI TEM GRAÇA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20PSIU%20ISSO%20AQUI%20TEM%20GRA%C3%87A.jpg?v=1755532137"
+    },
+    {
+      "start": "2025-10-01T12:23:57-03:00",
+      "stop": "2025-10-01T12:30:17-03:00",
+      "title": "UFOP EXPLICA - SEDENTARISMO, COMO EVITAR",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20SEDENTARISMO%2C%20COMO%20EVITAR.jpg?v=1758214275"
+    },
+    {
+      "start": "2025-10-01T12:30:17-03:00",
+      "stop": "2025-10-01T12:48:45-03:00",
+      "title": "PERIPATÉTICOS (2013) - EP8 - A MORTE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PERIPATETICOS%20I%20A%20MORTE.jpg?v=1758736665"
+    },
+    {
+      "start": "2025-10-01T12:48:45-03:00",
+      "stop": "2025-10-01T12:51:08-03:00",
+      "title": "MAIS UFOP - SISTEMAS DE INFORMAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20SISTEMAS%20DE%20INFORMA%C3%87%C3%83O.jpg?v=1758214097"
+    },
+    {
+      "start": "2025-10-01T12:51:08-03:00",
+      "stop": "2025-10-01T12:57:09-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - PRISCILA REZENDE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20PRISCILA%20REZENDE.jpg?v=1758202757"
+    },
+    {
+      "start": "2025-10-01T12:57:09-03:00",
+      "stop": "2025-10-01T13:00:10-03:00",
+      "title": "ANIVERSÁRIO TV UFOP - DU",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ANIVERS%C3%81RIO%20TV%2024%20I%2010%20DU.jpg?v=1756816737"
+    },
+    {
+      "start": "2025-10-01T13:00:10-03:00",
+      "stop": "2025-10-01T13:03:13-03:00",
+      "title": "BOLETIM - SEMANA DE DESENVOLVIMENTO ECONÔMICO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20SEMANA%20DE%20DESENVOLVIMENTO%20ECON%C3%94MICO.jpg?v=1759251695"
+    },
+    {
+      "start": "2025-10-01T13:03:13-03:00",
+      "stop": "2025-10-01T13:05:45-03:00",
+      "title": "MAIS UFOP - FARMÁCIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20FARM%C3%81CIA.jpg?v=1758214088"
+    },
+    {
+      "start": "2025-10-01T13:05:45-03:00",
+      "stop": "2025-10-01T13:09:08-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO - EP2",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20I%202%20.jpg?v=1758813392"
+    },
+    {
+      "start": "2025-10-01T13:09:08-03:00",
+      "stop": "2025-10-01T13:17:35-03:00",
+      "title": "REPORTAGEM - OURO PRETO SEDIA VI COPENE SUDESTE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20OURO%20PRETO%20SEDIA%20VI%20COPENE%20SUDESTE.jpg?v=1759237627"
+    },
+    {
+      "start": "2025-10-01T13:17:35-03:00",
+      "stop": "2025-10-01T13:21:06-03:00",
+      "title": "MAIS UFOP - ENGENHARIA GEOLÓGICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ENGENHARIA%20GEOL%C3%93GICA.jpg?v=1758214086"
+    },
+    {
+      "start": "2025-10-01T13:21:06-03:00",
+      "stop": "2025-10-01T13:30:14-03:00",
+      "title": "REPORTAGEM - HERBÁRIO DA UFOP",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20HERB%C3%81RIO%20UFOP.jpg?v=1756222887"
+    },
+    {
+      "start": "2025-10-01T13:30:14-03:00",
+      "stop": "2025-10-01T13:42:21-03:00",
+      "title": "PÉ DA LETRA (2014) - NEM QUE A VACA TUSSA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/P%C3%89%20DA%20LETRA%20I%20NEM%20QUE%20A%20VACA%20TUSSA.jpg?v=1758202180"
+    },
+    {
+      "start": "2025-10-01T13:42:21-03:00",
+      "stop": "2025-10-01T13:45:02-03:00",
+      "title": "DIORAMA (2012) - ENGENHEIRO CORREA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIORAMA%20I%20ENGENHEIRO%20CORREA.jpg?v=1758807325"
+    },
+    {
+      "start": "2025-10-01T13:45:02-03:00",
+      "stop": "2025-10-01T13:48:37-03:00",
+      "title": "QUE CORPO É ESSE? - MEU CORPO MINHAS REGRAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/QUE%20CORPO%20%C3%89%20ESSE%20I%20T1%20I%20EPIS%C3%93DIO%209.jpg?v=1758203358"
+    },
+    {
+      "start": "2025-10-01T13:48:37-03:00",
+      "stop": "2025-10-01T14:00:22-03:00",
+      "title": "UFOP EXPLICA - ALIMENTOS LIGHT, DIET E ZERO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20ALIMENTOS%20LIGHT%2C%20DIET%20E%20ZERO.jpg?v=1758214264"
+    },
+    {
+      "start": "2025-10-01T14:00:22-03:00",
+      "stop": "2025-10-01T14:52:19-03:00",
+      "title": "ESCOLAS INOVADORAS - RITAHARJU SCHOOL (FINLÂNDIA)",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESCOLAS%20INOVADORAS%20I%20RITAHARJU%20SCHOOL%20%28FINL%C3%82NDIA%29.jpg?v=1758736704"
+    },
+    {
+      "start": "2025-10-01T14:52:19-03:00",
+      "stop": "2025-10-01T14:57:09-03:00",
+      "title": "POÉTICAS DO CORPO - DANÇA TEATRO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20DAN%C3%87A%20TEATRO.jpg?v=1756742211"
+    },
+    {
+      "start": "2025-10-01T14:57:09-03:00",
+      "stop": "2025-10-01T15:00:15-03:00",
+      "title": "UFOP EM CASA - THAIZ CANTASINI E PANMELA RIBEIRO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%206.jpg?v=1753981079"
+    },
+    {
+      "start": "2025-10-01T15:00:15-03:00",
+      "stop": "2025-10-01T15:02:13-03:00",
+      "title": "BOLETIM - EDITAL BOLSA MATERNIDADE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20EDITAL%20BOLSA%20MATERNIDADE.jpg?v=1759251640"
+    },
+    {
+      "start": "2025-10-01T15:02:13-03:00",
+      "stop": "2025-10-01T15:07:09-03:00",
+      "title": "MAIS UFOP - ADMINISTRAÇÃO PÚBLICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ADMINISTRA%C3%87%C3%83O%20P%C3%9ABLICA.jpg?v=1758214082"
+    },
+    {
+      "start": "2025-10-01T15:07:09-03:00",
+      "stop": "2025-10-01T15:15:43-03:00",
+      "title": "REPORTAGEM - PROJETO DA UFOP DE CUIDADOS A IDOSOS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20PROJETO%20UFOP%20IDOSOS.jpg?v=1756728850"
+    },
+    {
+      "start": "2025-10-01T15:15:43-03:00",
+      "stop": "2025-10-01T15:44:33-03:00",
+      "title": "VOZES DO CARIRI (2023) - EP7 - CARIRIAÇU",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VOZES%20DO%20CARIRI%20%282023%29%20-%20EP7%20-%20BLOCO%201.jpg?v=1758736628"
+    },
+    {
+      "start": "2025-10-01T15:44:33-03:00",
+      "stop": "2025-10-01T16:00:28-03:00",
+      "title": "MINHA VOZ, MINHA VEZ (2018) - MÁRCIA VALADARES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MINHA%20VOZ%2C%20MINHA%20VEZ%20I%20M%C3%81RCIA%20VALADARES.jpg?v=1758903579"
+    },
+    {
+      "start": "2025-10-01T16:00:28-03:00",
+      "stop": "2025-10-01T16:47:37-03:00",
+      "title": "ALÉM DOS MUROS (2024) - ARTHUR E RAQUEL",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/AL%C3%89M%20DOS%20MUROS%20I%20ARTHUR%20E%20RAQUEL.jpg?v=1758045481"
+    },
+    {
+      "start": "2025-10-01T16:47:37-03:00",
+      "stop": "2025-10-01T16:56:16-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM DIREITO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20DIREITO.jpg?v=1758903672"
+    },
+    {
+      "start": "2025-10-01T16:56:16-03:00",
+      "stop": "2025-10-01T17:00:09-03:00",
+      "title": "SE LIGA AÍ - ANA ELVIRA WUO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20ANA%20ELVIRA%20WUO.jpg?v=1758202311"
+    },
+    {
+      "start": "2025-10-01T17:00:09-03:00",
+      "stop": "2025-10-01T17:09:49-03:00",
+      "title": "REPORTAGEM - INCULTEC FORTALECE EMPREENDEDORES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20PROJETO%20INCULTEC%20UFOP.jpg?v=1758288784"
+    },
+    {
+      "start": "2025-10-01T17:09:49-03:00",
+      "stop": "2025-10-01T17:15:36-03:00",
+      "title": "BOLETIM - PROJETO CANTO COLETIVO DA UFOP",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PROJETO%20CANTO%20COLETIVO.jpg?v=1758892961"
+    },
+    {
+      "start": "2025-10-01T17:15:36-03:00",
+      "stop": "2025-10-01T17:27:22-03:00",
+      "title": "UNIVERSO CULTURA - ATRIZ BRAMMA BREMMER",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UNIVERSO%20CULTURA%20-%20ATRIZ%20BRAMMA%20BREMMER%20.jpg?v=1742230963"
+    },
+    {
+      "start": "2025-10-01T17:27:22-03:00",
+      "stop": "2025-10-01T17:29:56-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO - EP4",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20-%204%20.jpg?v=1758813393"
+    },
+    {
+      "start": "2025-10-01T17:29:56-03:00",
+      "stop": "2025-10-01T17:44:09-03:00",
+      "title": "VEREDAS (2018) - EP2 - FLORESTA ESTADUAL DO UAIMIÍ",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEREDAS%20I%20FLORESTA%20ESTADUAL%20DO%20UAIMI%C3%8D.jpg?v=1758287739"
+    },
+    {
+      "start": "2025-10-01T17:44:09-03:00",
+      "stop": "2025-10-01T17:53:11-03:00",
+      "title": "UFOP EXPLICA - CRIME DE VILIPÊNDIO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20CRIME%20DE%20VILIP%C3%8ANDIO.jpg?v=1758214266"
+    },
+    {
+      "start": "2025-10-01T17:53:11-03:00",
+      "stop": "2025-10-01T17:55:16-03:00",
+      "title": "MAMBEMBE (2013) - DA APRESENTAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAMBEMBE%20I%20DA%20APRESENTA%C3%87%C3%83O.jpg?v=1758895697"
+    },
+    {
+      "start": "2025-10-01T17:55:16-03:00",
+      "stop": "2025-10-01T18:00:29-03:00",
+      "title": "MAIS UFOP - ARTES CÊNICAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ARTES%20C%C3%8ANICAS.jpg?v=1758214082"
+    },
+    {
+      "start": "2025-10-01T18:00:29-03:00",
+      "stop": "2025-10-01T18:27:39-03:00",
+      "title": "O SUMIÇO DE SANTO ANTÔNIO - EP6",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/O%20SUMI%C3%87O%20DE%20SANTO%20ANT%C3%94NIO%20-%20EPIS%C3%93DIO%2006.jpg?v=1756743255"
+    },
+    {
+      "start": "2025-10-01T18:27:39-03:00",
+      "stop": "2025-10-01T18:31:08-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - MC SOFFIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20MC%20SOFFIA.jpg?v=1758202756"
+    },
+    {
+      "start": "2025-10-01T18:31:08-03:00",
+      "stop": "2025-10-01T18:57:01-03:00",
+      "title": "ALMANAQUE SAÚDE - ALIMENTAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ALMANAQUE%20SA%C3%9ADE%20I%20ALIMENTA%C3%87%C3%83O.jpg?v=1758203779"
+    },
+    {
+      "start": "2025-10-01T18:57:01-03:00",
+      "stop": "2025-10-01T19:00:19-03:00",
+      "title": "MAIS UFOP - MÚSICA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20M%C3%9ASICA.jpg?v=1758214090"
+    },
+    {
+      "start": "2025-10-01T19:00:19-03:00",
+      "stop": "2025-10-01T19:12:51-03:00",
+      "title": "ENTREVISTA - ECA DIGITAL E A PROTEÇÃO NA INTERNET",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ENTREVISTA%20-%20ECA%20DIGITAL%20E%20A%20PROTE%C3%87%C3%83O%20NA%20INTERNET.jpg?v=1757593979"
+    },
+    {
+      "start": "2025-10-01T19:12:51-03:00",
+      "stop": "2025-10-01T19:15:30-03:00",
+      "title": "PARE PERCEBA ESCUTE - ANTIMACHISTA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PARE%20PERCEBA%20ESCUTE%20I%20ANTIMACHISTA.jpg?v=1756743174"
+    },
+    {
+      "start": "2025-10-01T19:15:30-03:00",
+      "stop": "2025-10-01T19:21:10-03:00",
+      "title": "MATERNIDADE ATÍPICA - POLITICAS PUBLICAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MATERNIDADE%20ATIPICA%20-%20POLITICAS%20PUBLICAS.jpg?v=1758903174"
+    },
+    {
+      "start": "2025-10-01T19:21:10-03:00",
+      "stop": "2025-10-01T19:25:16-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - O QUE É ENERGIA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20O%20QUE%20%C3%89%20ENERGIA.jpg?v=1758904149"
+    },
+    {
+      "start": "2025-10-01T19:25:16-03:00",
+      "stop": "2025-10-01T19:30:21-03:00",
+      "title": "FOCO DA DENGUE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FOCO%20DA%20DENGUE.jpg?v=1739921752"
+    },
+    {
+      "start": "2025-10-01T19:30:21-03:00",
+      "stop": "2025-10-01T19:53:00-03:00",
+      "title": "NA ESTRADA - ALAKAZAM",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/NA%20ESTRADA%20-%20ALAKAZAM.jpg?v=1748277934"
+    },
+    {
+      "start": "2025-10-01T19:53:00-03:00",
+      "stop": "2025-10-01T20:00:18-03:00",
+      "title": "UFOP EXPLICA - REFORMA TRIBUTÁRIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20REFORMA%20TRIBUT%C3%81RIA.jpg?v=1758214274"
+    },
+    {
+      "start": "2025-10-01T20:00:18-03:00",
+      "stop": "2025-10-01T20:19:16-03:00",
+      "title": "CONGADEIROS (2018) - EP4 - DEVOÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CONGADEIROS%20I%20EPIS%C3%93DIO%204.jpg?v=1758286604"
+    },
+    {
+      "start": "2025-10-01T20:19:16-03:00",
+      "stop": "2025-10-01T20:25:39-03:00",
+      "title": "UFOP EM CASA - CIRO MENDES E THIAGO CALDEIRA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20-%20CIRO%20MENDES%20E%20THIAGO%20CALDEIRA.jpg?v=1756127644"
+    },
+    {
+      "start": "2025-10-01T20:25:39-03:00",
+      "stop": "2025-10-01T20:30:24-03:00",
+      "title": "MAIS UFOP - ENGENHARIA DE PRODUÇÃO JOÃO MONLEVADE",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ENGENHARIA%20DE%20PRODU%C3%87%C3%83O%20JM.jpg?v=1758214086"
+    },
+    {
+      "start": "2025-10-01T20:30:24-03:00",
+      "stop": "2025-10-01T20:42:00-03:00",
+      "title": "CONCERTOS DIDÁTICOS (2017) - DESVAIRADA E BAIÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CONCERTOS%20DID%C3%81TICOS%20I%20DESVAIRADA%20E%20BAI%C3%83O%20DE%20LACAN.jpg?v=1758286434"
+    },
+    {
+      "start": "2025-10-01T20:42:00-03:00",
+      "stop": "2025-10-01T20:53:02-03:00",
+      "title": "UFOP EXPLICA - CRIME DE VILIPÊNDIO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20CRIME%20DE%20VILIP%C3%8ANDIO.jpg?v=1758214266"
+    },
+    {
+      "start": "2025-10-01T20:53:02-03:00",
+      "stop": "2025-10-01T21:00:08-03:00",
+      "title": "SE LIGA AÍ - DIRCE THOMAZ",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20DIRCE%20THOMAZ.jpg?v=1758202337"
+    },
+    {
+      "start": "2025-10-01T21:00:08-03:00",
+      "stop": "2025-10-01T21:03:11-03:00",
+      "title": "BOLETIM - SEMANA DE DESENVOLVIMENTO ECONÔMICO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20SEMANA%20DE%20DESENVOLVIMENTO%20ECON%C3%94MICO.jpg?v=1759251695"
+    },
+    {
+      "start": "2025-10-01T21:03:11-03:00",
+      "stop": "2025-10-01T21:07:08-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM FARMA NANOTECNOLOGIA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20NANOTECNOLOGIA%20FARMAC%C3%8AUTICA.jpg?v=1758903674"
+    },
+    {
+      "start": "2025-10-01T21:07:08-03:00",
+      "stop": "2025-10-01T21:15:13-03:00",
+      "title": "REPORTAGEM - PROJETO DA UFOP DE CUIDADOS A IDOSOS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20PROJETO%20UFOP%20IDOSOS.jpg?v=1756728850"
+    },
+    {
+      "start": "2025-10-01T21:15:13-03:00",
+      "stop": "2025-10-01T21:19:48-03:00",
+      "title": "DIA D (2024) - EP3 - DIU",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIA%20D%20I%20DIU.jpg?v=1758807063"
+    },
+    {
+      "start": "2025-10-01T21:19:48-03:00",
+      "stop": "2025-10-01T21:29:55-03:00",
+      "title": "UFOP EM CASA - A LUZANDEJA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20A%20LUZANDEJA.jpg?v=1755784424"
+    },
+    {
+      "start": "2025-10-01T21:29:55-03:00",
+      "stop": "2025-10-01T21:43:29-03:00",
+      "title": "PORTUGUÊS DAQUI, PORTUGUÊS DE LÁ - DIVERSIDADE É A NOSSA LÍNGUA II",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PORTUGU%C3%8AS%20DAQUI%2C%20PORTUGU%C3%8AS%20DE%20L%C3%81%20I%20DIVERSIDADE%20%C3%89%20A%20NOSSA%20L%C3%8DNGUA%20II.jpg?v=1758736846"
+    },
+    {
+      "start": "2025-10-01T21:43:29-03:00",
+      "stop": "2025-10-01T22:00:15-03:00",
+      "title": "UFOP EXPLICA - REVISTA RE.LATO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20REVISTA%20RE-LATO.jpg?v=1758214274"
+    },
+    {
+      "start": "2025-10-01T22:00:15-03:00",
+      "stop": "2025-10-01T22:23:29-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP3 - BEN E GRACY",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CLAQU%C3%89TICOS%20%282025%29%20-%20EP3%20-%20BEN%20E%20GRACY.jpg?v=1758215794"
+    },
+    {
+      "start": "2025-10-01T22:23:29-03:00",
+      "stop": "2025-10-01T22:26:03-03:00",
+      "title": "SE LIGA AÍ - NILMA LINO GOMES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20NILMA%20LINO%20GOMES.jpg?v=1758202754"
+    },
+    {
+      "start": "2025-10-01T22:26:03-03:00",
+      "stop": "2025-10-01T22:30:39-03:00",
+      "title": "MAIS UFOP - PÓS GRADUAÇÃO EM INSTRUMENTAÇÃO CONTROLE E AUTOMAÇÃO DE PROCESSOS DE MINERAÇÃO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S%20GRADUA%C3%87%C3%83O%20EM%20INSTRUMENTA%C3%87%C3%83O%20CONTROLE%20E%20AUTOMA%C3%87%C3%83O%20DE%20PROCESSOS%20DE%20MINERA%C3%87%C3%83O.jpg?v=1758903670"
+    },
+    {
+      "start": "2025-10-01T22:30:39-03:00",
+      "stop": "2025-10-01T22:59:59-03:00",
+      "title": "VEM VER - EP 3 - PARELHAS E CARNAÚBA DOS DANTAS",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEM%20VER%20-%20EPIS%C3%93DIO%203%20-%20PARELHAS%20E%20CARNA%C3%9ABA%20DOS%20DANTAS.jpg?v=1758736745"
+    },
+    {
+      "start": "2025-10-01T22:59:59-03:00",
+      "stop": "2025-10-01T23:02:42-03:00",
+      "title": "BOLETIM - ABERTA AS INSCRIÇÕES PARA CRECHES",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20INSCRI%C3%87%C3%95ES%20CRECHE%20REGI%C3%83O.jpg?v=1758892959"
+    },
+    {
+      "start": "2025-10-01T23:02:42-03:00",
+      "stop": "2025-10-01T23:06:19-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM DIREITO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20DIREITO.jpg?v=1758903672"
+    },
+    {
+      "start": "2025-10-01T23:06:19-03:00",
+      "stop": "2025-10-01T23:12:50-03:00",
+      "title": "BOLETIM - CADASTRO DOS ARTESÃOS DE MARIANA",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20CADASTRO%20ARTES%C3%83OS%20MARIANA.jpg?v=1758892960"
+    },
+    {
+      "start": "2025-10-01T23:12:50-03:00",
+      "stop": "2025-10-01T23:15:43-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1756302647"
+    },
+    {
+      "start": "2025-10-01T23:15:43-03:00",
+      "stop": "2025-10-01T23:49:15-03:00",
+      "title": "IAGORA ENTREVISTA - EDUCAÇÃO, IA E IMPACTO SOCIAL",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/IAGORA%20ENTREVISTA%20-%20EDUCA%C3%87%C3%83O%2C%20IA%20E%20O%20IMPACTO%20SOCIAL%20%20%28BLOCO%201%29.jpg?v=1758736550"
+    },
+    {
+      "start": "2025-10-01T23:53:20-03:00",
+      "stop": "2025-10-01T23:57:19-03:00",
+      "title": "ANIVERSÁRIO TV UFOP - DANILO NONATO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ANIVERS%C3%81RIO%20TV%2024%20I%2013%20DANILO%20NONATO.jpg?v=1756816697"
+    },
+    {
+      "start": "2025-10-01T23:57:19-03:00",
+      "stop": "2025-10-01T23:59:00-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1756302647"
     }
   ]
 }
