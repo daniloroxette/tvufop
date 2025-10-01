@@ -86,13 +86,18 @@
     /* Ícone de play (decorativo; clique passa através) */
     .eduplay-overlay .overlay-play{
       position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-      width:84px; height:84px; border-radius:999px;
+      /* antes havia: width:84px; height:84px; background:rgba(255,255,255,.92); box-shadow:... */
       display:none; align-items:center; justify-content:center;
-      background:rgba(255,255,255,.92);
-      box-shadow:0 8px 24px rgba(0,0,0,.45);
-      pointer-events:none;                 /* não intercepta o clique */
+      pointer-events:none;
+
+      /* remoções/overrides do círculo: */
+      background: none !important;
+      box-shadow: none !important;
+      width: auto;               /* deixa o tamanho do SVG mandar */
+      height: auto;
+      border-radius: 0;
     }
-    .eduplay-overlay .overlay-play svg{ width:40px; height:40px; display:block; }
+    .eduplay-overlay .overlay-play svg{ width:60px; height:60px; display:block; }
 
     /* Estados visuais */
     .eduplay-overlay.is-loading .overlay-content{ display:inline-flex; }
