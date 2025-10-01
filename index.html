@@ -33,14 +33,69 @@
     .wrap{ width:min(100%, 960px); margin:16px auto; padding:0 8px; }
 
     /* PLAYER COM OVERLAY INTERNO */
-    .player{ position: sticky; width:100%; aspect-ratio:16/9; background:#000; border-radius:12px; overflow:hidden; top: calc(var(--header-h, 0px) + var(--gap-top, 6px)); z-index: 999; }
-    .player iframe{ width:100%; height:100%; border:0; display:block; background:#000; }
+    .player{
+      position: sticky;
+      width:100%;
+      aspect-ratio:16/9;
+      background:#000;
+      border-radius:12px;
+      overflow:hidden;
+      top: calc(var(--header-h, 0px) + var(--gap-top, 6px));
+      z-index: 999;
+    }
+    .player iframe{
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+      background:#000;
+    }
 
-    .eduplay-overlay{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; background: rgba(0,0,0,.55); color:#fff; opacity:1; transition: opacity .25s ease, visibility .25s ease; }
-    .eduplay-overlay.is-hidden{ opacity:0; visibility:hidden; }
-    .eduplay-overlay .overlay-content{ display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:12px; background:rgba(0,0,0,.35); backdrop-filter: blur(2px); font-size:1rem; }
-    .eduplay-overlay .spinner{ width:16px; height:16px; border-radius:50%; border:2px solid #bbb; border-top-color:#8C1B2B; animation: spin 1s linear infinite; }
+    /* -------- Overlay Eduplay (carregando + play) -------- */
+    .eduplay-overlay{
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(0,0,0,.55);
+      color:#fff;
+      transition: opacity .25s ease, visibility .25s ease, transform .15s ease;
+      pointer-events:auto;            /* capta o clique até o handoff */
+      opacity:1; visibility:visible;
+    }
+    .eduplay-overlay.is-hidden{
+      opacity:0; visibility:hidden; pointer-events:none;
+    }
+    .eduplay-overlay .overlay-content{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 14px; border-radius:12px;
+      background:rgba(0,0,0,.35); backdrop-filter: blur(2px);
+      font-size:1rem;
+    }
+    .eduplay-overlay .spinner{
+      width:16px; height:16px; border-radius:50%;
+      border:2px solid #bbb; border-top-color:#8C1B2B;
+      animation: spin 1s linear infinite;
+    }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Botão de play central (mostrado quando pronto) */
+    .eduplay-overlay .overlay-play{
+      position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+      width:84px; height:84px; border-radius:999px; border:0; cursor:pointer;
+      display:none; align-items:center; justify-content:center;
+      background:rgba(255,255,255,.92);
+      box-shadow:0 8px 24px rgba(0,0,0,.45);
+      transition:transform .06s ease, opacity .2s ease;
+    }
+    .eduplay-overlay .overlay-play:hover{ transform:translate(-50%,-50%) scale(1.06); }
+    .eduplay-overlay .overlay-play:active{ transform:translate(-50%,-50%) scale(0.98); }
+    .eduplay-overlay .overlay-play svg{ width:40px; height:40px; display:block; }
+
+    /* Estados do overlay */
+    .eduplay-overlay.is-loading .overlay-content{ display:inline-flex; } /* mostra spinner/mensagem */
+    .eduplay-overlay.is-loading .overlay-play{ display:none; }
+
+    .eduplay-overlay.is-ready .overlay-content{ display:none; }           /* esconde texto/spinner */
+    .eduplay-overlay.is-ready .overlay-play{ display:inline-flex; }       /* mostra play */
 
     .logos{ margin:28px 0 40px; }
     .logos img{ margin:10px; vertical-align:middle; }
@@ -63,11 +118,20 @@
         tabindex="0">
       </iframe>
 
-      <div id="eduplay-overlay" class="eduplay-overlay" role="status" aria-live="polite" aria-busy="true">
+      <!-- Overlay atualizado: carrega -> mostra botão Play -> entrega o clique ao iframe -->
+      <div id="eduplay-overlay" class="eduplay-overlay is-loading" role="dialog" aria-label="Controle de reprodução" aria-live="polite" aria-busy="true">
         <div class="overlay-content">
           <span class="spinner" aria-hidden="true"></span>
-          <span class="msg">Carregando Eduplay…</span>
+          <span class="msg">Carregando o player…</span>
         </div>
+
+        <!-- Botão de play que “entrega” o clique para o iframe -->
+        <button id="eduplay-play" class="overlay-play" type="button" aria-label="Reproduzir">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48" aria-hidden="true" focusable="false">
+            <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="#e00"/>
+            <path d="M45 24 27 14v20z" fill="#fff"/>
+          </svg>
+        </button>
       </div>
     </div>
 
@@ -212,37 +276,87 @@
   })();
   </script>
 
-  <!-- Overlay: lógica de exibição -->
+  <!-- Overlay: lógica de exibição com “gate” de play -->
   <script>
   (function(){
     const iframe  = document.getElementById('eduplay-iframe');
     const overlay = document.getElementById('eduplay-overlay');
-    if (!iframe || !overlay) return;
+    const btnPlay = document.getElementById('eduplay-play');
+    if (!iframe || !overlay || !btnPlay) return;
 
+    // Estado inicial: carregando
     overlay.classList.remove('is-hidden');
+    overlay.classList.add('is-loading');
+    overlay.setAttribute('aria-busy','true');
+    overlay.querySelector('.msg').textContent = 'Carregando o player…';
 
+    // Quando o iframe terminar de carregar, ativa o “gate” de play
     iframe.addEventListener('load', () => {
-      setTimeout(() => {
-        overlay.classList.add('is-hidden');
-        overlay.setAttribute('aria-busy', 'false');
-      }, 500);
+      overlay.classList.remove('is-loading');
+      overlay.classList.add('is-ready');
+      overlay.setAttribute('aria-busy','false');
+      overlay.querySelector('.msg').textContent = 'Toque para reproduzir';
+      armarHandoffUnico();
     });
 
+    // Se o src do iframe mudar, volta ao modo carregando
     new MutationObserver(muts => {
       for (const m of muts) {
         if (m.type === 'attributes' && m.attributeName === 'src') {
-          overlay.querySelector('.msg').textContent = 'Carregando Eduplay…';
-          overlay.classList.remove('is-hidden');
-          overlay.setAttribute('aria-busy', 'true');
+          overlay.classList.remove('is-hidden','is-ready');
+          overlay.classList.add('is-loading');
+          overlay.style.pointerEvents = 'auto';
+          overlay.setAttribute('aria-busy','true');
+          overlay.querySelector('.msg').textContent = 'Carregando o player…';
         }
       }
     }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
 
+    // Mensagem de segurança se demorar
     setTimeout(() => {
-      if (!overlay.classList.contains('is-hidden')) {
-        overlay.querySelector('.msg').textContent = 'Carregando Eduplay… (verifique a conexão)';
+      if (overlay.classList.contains('is-loading')) {
+        overlay.querySelector('.msg').textContent = 'Carregando o player… (verifique a conexão)';
       }
     }, 12000);
+
+    // Handoff do clique: remove o overlay no pointerdown, sem impedir o click
+    function armarHandoffUnico(){
+      const handoff = () => {
+        // Não usamos preventDefault: deixamos mouseup/click seguirem para o iframe
+        overlay.style.pointerEvents = 'none'; // libera imediatamente eventos para trás
+        requestAnimationFrame(() => {
+          overlay.classList.add('is-hidden');
+          overlay.classList.remove('is-ready');
+          try { iframe.focus(); } catch(e){}
+        });
+        desmontar();
+      };
+
+      const desmontar = () => {
+        tipos.forEach(t => {
+          overlay.removeEventListener(t, handoffWrapper, opt);
+          btnPlay.removeEventListener(t, handoffWrapper, opt);
+        });
+        overlay.removeEventListener('keydown', onKey);
+      };
+
+      const handoffWrapper = () => handoff();
+      const onKey = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handoff();
+        }
+      };
+
+      const tipos = ['pointerdown','touchstart','mousedown'];
+      const opt   = { passive:true, once:true };
+
+      tipos.forEach(t => {
+        overlay.addEventListener(t, handoffWrapper, opt);
+        btnPlay.addEventListener(t, handoffWrapper, opt);
+      });
+      overlay.addEventListener('keydown', onKey);
+    }
   })();
   </script>
 
