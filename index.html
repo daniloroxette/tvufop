@@ -51,19 +51,25 @@
       background:#000;
     }
 
-    /* -------- Overlay Eduplay (carregando + play) -------- */
+    /* -------- Overlay Eduplay (carregando + play “pass-thru”) -------- */
     .eduplay-overlay{
       position:absolute; inset:0;
       display:flex; align-items:center; justify-content:center;
       background:rgba(0,0,0,.55);
       color:#fff;
-      transition: opacity .25s ease, visibility .25s ease, transform .15s ease;
-      pointer-events:auto;            /* capta o clique até o handoff */
+      transition: opacity .25s ease, visibility .25s ease;
       opacity:1; visibility:visible;
+      pointer-events:auto;                 /* bloqueia enquanto carrega */
     }
     .eduplay-overlay.is-hidden{
-      opacity:0; visibility:hidden; pointer-events:none;
+      opacity:0; visibility:hidden;
+      pointer-events:none;
     }
+    /* Pronto para interação: deixa o clique passar para o iframe */
+    .eduplay-overlay.is-ready{
+      pointer-events:none;                 /* clique passa para o iframe */
+    }
+
     .eduplay-overlay .overlay-content{
       display:inline-flex; gap:10px; align-items:center;
       padding:10px 14px; border-radius:12px;
@@ -77,25 +83,23 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Botão de play central (mostrado quando pronto) */
+    /* Ícone de play (decorativo; clique passa através) */
     .eduplay-overlay .overlay-play{
       position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-      width:84px; height:84px; border-radius:999px; border:0; cursor:pointer;
+      width:84px; height:84px; border-radius:999px;
       display:none; align-items:center; justify-content:center;
       background:rgba(255,255,255,.92);
       box-shadow:0 8px 24px rgba(0,0,0,.45);
-      transition:transform .06s ease, opacity .2s ease;
+      pointer-events:none;                 /* não intercepta o clique */
     }
-    .eduplay-overlay .overlay-play:hover{ transform:translate(-50%,-50%) scale(1.06); }
-    .eduplay-overlay .overlay-play:active{ transform:translate(-50%,-50%) scale(0.98); }
     .eduplay-overlay .overlay-play svg{ width:40px; height:40px; display:block; }
 
-    /* Estados do overlay */
-    .eduplay-overlay.is-loading .overlay-content{ display:inline-flex; } /* mostra spinner/mensagem */
+    /* Estados visuais */
+    .eduplay-overlay.is-loading .overlay-content{ display:inline-flex; }
     .eduplay-overlay.is-loading .overlay-play{ display:none; }
 
-    .eduplay-overlay.is-ready .overlay-content{ display:none; }           /* esconde texto/spinner */
-    .eduplay-overlay.is-ready .overlay-play{ display:inline-flex; }       /* mostra play */
+    .eduplay-overlay.is-ready .overlay-content{ display:none; }
+    .eduplay-overlay.is-ready .overlay-play{ display:inline-flex; }
 
     .logos{ margin:28px 0 40px; }
     .logos img{ margin:10px; vertical-align:middle; }
@@ -118,20 +122,20 @@
         tabindex="0">
       </iframe>
 
-      <!-- Overlay atualizado: carrega -> mostra botão Play -> entrega o clique ao iframe -->
+      <!-- Overlay: mostra spinner enquanto carrega; depois, ícone de play “pass-thru” -->
       <div id="eduplay-overlay" class="eduplay-overlay is-loading" role="dialog" aria-label="Controle de reprodução" aria-live="polite" aria-busy="true">
         <div class="overlay-content">
           <span class="spinner" aria-hidden="true"></span>
           <span class="msg">Carregando o player…</span>
         </div>
 
-        <!-- Botão de play que “entrega” o clique para o iframe -->
-        <button id="eduplay-play" class="overlay-play" type="button" aria-label="Reproduzir">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48" aria-hidden="true" focusable="false">
-            <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="#e00"/>
+        <!-- Ícone de play (decorativo). O clique passa para o iframe. -->
+        <div class="overlay-play" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48">
+            <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="#8C1B2B"/>
             <path d="M45 24 27 14v20z" fill="#fff"/>
           </svg>
-        </button>
+        </div>
       </div>
     </div>
 
@@ -159,7 +163,7 @@
         const r = player.getBoundingClientRect();
         document.documentElement.style.setProperty('--player-h', r.height + 'px');
       }
-      document.documentElement.style.setProperty('--gap-top', '6px'); // NOVO: controla o espaço extra
+      document.documentElement.style.setProperty('--gap-top', '6px');
     }
     window.addEventListener('load', updateVars);
     window.addEventListener('resize', updateVars);
@@ -276,13 +280,13 @@
   })();
   </script>
 
-  <!-- Overlay: lógica de exibição com “gate” de play -->
+  <!-- Overlay: lógica de exibição (primeiro clique já atinge o iframe) -->
   <script>
   (function(){
-    const iframe  = document.getElementById('eduplay-iframe');
-    const overlay = document.getElementById('eduplay-overlay');
-    const btnPlay = document.getElementById('eduplay-play');
-    if (!iframe || !overlay || !btnPlay) return;
+    const iframe   = document.getElementById('eduplay-iframe');
+    const overlay  = document.getElementById('eduplay-overlay');
+    const playerBx = document.getElementById('eduplay-box');
+    if (!iframe || !overlay || !playerBx) return;
 
     // Estado inicial: carregando
     overlay.classList.remove('is-hidden');
@@ -290,13 +294,12 @@
     overlay.setAttribute('aria-busy','true');
     overlay.querySelector('.msg').textContent = 'Carregando o player…';
 
-    // Quando o iframe terminar de carregar, ativa o “gate” de play
+    // Quando o iframe terminar de carregar, exibimos o ícone e liberamos o clique para o iframe
     iframe.addEventListener('load', () => {
       overlay.classList.remove('is-loading');
-      overlay.classList.add('is-ready');
+      overlay.classList.add('is-ready');          // pointer-events:none (clique passa)
       overlay.setAttribute('aria-busy','false');
       overlay.querySelector('.msg').textContent = 'Toque para reproduzir';
-      armarHandoffUnico();
     });
 
     // Se o src do iframe mudar, volta ao modo carregando
@@ -312,6 +315,39 @@
       }
     }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
 
+    // --- Oculta overlay quando o iframe ganhar foco (clique/tap dentro dele) ---
+    iframe.addEventListener('focus', () => {
+      if (overlay.classList.contains('is-ready')) {
+        overlay.classList.add('is-hidden');
+        overlay.classList.remove('is-ready');
+      }
+    });
+
+    // --- Fallback para navegadores que não disparam focus no iframe ---
+    let lastPointerInside = 0;
+    function pointInPlayer(ev){
+      const r = playerBx.getBoundingClientRect();
+      const x = ev.clientX, y = ev.clientY;
+      return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+    }
+
+    // Captura o down em área do player (sem impedir o gesto)
+    ['pointerdown','touchstart','mousedown'].forEach(t => {
+      document.addEventListener(t, (ev) => {
+        if (!overlay.classList.contains('is-ready')) return;
+        if (pointInPlayer(ev)) lastPointerInside = Date.now();
+      }, true); // capture
+    });
+
+    // Ao focar o conteúdo do iframe, algumas UAs disparam blur na janela pai
+    window.addEventListener('blur', () => {
+      if (!overlay.classList.contains('is-ready')) return;
+      if (Date.now() - lastPointerInside < 600) {
+        overlay.classList.add('is-hidden');
+        overlay.classList.remove('is-ready');
+      }
+    });
+
     // Mensagem de segurança se demorar
     setTimeout(() => {
       if (overlay.classList.contains('is-loading')) {
@@ -319,44 +355,19 @@
       }
     }, 12000);
 
-    // Handoff do clique: remove o overlay no pointerdown, sem impedir o click
-    function armarHandoffUnico(){
-      const handoff = () => {
-        // Não usamos preventDefault: deixamos mouseup/click seguirem para o iframe
-        overlay.style.pointerEvents = 'none'; // libera imediatamente eventos para trás
-        requestAnimationFrame(() => {
-          overlay.classList.add('is-hidden');
-          overlay.classList.remove('is-ready');
-          try { iframe.focus(); } catch(e){}
-        });
-        desmontar();
-      };
-
-      const desmontar = () => {
-        tipos.forEach(t => {
-          overlay.removeEventListener(t, handoffWrapper, opt);
-          btnPlay.removeEventListener(t, handoffWrapper, opt);
-        });
-        overlay.removeEventListener('keydown', onKey);
-      };
-
-      const handoffWrapper = () => handoff();
-      const onKey = (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handoff();
-        }
-      };
-
-      const tipos = ['pointerdown','touchstart','mousedown'];
-      const opt   = { passive:true, once:true };
-
-      tipos.forEach(t => {
-        overlay.addEventListener(t, handoffWrapper, opt);
-        btnPlay.addEventListener(t, handoffWrapper, opt);
-      });
-      overlay.addEventListener('keydown', onKey);
-    }
+    // -------- (Opcional) Fallback “autoplay param bump” --------
+    // Se, por política do player, ainda exigir segunda interação:
+    // ative a linha abaixo para forçar recarregar o embed com ?autoplay=1
+    // document.addEventListener('pointerdown', (ev) => {
+    //   if (!overlay.classList.contains('is-ready')) return;
+    //   if (!pointInPlayer(ev)) return;
+    //   try{
+    //     const u = new URL(iframe.src, location.href);
+    //     if (!u.searchParams.has('autoplay')) u.searchParams.set('autoplay','1');
+    //     u.searchParams.set('_ts', Date.now().toString());
+    //     iframe.src = u.toString();
+    //   }catch(e){}
+    // }, {capture:true, once:true});
   })();
   </script>
 
