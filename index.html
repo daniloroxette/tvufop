@@ -57,7 +57,7 @@
       display:flex; align-items:center; justify-content:center;
       background:rgba(0,0,0,.55);
       color:#fff;
-      transition: opacity .25s ease, visibility .25s ease;
+      transition: opacity .18s ease, visibility 0s linear .18s;
       opacity:1; visibility:visible;
       pointer-events:auto;                 /* bloqueia enquanto carrega */
     }
@@ -283,92 +283,91 @@
   <!-- Overlay: lógica de exibição (primeiro clique já atinge o iframe) -->
   <script>
   (function(){
-    const iframe   = document.getElementById('eduplay-iframe');
-    const overlay  = document.getElementById('eduplay-overlay');
-    const playerBx = document.getElementById('eduplay-box');
-    if (!iframe || !overlay || !playerBx) return;
+  const iframe   = document.getElementById('eduplay-iframe');
+  const overlay  = document.getElementById('eduplay-overlay');
+  const playerBx = document.getElementById('eduplay-box');
+  if (!iframe || !overlay || !playerBx) return;
 
-    // Estado inicial: carregando
-    overlay.classList.remove('is-hidden');
-    overlay.classList.add('is-loading');
-    overlay.setAttribute('aria-busy','true');
-    overlay.querySelector('.msg').textContent = 'Carregando o player…';
+  // Estado inicial: carregando
+  overlay.classList.remove('is-hidden');
+  overlay.classList.add('is-loading');
+  overlay.setAttribute('aria-busy','true');
+  overlay.querySelector('.msg').textContent = 'Carregando o player…';
 
-    // Quando o iframe terminar de carregar, exibimos o ícone e liberamos o clique para o iframe
-    iframe.addEventListener('load', () => {
-      overlay.classList.remove('is-loading');
-      overlay.classList.add('is-ready');          // pointer-events:none (clique passa)
-      overlay.setAttribute('aria-busy','false');
-      overlay.querySelector('.msg').textContent = 'Toque para reproduzir';
-    });
+  // Quando o iframe terminar de carregar, exibe ícone e libera clique "pass-through"
+  iframe.addEventListener('load', () => {
+    overlay.classList.remove('is-loading');
+    overlay.classList.add('is-ready');          // pointer-events:none via CSS
+    overlay.setAttribute('aria-busy','false');
+    overlay.querySelector('.msg').textContent = 'Toque para reproduzir';
+  });
 
-    // Se o src do iframe mudar, volta ao modo carregando
-    new MutationObserver(muts => {
-      for (const m of muts) {
-        if (m.type === 'attributes' && m.attributeName === 'src') {
-          overlay.classList.remove('is-hidden','is-ready');
-          overlay.classList.add('is-loading');
-          overlay.style.pointerEvents = 'auto';
-          overlay.setAttribute('aria-busy','true');
-          overlay.querySelector('.msg').textContent = 'Carregando o player…';
-        }
+  // Se o src do iframe mudar, volta ao modo carregando
+  new MutationObserver(muts => {
+    for (const m of muts) {
+      if (m.type === 'attributes' && m.attributeName === 'src') {
+        overlay.classList.remove('is-hidden','is-ready');
+        overlay.classList.add('is-loading');
+        overlay.style.pointerEvents = 'auto';
+        overlay.setAttribute('aria-busy','true');
+        overlay.querySelector('.msg').textContent = 'Carregando o player…';
       }
-    }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
-
-    // --- Oculta overlay quando o iframe ganhar foco (clique/tap dentro dele) ---
-    iframe.addEventListener('focus', () => {
-      if (overlay.classList.contains('is-ready')) {
-        overlay.classList.add('is-hidden');
-        overlay.classList.remove('is-ready');
-      }
-    });
-
-    // --- Fallback para navegadores que não disparam focus no iframe ---
-    let lastPointerInside = 0;
-    function pointInPlayer(ev){
-      const r = playerBx.getBoundingClientRect();
-      const x = ev.clientX, y = ev.clientY;
-      return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
     }
+  }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
 
-    // Captura o down em área do player (sem impedir o gesto)
-    ['pointerdown','touchstart','mousedown'].forEach(t => {
-      document.addEventListener(t, (ev) => {
-        if (!overlay.classList.contains('is-ready')) return;
-        if (pointInPlayer(ev)) lastPointerInside = Date.now();
-      }, true); // capture
+  // ---- Correção principal: esconder overlay no pointerdown dentro da área do player ----
+  function insidePlayer(ev){
+    const r = playerBx.getBoundingClientRect();
+    const x = ev.clientX, y = ev.clientY;
+    return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+  }
+
+  // Captura antes do iframe, não cancela o evento (sem preventDefault)
+  const onDownCapture = (ev) => {
+    if (!overlay.classList.contains('is-ready')) return;
+    if (!insidePlayer(ev)) return;
+    // Esconde no próximo frame, enquanto o mesmo gesto segue para o iframe
+    requestAnimationFrame(() => {
+      overlay.classList.add('is-hidden');
+      overlay.classList.remove('is-ready');
     });
+  };
 
-    // Ao focar o conteúdo do iframe, algumas UAs disparam blur na janela pai
-    window.addEventListener('blur', () => {
-      if (!overlay.classList.contains('is-ready')) return;
-      if (Date.now() - lastPointerInside < 600) {
-        overlay.classList.add('is-hidden');
-        overlay.classList.remove('is-ready');
-      }
-    });
+  // pointerdown cobre mouse/touch/pen com Pointer Events
+  document.addEventListener('pointerdown', onDownCapture, true);
 
-    // Mensagem de segurança se demorar
-    setTimeout(() => {
-      if (overlay.classList.contains('is-loading')) {
-        overlay.querySelector('.msg').textContent = 'Carregando o player… (verifique a conexão)';
-      }
-    }, 12000);
+  // Fallbacks auxiliares (mantidos, caso o UA dispare foco/blur):
+  iframe.addEventListener('focus', () => {
+    if (overlay.classList.contains('is-ready')) {
+      overlay.classList.add('is-hidden');
+      overlay.classList.remove('is-ready');
+    }
+  });
+  window.addEventListener('blur', () => {
+    if (overlay.classList.contains('is-ready')) {
+      overlay.classList.add('is-hidden');
+      overlay.classList.remove('is-ready');
+    }
+  });
 
-    // -------- (Opcional) Fallback “autoplay param bump” --------
-    // Se, por política do player, ainda exigir segunda interação:
-    // ative a linha abaixo para forçar recarregar o embed com ?autoplay=1
-    // document.addEventListener('pointerdown', (ev) => {
-    //   if (!overlay.classList.contains('is-ready')) return;
-    //   if (!pointInPlayer(ev)) return;
-    //   try{
-    //     const u = new URL(iframe.src, location.href);
-    //     if (!u.searchParams.has('autoplay')) u.searchParams.set('autoplay','1');
-    //     u.searchParams.set('_ts', Date.now().toString());
-    //     iframe.src = u.toString();
-    //   }catch(e){}
-    // }, {capture:true, once:true});
-  })();
+  // Mensagem de segurança se demorar demais
+  setTimeout(() => {
+    if (overlay.classList.contains('is-loading')) {
+      overlay.querySelector('.msg').textContent = 'Carregando o player… (verifique a conexão)';
+    }
+  }, 12000);
+
+  // (Opcional) Se ainda precisar, ative o bump de autoplay:
+  // document.addEventListener('pointerdown', (ev) => {
+  //   if (!insidePlayer(ev)) return;
+  //   try{
+  //     const u = new URL(iframe.src, location.href);
+  //     if (!u.searchParams.has('autoplay')) u.searchParams.set('autoplay','1');
+  //     u.searchParams.set('_ts', Date.now().toString());
+  //     iframe.src = u.toString();
+  //   }catch(e){}
+  // }, {capture:true, once:true});
+})();
   </script>
 
   <!-- Service Worker -->
