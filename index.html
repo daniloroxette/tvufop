@@ -51,6 +51,27 @@
       background:#000;
     }
 
+    /* Botão/overlay de unmute */
+    .unmute-overlay{
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(0,0,0,.35);
+      cursor:pointer;
+      border:0; padding:0; margin:0;
+      width:100%; height:100%;
+      transition: opacity .18s ease, visibility 0s linear .18s;
+      z-index: 1000;
+    }
+    .unmute-overlay.is-hidden{
+      opacity:0; visibility:hidden; pointer-events:none;
+    }
+    .unmute-overlay .icon{
+      display:inline-flex; align-items:center; justify-content:center;
+    }
+    .unmute-overlay .icon svg{
+      width:60px; height:60px; display:block;
+    }
+
     .logos{ margin:28px 0 40px; }
     .logos img{ margin:10px; vertical-align:middle; }
     .sep{ margin:18px 0; opacity:.3; }
@@ -71,6 +92,18 @@
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
+
+      <!-- Overlay: aparece sobre o vídeo já reproduzindo mudo; some ao clicar e desmuta -->
+      <button id="unmute-overlay" class="unmute-overlay" aria-label="Ativar som">
+        <span class="icon" aria-hidden="true">
+          <!-- Triângulo de play sem círculo de fundo -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48">
+            <!-- Moldura para contraste leve (opcional) -->
+            <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="rgba(0,0,0,.18)"/>
+            <path d="M45 24 27 14v20z" fill="#8C1B2B"/>
+          </svg>
+        </span>
+      </button>
     </div>
 
     <div class="logos">
@@ -217,18 +250,18 @@
   <!-- YouTube Iframe API -->
   <script src="https://www.youtube.com/iframe_api"></script>
 
-  <!-- Autoplay mudo + desmutar no primeiro gesto do usuário -->
+  <!-- Autoplay mudo + desmutar no clique do overlay -->
   <script>
   (function(){
     const iframe = document.getElementById('player-iframe');
+    const overlayBtn = document.getElementById('unmute-overlay');
 
     // Garante 'origin' no SRC (recomendado pela API do YouTube)
-    // e preserva os demais parâmetros já definidos no HTML.
     try {
       const u = new URL(iframe.src, location.href);
       if (!u.searchParams.has('origin')) {
         u.searchParams.set('origin', location.origin);
-        iframe.src = u.toString(); // atualiza caso não tivesse 'origin'
+        iframe.src = u.toString();
       }
     } catch (e) {}
 
@@ -248,21 +281,30 @@
       });
     };
 
-    // Primeiro gesto do usuário: tentar desmutar e garantir reprodução
-    const unmuteOnce = () => {
-      if (player && player.unMute) {
-        try {
+    // Clique no overlay: desmuta, mantém reprodução e esconde overlay
+    function handleUnmute() {
+      try {
+        if (player && player.unMute) {
           player.unMute();
           if (player.setVolume) player.setVolume(100);
           if (player.playVideo) player.playVideo();
-        } catch(_) {}
-      }
-      window.removeEventListener('pointerdown', unmuteOnce, true);
-      window.removeEventListener('keydown', unmuteOnce, true); // Enter/Espaço também contam como gesto
-    };
+        }
+      } catch(_) {}
+      overlayBtn.classList.add('is-hidden');
+      // remove listeners para evitar reprocessamento
+      overlayBtn.removeEventListener('click', handleUnmute);
+      overlayBtn.removeEventListener('keydown', onKey);
+    }
 
-    window.addEventListener('pointerdown', unmuteOnce, true);
-    window.addEventListener('keydown', unmuteOnce, true);
+    function onKey(e){
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleUnmute();
+      }
+    }
+
+    overlayBtn.addEventListener('click', handleUnmute);
+    overlayBtn.addEventListener('keydown', onKey);
   })();
   </script>
 
