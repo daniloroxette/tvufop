@@ -32,7 +32,7 @@
     h1{ margin:0; padding:16px 12px; background:var(--bordo); color:#fff; font-size:20px; letter-spacing:.3px; position: sticky; top: 0; z-index: 1000; }
     .wrap{ width:min(100%, 960px); margin:16px auto; padding:0 8px; }
 
-    /* PLAYER STICKY (mantém topo fixo ao rolar) */
+    /* PLAYER STICKY */
     .player{
       position: sticky;
       width:100%;
@@ -60,11 +60,11 @@
   <h1>TV UFOP</h1>
 
   <div class="wrap">
-    <!-- Player YouTube Live (mantidas medidas e bordas arredondadas) -->
+    <!-- Player YouTube Live (medidas e bordas mantidas) -->
     <div class="player" id="player-box">
       <iframe
         id="player-iframe"
-        src="https://www.youtube.com/embed/-2bY2u1O7QE?si=PVPOMbGQ3e6JSuyE&autoplay=1&mute=1&playsinline=1"
+        src="https://www.youtube.com/embed/-2bY2u1O7QE?si=PVPOMbGQ3e6JSuyE&autoplay=1&mute=1&playsinline=1&enablejsapi=1"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -107,7 +107,7 @@
   <!-- Carrega EPG -->
   <script src="epg/epg.js"></script>
 
-  <!-- EPG – scroll único no #epg-viewport; cabeçalho sticky; “Agora” funcional c/ offset -->
+  <!-- EPG – scroll único no #epg-viewport; cabeçalho sticky; “Agora” com offset -->
   <script>
   (function(){
     const viewport = document.getElementById('epg-viewport');
@@ -211,6 +211,58 @@
 
     window.addEventListener('load', initAlign);
     window.addEventListener('resize', () => { done = false; initAlign(); });
+  })();
+  </script>
+
+  <!-- YouTube Iframe API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <!-- Autoplay mudo + desmutar no primeiro gesto do usuário -->
+  <script>
+  (function(){
+    const iframe = document.getElementById('player-iframe');
+
+    // Garante 'origin' no SRC (recomendado pela API do YouTube)
+    // e preserva os demais parâmetros já definidos no HTML.
+    try {
+      const u = new URL(iframe.src, location.href);
+      if (!u.searchParams.has('origin')) {
+        u.searchParams.set('origin', location.origin);
+        iframe.src = u.toString(); // atualiza caso não tivesse 'origin'
+      }
+    } catch (e) {}
+
+    let player;
+
+    // Chamado pela Iframe API quando pronta
+    window.onYouTubeIframeAPIReady = function(){
+      player = new YT.Player('player-iframe', {
+        events: {
+          onReady: (ev) => {
+            try {
+              ev.target.mute();
+              ev.target.playVideo(); // inicia mudo
+            } catch (_) {}
+          }
+        }
+      });
+    };
+
+    // Primeiro gesto do usuário: tentar desmutar e garantir reprodução
+    const unmuteOnce = () => {
+      if (player && player.unMute) {
+        try {
+          player.unMute();
+          if (player.setVolume) player.setVolume(100);
+          if (player.playVideo) player.playVideo();
+        } catch(_) {}
+      }
+      window.removeEventListener('pointerdown', unmuteOnce, true);
+      window.removeEventListener('keydown', unmuteOnce, true); // Enter/Espaço também contam como gesto
+    };
+
+    window.addEventListener('pointerdown', unmuteOnce, true);
+    window.addEventListener('keydown', unmuteOnce, true);
   })();
   </script>
 
