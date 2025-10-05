@@ -51,25 +51,39 @@
       background:#000;
     }
 
-    /* Botão/overlay de unmute */
+    /* Botão/overlay de unmute – mais visível */
     .unmute-overlay{
       position:absolute; inset:0;
-      display:flex; align-items:center; justify-content:center;
-      background:rgba(0,0,0,.35);
+      display:flex; flex-direction:column; gap:12px;
+      align-items:center; justify-content:center;
+      background:rgba(0,0,0,.6); /* mais escuro */
       cursor:pointer;
       border:0; padding:0; margin:0;
       width:100%; height:100%;
-      transition: opacity .18s ease, visibility 0s linear .18s;
+      transition: opacity .18s ease, visibility 0s linear .18s, transform .12s ease;
       z-index: 1000;
+      color:#fff;
+    }
+    .unmute-overlay:is(:hover,:focus-visible){
+      transform: scale(1.01);
     }
     .unmute-overlay.is-hidden{
       opacity:0; visibility:hidden; pointer-events:none;
     }
     .unmute-overlay .icon{
       display:inline-flex; align-items:center; justify-content:center;
+      filter: drop-shadow(0 3px 10px rgba(0,0,0,.6)); /* destaca o ícone */
     }
     .unmute-overlay .icon svg{
-      width:60px; height:60px; display:block;
+      width:112px; height:112px; display:block; /* maior */
+    }
+    .unmute-overlay .label{
+      font-size:16px; font-weight:600; letter-spacing:.2px;
+      text-shadow: 0 1px 2px rgba(0,0,0,.5);
+      user-select:none;
+    }
+    .unmute-overlay:focus-visible{
+      outline: 3px solid #fff; outline-offset: -6px;
     }
 
     .logos{ margin:28px 0 40px; }
@@ -93,16 +107,17 @@
         allowfullscreen>
       </iframe>
 
-      <!-- Overlay: aparece sobre o vídeo já reproduzindo mudo; some ao clicar e desmuta -->
+      <!-- Overlay: aparece sobre o vídeo mudo; ao clicar desmuta e some -->
       <button id="unmute-overlay" class="unmute-overlay" aria-label="Ativar som">
         <span class="icon" aria-hidden="true">
-          <!-- Triângulo de play sem círculo de fundo -->
+          <!-- Triângulo de play (sem círculo de fundo), grande e com sombra -->
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48">
-            <!-- Moldura para contraste leve (opcional) -->
-            <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="rgba(0,0,0,.18)"/>
-            <path d="M45 24 27 14v20z" fill="#8C1B2B"/>
+            <!-- leve moldura de contraste (transparente) -->
+            <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="rgba(0,0,0,.12)"/>
+            <path d="M45 24 27 14v20z" fill="var(--bordo)" stroke="#fff" stroke-width="1.2"/>
           </svg>
         </span>
+        <span class="label">Ativar som</span>
       </button>
     </div>
 
@@ -291,7 +306,6 @@
         }
       } catch(_) {}
       overlayBtn.classList.add('is-hidden');
-      // remove listeners para evitar reprocessamento
       overlayBtn.removeEventListener('click', handleUnmute);
       overlayBtn.removeEventListener('keydown', onKey);
     }
