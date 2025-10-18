@@ -3,7 +3,12 @@ name: Sync EPG to Pages
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 13-19 * * 1-5"   # 10h–16h BRT (UTC-3) -> 13h–19h UTC, seg–sex
+    # Seg–Sex: 10h–20h BRT (13–23 UTC, mesmo dia)
+    - cron: "0 13-23 * * 1-5"
+
+    # Complemento para 21h e 22h BRT (00–01 UTC do dia seguinte)
+    # Tue–Sat (2-6) cobre as noites de seg–sex em BRT
+    - cron: "0 0-1 * * 2-6"
 
 concurrency:
   group: sync-epg
