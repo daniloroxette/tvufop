@@ -229,6 +229,24 @@ table tr > td:first-child { width: 560px; } /* ajuste conforme o site */
 }
 
 
+  /* Garantir que o player ocupe a coluna e fique 16:9 */
+table lite-youtube,
+table iframe[src*="youtube.com/embed/"]{
+  display:block;
+  width:100% !important;
+  max-width:100% !important;
+  height:auto !important;
+  aspect-ratio:16/9;
+  border-radius:12px;
+}
+
+/* Iframe interno do componente preenchendo tudo */
+table lite-youtube iframe{
+  width:100% !important;
+  height:100% !important;
+  border:0;
+}
+
 
 
 
