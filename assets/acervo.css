@@ -195,5 +195,38 @@ min-height: 0 !important
 }
 
 
+  /* Player responsivo no TD da tabela (desktop e mobile) */
+table lite-youtube,
+table iframe[src*="youtube.com/embed/"] {
+  display: block;
+  width: 100% !important;     /* ocupa toda a célula */
+  max-width: 100% !important;
+  aspect-ratio: 16 / 9;       /* mantém 16:9 */
+  height: auto !important;
+  border-radius: 12px;         /* mantém cantos arredondados */
+}
+
+/* Quando o iframe “abre” dentro do <lite-youtube> */
+table lite-youtube iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* Se quiser preservar um limite superior no desktop */
+@media (min-width: 1024px) {
+  table lite-youtube,
+  table iframe[src*="youtube.com/embed/"] {
+    max-width: 720px;         /* opcional: ajuste ao seu gosto */
+  }
+}
+
+/* (Opcional) Controlar a largura da 1ª coluna, sem mexer no HTML */
+table { table-layout: fixed; } /* evita encolhimento imprevisível */
+table tr > td:first-child { width: 560px; } /* ajuste conforme o site */
+@media (max-width: 900px) {
+  table tr > td:first-child { width: auto; } /* solta no mobile */
+}
+
 
 
