@@ -1,0 +1,199 @@
+/* bordas arredondadas nos iframes */
+iframe {
+border-radius: 12px !important;
+padding-left: 0vw;
+padding-top: 0vw;
+padding-bottom:0vw;
+}
+
+.campl-scale-with-grid {
+border-radius: 12px !important
+}
+
+/* reduz tamanho anormal do iframe em mobile */
+@media (max-width: 767px){
+iframe{
+height: 200px !important;
+width: 355px !important;
+}
+
+/* reduz tamanho do lite-youtube */
+lite-youtube {
+height: 200px !important;
+width: 355px !important;
+}
+
+/* reduz tamanho de imagens em mobile */
+@media (max-width: 767px) {
+  #page-content img,
+  .node-page img {
+    max-width: 100% !important;  /* nunca passa da largura do container */
+    height: auto !important;     /* mantém proporção */
+    display: block;              /* evita comportamento inline */
+    margin: 0 auto;              /* centraliza a imagem */
+  }
+}
+
+
+/* reduz tamanho da barra superior da programação em mobile */
+@media (max-width: 480px) {
+  #tvufop-epg .tv-header {
+    font-size: 12px !important;   /* afeta todo o header */
+    line-height: 1.2em !important;
+  }
+
+  /* Se houver strong ou span, garante também */
+  #tvufop-epg .tv-header strong,
+  #tvufop-epg .tv-header span,
+  #tvufop-epg .tv-header div,
+  #tvufop-epg .tv-header p {
+    font-size: 12px !important;
+  }
+  
+    #tvufop-epg button {
+    font-size: 10px !important;
+    padding: 3px 6px !important;
+  }
+
+}
+
+
+
+
+
+/* PROGRAMAS Mobile: cada TD vira um “cartão” com espaçamento constante entre TODOS */
+@media (max-width: 768px) {
+  body.page-programas .view-programas-tv .views-view-grid {
+    border-spacing: 0 !important;       /* desliga o espaço por linha */
+  }
+  body.page-programas .view-programas-tv .views-view-grid > tbody {
+    display: grid;                       /* um grid vertical */
+    grid-template-columns: 1fr;          /* 1 item por linha */
+    row-gap: 50px;                       /* respiro entre CADA item */
+  }
+  body.page-programas .view-programas-tv .views-view-grid > tbody > tr {
+    display: contents;                   /* achata as linhas: os TDs viram irmãos diretos */
+  }
+  body.page-programas .view-programas-tv .views-view-grid > tbody > tr > td {
+    display: block;                      /* garante largura cheia e permite altura/margem próprias */
+    width: 100%;
+  }
+}
+
+
+
+
+/* Ocultar cabeçalhos repetidos SOMENTE no mobile na LINHA DO TEMPO*/
+@media (max-width: 768px) {
+  /* 1) Cabeçalho da própria tabela */
+  table.linha-do-tempo thead { 
+    display: none !important;
+  }
+
+  /* 2) Cabeçalho "clone" que alguns temas/JS geram (sticky) */
+  table.linha-do-tempo + table.sticky-header {
+    display: none !important;
+  }
+
+  /* 3) Rótulos por célula injetados no mobile */
+  table.linha-do-tempo td > .campl-table-heading {
+    display: none !important;
+  }
+
+
+
+
+/* Alvo: a tabela com as classes do tema */
+.campl-table.campl-vertical-stacking-table {
+  width: 100% !important;
+  table-layout: fixed !important;   /* necessário p/ a largura da coluna valer */
+}
+
+/* Largura da 1ª coluna (desktop) */
+@media (min-width: 700px) {
+  .campl-table.campl-vertical-stacking-table th:first-child,
+  .campl-table.campl-vertical-stacking-table td:first-child {
+    width: 560px !important;      
+  }
+}
+
+
+/* ARREDA */
+lite-youtube > iframe{
+  /*margin-left: -40px !important;*/
+    height: 100% !important;
+    width: 100% !important;  
+
+}
+
+/* ARREDA MOBILE */
+@media (max-width: 699px){
+  lite-youtube > iframe{
+    /*margin-left: -30px !important;*/
+    /*top: -8px !important;*/
+    height: 100% !important;
+    width: 100% !important;
+
+  }
+}
+`
+/* CANTOS ARREDONDADOS */
+p > lite-youtube {
+    border-radius: 16px !important;
+    }
+    
+/* FOTOS DO TOPO - DISTANCIAS */
+.acervo-duas-imagens{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left; /* ajuste para left/center/right se desejar */
+  gap: 12px;               /* pequena distância entre as imagens */
+}
+
+/* FOTOS DO TOPO - DISTANCIAS MOBILE*/
+@media (max-width: 767px){
+  .acervo-duas-imagens{
+    flex-direction: column;  /* empilha no mobile */
+    gap: 10px;               /* distância vertical no empilhamento */
+    align-items: stretch;
+  }
+  /* As imagens têm width/height inline; garantimos que se adaptem no mobile */
+  .acervo-duas-imagens img{
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+
+
+
+
+/* OCULTA CÓDIGO DA FITA*/
+#node-3 table tbody tr > td:nth-child(2) > strong:nth-of-type(2),
+#node-3 table tbody tr > td:nth-child(2) > p > strong:nth-of-type(2){
+  display: none !important;
+}
+
+#node-3 table tbody tr > td:nth-child(2) br:has(+ strong:nth-of-type(2)),
+#node-3 table tbody tr > td:nth-child(2) p br:has(+ strong:nth-of-type(2)){
+  display: none !important;
+}
+
+
+table tbody td:nth-child(2){
+
+text-align: justify !important
+
+} 
+
+
+#page-content {
+
+min-height: 0 !important
+
+}
+
+
+
+
