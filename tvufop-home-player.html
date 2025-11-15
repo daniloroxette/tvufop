@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>TV UFOP – Ao vivo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- HLS.js para navegadores que não tocam HLS nativamente -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    #player-container {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+    }
+
+    #tvufop-video {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      object-fit: cover;
+    }
+
+    /* Barra de “ao vivo” (não clicável) */
+    .live-progress {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 46px; /* logo acima da barra de controles */
+      height: 4px;
+      pointer-events: none;
+    }
+
+    .live-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 2px;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .live-dot {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      transform: translate(50%, -50%);
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Controles personalizados */
+    .controls {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.0)
+      );
+      box-sizing: border-box;
+    }
+
+    .controls button {
+      border: none;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 4px 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .controls button:focus {
+      outline: 1px solid #fff;
+      outline-offset: 2px;
+    }
+
+    .volume-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .volume-wrapper input[type="range"] {
+      width: 90px;
+    }
+
+    .spacer {
+      flex: 1;
+    }
+
+    .badge-hd {
+      font-size: 11px;
+      border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 2px 4px;
+      margin-right: 8px;
+      text-transform: uppercase;
+    }
+
+    .live-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-right: 8px;
+    }
+
+    .live-label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff3b3b;
+    }
+  </style>
+</head>
+<body>
+  <div id="player-container">
+    <video
+      id="tvufop-video"
+      playsinline
+      webkit-playsinline
+      autoplay
+      muted
+    ></video>
+
+    <!-- “barra de progresso” fixa com a bolinha colada à direita -->
+    <div class="live-progress">
+      <div class="live-line"></div>
+      <div class="live-dot"></div>
+    </div>
+
+    <!-- Barra inferior de controles -->
+    <div class="controls">
+      <button id="btn-play-pause" title="Reproduzir / Pausar">▶</button>
+
+      <button id="btn-mute" title="Ativar / desativar áudio">🔇</button>
+
+      <div class="volume-wrapper">
+        <input
+          id="volume-range"
+          type="range"
+          min="0"
+          max="1"
+          step="0.05"
+          value="0.8"
+        />
+      </div>
+
+      <div class="spacer"></div>
+
+      <span class="badge-hd">HD</span>
+
+      <span class="live-label">
+        <span class="live-label-dot"></span>
+        <span>Ao vivo</span>
+      </span>
+
+      <button id="btn-fullscreen" title="Tela cheia">⛶</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const video = document.getElementById("tvufop-video");
+      const container = document.getElementById("player-container");
+
+      const playPauseBtn = document.getElementById("btn-play-pause");
+      const muteBtn = document.getElementById("btn-mute");
+      const volumeRange = document.getElementById("volume-range");
+      const fullscreenBtn = document.getElementById("btn-fullscreen");
+
+      const streamUrl = "https://app.tvufop.com.br/hls/tvufop.m3u8";
+
+      // Carregar HLS
+      function initPlayer() {
+        if (video.canPlayType("application/vnd.apple.mpegurl")) {
+          // Safari / iOS com suporte nativo
+          video.src = streamUrl;
+        } else if (window.Hls && window.Hls.isSupported()) {
+          const hls = new Hls({
+            liveDurationInfinity: true
+          });
+          hls.loadSource(streamUrl);
+          hls.attachMedia(video);
+        } else {
+          console.warn("HLS não suportado neste navegador.");
+        }
+      }
+
+      // Tentar autoplay muted
+      function tryAutoplay() {
+        video.muted = true;
+        const promise = video.play();
+        if (promise && promise.catch) {
+          promise.catch(function (err) {
+            console.log("Autoplay bloqueado; aguardando interação do usuário.", err);
+          });
+        }
+      }
+
+      // Atualizar ícone de play/pause
+      function updatePlayPauseIcon() {
+        if (video.paused) {
+          playPauseBtn.textContent = "▶";
+        } else {
+          playPauseBtn.textContent = "❚❚";
+        }
+      }
+
+      // Atualizar ícone de mute
+      function updateMuteIcon() {
+        muteBtn.textContent = video.muted || video.volume === 0 ? "🔇" : "🔊";
+      }
+
+      // Controles
+      playPauseBtn.addEventListener("click", function () {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+
+      muteBtn.addEventListener("click", function () {
+        // Se estiver mudo, restaurar volume anterior (slider)
+        if (video.muted) {
+          video.muted = false;
+          if (video.volume === 0) {
+            video.volume = parseFloat(volumeRange.value) || 0.8;
+          }
+        } else {
+          video.muted = true;
+        }
+        updateMuteIcon();
+      });
+
+      volumeRange.addEventListener("input", function () {
+        const vol = parseFloat(volumeRange.value);
+        video.volume = vol;
+        // Se o usuário mexer no volume, remover mute lógico
+        if (vol > 0 && video.muted) {
+          video.muted = false;
+        }
+        updateMuteIcon();
+      });
+
+      fullscreenBtn.addEventListener("click", function () {
+        if (!document.fullscreenElement) {
+          if (container.requestFullscreen) {
+            container.requestFullscreen();
+          } else if (container.webkitRequestFullscreen) {
+            container.webkitRequestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+        }
+      });
+
+      video.addEventListener("play", updatePlayPauseIcon);
+      video.addEventListener("pause", updatePlayPauseIcon);
+
+      // Garante que ícones fiquem coerentes
+      video.addEventListener("volumechange", updateMuteIcon);
+
+      // Inicialização
+      initPlayer();
+
+      // Tentar autoplay ao carregar a página e assim que o vídeo estiver pronto
+      window.addEventListener("load", tryAutoplay);
+      video.addEventListener("canplay", tryAutoplay);
+    })();
+  </script>
+</body>
+</html>
