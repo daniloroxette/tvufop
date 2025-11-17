@@ -242,14 +242,22 @@
         hideUiTimeout = setTimeout(hideUI, 3000); // 3s após a última interação
       }
 
-      // Clique/toque em qualquer lugar do container alterna o overlay
-      container.addEventListener("click", function () {
-        if (uiVisible) {
-          hideUI();
-        } else {
-          showUI();
-        }
-      });
+      // Qualquer atividade do usuário no container "acorda" o overlay
+      function registerUserActivity() {
+        showUI();
+      }
+
+      // Desktop: mover o mouse sobre o player
+      container.addEventListener("mousemove", registerUserActivity);
+
+      // Mobile / toque: início do toque em qualquer parte do player
+      container.addEventListener(
+        "touchstart",
+        function () {
+          registerUserActivity();
+        },
+        { passive: true }
+      );
 
       // --------- FULLSCREEN (com fallbacks) ---------
       function isFullscreen() {
@@ -328,10 +336,9 @@
         }
       }
 
-      // Monitorar mudanças de fullscreen (para manter overlay coerente, se desejar)
       ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach(ev => {
         document.addEventListener(ev, () => {
-          // aqui você pode ajustar overlay se quiser reagir ao entrar/sair de tela cheia
+          // espaço reservado se quiser reagir a entrar/sair de tela cheia
         });
       });
 
@@ -380,7 +387,7 @@
 
       // Controles
       playPauseBtn.addEventListener("click", function (event) {
-        event.stopPropagation(); // não alternar overlay
+        event.stopPropagation();
         if (video.paused) {
           video.play();
         } else {
