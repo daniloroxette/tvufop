@@ -39,7 +39,7 @@
       object-fit: contain;
     }
 
-    /* Barra de “ao vivo” (não clicável) */
+    /* Barra de “ao vivo” */
     .live-progress {
       position: absolute;
       left: 0;
@@ -47,6 +47,8 @@
       bottom: 46px; /* logo acima da barra de controles */
       height: 4px;
       pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.25s ease-in-out;
     }
 
     .live-line {
@@ -88,6 +90,8 @@
         rgba(0, 0, 0, 0.0)
       );
       box-sizing: border-box;
+      opacity: 1;
+      transition: opacity 0.25s ease-in-out;
     }
 
     .controls button {
@@ -144,6 +148,13 @@
       height: 8px;
       border-radius: 50%;
       background: #ff3b3b;
+    }
+
+    /* Estado em que o overlay é escondido */
+    #player-container.ui-hidden .controls,
+    #player-container.ui-hidden .live-progress {
+      opacity: 0;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -205,6 +216,127 @@
 
       const streamUrl = "https://app.tvufop.com.br/hls/tvufop.m3u8";
 
+      // Controle de visibilidade do overlay
+      let uiVisible = true;
+      let hideUiTimeout = null;
+
+      function hideUI() {
+        container.classList.add("ui-hidden");
+        uiVisible = false;
+      }
+
+      function showUI() {
+        container.classList.remove("ui-hidden");
+        uiVisible = true;
+        resetHideTimer();
+      }
+
+      function resetHideTimer() {
+        if (hideUiTimeout) {
+          clearTimeout(hideUiTimeout);
+        }
+        // Não esconder automaticamente se o vídeo estiver pausado
+        if (video.paused) {
+          return;
+        }
+        hideUiTimeout = setTimeout(hideUI, 3000); // 3s após a última interação
+      }
+
+      // Clique/toque em qualquer lugar do container alterna o overlay
+      container.addEventListener("click", function () {
+        if (uiVisible) {
+          hideUI();
+        } else {
+          showUI();
+        }
+      });
+
+      // --------- FULLSCREEN (com fallbacks) ---------
+      function isFullscreen() {
+        return (
+          document.fullscreenElement ||
+          document.webkitFullscreenElement ||
+          document.mozFullScreenElement ||
+          document.msFullscreenElement
+        );
+      }
+
+      function enterFullscreen() {
+        const el = container;
+
+        // Fullscreen API padrão
+        if (el.requestFullscreen) {
+          const p = el.requestFullscreen();
+          if (p && p.catch) {
+            p.catch(err => {
+              console.warn("Falha em requestFullscreen:", err);
+              // Fallback para iOS/Safari
+              if (video.webkitEnterFullscreen) {
+                video.webkitEnterFullscreen();
+              }
+            });
+          }
+          return;
+        }
+
+        // Prefixados
+        if (el.webkitRequestFullscreen) {
+          el.webkitRequestFullscreen();
+          return;
+        }
+        if (el.mozRequestFullScreen) {
+          el.mozRequestFullScreen();
+          return;
+        }
+        if (el.msRequestFullscreen) {
+          el.msRequestFullscreen();
+          return;
+        }
+
+        // Fallback iOS (modo fullscreen só do vídeo)
+        if (video.webkitEnterFullscreen) {
+          video.webkitEnterFullscreen();
+        }
+      }
+
+      function exitFullscreen() {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch?.(err => {
+            console.warn("Falha em exitFullscreen:", err);
+          });
+          return;
+        }
+        if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+          return;
+        }
+        if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+          return;
+        }
+        if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+          return;
+        }
+      }
+
+      function toggleFullscreen() {
+        if (isFullscreen()) {
+          exitFullscreen();
+        } else {
+          enterFullscreen();
+        }
+      }
+
+      // Monitorar mudanças de fullscreen (para manter overlay coerente, se desejar)
+      ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach(ev => {
+        document.addEventListener(ev, () => {
+          // aqui você pode ajustar overlay se quiser reagir ao entrar/sair de tela cheia
+        });
+      });
+
+      // --------- FIM FULLSCREEN ---------
+
       // Carregar HLS
       function initPlayer() {
         if (video.canPlayType("application/vnd.apple.mpegurl")) {
@@ -247,16 +379,18 @@
       }
 
       // Controles
-      playPauseBtn.addEventListener("click", function () {
+      playPauseBtn.addEventListener("click", function (event) {
+        event.stopPropagation(); // não alternar overlay
         if (video.paused) {
           video.play();
         } else {
           video.pause();
         }
+        showUI();
       });
 
-      muteBtn.addEventListener("click", function () {
-        // Se estiver mudo, restaurar volume anterior (slider)
+      muteBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
         if (video.muted) {
           video.muted = false;
           if (video.volume === 0) {
@@ -266,42 +400,46 @@
           video.muted = true;
         }
         updateMuteIcon();
+        showUI();
       });
 
-      volumeRange.addEventListener("input", function () {
+      volumeRange.addEventListener("input", function (event) {
+        event.stopPropagation();
         const vol = parseFloat(volumeRange.value);
         video.volume = vol;
-        // Se o usuário mexer no volume, remover mute lógico
         if (vol > 0 && video.muted) {
           video.muted = false;
         }
         updateMuteIcon();
+        showUI();
       });
 
-      fullscreenBtn.addEventListener("click", function () {
-        if (!document.fullscreenElement) {
-          if (container.requestFullscreen) {
-            container.requestFullscreen();
-          } else if (container.webkitRequestFullscreen) {
-            container.webkitRequestFullscreen();
-          }
-        } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-          }
-        }
+      fullscreenBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        toggleFullscreen();
+        showUI();
       });
 
-      video.addEventListener("play", updatePlayPauseIcon);
-      video.addEventListener("pause", updatePlayPauseIcon);
+      // Eventos do vídeo
+      video.addEventListener("play", function () {
+        updatePlayPauseIcon();
+        resetHideTimer();
+      });
+
+      video.addEventListener("pause", function () {
+        updatePlayPauseIcon();
+        // Em pausa, mantém os controles visíveis
+        showUI();
+      });
 
       // Garante que ícones fiquem coerentes
       video.addEventListener("volumechange", updateMuteIcon);
 
       // Inicialização
       initPlayer();
+
+      // UI começa visível
+      showUI();
 
       // Tentar autoplay ao carregar a página e assim que o vídeo estiver pronto
       window.addEventListener("load", tryAutoplay);
