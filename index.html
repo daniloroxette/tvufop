@@ -25,12 +25,35 @@
   <!-- EPG CSS -->
   <link rel="stylesheet" href="epg/epg.css">
 
+  <!-- HLS.js para navegadores que não tocam HLS nativamente -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
   <style>
     :root { --bordo:#8C1B2B; }
     *{box-sizing:border-box}
-    body{ font-family: Arial, sans-serif; margin:0; padding:0; background:#fff; text-align:center; }
-    h1{ margin:0; padding:16px 12px; background:var(--bordo); color:#fff; font-size:20px; letter-spacing:.3px; position: sticky; top: 0; z-index: 1000; }
-    .wrap{ width:min(100%, 960px); margin:16px auto; padding:0 8px; }
+    body{
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background:#fff;
+      text-align:center;
+    }
+    h1{
+      margin:0;
+      padding:16px 12px;
+      background:var(--bordo);
+      color:#fff;
+      font-size:20px;
+      letter-spacing:.3px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .wrap{
+      width:min(100%, 960px);
+      margin:16px auto;
+      padding:0 8px;
+    }
 
     /* PLAYER STICKY */
     .player{
@@ -43,81 +66,204 @@
       top: calc(var(--header-h, 0px) + var(--gap-top, 6px));
       z-index: 999;
     }
-    .player iframe{
-      width:100%;
-      height:100%;
-      border:0;
-      display:block;
-      background:#000;
+
+    /* CONTAINER INTERNO DO PLAYER HLS */
+    #player-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
     }
 
-    /* Botão/overlay de unmute – mais visível */
-    .unmute-overlay{
-      position:absolute; inset:0;
-      display:flex; flex-direction:column; gap:12px;
-      align-items:center; justify-content:center;
-      background:rgba(0,0,0,.6); /* mais escuro */
-      cursor:pointer;
-      border:0; padding:0; margin:0;
-      width:100%; height:100%;
-      transition: opacity .18s ease, visibility 0s linear .18s, transform .12s ease;
-      z-index: 1000;
-      color:#fff;
-    }
-    .unmute-overlay:is(:hover,:focus-visible){
-      transform: scale(1.01);
-    }
-    .unmute-overlay.is-hidden{
-      opacity:0; visibility:hidden; pointer-events:none;
-    }
-    .unmute-overlay .icon{
-      display:inline-flex; align-items:center; justify-content:center;
-      filter: drop-shadow(0 3px 10px rgba(0,0,0,.6)); /* destaca o ícone */
-    }
-    .unmute-overlay .icon svg{
-      width:112px; height:112px; display:block; /* maior */
-    }
-    .unmute-overlay .label{
-      font-size:16px; font-weight:600; letter-spacing:.2px;
-      text-shadow: 0 1px 2px rgba(0,0,0,.5);
-      user-select:none;
-    }
-    .unmute-overlay:focus-visible{
-      outline: 3px solid #fff; outline-offset: -6px;
+    #tvufop-video {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      object-fit: contain;
     }
 
-    .logos{ margin:28px 0 40px; }
-    .logos img{ margin:10px; vertical-align:middle; }
-    .sep{ margin:18px 0; opacity:.3; }
+    /* Barra de “ao vivo” */
+    .live-progress {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 46px; /* logo acima da barra de controles */
+      height: 4px;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    .live-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 2px;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .live-dot {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      transform: translate(50%, -50%);
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Controles personalizados */
+    .controls {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.0)
+      );
+      box-sizing: border-box;
+      opacity: 1;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    .controls button {
+      border: none;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 4px 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .controls button:focus {
+      outline: 1px solid #fff;
+      outline-offset: 2px;
+    }
+
+    .volume-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .volume-wrapper input[type="range"] {
+      width: 90px;
+    }
+
+    .spacer {
+      flex: 1;
+    }
+
+    .badge-hd {
+      font-size: 11px;
+      border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 2px 4px;
+      margin-right: 8px;
+      text-transform: uppercase;
+    }
+
+    .live-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-right: 8px;
+    }
+
+    .live-label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff3b3b;
+    }
+
+    /* Estado em que o overlay é escondido */
+    #player-container.ui-hidden .controls,
+    #player-container.ui-hidden .live-progress {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .logos{
+      margin:28px 0 40px;
+    }
+    .logos img{
+      margin:10px;
+      vertical-align:middle;
+    }
+    .sep{
+      margin:18px 0;
+      opacity:.3;
+    }
   </style>
 </head>
 <body>
   <h1>TV UFOP</h1>
 
   <div class="wrap">
-    <!-- Player YouTube Live (medidas e bordas mantidas) -->
+    <!-- Player HLS ao vivo -->
     <div class="player" id="player-box">
-      <iframe
-        id="player-iframe"
-        src="https://www.youtube.com/embed/f3VORgqujlI?si=vWan4yvcWBJmY6AU&autoplay=1&mute=1&playsinline=1&enablejsapi=1"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+      <div id="player-container">
+        <video
+          id="tvufop-video"
+          playsinline
+          webkit-playsinline
+          autoplay
+          muted
+        ></video>
 
-      <!-- Overlay: aparece sobre o vídeo mudo; ao clicar desmuta e some -->
-      <button id="unmute-overlay" class="unmute-overlay" aria-label="Ativar Som">
-        <span class="icon" aria-hidden="true">
-          <!-- Triângulo de play (sem círculo de fundo), grande e com sombra -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48">
-            <!-- leve moldura de contraste (transparente) -->
-            <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="rgba(0,0,0,.12)"/>
-            <path d="M45 24 27 14v20z" fill="var(--bordo)" stroke="#fff" stroke-width="1.2"/>
-          </svg>
-        </span>
-      </button>
+        <!-- “barra de progresso” fixa com a bolinha colada à direita -->
+        <div class="live-progress">
+          <div class="live-line"></div>
+          <div class="live-dot"></div>
+        </div>
+
+        <!-- Barra inferior de controles -->
+        <div class="controls">
+          <button id="btn-play-pause" title="Reproduzir / Pausar">▶</button>
+
+          <button id="btn-mute" title="Ativar / desativar áudio">🔇</button>
+
+          <div class="volume-wrapper">
+            <input
+              id="volume-range"
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.8"
+            />
+          </div>
+
+          <div class="spacer"></div>
+
+          <span class="badge-hd">HD</span>
+
+          <span class="live-label">
+            <span class="live-label-dot"></span>
+            <span>Ao vivo</span>
+          </span>
+
+          <button id="btn-fullscreen" title="Tela cheia">⛶</button>
+        </div>
+      </div>
     </div>
 
     <div class="logos">
@@ -261,64 +407,255 @@
   })();
   </script>
 
-  <!-- YouTube Iframe API -->
-  <script src="https://www.youtube.com/iframe_api"></script>
-
-  <!-- Autoplay mudo + desmutar no clique do overlay -->
+  <!-- Player HLS: autoplay mudo + controles customizados -->
   <script>
-  (function(){
-    const iframe = document.getElementById('player-iframe');
-    const overlayBtn = document.getElementById('unmute-overlay');
+    (function () {
+      const video = document.getElementById("tvufop-video");
+      const container = document.getElementById("player-container");
 
-    // Garante 'origin' no SRC (recomendado pela API do YouTube)
-    try {
-      const u = new URL(iframe.src, location.href);
-      if (!u.searchParams.has('origin')) {
-        u.searchParams.set('origin', location.origin);
-        iframe.src = u.toString();
+      const playPauseBtn = document.getElementById("btn-play-pause");
+      const muteBtn = document.getElementById("btn-mute");
+      const volumeRange = document.getElementById("volume-range");
+      const fullscreenBtn = document.getElementById("btn-fullscreen");
+
+      const streamUrl = "https://app.tvufop.com.br/hls/tvufop.m3u8";
+
+      // Controle de visibilidade do overlay
+      let uiVisible = true;
+      let hideUiTimeout = null;
+
+      function hideUI() {
+        container.classList.add("ui-hidden");
+        uiVisible = false;
       }
-    } catch (e) {}
 
-    let player;
+      function showUI() {
+        container.classList.remove("ui-hidden");
+        uiVisible = true;
+        resetHideTimer();
+      }
 
-    // Chamado pela Iframe API quando pronta
-    window.onYouTubeIframeAPIReady = function(){
-      player = new YT.Player('player-iframe', {
-        events: {
-          onReady: (ev) => {
-            try {
-              ev.target.mute();
-              ev.target.playVideo(); // inicia mudo
-            } catch (_) {}
+      function resetHideTimer() {
+        if (hideUiTimeout) {
+          clearTimeout(hideUiTimeout);
+        }
+        // Não esconder automaticamente se o vídeo estiver pausado
+        if (video.paused) {
+          return;
+        }
+        hideUiTimeout = setTimeout(hideUI, 3000); // 3s após a última interação
+      }
+
+      // Qualquer atividade do usuário no container "acorda" o overlay
+      function registerUserActivity() {
+        showUI();
+      }
+
+      // Desktop: mover o mouse sobre o player
+      container.addEventListener("mousemove", registerUserActivity);
+
+      // Mobile / toque: início do toque em qualquer parte do player
+      container.addEventListener(
+        "touchstart",
+        function () {
+          registerUserActivity();
+        },
+        { passive: true }
+      );
+
+      // --------- FULLSCREEN (com fallbacks) ---------
+      function isFullscreen() {
+        return (
+          document.fullscreenElement ||
+          document.webkitFullscreenElement ||
+          document.mozFullScreenElement ||
+          document.msFullscreenElement
+        );
+      }
+
+      function enterFullscreen() {
+        const el = document.getElementById("player-box");
+
+        // Fullscreen API padrão
+        if (el.requestFullscreen) {
+          const p = el.requestFullscreen();
+          if (p && p.catch) {
+            p.catch(err => {
+              console.warn("Falha em requestFullscreen:", err);
+              // Fallback para iOS/Safari
+              if (video.webkitEnterFullscreen) {
+                video.webkitEnterFullscreen();
+              }
+            });
           }
+          return;
         }
-      });
-    };
 
-    // Clique no overlay: desmuta, mantém reprodução e esconde overlay
-    function handleUnmute() {
-      try {
-        if (player && player.unMute) {
-          player.unMute();
-          if (player.setVolume) player.setVolume(100);
-          if (player.playVideo) player.playVideo();
+        // Prefixados
+        if (el.webkitRequestFullscreen) {
+          el.webkitRequestFullscreen();
+          return;
         }
-      } catch(_) {}
-      overlayBtn.classList.add('is-hidden');
-      overlayBtn.removeEventListener('click', handleUnmute);
-      overlayBtn.removeEventListener('keydown', onKey);
-    }
+        if (el.mozRequestFullScreen) {
+          el.mozRequestFullScreen();
+          return;
+        }
+        if (el.msRequestFullscreen) {
+          el.msRequestFullscreen();
+          return;
+        }
 
-    function onKey(e){
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        handleUnmute();
+        // Fallback iOS (modo fullscreen só do vídeo)
+        if (video.webkitEnterFullscreen) {
+          video.webkitEnterFullscreen();
+        }
       }
-    }
 
-    overlayBtn.addEventListener('click', handleUnmute);
-    overlayBtn.addEventListener('keydown', onKey);
-  })();
+      function exitFullscreen() {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch?.(err => {
+            console.warn("Falha em exitFullscreen:", err);
+          });
+          return;
+        }
+        if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+          return;
+        }
+        if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+          return;
+        }
+        if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+          return;
+        }
+      }
+
+      function toggleFullscreen() {
+        if (isFullscreen()) {
+          exitFullscreen();
+        } else {
+          enterFullscreen();
+        }
+      }
+
+      ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach(ev => {
+        document.addEventListener(ev, () => {
+          // reservado para reagir a entrar/sair de tela cheia, se necessário
+        });
+      });
+
+      // --------- FIM FULLSCREEN ---------
+
+      // Carregar HLS
+      function initPlayer() {
+        if (video.canPlayType("application/vnd.apple.mpegurl")) {
+          // Safari / iOS com suporte nativo
+          video.src = streamUrl;
+        } else if (window.Hls && window.Hls.isSupported()) {
+          const hls = new Hls({
+            liveDurationInfinity: true
+          });
+          hls.loadSource(streamUrl);
+          hls.attachMedia(video);
+        } else {
+          console.warn("HLS não suportado neste navegador.");
+        }
+      }
+
+      // Tentar autoplay muted
+      function tryAutoplay() {
+        video.muted = true;
+        const promise = video.play();
+        if (promise && promise.catch) {
+          promise.catch(function (err) {
+            console.log("Autoplay bloqueado; aguardando interação do usuário.", err);
+          });
+        }
+      }
+
+      // Atualizar ícone de play/pause
+      function updatePlayPauseIcon() {
+        if (video.paused) {
+          playPauseBtn.textContent = "▶";
+        } else {
+          playPauseBtn.textContent = "❚❚";
+        }
+      }
+
+      // Atualizar ícone de mute
+      function updateMuteIcon() {
+        muteBtn.textContent = video.muted || video.volume === 0 ? "🔇" : "🔊";
+      }
+
+      // Controles
+      playPauseBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+        showUI();
+      });
+
+      muteBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        if (video.muted) {
+          video.muted = false;
+          if (video.volume === 0) {
+            video.volume = parseFloat(volumeRange.value) || 0.8;
+          }
+        } else {
+          video.muted = true;
+        }
+        updateMuteIcon();
+        showUI();
+      });
+
+      volumeRange.addEventListener("input", function (event) {
+        event.stopPropagation();
+        const vol = parseFloat(volumeRange.value);
+        video.volume = vol;
+        if (vol > 0 && video.muted) {
+          video.muted = false;
+        }
+        updateMuteIcon();
+        showUI();
+      });
+
+      fullscreenBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        toggleFullscreen();
+        showUI();
+      });
+
+      // Eventos do vídeo
+      video.addEventListener("play", function () {
+        updatePlayPauseIcon();
+        resetHideTimer();
+      });
+
+      video.addEventListener("pause", function () {
+        updatePlayPauseIcon();
+        // Em pausa, mantém os controles visíveis
+        showUI();
+      });
+
+      // Garante que ícones fiquem coerentes
+      video.addEventListener("volumechange", updateMuteIcon);
+
+      // Inicialização
+      initPlayer();
+
+      // UI começa visível
+      showUI();
+
+      // Tentar autoplay ao carregar a página e assim que o vídeo estiver pronto
+      window.addEventListener("load", tryAutoplay);
+      video.addEventListener("canplay", tryAutoplay);
+    })();
   </script>
 
   <!-- Service Worker -->
