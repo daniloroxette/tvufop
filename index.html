@@ -29,7 +29,12 @@
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
   <style>
-    :root { --bordo:#8C1B2B; }
+    :root {
+      --bordo:#8C1B2B;
+      --now-thumb-width:96px; /* largura da miniatura */
+      --now-thumb-gap:8px;    /* espaçamento entre miniatura e texto */
+    }
+
     *{box-sizing:border-box}
     body{
       font-family: Arial, sans-serif;
@@ -234,10 +239,10 @@
     #epg-inline-now-mobile .now-main{
       display:flex;
       align-items:flex-start;
-      gap:8px;
+      gap:var(--now-thumb-gap);
     }
     #epg-inline-now-mobile .thumb-wrap{
-      flex:0 0 96px;
+      flex:0 0 var(--now-thumb-width);
       border-radius:6px;
       overflow:hidden;
       background:#e0e0e0;
@@ -252,11 +257,13 @@
       font-weight:700;
       margin:0;
     }
+    /* descrição: primeira linha ao lado da miniatura, linhas seguintes embaixo dela */
     #epg-inline-now-mobile .now-desc{
       margin:8px 0 0;
       font-size:13px;
       color:#444;
       text-align:justify;
+      text-indent: calc(var(--now-thumb-width) + var(--now-thumb-gap));
     }
   </style>
 </head>
@@ -346,7 +353,7 @@
   })();
   </script>
 
-  <!-- Card "Em exibição agora" para app, usando /epg_proxy/now_next -->
+  <!-- Card "Em exibição agora" para app, usando now_next.json -->
   <script>
   (function () {
     var ENDPOINT   = "https://app.tvufop.com.br/epg/now_next.json";
