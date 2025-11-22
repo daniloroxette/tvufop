@@ -212,6 +212,52 @@
       margin:18px 0;
       opacity:.3;
     }
+
+    /* Card "Em exibição agora" para versão app */
+    #epg-inline-now-mobile{
+      margin:0 0 16px;
+      text-align:left;
+      font-family:Arial,sans-serif;
+    }
+    #epg-inline-now-mobile .now-card{
+      background:#f6f6f6;
+      border:1px solid #ddd;
+      border-radius:10px;
+      padding:10px 10px 12px;
+      max-width:100%;
+    }
+    #epg-inline-now-mobile .now-header{
+      font-size:12px;
+      font-weight:600;
+      margin:0 0 6px;
+    }
+    #epg-inline-now-mobile .now-main{
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+    }
+    #epg-inline-now-mobile .thumb-wrap{
+      flex:0 0 96px;
+      border-radius:6px;
+      overflow:hidden;
+      background:#e0e0e0;
+    }
+    #epg-inline-now-mobile .thumb-wrap img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    #epg-inline-now-mobile .now-title{
+      font-size:15px;
+      font-weight:700;
+      margin:0;
+    }
+    #epg-inline-now-mobile .now-desc{
+      margin:8px 0 0;
+      font-size:13px;
+      color:#444;
+      text-align:justify;
+    }
   </style>
 </head>
 <body>
@@ -273,6 +319,9 @@
       <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
     </div>
 
+    <!-- Card "Em exibição agora" -->
+    <div id="epg-inline-now-mobile"></div>
+
     <!-- Viewport rolável só da programação -->
     <div id="epg-viewport" role="region" aria-label="Programação">
       <div id="tvufop-epg"></div>
@@ -294,6 +343,78 @@
     }
     window.addEventListener('load', updateVars);
     window.addEventListener('resize', updateVars);
+  })();
+  </script>
+
+  <!-- Card "Em exibição agora" para app, usando /epg_proxy/now_next -->
+  <script>
+  (function () {
+    var ENDPOINT   = "https://app.tvufop.com.br/epg/now_next.json";
+    var REFRESH_MS = 30000;
+    var rootId     = "epg-inline-now-mobile";
+
+    function $(id){ return document.getElementById(id); }
+
+    function esc(s){
+      return String(s || "").replace(/[&<>"']/g, function (c) {
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          "\"": "&quot;",
+          "'": "&#39;"
+        }[c];
+      });
+    }
+
+    function ensureBox(){
+      var host = $(rootId);
+      if (!host) return null;
+      return host;
+    }
+
+    function render(data){
+      var box = ensureBox();
+      if (!box) return;
+
+      var c = data && data.current ? data.current : null;
+
+      var html = '<div class="now-card">';
+      html += '<div class="now-header">Em exibição agora:</div>';
+
+      if (c){
+        html += '<div class="now-main">';
+        if (c.thumb){
+          html += '<div class="thumb-wrap">';
+          html += '<img src="' + esc(c.thumb) + '" alt="' + esc(c.title || "") + '" loading="lazy">';
+          html += '</div>';
+        }
+        html += '<div class="now-text">';
+        html += '<p class="now-title">' + esc(c.title || "") + '</p>';
+        html += '</div></div>';
+        if (c.desc){
+          html += '<div class="now-desc">' + esc(c.desc) + '</div>';
+        }
+      } else {
+        html += '<div class="now-main"><p class="now-title">—</p></div>';
+      }
+
+      html += '</div>';
+
+      box.innerHTML = html;
+    }
+
+    function load(){
+      var box = $(rootId);
+      if (!box || !window.fetch) return;
+      fetch(ENDPOINT, { cache: "no-store" })
+        .then(function (r){ return r.json(); })
+        .then(render)
+        .catch(function(){ /* falha silenciosa */ });
+    }
+
+    load();
+    setInterval(load, REFRESH_MS);
   })();
   </script>
 
