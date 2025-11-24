@@ -31,7 +31,7 @@
   <style>
     :root {
       --bordo:#8C1B2B;
-      --now-thumb-width:96px; /* largura da miniatura */
+      --now-thumb-width:144px; /* largura da miniatura */
       --now-thumb-gap:8px;    /* espaçamento entre miniatura e texto */
     }
 
@@ -218,53 +218,84 @@
       opacity:.3;
     }
 
-    /* Card "Em exibição agora" para versão app */
-    #epg-inline-now-mobile{
-      margin:0 0 16px;
-      text-align:left;
-      font-family:Arial,sans-serif;
-    }
-    #epg-inline-now-mobile .now-card{
-      background:#f6f6f6;
-      border:1px solid #ddd;
-      border-radius:10px;
-      padding:10px 10px 12px;
-      max-width:100%;
-    }
-    #epg-inline-now-mobile .now-header{
-      font-size:12px;
-      font-weight:600;
-      margin:0 0 6px;
-    }
-    #epg-inline-now-mobile .now-main{
-      display:flex;
-      align-items:flex-start;
-      gap:var(--now-thumb-gap);
-    }
-    #epg-inline-now-mobile .thumb-wrap{
-      flex:0 0 var(--now-thumb-width);
-      border-radius:6px;
-      overflow:hidden;
-      background:#e0e0e0;
-    }
-    #epg-inline-now-mobile .thumb-wrap img{
-      display:block;
-      width:100%;
-      height:auto;
-    }
-    #epg-inline-now-mobile .now-title{
-      font-size:15px;
-      font-weight:700;
-      margin:0;
-    }
-    /* descrição: primeira linha ao lado da miniatura, linhas seguintes embaixo dela */
-    #epg-inline-now-mobile .now-desc{
-      margin:8px 0 0;
-      font-size:13px;
-      color:#444;
-      text-align:justify;
-      text-indent: calc(var(--now-thumb-width) + var(--now-thumb-gap));
-    }
+
+
+
+	/* Card "Em exibição agora" para versão app */
+	#epg-inline-now-mobile{
+	  margin:0 0 16px;
+	  text-align:left;
+	  font-family:Arial,sans-serif;
+	}
+
+	#epg-inline-now-mobile .now-card{
+	  background:#fafafa;
+	  border:1px solid #e0e0e0;
+	  border-radius:12px;
+	  padding:12px 12px 14px;
+	  max-width:100%;
+	  box-shadow:0 1px 3px rgba(0,0,0,0.08);
+	}
+
+	#epg-inline-now-mobile .now-header{
+	  font-size:12px;
+	  font-weight:600;
+	  margin:0 0 8px;
+	  color:#555;
+	}
+
+	#epg-inline-now-mobile .now-main{
+	  font-size:13px;
+	  line-height:1.35;
+	  position:relative;
+	}
+
+	/* miniatura maior, flutuando à esquerda */
+	#epg-inline-now-mobile .thumb-wrap{
+	  float:left;
+	  width:var(--now-thumb-width);
+	  margin-right:var(--now-thumb-gap);
+	  margin-bottom:6px;
+	  border-radius:8px;
+	  overflow:hidden;
+	  background:#e0e0e0;
+	}
+
+	#epg-inline-now-mobile .thumb-wrap img{
+	  display:block;
+	  width:100%;
+	  height:auto;
+	}
+
+	/* coluna de texto (título + descrição) ao lado da miniatura */
+	#epg-inline-now-mobile .now-text{
+	  font-size:13px;
+	}
+
+	/* título colado à miniatura */
+	#epg-inline-now-mobile .now-title{
+	  font-size:15px;
+	  font-weight:700;
+	  margin:0 0 4px;
+	}
+
+	/* descrição logo abaixo do título.
+	   Enquanto houver altura da miniatura, ela fica ao lado dela.
+	   Quando “acaba” a altura, o texto passa a ocupar a largura toda. */
+	#epg-inline-now-mobile .now-desc{
+	  margin:0;
+	  font-size:13px;
+	  color:#444;
+	  text-align:justify;
+	}
+
+	/* clearfix para o float da thumb */
+	#epg-inline-now-mobile .now-main::after{
+	  content:"";
+	  display:block;
+	  clear:both;
+	}
+	
   </style>
 </head>
 <body>
@@ -389,22 +420,23 @@
       var html = '<div class="now-card">';
       html += '<div class="now-header">Em exibição agora:</div>';
 
-      if (c){
-        html += '<div class="now-main">';
-        if (c.thumb){
-          html += '<div class="thumb-wrap">';
-          html += '<img src="' + esc(c.thumb) + '" alt="' + esc(c.title || "") + '" loading="lazy">';
-          html += '</div>';
-        }
-        html += '<div class="now-text">';
-        html += '<p class="now-title">' + esc(c.title || "") + '</p>';
-        html += '</div></div>';
-        if (c.desc){
-          html += '<div class="now-desc">' + esc(c.desc) + '</div>';
-        }
-      } else {
-        html += '<div class="now-main"><p class="now-title">—</p></div>';
-      }
+		if (c){
+		  html += '<div class="now-main">';
+		  if (c.thumb){
+			html += '<div class="thumb-wrap">';
+			html += '<img src="' + esc(c.thumb) + '" alt="' + esc(c.title || "") + '" loading="lazy">';
+			html += '</div>';
+		  }
+		  html += '<div class="now-text">';
+		  html += '<p class="now-title">' + esc(c.title || "") + '</p>';
+		  if (c.desc){
+			html += '<p class="now-desc">' + esc(c.desc) + '</p>';
+		  }
+		  html += '</div>'; // now-text
+		  html += '</div>'; // now-main
+		} else {
+		  html += '<div class="now-main"><p class="now-title">—</p></div>';
+		}
 
       html += '</div>';
 
