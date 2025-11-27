@@ -3,6 +3,8 @@ name: Sync EPG to Pages
 on:
   workflow_dispatch:
   schedule:
+    # Roda de hora em hora das 10h às 22h de segunda a sexta.
+    # A divisão em duas expressões é apenas para lidar com a mudança de dia no fuso horário quando passa de 21h/22h BRT para 00h/01h UTC.
     # Seg–Sex: 10h–20h BRT (13–23 UTC, mesmo dia)
     - cron: "0 13-23 * * 1-5"
 
