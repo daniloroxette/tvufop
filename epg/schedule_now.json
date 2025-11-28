@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-28T14:10:01.186400-03:00",
+  "generated_at": "2025-11-28T15:16:01.838734-03:00",
   "schedule": [
     {
       "start": "2025-11-28T00:00:01-03:00",
@@ -1136,6 +1136,3430 @@
       "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20N%C3%9ACLEO%20DE%20INVESTIGA%C3%87%C3%95ES%20FEMINISTAS%20-%20NINFEIAS.jpg?v=1762956765"
+    },
+    {
+      "start": "2025-11-29T00:00:01-03:00",
+      "stop": "2025-11-29T00:12:39-03:00",
+      "title": "(FUTURA) CANAL DA HISTÓRIA - JÂNIO QUADROS",
+      "desc": "Clara e Neto usam uma máquina do tempo para conversar com importantes figuras da nossa História.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CANAL%20DA%20HIST%C3%93RIA%20I%20J%C3%82NIO%20QUADROS.jpg?v=1760537422"
+    },
+    {
+      "start": "2025-11-29T00:12:39-03:00",
+      "stop": "2025-11-29T00:16:32-03:00",
+      "title": "POÉTICAS DO CORPO - DANÇA TEATRO",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20DAN%C3%87A%20TEATRO.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-11-29T00:16:32-03:00",
+      "stop": "2025-11-29T00:18:38-03:00",
+      "title": "SE LIGA AÍ - LITERATURA - VOZES GUARDADAS, DE ELISA LUCINDA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20VOZES%20GUARDADAS%2C%20DE%20ELISA%20LUCINDA.jpg?v=1762956761"
+    },
+    {
+      "start": "2025-11-29T00:18:38-03:00",
+      "stop": "2025-11-29T00:27:12-03:00",
+      "title": "UFOP EXPLICA - COMO COMBATER O CYBERBULLYING",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20COMO%20COMBATER%20O%20CYBERBULLYING.jpg?v=1762959221"
+    },
+    {
+      "start": "2025-11-29T00:27:12-03:00",
+      "stop": "2025-11-29T00:30:07-03:00",
+      "title": "MAIS UFOP - MEDICINA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20MEDICINA.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-11-29T00:30:07-03:00",
+      "stop": "2025-11-29T00:37:56-03:00",
+      "title": "SABOR DE MEMÓRIA (2018) - EP1 - ROSÁRIO DE FÁTIMA",
+      "desc": "Um olhar para os pratos culinários como forma de reconhecimento da nossa cultura e memória.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SABOR%20DE%20MEM%C3%93RIA%20I%20ROS%C3%81RIO%20DE%20F%C3%81TIMA.jpg?v=1762956908"
+    },
+    {
+      "start": "2025-11-29T00:37:56-03:00",
+      "stop": "2025-11-29T00:51:03-03:00",
+      "title": "UFOP EXPLICA - BOLETIM DE OCORRÊNCIA E SUA IMPORTÂNCIA",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20BOLETIM%20DE%20OCORR%C3%8ANCIA%20E%20SUA%20IMPORT%C3%82NCIA.jpg?v=1762959220"
+    },
+    {
+      "start": "2025-11-29T00:51:03-03:00",
+      "stop": "2025-11-29T00:54:31-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM MATEMÁTICA EM REDE NACIONAL",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20MATEM%C3%81TICA%20EM%20REDE%20NACIONAL.jpg?v=1762960519"
+    },
+    {
+      "start": "2025-11-29T00:54:31-03:00",
+      "stop": "2025-11-29T01:00:18-03:00",
+      "title": "SE LIGA AÍ - TEUDA BARA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20TEUDA%20BARA.jpg?v=1762956767"
+    },
+    {
+      "start": "2025-11-29T01:00:18-03:00",
+      "stop": "2025-11-29T01:09:19-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-11-29T01:09:19-03:00",
+      "stop": "2025-11-29T01:17:35-03:00",
+      "title": "REPORTAGEM - SEMINÁRIO: 10 ANOS DO ROMPIMENTO DA BARRAGEM DE FUNDÃO",
+      "desc": "Seminário destaca lutas e reparações no Alto Rio Doce, com foco nas comunidades.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20SEMIN%C3%81RIO%20-%2010%20ANOS%20DO%20ROMPIMENTO%20DA%20BARRAGEM%20DE%20FUND%C3%83O.jpg?v=1763469357"
+    },
+    {
+      "start": "2025-11-29T01:17:35-03:00",
+      "stop": "2025-11-29T01:30:18-03:00",
+      "title": "ENTREVISTA - NOVEMBRO AZUL",
+      "desc": "Urologista Nivan Gribel alerta sobre prevenção e conscientização do câncer de próstata.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ENTREVISTA%20-%20NOVEMBRO%20AZUL.jpg?v=1764005867"
+    },
+    {
+      "start": "2025-11-29T01:30:18-03:00",
+      "stop": "2025-11-29T01:42:59-03:00",
+      "title": "PÉ DA LETRA (2014) - CUSTA OS OLHOS DA CARA",
+      "desc": "Primeiro programa infantil criado pela TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/P%C3%89%20DA%20LETRA%20I%20OLHOS%20DA%20CARA.jpg?v=1759840886"
+    },
+    {
+      "start": "2025-11-29T01:42:59-03:00",
+      "stop": "2025-11-29T01:45:28-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "ConferênciaWeb, o serviço da RNP que disponibiliza salas virtuais para encontros.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1759842296"
+    },
+    {
+      "start": "2025-11-29T01:45:28-03:00",
+      "stop": "2025-11-29T01:49:01-03:00",
+      "title": "(FUTURA) QUE CORPO É ESSE? - SHARETHING",
+      "desc": "A série animada nos alerta sobre o conhecimento do próprio corpo e sobre o direito à sexualidade.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/QUE%20CORPO%20%C3%89%20ESSE%20I%20T2%20I%20EPIS%C3%93DIO%208%20I%20SHARETHING.jpg?v=1760538338"
+    },
+    {
+      "start": "2025-11-29T01:49:01-03:00",
+      "stop": "2025-11-29T01:56:08-03:00",
+      "title": "CURTA - SÓ SEI QUE FOI ASSIM",
+      "desc": "Curta em animação, idealizado, ilustrado e dirigido por Giovanna Muzel pela UFPEL.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20S%C3%93%20SEI%20QUE%20FOI%20ASSIM.jpg?v=1759769881"
+    },
+    {
+      "start": "2025-11-29T01:56:08-03:00",
+      "stop": "2025-11-29T02:00:18-03:00",
+      "title": "MAIS UFOP - ARTES CÊNICAS",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ARTES%20C%C3%8ANICAS.jpg?v=1762960475"
+    },
+    {
+      "start": "2025-11-29T02:00:18-03:00",
+      "stop": "2025-11-29T02:49:00-03:00",
+      "title": "(FUTURA) ESCOLAS INOVADORAS - LA CECILIA ARGENTINA",
+      "desc": "Descubra a inovação escolar e propostas inspiradoras para transformar o dia a dia da sala de aula.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESCOLAS%20INOVADORAS%20I%20LA%20CECILIA%20%28ARGENTINA%29.jpg?v=1760619873"
+    },
+    {
+      "start": "2025-11-29T02:49:00-03:00",
+      "stop": "2025-11-29T03:00:30-03:00",
+      "title": "UFOP EXPLICA - SEMINÁRIO NACIONAL DE DIREITO DO PATRIMÔNIO CULTURAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20PATRIM%C3%94NIO%20CULTURAL%2C%20SEMIN%C3%81RIO%20NACIONAL%20DE%20DIREITO%20DO%20PATRIM%C3%94NIO%20CULTURAL.jpg?v=1762959231"
+    },
+    {
+      "start": "2025-11-29T03:00:30-03:00",
+      "stop": "2025-11-29T03:05:21-03:00",
+      "title": "BOLETIM - SIMPÓSIO DE EMPREENDEDORISMO DA UFOP",
+      "desc": "Simpósio abre inscrições e promove ideias em inovação, sustentabilidade e desenvolvimento.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20SIMP%C3%93SIO%20DE%20EMPREENDEDORISMO%20DA%20UFOP.jpg?v=1763554954"
+    },
+    {
+      "start": "2025-11-29T03:05:21-03:00",
+      "stop": "2025-11-29T03:15:37-03:00",
+      "title": "REPORTAGEM - UFOP HOMENAGEIA SERVIDORES",
+      "desc": "Solenidades da UFOP têm posses, medalhas e homenagem à ex-reitora Cláudia Marliére.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20UFOP%20HOMENAGEIA%20SERVIDORES.jpg?v=1764246034"
+    },
+    {
+      "start": "2025-11-29T03:15:37-03:00",
+      "stop": "2025-11-29T03:45:56-03:00",
+      "title": "(EBC) INCLUSÃO PARA VALER - EP3 - JOSÉ EDUARDO",
+      "desc": "Mariana Rosa nos convida para um bate-papo sobre a inclusão escolar de pessoas com deficiência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/INCLUS%C3%83O%20PARA%20VALER%20-%20EP%2003.jpg?v=1761657807"
+    },
+    {
+      "start": "2025-11-29T03:45:56-03:00",
+      "stop": "2025-11-29T03:52:13-03:00",
+      "title": "UFOP EM CASA - TRECHOS ORQUESTRAIS PARA TROMPETE",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%202.jpg?v=1762959125"
+    },
+    {
+      "start": "2025-11-29T03:52:13-03:00",
+      "stop": "2025-11-29T04:00:33-03:00",
+      "title": "UFOP EXPLICA - BARRAGENS DE REJEITOS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20BARRAGENS%20DE%20REJEITOS.jpg?v=1762959220"
+    },
+    {
+      "start": "2025-11-29T04:00:33-03:00",
+      "stop": "2025-11-29T05:00:40-03:00",
+      "title": "(CANAL SAÚDE) SALA DE CONVIDADOS - BASE INDUSTRIAL",
+      "desc": "Programa do Canal Saúde que debate assuntos de saúde pública com especialistas e o público.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SALA%20DE%20CONVIDADOS%20I%20RETOMADA%20DO%20COMPLEXO%20ECON%C3%94MICO%20INDUSTRIAL%20DA%20SA%C3%9ADE.jpg?v=1760965852"
+    },
+    {
+      "start": "2025-11-29T05:00:40-03:00",
+      "stop": "2025-11-29T05:07:28-03:00",
+      "title": "BOLETIM - PARTICIPE DA AVALIAÇÃO INSTITUCIONAL DA UFOP",
+      "desc": "Comunidade é convidada a participar do Questionário de Avaliação Institucional da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PARTICIPE%20DA%20AVALIA%C3%87%C3%83O%20INSTITUCIONAL%20DA%20UFOP.jpg?v=1762876825"
+    },
+    {
+      "start": "2025-11-29T05:07:28-03:00",
+      "stop": "2025-11-29T05:15:48-03:00",
+      "title": "REPORTAGEM - SEMINÁRIO: 10 ANOS DO ROMPIMENTO DA BARRAGEM DE FUNDÃO",
+      "desc": "Seminário destaca lutas e reparações no Alto Rio Doce, com foco nas comunidades.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20SEMIN%C3%81RIO%20-%2010%20ANOS%20DO%20ROMPIMENTO%20DA%20BARRAGEM%20DE%20FUND%C3%83O.jpg?v=1763469357"
+    },
+    {
+      "start": "2025-11-29T05:15:48-03:00",
+      "stop": "2025-11-29T05:20:12-03:00",
+      "title": "(UFG) HORA DO CONTO - O ORGULHOSO",
+      "desc": "O programa Hora do Conto apresenta contos na Língua Brasileira de Sinais (Libras).",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/HORA%20DO%20CONTO%20I%20O%20ORGULHOSO%20LIBRAS.jpg?v=1760553142"
+    },
+    {
+      "start": "2025-11-29T05:20:12-03:00",
+      "stop": "2025-11-29T05:22:40-03:00",
+      "title": "VISIBILIDADE TRANS",
+      "desc": "No Brasil, o Dia da Visibilidade Trans é celebrado no dia 29 de janeiro.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VISIBILIDADE%20TRANS.jpg?v=1762882984"
+    },
+    {
+      "start": "2025-11-29T05:22:40-03:00",
+      "stop": "2025-11-29T05:25:10-03:00",
+      "title": "SE LIGA AÍ - LITERATURA - DOIS IRMÃOS, DE MILTON HATOUM",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20DOIS%20IRM%C3%83OS%2C%20DE%20MILTON%20HATOUM.jpg?v=1762956759"
+    },
+    {
+      "start": "2025-11-29T05:25:10-03:00",
+      "stop": "2025-11-29T05:31:03-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA O QUE É CIÊNCIA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20O%20QUE%20%C3%89%20CI%C3%8ANCIA.jpg?v=1758904147"
+    },
+    {
+      "start": "2025-11-29T05:31:03-03:00",
+      "stop": "2025-11-29T05:50:04-03:00",
+      "title": "VEREDAS (2018) - EP1 - BACIA DO CUSTÓDIO",
+      "desc": "Reflexões sobre o uso consciente dos recursos naturais e as possibilidades do ecoturismo.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEREDAS%20I%20BACIA%20DO%20CUST%C3%93DIO.jpg?v=1759844741"
+    },
+    {
+      "start": "2025-11-29T05:50:04-03:00",
+      "stop": "2025-11-29T05:53:47-03:00",
+      "title": "SE LIGA AÍ - MARACATU - KAREN AGUIAR",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20MARACATU%20-%20KAREN%20AGUIAR.jpg?v=1762956762"
+    },
+    {
+      "start": "2025-11-29T05:53:47-03:00",
+      "stop": "2025-11-29T05:56:51-03:00",
+      "title": "VENHA ESTUDAR COM A GENTE",
+      "desc": "Estudantes, servidores, trabalhadores e professores contam o que a UFOP tem de especial.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VENHA%20ESTUDAR%20COM%20A%20GENTE.jpg?v=1759844646"
+    },
+    {
+      "start": "2025-11-29T05:56:51-03:00",
+      "stop": "2025-11-29T06:00:33-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "ConferênciaWeb, o serviço da RNP que disponibiliza salas virtuais para encontros.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1759842296"
+    },
+    {
+      "start": "2025-11-29T06:00:33-03:00",
+      "stop": "2025-11-29T06:20:54-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP1 - JÚLIA E LÉO",
+      "desc": "Videocast do Cine Vila Rica para refletir sobre o universo cinematográfico.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CLAQU%C3%89TICOS%20%282025%29%20-%20EP2%20-%20J%C3%9ALIA%20E%20L%C3%89O.jpg?v=1759769287"
+    },
+    {
+      "start": "2025-11-29T06:20:54-03:00",
+      "stop": "2025-11-29T06:30:52-03:00",
+      "title": "UFOP EXPLICA - SEMINÁRIO NACIONAL DE DIREITO DO PATRIMÔNIO CULTURAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20PATRIM%C3%94NIO%20CULTURAL%2C%20SEMIN%C3%81RIO%20NACIONAL%20DE%20DIREITO%20DO%20PATRIM%C3%94NIO%20CULTURAL.jpg?v=1762959231"
+    },
+    {
+      "start": "2025-11-29T06:30:52-03:00",
+      "stop": "2025-11-29T07:00:31-03:00",
+      "title": "(FUTURA) ALMANAQUE SAÚDE - DROGAS",
+      "desc": "Temas importantes para a saúde dos brasileiros de forma informativa e descontraída.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ALMANAQUE%20SA%C3%9ADE%20I%20DROGAS.jpg?v=1761242242"
+    },
+    {
+      "start": "2025-11-29T07:00:31-03:00",
+      "stop": "2025-11-29T07:03:30-03:00",
+      "title": "BOLETIM - REFIS MARIANA 2025",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20REFIS%20MARIANA%202025.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-11-29T07:03:30-03:00",
+      "stop": "2025-11-29T07:05:52-03:00",
+      "title": "MAIS UFOP - LETRAS",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20LETRAS.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-11-29T07:05:52-03:00",
+      "stop": "2025-11-29T07:15:42-03:00",
+      "title": "BOLETIM - UFOP OFERECE DOUTORADO INTERINSTITUCIONAL",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20OFERECE%20DOUTORADO%20INTERINSTITUCIONAL.jpg?v=1761053838"
+    },
+    {
+      "start": "2025-11-29T07:15:42-03:00",
+      "stop": "2025-11-29T07:23:09-03:00",
+      "title": "(UFMG) MATERNIDADE ATÍPICA - ROTINA DE CUIDADOS",
+      "desc": "A série aborda os desafios no cuidado de pessoas com deficiência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MATERNIDADE%20ATIPICA%20-%20ROTINA%20DE%20CUIDADOS.jpg?v=1760623682"
+    },
+    {
+      "start": "2025-11-29T07:23:09-03:00",
+      "stop": "2025-11-29T07:30:10-03:00",
+      "title": "UFOP EXPLICA - 07 DICAS PARA COMBATER O SEDENTARISMO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%2007%20DICAS%20PARA%20COMBATER%20O%20SEDENTARISMO.jpg?v=1762959217"
+    },
+    {
+      "start": "2025-11-29T07:30:10-03:00",
+      "stop": "2025-11-29T07:52:44-03:00",
+      "title": "(UFPE) NA ESTRADA - ALAKAZAM",
+      "desc": "A série aborda aspectos relevantes dos campos artístico e cultural de Pernambuco e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/NA%20ESTRADA%20-%20ALAKAZAM.jpg?v=1760630439"
+    },
+    {
+      "start": "2025-11-29T07:52:44-03:00",
+      "stop": "2025-11-29T08:00:19-03:00",
+      "title": "SE LIGA AÍ - COLETIVO MINAS DA VOZ",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20COLETIVO%20MINAS%20DA%20VOZ.jpg?v=1762956757"
+    },
+    {
+      "start": "2025-11-29T08:00:19-03:00",
+      "stop": "2025-11-29T08:42:33-03:00",
+      "title": "ALÉM DOS MUROS (2024) - ARTHUR E RAQUEL",
+      "desc": "Novas formas pedagógicas realizadas através de experiências que unem a educação e o audiovisual.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/AL%C3%89M%20DOS%20MUROS%20I%20ARTHUR%20E%20RAQUEL.jpg?v=1759768609"
+    },
+    {
+      "start": "2025-11-29T08:42:33-03:00",
+      "stop": "2025-11-29T08:50:16-03:00",
+      "title": "UFOP EXPLICA - TRANSFOBIA PROPOSTAS DE POLÍTICAS AFIRMATIVAS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20TRANSFOBIA%20PROPOSTAS%20DE%20POL%C3%8DTICAS%20AFIRMATIVAS.jpg?v=1762959232"
+    },
+    {
+      "start": "2025-11-29T08:50:16-03:00",
+      "stop": "2025-11-29T09:00:13-03:00",
+      "title": "CURTA - PSIU ISSO AQUI TEM GRAÇA",
+      "desc": "Thaís Alessandra do Coletivo Cirandar, traz uma ótica sobre o feminismo através do humor.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20PSIU%20ISSO%20AQUI%20TEM%20GRA%C3%87A.jpg?v=1759769861"
+    },
+    {
+      "start": "2025-11-29T09:00:13-03:00",
+      "stop": "2025-11-29T09:09:27-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-11-29T09:09:27-03:00",
+      "stop": "2025-11-29T09:15:11-03:00",
+      "title": "BOLETIM - PARTICIPE DA AVALIAÇÃO INSTITUCIONAL DA UFOP",
+      "desc": "Comunidade é convidada a participar do Questionário de Avaliação Institucional da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PARTICIPE%20DA%20AVALIA%C3%87%C3%83O%20INSTITUCIONAL%20DA%20UFOP.jpg?v=1762876825"
+    },
+    {
+      "start": "2025-11-29T09:15:11-03:00",
+      "stop": "2025-11-29T09:24:03-03:00",
+      "title": "FLUXOARTE (2025) - EP4 - MARINA AZZE",
+      "desc": "Artistas apresentam e comentam o percurso de seus processos criativos singulares.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FLUXOARTE%20%282025%29%20-%20EP4%20-%20MARINA%20AZZE.jpg?v=1759771325"
+    },
+    {
+      "start": "2025-11-29T09:24:03-03:00",
+      "stop": "2025-11-29T09:26:15-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - O QUE É SUSTENTABILIDADE",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20O%20QUE%20%C3%89%20SUSTENTABILIDADE.jpg?v=1758904150"
+    },
+    {
+      "start": "2025-11-29T09:26:15-03:00",
+      "stop": "2025-11-29T09:29:35-03:00",
+      "title": "POÉTICAS DO CORPO - ENTRE FLUXOS",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20ENTRE%20FLUXOS.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-11-29T09:29:35-03:00",
+      "stop": "2025-11-29T09:39:34-03:00",
+      "title": "PORTUGUÊS DAQUI, PORTUGUÊS DE LÁ - O PORTUGUÊS É REALMENTE UMA LÍNGUA DIFÍCIL?",
+      "desc": "A série pretende desvendar as diversidades, complexidades e práticas da língua portuguesa.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PORTUGU%C3%8AS%20DAQUI%2C%20PORTUGU%C3%8AS%20DE%20L%C3%81%20I%20O%20PORTUGU%C3%8AS%20%C3%89%20REALMENTE%20UMA%20L%C3%8DNGUA%20DIF%C3%8DCIL.jpg?v=1759841114"
+    },
+    {
+      "start": "2025-11-29T09:39:34-03:00",
+      "stop": "2025-11-29T09:50:17-03:00",
+      "title": "UFOP EXPLICA - OVERDOSE DEPENDÊNCIAS QUÍMICAS E TRATAMENTO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20OVERDOSE%20DEPEND%C3%8ANCIAS%20QU%C3%8DMICAS%20E%20TRATAMENTO.jpg?v=1762959229"
+    },
+    {
+      "start": "2025-11-29T09:50:17-03:00",
+      "stop": "2025-11-29T09:55:13-03:00",
+      "title": "CUIDADOS COM A DENGUE",
+      "desc": "Atenção aos cuidados contra a Dengue! Afinal, ninguém quer receber essa visita inesperada, né!?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MONOLOGO%20DENGUE.jpg?v=1759769790"
+    },
+    {
+      "start": "2025-11-29T09:55:13-03:00",
+      "stop": "2025-11-29T09:57:19-03:00",
+      "title": "ANIVERSÁRIO TV UFOP - RONDON",
+      "desc": "Depoimentos e memórias de colaboradores da TV UFOP comemorando o aniversário de 13 anos do canal.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ANIVERS%C3%81RIO%20TV%2024%20I%201%20RONDOM.jpg?v=1759768768"
+    },
+    {
+      "start": "2025-11-29T09:57:19-03:00",
+      "stop": "2025-11-29T10:00:13-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO",
+      "desc": "O que você faria para mudar o mundo? Quais são suas ideias? Seus ideais? Como podemos fazer isso?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20-%204%20.jpg?v=1760550636"
+    },
+    {
+      "start": "2025-11-29T10:00:13-03:00",
+      "stop": "2025-11-29T10:25:55-03:00",
+      "title": "(REDE MINAS) ESTAÇÕES - MONTE AZUL",
+      "desc": "As estações de trem como linha condutora das histórias do povo mineiro.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESTA%C3%87%C3%95ES%20I%20PAI%20PEDRO%2C%20CATUTI%20E%20MONTE%20AZUL.jpg?v=1760620268"
+    },
+    {
+      "start": "2025-11-29T10:25:55-03:00",
+      "stop": "2025-11-29T10:30:47-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - DJANIRA DA MOTTA E SILVA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20DJANIRA%20DA%20MOTTA%20E%20SILVA.jpg?v=1762956763"
+    },
+    {
+      "start": "2025-11-29T10:30:47-03:00",
+      "stop": "2025-11-29T11:00:12-03:00",
+      "title": "(UERN) VEM VER - TURISMO VERDE",
+      "desc": "As belezas do estado do Rio Grande do Norte para além dos pontos turísticos já conhecidos.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEM%20VER%20-%20EPIS%C3%93DIO%2011%20-%20TURISMO%20VERDE%20.jpg?v=1760707949"
+    },
+    {
+      "start": "2025-11-29T11:00:12-03:00",
+      "stop": "2025-11-29T11:09:54-03:00",
+      "title": "REPORTAGEM - HACKATRAMPO REÚNE TALENTOS EM OURO PRETO",
+      "desc": "As reportagens expõem, analisam ou interpretam informações do cotidiano.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20HACKATRAMPO%20RE%C3%9ANE%20TALENTOS%20EM%20OURO%20PRETO.jpg?v=1762192921"
+    },
+    {
+      "start": "2025-11-29T11:09:54-03:00",
+      "stop": "2025-11-29T11:15:30-03:00",
+      "title": "BOLETIM - PROJETO CANTO COLETIVO DA UFOP",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PROJETO%20CANTO%20COLETIVO.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-11-29T11:15:30-03:00",
+      "stop": "2025-11-29T11:21:36-03:00",
+      "title": "A CENA MUDA (2015) - EP4 - CORTANDO CEBOLA",
+      "desc": "A Cena Muda é um programa inspirado no show antológico da cantora Maria Bethânia.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/A%20CENA%20MUDA%20I%20CORTADOR%20CEBOLA.jpg?v=1759768567"
+    },
+    {
+      "start": "2025-11-29T11:21:36-03:00",
+      "stop": "2025-11-29T11:30:16-03:00",
+      "title": "UFOP EXPLICA - ÁGUA: UM BEM DE USO COMUM",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20%C3%81GUA%20%C3%89%20DE%20TODOS.jpg?v=1762959219"
+    },
+    {
+      "start": "2025-11-29T11:30:16-03:00",
+      "stop": "2025-11-29T11:47:54-03:00",
+      "title": "CONGADEIROS (2018) - EP2 - ORIGENS DO CONGADO",
+      "desc": "A cultura do Congado em Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CONGADEIROS%20I%20EPIS%C3%93DIO%202.jpg?v=1759769412"
+    },
+    {
+      "start": "2025-11-29T11:47:54-03:00",
+      "stop": "2025-11-29T11:51:16-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - DENGUE E PREVENÇÃO",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20DENGUE%20E%20PREVEN%C3%87%C3%83O.jpg?v=1758904148"
+    },
+    {
+      "start": "2025-11-29T11:51:16-03:00",
+      "stop": "2025-11-29T11:54:52-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM FARMACÊUTICAS",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20-%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20CI%C3%8ANCIAS%20FARMAC%C3%8AUTICAS.jpg?v=1762960518"
+    },
+    {
+      "start": "2025-11-29T11:54:52-03:00",
+      "stop": "2025-11-29T11:57:12-03:00",
+      "title": "DIORAMA (2012) - ENGENHEIRO CORREA",
+      "desc": "Esta série apresenta os aspectos históricos e culturais da região de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIORAMA%20I%20ENGENHEIRO%20CORREA.jpg?v=1759769963"
+    },
+    {
+      "start": "2025-11-29T11:57:12-03:00",
+      "stop": "2025-11-29T11:59:00-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - NÚCLEO DE INVESTIGAÇÕES FEMINISTAS  - NINFEIAS",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20N%C3%9ACLEO%20DE%20INVESTIGA%C3%87%C3%95ES%20FEMINISTAS%20-%20NINFEIAS.jpg?v=1762956765"
+    },
+    {
+      "start": "2025-11-29T12:00:01-03:00",
+      "stop": "2025-11-29T12:12:39-03:00",
+      "title": "(FUTURA) CANAL DA HISTÓRIA - JÂNIO QUADROS",
+      "desc": "Clara e Neto usam uma máquina do tempo para conversar com importantes figuras da nossa História.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CANAL%20DA%20HIST%C3%93RIA%20I%20J%C3%82NIO%20QUADROS.jpg?v=1760537422"
+    },
+    {
+      "start": "2025-11-29T12:12:39-03:00",
+      "stop": "2025-11-29T12:16:32-03:00",
+      "title": "POÉTICAS DO CORPO - DANÇA TEATRO",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20DAN%C3%87A%20TEATRO.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-11-29T12:16:32-03:00",
+      "stop": "2025-11-29T12:18:38-03:00",
+      "title": "SE LIGA AÍ - LITERATURA - VOZES GUARDADAS, DE ELISA LUCINDA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20VOZES%20GUARDADAS%2C%20DE%20ELISA%20LUCINDA.jpg?v=1762956761"
+    },
+    {
+      "start": "2025-11-29T12:18:38-03:00",
+      "stop": "2025-11-29T12:27:12-03:00",
+      "title": "UFOP EXPLICA - COMO COMBATER O CYBERBULLYING",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20COMO%20COMBATER%20O%20CYBERBULLYING.jpg?v=1762959221"
+    },
+    {
+      "start": "2025-11-29T12:27:12-03:00",
+      "stop": "2025-11-29T12:30:07-03:00",
+      "title": "MAIS UFOP - MEDICINA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20MEDICINA.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-11-29T12:30:07-03:00",
+      "stop": "2025-11-29T12:37:56-03:00",
+      "title": "SABOR DE MEMÓRIA (2018) - EP1 - ROSÁRIO DE FÁTIMA",
+      "desc": "Um olhar para os pratos culinários como forma de reconhecimento da nossa cultura e memória.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SABOR%20DE%20MEM%C3%93RIA%20I%20ROS%C3%81RIO%20DE%20F%C3%81TIMA.jpg?v=1762956908"
+    },
+    {
+      "start": "2025-11-29T12:37:56-03:00",
+      "stop": "2025-11-29T12:51:03-03:00",
+      "title": "UFOP EXPLICA - BOLETIM DE OCORRÊNCIA E SUA IMPORTÂNCIA",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20BOLETIM%20DE%20OCORR%C3%8ANCIA%20E%20SUA%20IMPORT%C3%82NCIA.jpg?v=1762959220"
+    },
+    {
+      "start": "2025-11-29T12:51:03-03:00",
+      "stop": "2025-11-29T12:54:31-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM MATEMÁTICA EM REDE NACIONAL",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20MATEM%C3%81TICA%20EM%20REDE%20NACIONAL.jpg?v=1762960519"
+    },
+    {
+      "start": "2025-11-29T12:54:31-03:00",
+      "stop": "2025-11-29T13:00:18-03:00",
+      "title": "SE LIGA AÍ - TEUDA BARA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20TEUDA%20BARA.jpg?v=1762956767"
+    },
+    {
+      "start": "2025-11-29T13:00:18-03:00",
+      "stop": "2025-11-29T13:09:19-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-11-29T13:09:19-03:00",
+      "stop": "2025-11-29T13:17:35-03:00",
+      "title": "REPORTAGEM - SEMINÁRIO: 10 ANOS DO ROMPIMENTO DA BARRAGEM DE FUNDÃO",
+      "desc": "Seminário destaca lutas e reparações no Alto Rio Doce, com foco nas comunidades.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20SEMIN%C3%81RIO%20-%2010%20ANOS%20DO%20ROMPIMENTO%20DA%20BARRAGEM%20DE%20FUND%C3%83O.jpg?v=1763469357"
+    },
+    {
+      "start": "2025-11-29T13:17:35-03:00",
+      "stop": "2025-11-29T13:30:18-03:00",
+      "title": "ENTREVISTA - NOVEMBRO AZUL",
+      "desc": "Urologista Nivan Gribel alerta sobre prevenção e conscientização do câncer de próstata.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ENTREVISTA%20-%20NOVEMBRO%20AZUL.jpg?v=1764005867"
+    },
+    {
+      "start": "2025-11-29T13:30:18-03:00",
+      "stop": "2025-11-29T13:42:59-03:00",
+      "title": "PÉ DA LETRA (2014) - CUSTA OS OLHOS DA CARA",
+      "desc": "Primeiro programa infantil criado pela TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/P%C3%89%20DA%20LETRA%20I%20OLHOS%20DA%20CARA.jpg?v=1759840886"
+    },
+    {
+      "start": "2025-11-29T13:42:59-03:00",
+      "stop": "2025-11-29T13:45:28-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "ConferênciaWeb, o serviço da RNP que disponibiliza salas virtuais para encontros.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1759842296"
+    },
+    {
+      "start": "2025-11-29T13:45:28-03:00",
+      "stop": "2025-11-29T13:49:01-03:00",
+      "title": "(FUTURA) QUE CORPO É ESSE? - SHARETHING",
+      "desc": "A série animada nos alerta sobre o conhecimento do próprio corpo e sobre o direito à sexualidade.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/QUE%20CORPO%20%C3%89%20ESSE%20I%20T2%20I%20EPIS%C3%93DIO%208%20I%20SHARETHING.jpg?v=1760538338"
+    },
+    {
+      "start": "2025-11-29T13:49:01-03:00",
+      "stop": "2025-11-29T13:56:08-03:00",
+      "title": "CURTA - SÓ SEI QUE FOI ASSIM",
+      "desc": "Curta em animação, idealizado, ilustrado e dirigido por Giovanna Muzel pela UFPEL.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20S%C3%93%20SEI%20QUE%20FOI%20ASSIM.jpg?v=1759769881"
+    },
+    {
+      "start": "2025-11-29T13:56:08-03:00",
+      "stop": "2025-11-29T14:00:18-03:00",
+      "title": "MAIS UFOP - ARTES CÊNICAS",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ARTES%20C%C3%8ANICAS.jpg?v=1762960475"
+    },
+    {
+      "start": "2025-11-29T14:00:18-03:00",
+      "stop": "2025-11-29T14:49:00-03:00",
+      "title": "(FUTURA) ESCOLAS INOVADORAS - LA CECILIA ARGENTINA",
+      "desc": "Descubra a inovação escolar e propostas inspiradoras para transformar o dia a dia da sala de aula.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESCOLAS%20INOVADORAS%20I%20LA%20CECILIA%20%28ARGENTINA%29.jpg?v=1760619873"
+    },
+    {
+      "start": "2025-11-29T14:49:00-03:00",
+      "stop": "2025-11-29T15:00:30-03:00",
+      "title": "UFOP EXPLICA - SEMINÁRIO NACIONAL DE DIREITO DO PATRIMÔNIO CULTURAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20PATRIM%C3%94NIO%20CULTURAL%2C%20SEMIN%C3%81RIO%20NACIONAL%20DE%20DIREITO%20DO%20PATRIM%C3%94NIO%20CULTURAL.jpg?v=1762959231"
+    },
+    {
+      "start": "2025-11-29T15:00:30-03:00",
+      "stop": "2025-11-29T15:05:21-03:00",
+      "title": "BOLETIM - SIMPÓSIO DE EMPREENDEDORISMO DA UFOP",
+      "desc": "Simpósio abre inscrições e promove ideias em inovação, sustentabilidade e desenvolvimento.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20SIMP%C3%93SIO%20DE%20EMPREENDEDORISMO%20DA%20UFOP.jpg?v=1763554954"
+    },
+    {
+      "start": "2025-11-29T15:05:21-03:00",
+      "stop": "2025-11-29T15:15:37-03:00",
+      "title": "REPORTAGEM - UFOP HOMENAGEIA SERVIDORES",
+      "desc": "Solenidades da UFOP têm posses, medalhas e homenagem à ex-reitora Cláudia Marliére.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20UFOP%20HOMENAGEIA%20SERVIDORES.jpg?v=1764246034"
+    },
+    {
+      "start": "2025-11-29T15:15:37-03:00",
+      "stop": "2025-11-29T15:45:56-03:00",
+      "title": "(EBC) INCLUSÃO PARA VALER - EP3 - JOSÉ EDUARDO",
+      "desc": "Mariana Rosa nos convida para um bate-papo sobre a inclusão escolar de pessoas com deficiência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/INCLUS%C3%83O%20PARA%20VALER%20-%20EP%2003.jpg?v=1761657807"
+    },
+    {
+      "start": "2025-11-29T15:45:56-03:00",
+      "stop": "2025-11-29T15:52:13-03:00",
+      "title": "UFOP EM CASA - TRECHOS ORQUESTRAIS PARA TROMPETE",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%202.jpg?v=1762959125"
+    },
+    {
+      "start": "2025-11-29T15:52:13-03:00",
+      "stop": "2025-11-29T16:00:33-03:00",
+      "title": "UFOP EXPLICA - BARRAGENS DE REJEITOS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20BARRAGENS%20DE%20REJEITOS.jpg?v=1762959220"
+    },
+    {
+      "start": "2025-11-29T16:00:33-03:00",
+      "stop": "2025-11-29T17:00:40-03:00",
+      "title": "(CANAL SAÚDE) SALA DE CONVIDADOS - BASE INDUSTRIAL",
+      "desc": "Programa do Canal Saúde que debate assuntos de saúde pública com especialistas e o público.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SALA%20DE%20CONVIDADOS%20I%20RETOMADA%20DO%20COMPLEXO%20ECON%C3%94MICO%20INDUSTRIAL%20DA%20SA%C3%9ADE.jpg?v=1760965852"
+    },
+    {
+      "start": "2025-11-29T17:00:40-03:00",
+      "stop": "2025-11-29T17:07:28-03:00",
+      "title": "BOLETIM - PARTICIPE DA AVALIAÇÃO INSTITUCIONAL DA UFOP",
+      "desc": "Comunidade é convidada a participar do Questionário de Avaliação Institucional da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PARTICIPE%20DA%20AVALIA%C3%87%C3%83O%20INSTITUCIONAL%20DA%20UFOP.jpg?v=1762876825"
+    },
+    {
+      "start": "2025-11-29T17:07:28-03:00",
+      "stop": "2025-11-29T17:15:48-03:00",
+      "title": "REPORTAGEM - SEMINÁRIO: 10 ANOS DO ROMPIMENTO DA BARRAGEM DE FUNDÃO",
+      "desc": "Seminário destaca lutas e reparações no Alto Rio Doce, com foco nas comunidades.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20SEMIN%C3%81RIO%20-%2010%20ANOS%20DO%20ROMPIMENTO%20DA%20BARRAGEM%20DE%20FUND%C3%83O.jpg?v=1763469357"
+    },
+    {
+      "start": "2025-11-29T17:15:48-03:00",
+      "stop": "2025-11-29T17:20:12-03:00",
+      "title": "(UFG) HORA DO CONTO - O ORGULHOSO",
+      "desc": "O programa Hora do Conto apresenta contos na Língua Brasileira de Sinais (Libras).",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/HORA%20DO%20CONTO%20I%20O%20ORGULHOSO%20LIBRAS.jpg?v=1760553142"
+    },
+    {
+      "start": "2025-11-29T17:20:12-03:00",
+      "stop": "2025-11-29T17:22:40-03:00",
+      "title": "VISIBILIDADE TRANS",
+      "desc": "No Brasil, o Dia da Visibilidade Trans é celebrado no dia 29 de janeiro.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VISIBILIDADE%20TRANS.jpg?v=1762882984"
+    },
+    {
+      "start": "2025-11-29T17:22:40-03:00",
+      "stop": "2025-11-29T17:25:10-03:00",
+      "title": "SE LIGA AÍ - LITERATURA - DOIS IRMÃOS, DE MILTON HATOUM",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20DOIS%20IRM%C3%83OS%2C%20DE%20MILTON%20HATOUM.jpg?v=1762956759"
+    },
+    {
+      "start": "2025-11-29T17:25:10-03:00",
+      "stop": "2025-11-29T17:31:03-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA O QUE É CIÊNCIA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20O%20QUE%20%C3%89%20CI%C3%8ANCIA.jpg?v=1758904147"
+    },
+    {
+      "start": "2025-11-29T17:31:03-03:00",
+      "stop": "2025-11-29T17:50:04-03:00",
+      "title": "VEREDAS (2018) - EP1 - BACIA DO CUSTÓDIO",
+      "desc": "Reflexões sobre o uso consciente dos recursos naturais e as possibilidades do ecoturismo.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEREDAS%20I%20BACIA%20DO%20CUST%C3%93DIO.jpg?v=1759844741"
+    },
+    {
+      "start": "2025-11-29T17:50:04-03:00",
+      "stop": "2025-11-29T17:53:47-03:00",
+      "title": "SE LIGA AÍ - MARACATU - KAREN AGUIAR",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20MARACATU%20-%20KAREN%20AGUIAR.jpg?v=1762956762"
+    },
+    {
+      "start": "2025-11-29T17:53:47-03:00",
+      "stop": "2025-11-29T17:56:51-03:00",
+      "title": "VENHA ESTUDAR COM A GENTE",
+      "desc": "Estudantes, servidores, trabalhadores e professores contam o que a UFOP tem de especial.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VENHA%20ESTUDAR%20COM%20A%20GENTE.jpg?v=1759844646"
+    },
+    {
+      "start": "2025-11-29T17:56:51-03:00",
+      "stop": "2025-11-29T18:00:33-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "ConferênciaWeb, o serviço da RNP que disponibiliza salas virtuais para encontros.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1759842296"
+    },
+    {
+      "start": "2025-11-29T18:00:33-03:00",
+      "stop": "2025-11-29T18:20:54-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP1 - JÚLIA E LÉO",
+      "desc": "Videocast do Cine Vila Rica para refletir sobre o universo cinematográfico.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CLAQU%C3%89TICOS%20%282025%29%20-%20EP2%20-%20J%C3%9ALIA%20E%20L%C3%89O.jpg?v=1759769287"
+    },
+    {
+      "start": "2025-11-29T18:20:54-03:00",
+      "stop": "2025-11-29T18:30:52-03:00",
+      "title": "UFOP EXPLICA - SEMINÁRIO NACIONAL DE DIREITO DO PATRIMÔNIO CULTURAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20PATRIM%C3%94NIO%20CULTURAL%2C%20SEMIN%C3%81RIO%20NACIONAL%20DE%20DIREITO%20DO%20PATRIM%C3%94NIO%20CULTURAL.jpg?v=1762959231"
+    },
+    {
+      "start": "2025-11-29T18:30:52-03:00",
+      "stop": "2025-11-29T19:00:31-03:00",
+      "title": "(FUTURA) ALMANAQUE SAÚDE - DROGAS",
+      "desc": "Temas importantes para a saúde dos brasileiros de forma informativa e descontraída.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ALMANAQUE%20SA%C3%9ADE%20I%20DROGAS.jpg?v=1761242242"
+    },
+    {
+      "start": "2025-11-29T19:00:31-03:00",
+      "stop": "2025-11-29T19:03:30-03:00",
+      "title": "BOLETIM - REFIS MARIANA 2025",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20REFIS%20MARIANA%202025.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-11-29T19:03:30-03:00",
+      "stop": "2025-11-29T19:05:52-03:00",
+      "title": "MAIS UFOP - LETRAS",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20LETRAS.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-11-29T19:05:52-03:00",
+      "stop": "2025-11-29T19:15:42-03:00",
+      "title": "BOLETIM - UFOP OFERECE DOUTORADO INTERINSTITUCIONAL",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20OFERECE%20DOUTORADO%20INTERINSTITUCIONAL.jpg?v=1761053838"
+    },
+    {
+      "start": "2025-11-29T19:15:42-03:00",
+      "stop": "2025-11-29T19:23:09-03:00",
+      "title": "(UFMG) MATERNIDADE ATÍPICA - ROTINA DE CUIDADOS",
+      "desc": "A série aborda os desafios no cuidado de pessoas com deficiência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MATERNIDADE%20ATIPICA%20-%20ROTINA%20DE%20CUIDADOS.jpg?v=1760623682"
+    },
+    {
+      "start": "2025-11-29T19:23:09-03:00",
+      "stop": "2025-11-29T19:30:10-03:00",
+      "title": "UFOP EXPLICA - 07 DICAS PARA COMBATER O SEDENTARISMO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%2007%20DICAS%20PARA%20COMBATER%20O%20SEDENTARISMO.jpg?v=1762959217"
+    },
+    {
+      "start": "2025-11-29T19:30:10-03:00",
+      "stop": "2025-11-29T19:52:44-03:00",
+      "title": "(UFPE) NA ESTRADA - ALAKAZAM",
+      "desc": "A série aborda aspectos relevantes dos campos artístico e cultural de Pernambuco e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/NA%20ESTRADA%20-%20ALAKAZAM.jpg?v=1760630439"
+    },
+    {
+      "start": "2025-11-29T19:52:44-03:00",
+      "stop": "2025-11-29T20:00:19-03:00",
+      "title": "SE LIGA AÍ - COLETIVO MINAS DA VOZ",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20COLETIVO%20MINAS%20DA%20VOZ.jpg?v=1762956757"
+    },
+    {
+      "start": "2025-11-29T20:00:19-03:00",
+      "stop": "2025-11-29T20:42:33-03:00",
+      "title": "ALÉM DOS MUROS (2024) - ARTHUR E RAQUEL",
+      "desc": "Novas formas pedagógicas realizadas através de experiências que unem a educação e o audiovisual.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/AL%C3%89M%20DOS%20MUROS%20I%20ARTHUR%20E%20RAQUEL.jpg?v=1759768609"
+    },
+    {
+      "start": "2025-11-29T20:42:33-03:00",
+      "stop": "2025-11-29T20:50:16-03:00",
+      "title": "UFOP EXPLICA - TRANSFOBIA PROPOSTAS DE POLÍTICAS AFIRMATIVAS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20TRANSFOBIA%20PROPOSTAS%20DE%20POL%C3%8DTICAS%20AFIRMATIVAS.jpg?v=1762959232"
+    },
+    {
+      "start": "2025-11-29T20:50:16-03:00",
+      "stop": "2025-11-29T21:00:13-03:00",
+      "title": "CURTA - PSIU ISSO AQUI TEM GRAÇA",
+      "desc": "Thaís Alessandra do Coletivo Cirandar, traz uma ótica sobre o feminismo através do humor.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20PSIU%20ISSO%20AQUI%20TEM%20GRA%C3%87A.jpg?v=1759769861"
+    },
+    {
+      "start": "2025-11-29T21:00:13-03:00",
+      "stop": "2025-11-29T21:09:27-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-11-29T21:09:27-03:00",
+      "stop": "2025-11-29T21:15:11-03:00",
+      "title": "BOLETIM - PARTICIPE DA AVALIAÇÃO INSTITUCIONAL DA UFOP",
+      "desc": "Comunidade é convidada a participar do Questionário de Avaliação Institucional da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PARTICIPE%20DA%20AVALIA%C3%87%C3%83O%20INSTITUCIONAL%20DA%20UFOP.jpg?v=1762876825"
+    },
+    {
+      "start": "2025-11-29T21:15:11-03:00",
+      "stop": "2025-11-29T21:24:03-03:00",
+      "title": "FLUXOARTE (2025) - EP4 - MARINA AZZE",
+      "desc": "Artistas apresentam e comentam o percurso de seus processos criativos singulares.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FLUXOARTE%20%282025%29%20-%20EP4%20-%20MARINA%20AZZE.jpg?v=1759771325"
+    },
+    {
+      "start": "2025-11-29T21:24:03-03:00",
+      "stop": "2025-11-29T21:26:15-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - O QUE É SUSTENTABILIDADE",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20O%20QUE%20%C3%89%20SUSTENTABILIDADE.jpg?v=1758904150"
+    },
+    {
+      "start": "2025-11-29T21:26:15-03:00",
+      "stop": "2025-11-29T21:29:35-03:00",
+      "title": "POÉTICAS DO CORPO - ENTRE FLUXOS",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20ENTRE%20FLUXOS.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-11-29T21:29:35-03:00",
+      "stop": "2025-11-29T21:39:34-03:00",
+      "title": "PORTUGUÊS DAQUI, PORTUGUÊS DE LÁ - O PORTUGUÊS É REALMENTE UMA LÍNGUA DIFÍCIL?",
+      "desc": "A série pretende desvendar as diversidades, complexidades e práticas da língua portuguesa.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PORTUGU%C3%8AS%20DAQUI%2C%20PORTUGU%C3%8AS%20DE%20L%C3%81%20I%20O%20PORTUGU%C3%8AS%20%C3%89%20REALMENTE%20UMA%20L%C3%8DNGUA%20DIF%C3%8DCIL.jpg?v=1759841114"
+    },
+    {
+      "start": "2025-11-29T21:39:34-03:00",
+      "stop": "2025-11-29T21:50:17-03:00",
+      "title": "UFOP EXPLICA - OVERDOSE DEPENDÊNCIAS QUÍMICAS E TRATAMENTO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20OVERDOSE%20DEPEND%C3%8ANCIAS%20QU%C3%8DMICAS%20E%20TRATAMENTO.jpg?v=1762959229"
+    },
+    {
+      "start": "2025-11-29T21:50:17-03:00",
+      "stop": "2025-11-29T21:55:13-03:00",
+      "title": "CUIDADOS COM A DENGUE",
+      "desc": "Atenção aos cuidados contra a Dengue! Afinal, ninguém quer receber essa visita inesperada, né!?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MONOLOGO%20DENGUE.jpg?v=1759769790"
+    },
+    {
+      "start": "2025-11-29T21:55:13-03:00",
+      "stop": "2025-11-29T21:57:19-03:00",
+      "title": "ANIVERSÁRIO TV UFOP - RONDON",
+      "desc": "Depoimentos e memórias de colaboradores da TV UFOP comemorando o aniversário de 13 anos do canal.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ANIVERS%C3%81RIO%20TV%2024%20I%201%20RONDOM.jpg?v=1759768768"
+    },
+    {
+      "start": "2025-11-29T21:57:19-03:00",
+      "stop": "2025-11-29T22:00:13-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO",
+      "desc": "O que você faria para mudar o mundo? Quais são suas ideias? Seus ideais? Como podemos fazer isso?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20-%204%20.jpg?v=1760550636"
+    },
+    {
+      "start": "2025-11-29T22:00:13-03:00",
+      "stop": "2025-11-29T22:25:55-03:00",
+      "title": "(REDE MINAS) ESTAÇÕES - MONTE AZUL",
+      "desc": "As estações de trem como linha condutora das histórias do povo mineiro.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESTA%C3%87%C3%95ES%20I%20PAI%20PEDRO%2C%20CATUTI%20E%20MONTE%20AZUL.jpg?v=1760620268"
+    },
+    {
+      "start": "2025-11-29T22:25:55-03:00",
+      "stop": "2025-11-29T22:30:47-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - DJANIRA DA MOTTA E SILVA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20DJANIRA%20DA%20MOTTA%20E%20SILVA.jpg?v=1762956763"
+    },
+    {
+      "start": "2025-11-29T22:30:47-03:00",
+      "stop": "2025-11-29T23:00:12-03:00",
+      "title": "(UERN) VEM VER - TURISMO VERDE",
+      "desc": "As belezas do estado do Rio Grande do Norte para além dos pontos turísticos já conhecidos.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEM%20VER%20-%20EPIS%C3%93DIO%2011%20-%20TURISMO%20VERDE%20.jpg?v=1760707949"
+    },
+    {
+      "start": "2025-11-29T23:00:12-03:00",
+      "stop": "2025-11-29T23:09:54-03:00",
+      "title": "REPORTAGEM - HACKATRAMPO REÚNE TALENTOS EM OURO PRETO",
+      "desc": "As reportagens expõem, analisam ou interpretam informações do cotidiano.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20HACKATRAMPO%20RE%C3%9ANE%20TALENTOS%20EM%20OURO%20PRETO.jpg?v=1762192921"
+    },
+    {
+      "start": "2025-11-29T23:09:54-03:00",
+      "stop": "2025-11-29T23:15:30-03:00",
+      "title": "BOLETIM - PROJETO CANTO COLETIVO DA UFOP",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PROJETO%20CANTO%20COLETIVO.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-11-29T23:15:30-03:00",
+      "stop": "2025-11-29T23:21:36-03:00",
+      "title": "A CENA MUDA (2015) - EP4 - CORTANDO CEBOLA",
+      "desc": "A Cena Muda é um programa inspirado no show antológico da cantora Maria Bethânia.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/A%20CENA%20MUDA%20I%20CORTADOR%20CEBOLA.jpg?v=1759768567"
+    },
+    {
+      "start": "2025-11-29T23:21:36-03:00",
+      "stop": "2025-11-29T23:30:16-03:00",
+      "title": "UFOP EXPLICA - ÁGUA: UM BEM DE USO COMUM",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20%C3%81GUA%20%C3%89%20DE%20TODOS.jpg?v=1762959219"
+    },
+    {
+      "start": "2025-11-29T23:30:16-03:00",
+      "stop": "2025-11-29T23:47:54-03:00",
+      "title": "CONGADEIROS (2018) - EP2 - ORIGENS DO CONGADO",
+      "desc": "A cultura do Congado em Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CONGADEIROS%20I%20EPIS%C3%93DIO%202.jpg?v=1759769412"
+    },
+    {
+      "start": "2025-11-29T23:47:54-03:00",
+      "stop": "2025-11-29T23:51:16-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - DENGUE E PREVENÇÃO",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20DENGUE%20E%20PREVEN%C3%87%C3%83O.jpg?v=1758904148"
+    },
+    {
+      "start": "2025-11-29T23:51:16-03:00",
+      "stop": "2025-11-29T23:54:52-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM FARMACÊUTICAS",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20-%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20CI%C3%8ANCIAS%20FARMAC%C3%8AUTICAS.jpg?v=1762960518"
+    },
+    {
+      "start": "2025-11-29T23:54:52-03:00",
+      "stop": "2025-11-29T23:57:12-03:00",
+      "title": "DIORAMA (2012) - ENGENHEIRO CORREA",
+      "desc": "Esta série apresenta os aspectos históricos e culturais da região de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIORAMA%20I%20ENGENHEIRO%20CORREA.jpg?v=1759769963"
+    },
+    {
+      "start": "2025-11-29T23:57:12-03:00",
+      "stop": "2025-11-29T23:59:00-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - NÚCLEO DE INVESTIGAÇÕES FEMINISTAS  - NINFEIAS",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20N%C3%9ACLEO%20DE%20INVESTIGA%C3%87%C3%95ES%20FEMINISTAS%20-%20NINFEIAS.jpg?v=1762956765"
+    },
+    {
+      "start": "2025-11-30T00:00:01-03:00",
+      "stop": "2025-11-30T00:12:39-03:00",
+      "title": "(FUTURA) CANAL DA HISTÓRIA - JÂNIO QUADROS",
+      "desc": "Clara e Neto usam uma máquina do tempo para conversar com importantes figuras da nossa História.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CANAL%20DA%20HIST%C3%93RIA%20I%20J%C3%82NIO%20QUADROS.jpg?v=1760537422"
+    },
+    {
+      "start": "2025-11-30T00:12:39-03:00",
+      "stop": "2025-11-30T00:16:32-03:00",
+      "title": "POÉTICAS DO CORPO - DANÇA TEATRO",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20DAN%C3%87A%20TEATRO.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-11-30T00:16:32-03:00",
+      "stop": "2025-11-30T00:18:38-03:00",
+      "title": "SE LIGA AÍ - LITERATURA - VOZES GUARDADAS, DE ELISA LUCINDA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20VOZES%20GUARDADAS%2C%20DE%20ELISA%20LUCINDA.jpg?v=1762956761"
+    },
+    {
+      "start": "2025-11-30T00:18:38-03:00",
+      "stop": "2025-11-30T00:27:12-03:00",
+      "title": "UFOP EXPLICA - COMO COMBATER O CYBERBULLYING",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20COMO%20COMBATER%20O%20CYBERBULLYING.jpg?v=1762959221"
+    },
+    {
+      "start": "2025-11-30T00:27:12-03:00",
+      "stop": "2025-11-30T00:30:07-03:00",
+      "title": "MAIS UFOP - MEDICINA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20MEDICINA.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-11-30T00:30:07-03:00",
+      "stop": "2025-11-30T00:37:56-03:00",
+      "title": "SABOR DE MEMÓRIA (2018) - EP1 - ROSÁRIO DE FÁTIMA",
+      "desc": "Um olhar para os pratos culinários como forma de reconhecimento da nossa cultura e memória.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SABOR%20DE%20MEM%C3%93RIA%20I%20ROS%C3%81RIO%20DE%20F%C3%81TIMA.jpg?v=1762956908"
+    },
+    {
+      "start": "2025-11-30T00:37:56-03:00",
+      "stop": "2025-11-30T00:51:03-03:00",
+      "title": "UFOP EXPLICA - BOLETIM DE OCORRÊNCIA E SUA IMPORTÂNCIA",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20BOLETIM%20DE%20OCORR%C3%8ANCIA%20E%20SUA%20IMPORT%C3%82NCIA.jpg?v=1762959220"
+    },
+    {
+      "start": "2025-11-30T00:51:03-03:00",
+      "stop": "2025-11-30T00:54:31-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM MATEMÁTICA EM REDE NACIONAL",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20MATEM%C3%81TICA%20EM%20REDE%20NACIONAL.jpg?v=1762960519"
+    },
+    {
+      "start": "2025-11-30T00:54:31-03:00",
+      "stop": "2025-11-30T01:00:18-03:00",
+      "title": "SE LIGA AÍ - TEUDA BARA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20TEUDA%20BARA.jpg?v=1762956767"
+    },
+    {
+      "start": "2025-11-30T01:00:18-03:00",
+      "stop": "2025-11-30T01:09:19-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-11-30T01:09:19-03:00",
+      "stop": "2025-11-30T01:17:35-03:00",
+      "title": "REPORTAGEM - SEMINÁRIO: 10 ANOS DO ROMPIMENTO DA BARRAGEM DE FUNDÃO",
+      "desc": "Seminário destaca lutas e reparações no Alto Rio Doce, com foco nas comunidades.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20SEMIN%C3%81RIO%20-%2010%20ANOS%20DO%20ROMPIMENTO%20DA%20BARRAGEM%20DE%20FUND%C3%83O.jpg?v=1763469357"
+    },
+    {
+      "start": "2025-11-30T01:17:35-03:00",
+      "stop": "2025-11-30T01:30:18-03:00",
+      "title": "ENTREVISTA - NOVEMBRO AZUL",
+      "desc": "Urologista Nivan Gribel alerta sobre prevenção e conscientização do câncer de próstata.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ENTREVISTA%20-%20NOVEMBRO%20AZUL.jpg?v=1764005867"
+    },
+    {
+      "start": "2025-11-30T01:30:18-03:00",
+      "stop": "2025-11-30T01:42:59-03:00",
+      "title": "PÉ DA LETRA (2014) - CUSTA OS OLHOS DA CARA",
+      "desc": "Primeiro programa infantil criado pela TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/P%C3%89%20DA%20LETRA%20I%20OLHOS%20DA%20CARA.jpg?v=1759840886"
+    },
+    {
+      "start": "2025-11-30T01:42:59-03:00",
+      "stop": "2025-11-30T01:45:28-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "ConferênciaWeb, o serviço da RNP que disponibiliza salas virtuais para encontros.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1759842296"
+    },
+    {
+      "start": "2025-11-30T01:45:28-03:00",
+      "stop": "2025-11-30T01:49:01-03:00",
+      "title": "(FUTURA) QUE CORPO É ESSE? - SHARETHING",
+      "desc": "A série animada nos alerta sobre o conhecimento do próprio corpo e sobre o direito à sexualidade.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/QUE%20CORPO%20%C3%89%20ESSE%20I%20T2%20I%20EPIS%C3%93DIO%208%20I%20SHARETHING.jpg?v=1760538338"
+    },
+    {
+      "start": "2025-11-30T01:49:01-03:00",
+      "stop": "2025-11-30T01:56:08-03:00",
+      "title": "CURTA - SÓ SEI QUE FOI ASSIM",
+      "desc": "Curta em animação, idealizado, ilustrado e dirigido por Giovanna Muzel pela UFPEL.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20S%C3%93%20SEI%20QUE%20FOI%20ASSIM.jpg?v=1759769881"
+    },
+    {
+      "start": "2025-11-30T01:56:08-03:00",
+      "stop": "2025-11-30T02:00:18-03:00",
+      "title": "MAIS UFOP - ARTES CÊNICAS",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ARTES%20C%C3%8ANICAS.jpg?v=1762960475"
+    },
+    {
+      "start": "2025-11-30T02:00:18-03:00",
+      "stop": "2025-11-30T02:49:00-03:00",
+      "title": "(FUTURA) ESCOLAS INOVADORAS - LA CECILIA ARGENTINA",
+      "desc": "Descubra a inovação escolar e propostas inspiradoras para transformar o dia a dia da sala de aula.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESCOLAS%20INOVADORAS%20I%20LA%20CECILIA%20%28ARGENTINA%29.jpg?v=1760619873"
+    },
+    {
+      "start": "2025-11-30T02:49:00-03:00",
+      "stop": "2025-11-30T03:00:30-03:00",
+      "title": "UFOP EXPLICA - SEMINÁRIO NACIONAL DE DIREITO DO PATRIMÔNIO CULTURAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20PATRIM%C3%94NIO%20CULTURAL%2C%20SEMIN%C3%81RIO%20NACIONAL%20DE%20DIREITO%20DO%20PATRIM%C3%94NIO%20CULTURAL.jpg?v=1762959231"
+    },
+    {
+      "start": "2025-11-30T03:00:30-03:00",
+      "stop": "2025-11-30T03:05:21-03:00",
+      "title": "BOLETIM - SIMPÓSIO DE EMPREENDEDORISMO DA UFOP",
+      "desc": "Simpósio abre inscrições e promove ideias em inovação, sustentabilidade e desenvolvimento.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20SIMP%C3%93SIO%20DE%20EMPREENDEDORISMO%20DA%20UFOP.jpg?v=1763554954"
+    },
+    {
+      "start": "2025-11-30T03:05:21-03:00",
+      "stop": "2025-11-30T03:15:37-03:00",
+      "title": "REPORTAGEM - UFOP HOMENAGEIA SERVIDORES",
+      "desc": "Solenidades da UFOP têm posses, medalhas e homenagem à ex-reitora Cláudia Marliére.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20UFOP%20HOMENAGEIA%20SERVIDORES.jpg?v=1764246034"
+    },
+    {
+      "start": "2025-11-30T03:15:37-03:00",
+      "stop": "2025-11-30T03:45:56-03:00",
+      "title": "(EBC) INCLUSÃO PARA VALER - EP3 - JOSÉ EDUARDO",
+      "desc": "Mariana Rosa nos convida para um bate-papo sobre a inclusão escolar de pessoas com deficiência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/INCLUS%C3%83O%20PARA%20VALER%20-%20EP%2003.jpg?v=1761657807"
+    },
+    {
+      "start": "2025-11-30T03:45:56-03:00",
+      "stop": "2025-11-30T03:52:13-03:00",
+      "title": "UFOP EM CASA - TRECHOS ORQUESTRAIS PARA TROMPETE",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%202.jpg?v=1762959125"
+    },
+    {
+      "start": "2025-11-30T03:52:13-03:00",
+      "stop": "2025-11-30T04:00:33-03:00",
+      "title": "UFOP EXPLICA - BARRAGENS DE REJEITOS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20BARRAGENS%20DE%20REJEITOS.jpg?v=1762959220"
+    },
+    {
+      "start": "2025-11-30T04:00:33-03:00",
+      "stop": "2025-11-30T05:00:40-03:00",
+      "title": "(CANAL SAÚDE) SALA DE CONVIDADOS - BASE INDUSTRIAL",
+      "desc": "Programa do Canal Saúde que debate assuntos de saúde pública com especialistas e o público.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SALA%20DE%20CONVIDADOS%20I%20RETOMADA%20DO%20COMPLEXO%20ECON%C3%94MICO%20INDUSTRIAL%20DA%20SA%C3%9ADE.jpg?v=1760965852"
+    },
+    {
+      "start": "2025-11-30T05:00:40-03:00",
+      "stop": "2025-11-30T05:07:28-03:00",
+      "title": "BOLETIM - PARTICIPE DA AVALIAÇÃO INSTITUCIONAL DA UFOP",
+      "desc": "Comunidade é convidada a participar do Questionário de Avaliação Institucional da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PARTICIPE%20DA%20AVALIA%C3%87%C3%83O%20INSTITUCIONAL%20DA%20UFOP.jpg?v=1762876825"
+    },
+    {
+      "start": "2025-11-30T05:07:28-03:00",
+      "stop": "2025-11-30T05:15:48-03:00",
+      "title": "REPORTAGEM - SEMINÁRIO: 10 ANOS DO ROMPIMENTO DA BARRAGEM DE FUNDÃO",
+      "desc": "Seminário destaca lutas e reparações no Alto Rio Doce, com foco nas comunidades.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20SEMIN%C3%81RIO%20-%2010%20ANOS%20DO%20ROMPIMENTO%20DA%20BARRAGEM%20DE%20FUND%C3%83O.jpg?v=1763469357"
+    },
+    {
+      "start": "2025-11-30T05:15:48-03:00",
+      "stop": "2025-11-30T05:20:12-03:00",
+      "title": "(UFG) HORA DO CONTO - O ORGULHOSO",
+      "desc": "O programa Hora do Conto apresenta contos na Língua Brasileira de Sinais (Libras).",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/HORA%20DO%20CONTO%20I%20O%20ORGULHOSO%20LIBRAS.jpg?v=1760553142"
+    },
+    {
+      "start": "2025-11-30T05:20:12-03:00",
+      "stop": "2025-11-30T05:22:40-03:00",
+      "title": "VISIBILIDADE TRANS",
+      "desc": "No Brasil, o Dia da Visibilidade Trans é celebrado no dia 29 de janeiro.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VISIBILIDADE%20TRANS.jpg?v=1762882984"
+    },
+    {
+      "start": "2025-11-30T05:22:40-03:00",
+      "stop": "2025-11-30T05:25:10-03:00",
+      "title": "SE LIGA AÍ - LITERATURA - DOIS IRMÃOS, DE MILTON HATOUM",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20DOIS%20IRM%C3%83OS%2C%20DE%20MILTON%20HATOUM.jpg?v=1762956759"
+    },
+    {
+      "start": "2025-11-30T05:25:10-03:00",
+      "stop": "2025-11-30T05:31:03-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA O QUE É CIÊNCIA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20O%20QUE%20%C3%89%20CI%C3%8ANCIA.jpg?v=1758904147"
+    },
+    {
+      "start": "2025-11-30T05:31:03-03:00",
+      "stop": "2025-11-30T05:50:04-03:00",
+      "title": "VEREDAS (2018) - EP1 - BACIA DO CUSTÓDIO",
+      "desc": "Reflexões sobre o uso consciente dos recursos naturais e as possibilidades do ecoturismo.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEREDAS%20I%20BACIA%20DO%20CUST%C3%93DIO.jpg?v=1759844741"
+    },
+    {
+      "start": "2025-11-30T05:50:04-03:00",
+      "stop": "2025-11-30T05:53:47-03:00",
+      "title": "SE LIGA AÍ - MARACATU - KAREN AGUIAR",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20MARACATU%20-%20KAREN%20AGUIAR.jpg?v=1762956762"
+    },
+    {
+      "start": "2025-11-30T05:53:47-03:00",
+      "stop": "2025-11-30T05:56:51-03:00",
+      "title": "VENHA ESTUDAR COM A GENTE",
+      "desc": "Estudantes, servidores, trabalhadores e professores contam o que a UFOP tem de especial.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VENHA%20ESTUDAR%20COM%20A%20GENTE.jpg?v=1759844646"
+    },
+    {
+      "start": "2025-11-30T05:56:51-03:00",
+      "stop": "2025-11-30T06:00:33-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "ConferênciaWeb, o serviço da RNP que disponibiliza salas virtuais para encontros.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1759842296"
+    },
+    {
+      "start": "2025-11-30T06:00:33-03:00",
+      "stop": "2025-11-30T06:20:54-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP1 - JÚLIA E LÉO",
+      "desc": "Videocast do Cine Vila Rica para refletir sobre o universo cinematográfico.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CLAQU%C3%89TICOS%20%282025%29%20-%20EP2%20-%20J%C3%9ALIA%20E%20L%C3%89O.jpg?v=1759769287"
+    },
+    {
+      "start": "2025-11-30T06:20:54-03:00",
+      "stop": "2025-11-30T06:30:52-03:00",
+      "title": "UFOP EXPLICA - SEMINÁRIO NACIONAL DE DIREITO DO PATRIMÔNIO CULTURAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20PATRIM%C3%94NIO%20CULTURAL%2C%20SEMIN%C3%81RIO%20NACIONAL%20DE%20DIREITO%20DO%20PATRIM%C3%94NIO%20CULTURAL.jpg?v=1762959231"
+    },
+    {
+      "start": "2025-11-30T06:30:52-03:00",
+      "stop": "2025-11-30T07:00:31-03:00",
+      "title": "(FUTURA) ALMANAQUE SAÚDE - DROGAS",
+      "desc": "Temas importantes para a saúde dos brasileiros de forma informativa e descontraída.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ALMANAQUE%20SA%C3%9ADE%20I%20DROGAS.jpg?v=1761242242"
+    },
+    {
+      "start": "2025-11-30T07:00:31-03:00",
+      "stop": "2025-11-30T07:03:30-03:00",
+      "title": "BOLETIM - REFIS MARIANA 2025",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20REFIS%20MARIANA%202025.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-11-30T07:03:30-03:00",
+      "stop": "2025-11-30T07:05:52-03:00",
+      "title": "MAIS UFOP - LETRAS",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20LETRAS.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-11-30T07:05:52-03:00",
+      "stop": "2025-11-30T07:15:42-03:00",
+      "title": "BOLETIM - UFOP OFERECE DOUTORADO INTERINSTITUCIONAL",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20OFERECE%20DOUTORADO%20INTERINSTITUCIONAL.jpg?v=1761053838"
+    },
+    {
+      "start": "2025-11-30T07:15:42-03:00",
+      "stop": "2025-11-30T07:23:09-03:00",
+      "title": "(UFMG) MATERNIDADE ATÍPICA - ROTINA DE CUIDADOS",
+      "desc": "A série aborda os desafios no cuidado de pessoas com deficiência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MATERNIDADE%20ATIPICA%20-%20ROTINA%20DE%20CUIDADOS.jpg?v=1760623682"
+    },
+    {
+      "start": "2025-11-30T07:23:09-03:00",
+      "stop": "2025-11-30T07:30:10-03:00",
+      "title": "UFOP EXPLICA - 07 DICAS PARA COMBATER O SEDENTARISMO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%2007%20DICAS%20PARA%20COMBATER%20O%20SEDENTARISMO.jpg?v=1762959217"
+    },
+    {
+      "start": "2025-11-30T07:30:10-03:00",
+      "stop": "2025-11-30T07:52:44-03:00",
+      "title": "(UFPE) NA ESTRADA - ALAKAZAM",
+      "desc": "A série aborda aspectos relevantes dos campos artístico e cultural de Pernambuco e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/NA%20ESTRADA%20-%20ALAKAZAM.jpg?v=1760630439"
+    },
+    {
+      "start": "2025-11-30T07:52:44-03:00",
+      "stop": "2025-11-30T08:00:19-03:00",
+      "title": "SE LIGA AÍ - COLETIVO MINAS DA VOZ",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20COLETIVO%20MINAS%20DA%20VOZ.jpg?v=1762956757"
+    },
+    {
+      "start": "2025-11-30T08:00:19-03:00",
+      "stop": "2025-11-30T08:42:33-03:00",
+      "title": "ALÉM DOS MUROS (2024) - ARTHUR E RAQUEL",
+      "desc": "Novas formas pedagógicas realizadas através de experiências que unem a educação e o audiovisual.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/AL%C3%89M%20DOS%20MUROS%20I%20ARTHUR%20E%20RAQUEL.jpg?v=1759768609"
+    },
+    {
+      "start": "2025-11-30T08:42:33-03:00",
+      "stop": "2025-11-30T08:50:16-03:00",
+      "title": "UFOP EXPLICA - TRANSFOBIA PROPOSTAS DE POLÍTICAS AFIRMATIVAS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20TRANSFOBIA%20PROPOSTAS%20DE%20POL%C3%8DTICAS%20AFIRMATIVAS.jpg?v=1762959232"
+    },
+    {
+      "start": "2025-11-30T08:50:16-03:00",
+      "stop": "2025-11-30T09:00:13-03:00",
+      "title": "CURTA - PSIU ISSO AQUI TEM GRAÇA",
+      "desc": "Thaís Alessandra do Coletivo Cirandar, traz uma ótica sobre o feminismo através do humor.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20PSIU%20ISSO%20AQUI%20TEM%20GRA%C3%87A.jpg?v=1759769861"
+    },
+    {
+      "start": "2025-11-30T09:00:13-03:00",
+      "stop": "2025-11-30T09:09:27-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-11-30T09:09:27-03:00",
+      "stop": "2025-11-30T09:15:11-03:00",
+      "title": "BOLETIM - PARTICIPE DA AVALIAÇÃO INSTITUCIONAL DA UFOP",
+      "desc": "Comunidade é convidada a participar do Questionário de Avaliação Institucional da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PARTICIPE%20DA%20AVALIA%C3%87%C3%83O%20INSTITUCIONAL%20DA%20UFOP.jpg?v=1762876825"
+    },
+    {
+      "start": "2025-11-30T09:15:11-03:00",
+      "stop": "2025-11-30T09:24:03-03:00",
+      "title": "FLUXOARTE (2025) - EP4 - MARINA AZZE",
+      "desc": "Artistas apresentam e comentam o percurso de seus processos criativos singulares.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FLUXOARTE%20%282025%29%20-%20EP4%20-%20MARINA%20AZZE.jpg?v=1759771325"
+    },
+    {
+      "start": "2025-11-30T09:24:03-03:00",
+      "stop": "2025-11-30T09:26:15-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - O QUE É SUSTENTABILIDADE",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20O%20QUE%20%C3%89%20SUSTENTABILIDADE.jpg?v=1758904150"
+    },
+    {
+      "start": "2025-11-30T09:26:15-03:00",
+      "stop": "2025-11-30T09:29:35-03:00",
+      "title": "POÉTICAS DO CORPO - ENTRE FLUXOS",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20ENTRE%20FLUXOS.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-11-30T09:29:35-03:00",
+      "stop": "2025-11-30T09:39:34-03:00",
+      "title": "PORTUGUÊS DAQUI, PORTUGUÊS DE LÁ - O PORTUGUÊS É REALMENTE UMA LÍNGUA DIFÍCIL?",
+      "desc": "A série pretende desvendar as diversidades, complexidades e práticas da língua portuguesa.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PORTUGU%C3%8AS%20DAQUI%2C%20PORTUGU%C3%8AS%20DE%20L%C3%81%20I%20O%20PORTUGU%C3%8AS%20%C3%89%20REALMENTE%20UMA%20L%C3%8DNGUA%20DIF%C3%8DCIL.jpg?v=1759841114"
+    },
+    {
+      "start": "2025-11-30T09:39:34-03:00",
+      "stop": "2025-11-30T09:50:17-03:00",
+      "title": "UFOP EXPLICA - OVERDOSE DEPENDÊNCIAS QUÍMICAS E TRATAMENTO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20OVERDOSE%20DEPEND%C3%8ANCIAS%20QU%C3%8DMICAS%20E%20TRATAMENTO.jpg?v=1762959229"
+    },
+    {
+      "start": "2025-11-30T09:50:17-03:00",
+      "stop": "2025-11-30T09:55:13-03:00",
+      "title": "CUIDADOS COM A DENGUE",
+      "desc": "Atenção aos cuidados contra a Dengue! Afinal, ninguém quer receber essa visita inesperada, né!?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MONOLOGO%20DENGUE.jpg?v=1759769790"
+    },
+    {
+      "start": "2025-11-30T09:55:13-03:00",
+      "stop": "2025-11-30T09:57:19-03:00",
+      "title": "ANIVERSÁRIO TV UFOP - RONDON",
+      "desc": "Depoimentos e memórias de colaboradores da TV UFOP comemorando o aniversário de 13 anos do canal.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ANIVERS%C3%81RIO%20TV%2024%20I%201%20RONDOM.jpg?v=1759768768"
+    },
+    {
+      "start": "2025-11-30T09:57:19-03:00",
+      "stop": "2025-11-30T10:00:13-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO",
+      "desc": "O que você faria para mudar o mundo? Quais são suas ideias? Seus ideais? Como podemos fazer isso?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20-%204%20.jpg?v=1760550636"
+    },
+    {
+      "start": "2025-11-30T10:00:13-03:00",
+      "stop": "2025-11-30T10:25:55-03:00",
+      "title": "(REDE MINAS) ESTAÇÕES - MONTE AZUL",
+      "desc": "As estações de trem como linha condutora das histórias do povo mineiro.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESTA%C3%87%C3%95ES%20I%20PAI%20PEDRO%2C%20CATUTI%20E%20MONTE%20AZUL.jpg?v=1760620268"
+    },
+    {
+      "start": "2025-11-30T10:25:55-03:00",
+      "stop": "2025-11-30T10:30:47-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - DJANIRA DA MOTTA E SILVA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20DJANIRA%20DA%20MOTTA%20E%20SILVA.jpg?v=1762956763"
+    },
+    {
+      "start": "2025-11-30T10:30:47-03:00",
+      "stop": "2025-11-30T11:00:12-03:00",
+      "title": "(UERN) VEM VER - TURISMO VERDE",
+      "desc": "As belezas do estado do Rio Grande do Norte para além dos pontos turísticos já conhecidos.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEM%20VER%20-%20EPIS%C3%93DIO%2011%20-%20TURISMO%20VERDE%20.jpg?v=1760707949"
+    },
+    {
+      "start": "2025-11-30T11:00:12-03:00",
+      "stop": "2025-11-30T11:09:54-03:00",
+      "title": "REPORTAGEM - HACKATRAMPO REÚNE TALENTOS EM OURO PRETO",
+      "desc": "As reportagens expõem, analisam ou interpretam informações do cotidiano.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20HACKATRAMPO%20RE%C3%9ANE%20TALENTOS%20EM%20OURO%20PRETO.jpg?v=1762192921"
+    },
+    {
+      "start": "2025-11-30T11:09:54-03:00",
+      "stop": "2025-11-30T11:15:30-03:00",
+      "title": "BOLETIM - PROJETO CANTO COLETIVO DA UFOP",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PROJETO%20CANTO%20COLETIVO.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-11-30T11:15:30-03:00",
+      "stop": "2025-11-30T11:21:36-03:00",
+      "title": "A CENA MUDA (2015) - EP4 - CORTANDO CEBOLA",
+      "desc": "A Cena Muda é um programa inspirado no show antológico da cantora Maria Bethânia.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/A%20CENA%20MUDA%20I%20CORTADOR%20CEBOLA.jpg?v=1759768567"
+    },
+    {
+      "start": "2025-11-30T11:21:36-03:00",
+      "stop": "2025-11-30T11:30:16-03:00",
+      "title": "UFOP EXPLICA - ÁGUA: UM BEM DE USO COMUM",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20%C3%81GUA%20%C3%89%20DE%20TODOS.jpg?v=1762959219"
+    },
+    {
+      "start": "2025-11-30T11:30:16-03:00",
+      "stop": "2025-11-30T11:47:54-03:00",
+      "title": "CONGADEIROS (2018) - EP2 - ORIGENS DO CONGADO",
+      "desc": "A cultura do Congado em Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CONGADEIROS%20I%20EPIS%C3%93DIO%202.jpg?v=1759769412"
+    },
+    {
+      "start": "2025-11-30T11:47:54-03:00",
+      "stop": "2025-11-30T11:51:16-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - DENGUE E PREVENÇÃO",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20DENGUE%20E%20PREVEN%C3%87%C3%83O.jpg?v=1758904148"
+    },
+    {
+      "start": "2025-11-30T11:51:16-03:00",
+      "stop": "2025-11-30T11:54:52-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM FARMACÊUTICAS",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20-%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20CI%C3%8ANCIAS%20FARMAC%C3%8AUTICAS.jpg?v=1762960518"
+    },
+    {
+      "start": "2025-11-30T11:54:52-03:00",
+      "stop": "2025-11-30T11:57:12-03:00",
+      "title": "DIORAMA (2012) - ENGENHEIRO CORREA",
+      "desc": "Esta série apresenta os aspectos históricos e culturais da região de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIORAMA%20I%20ENGENHEIRO%20CORREA.jpg?v=1759769963"
+    },
+    {
+      "start": "2025-11-30T11:57:12-03:00",
+      "stop": "2025-11-30T11:59:00-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - NÚCLEO DE INVESTIGAÇÕES FEMINISTAS  - NINFEIAS",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20N%C3%9ACLEO%20DE%20INVESTIGA%C3%87%C3%95ES%20FEMINISTAS%20-%20NINFEIAS.jpg?v=1762956765"
+    },
+    {
+      "start": "2025-11-30T12:00:01-03:00",
+      "stop": "2025-11-30T12:12:39-03:00",
+      "title": "(FUTURA) CANAL DA HISTÓRIA - JÂNIO QUADROS",
+      "desc": "Clara e Neto usam uma máquina do tempo para conversar com importantes figuras da nossa História.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CANAL%20DA%20HIST%C3%93RIA%20I%20J%C3%82NIO%20QUADROS.jpg?v=1760537422"
+    },
+    {
+      "start": "2025-11-30T12:12:39-03:00",
+      "stop": "2025-11-30T12:16:32-03:00",
+      "title": "POÉTICAS DO CORPO - DANÇA TEATRO",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20DAN%C3%87A%20TEATRO.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-11-30T12:16:32-03:00",
+      "stop": "2025-11-30T12:18:38-03:00",
+      "title": "SE LIGA AÍ - LITERATURA - VOZES GUARDADAS, DE ELISA LUCINDA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20VOZES%20GUARDADAS%2C%20DE%20ELISA%20LUCINDA.jpg?v=1762956761"
+    },
+    {
+      "start": "2025-11-30T12:18:38-03:00",
+      "stop": "2025-11-30T12:27:12-03:00",
+      "title": "UFOP EXPLICA - COMO COMBATER O CYBERBULLYING",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20COMO%20COMBATER%20O%20CYBERBULLYING.jpg?v=1762959221"
+    },
+    {
+      "start": "2025-11-30T12:27:12-03:00",
+      "stop": "2025-11-30T12:30:07-03:00",
+      "title": "MAIS UFOP - MEDICINA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20MEDICINA.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-11-30T12:30:07-03:00",
+      "stop": "2025-11-30T12:37:56-03:00",
+      "title": "SABOR DE MEMÓRIA (2018) - EP1 - ROSÁRIO DE FÁTIMA",
+      "desc": "Um olhar para os pratos culinários como forma de reconhecimento da nossa cultura e memória.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SABOR%20DE%20MEM%C3%93RIA%20I%20ROS%C3%81RIO%20DE%20F%C3%81TIMA.jpg?v=1762956908"
+    },
+    {
+      "start": "2025-11-30T12:37:56-03:00",
+      "stop": "2025-11-30T12:51:03-03:00",
+      "title": "UFOP EXPLICA - BOLETIM DE OCORRÊNCIA E SUA IMPORTÂNCIA",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20BOLETIM%20DE%20OCORR%C3%8ANCIA%20E%20SUA%20IMPORT%C3%82NCIA.jpg?v=1762959220"
+    },
+    {
+      "start": "2025-11-30T12:51:03-03:00",
+      "stop": "2025-11-30T12:54:31-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM MATEMÁTICA EM REDE NACIONAL",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20MATEM%C3%81TICA%20EM%20REDE%20NACIONAL.jpg?v=1762960519"
+    },
+    {
+      "start": "2025-11-30T12:54:31-03:00",
+      "stop": "2025-11-30T13:00:18-03:00",
+      "title": "SE LIGA AÍ - TEUDA BARA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20TEUDA%20BARA.jpg?v=1762956767"
+    },
+    {
+      "start": "2025-11-30T13:00:18-03:00",
+      "stop": "2025-11-30T13:09:19-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-11-30T13:09:19-03:00",
+      "stop": "2025-11-30T13:17:35-03:00",
+      "title": "REPORTAGEM - SEMINÁRIO: 10 ANOS DO ROMPIMENTO DA BARRAGEM DE FUNDÃO",
+      "desc": "Seminário destaca lutas e reparações no Alto Rio Doce, com foco nas comunidades.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20SEMIN%C3%81RIO%20-%2010%20ANOS%20DO%20ROMPIMENTO%20DA%20BARRAGEM%20DE%20FUND%C3%83O.jpg?v=1763469357"
+    },
+    {
+      "start": "2025-11-30T13:17:35-03:00",
+      "stop": "2025-11-30T13:30:18-03:00",
+      "title": "ENTREVISTA - NOVEMBRO AZUL",
+      "desc": "Urologista Nivan Gribel alerta sobre prevenção e conscientização do câncer de próstata.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ENTREVISTA%20-%20NOVEMBRO%20AZUL.jpg?v=1764005867"
+    },
+    {
+      "start": "2025-11-30T13:30:18-03:00",
+      "stop": "2025-11-30T13:42:59-03:00",
+      "title": "PÉ DA LETRA (2014) - CUSTA OS OLHOS DA CARA",
+      "desc": "Primeiro programa infantil criado pela TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/P%C3%89%20DA%20LETRA%20I%20OLHOS%20DA%20CARA.jpg?v=1759840886"
+    },
+    {
+      "start": "2025-11-30T13:42:59-03:00",
+      "stop": "2025-11-30T13:45:28-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "ConferênciaWeb, o serviço da RNP que disponibiliza salas virtuais para encontros.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1759842296"
+    },
+    {
+      "start": "2025-11-30T13:45:28-03:00",
+      "stop": "2025-11-30T13:49:01-03:00",
+      "title": "(FUTURA) QUE CORPO É ESSE? - SHARETHING",
+      "desc": "A série animada nos alerta sobre o conhecimento do próprio corpo e sobre o direito à sexualidade.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/QUE%20CORPO%20%C3%89%20ESSE%20I%20T2%20I%20EPIS%C3%93DIO%208%20I%20SHARETHING.jpg?v=1760538338"
+    },
+    {
+      "start": "2025-11-30T13:49:01-03:00",
+      "stop": "2025-11-30T13:56:08-03:00",
+      "title": "CURTA - SÓ SEI QUE FOI ASSIM",
+      "desc": "Curta em animação, idealizado, ilustrado e dirigido por Giovanna Muzel pela UFPEL.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20S%C3%93%20SEI%20QUE%20FOI%20ASSIM.jpg?v=1759769881"
+    },
+    {
+      "start": "2025-11-30T13:56:08-03:00",
+      "stop": "2025-11-30T14:00:18-03:00",
+      "title": "MAIS UFOP - ARTES CÊNICAS",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ARTES%20C%C3%8ANICAS.jpg?v=1762960475"
+    },
+    {
+      "start": "2025-11-30T14:00:18-03:00",
+      "stop": "2025-11-30T14:49:00-03:00",
+      "title": "(FUTURA) ESCOLAS INOVADORAS - LA CECILIA ARGENTINA",
+      "desc": "Descubra a inovação escolar e propostas inspiradoras para transformar o dia a dia da sala de aula.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESCOLAS%20INOVADORAS%20I%20LA%20CECILIA%20%28ARGENTINA%29.jpg?v=1760619873"
+    },
+    {
+      "start": "2025-11-30T14:49:00-03:00",
+      "stop": "2025-11-30T15:00:30-03:00",
+      "title": "UFOP EXPLICA - SEMINÁRIO NACIONAL DE DIREITO DO PATRIMÔNIO CULTURAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20PATRIM%C3%94NIO%20CULTURAL%2C%20SEMIN%C3%81RIO%20NACIONAL%20DE%20DIREITO%20DO%20PATRIM%C3%94NIO%20CULTURAL.jpg?v=1762959231"
+    },
+    {
+      "start": "2025-11-30T15:00:30-03:00",
+      "stop": "2025-11-30T15:05:21-03:00",
+      "title": "BOLETIM - SIMPÓSIO DE EMPREENDEDORISMO DA UFOP",
+      "desc": "Simpósio abre inscrições e promove ideias em inovação, sustentabilidade e desenvolvimento.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20SIMP%C3%93SIO%20DE%20EMPREENDEDORISMO%20DA%20UFOP.jpg?v=1763554954"
+    },
+    {
+      "start": "2025-11-30T15:05:21-03:00",
+      "stop": "2025-11-30T15:15:37-03:00",
+      "title": "REPORTAGEM - UFOP HOMENAGEIA SERVIDORES",
+      "desc": "Solenidades da UFOP têm posses, medalhas e homenagem à ex-reitora Cláudia Marliére.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20UFOP%20HOMENAGEIA%20SERVIDORES.jpg?v=1764246034"
+    },
+    {
+      "start": "2025-11-30T15:15:37-03:00",
+      "stop": "2025-11-30T15:45:56-03:00",
+      "title": "(EBC) INCLUSÃO PARA VALER - EP3 - JOSÉ EDUARDO",
+      "desc": "Mariana Rosa nos convida para um bate-papo sobre a inclusão escolar de pessoas com deficiência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/INCLUS%C3%83O%20PARA%20VALER%20-%20EP%2003.jpg?v=1761657807"
+    },
+    {
+      "start": "2025-11-30T15:45:56-03:00",
+      "stop": "2025-11-30T15:52:13-03:00",
+      "title": "UFOP EM CASA - TRECHOS ORQUESTRAIS PARA TROMPETE",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%202.jpg?v=1762959125"
+    },
+    {
+      "start": "2025-11-30T15:52:13-03:00",
+      "stop": "2025-11-30T16:00:33-03:00",
+      "title": "UFOP EXPLICA - BARRAGENS DE REJEITOS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20BARRAGENS%20DE%20REJEITOS.jpg?v=1762959220"
+    },
+    {
+      "start": "2025-11-30T16:00:33-03:00",
+      "stop": "2025-11-30T17:00:40-03:00",
+      "title": "(CANAL SAÚDE) SALA DE CONVIDADOS - BASE INDUSTRIAL",
+      "desc": "Programa do Canal Saúde que debate assuntos de saúde pública com especialistas e o público.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SALA%20DE%20CONVIDADOS%20I%20RETOMADA%20DO%20COMPLEXO%20ECON%C3%94MICO%20INDUSTRIAL%20DA%20SA%C3%9ADE.jpg?v=1760965852"
+    },
+    {
+      "start": "2025-11-30T17:00:40-03:00",
+      "stop": "2025-11-30T17:07:28-03:00",
+      "title": "BOLETIM - PARTICIPE DA AVALIAÇÃO INSTITUCIONAL DA UFOP",
+      "desc": "Comunidade é convidada a participar do Questionário de Avaliação Institucional da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PARTICIPE%20DA%20AVALIA%C3%87%C3%83O%20INSTITUCIONAL%20DA%20UFOP.jpg?v=1762876825"
+    },
+    {
+      "start": "2025-11-30T17:07:28-03:00",
+      "stop": "2025-11-30T17:15:48-03:00",
+      "title": "REPORTAGEM - SEMINÁRIO: 10 ANOS DO ROMPIMENTO DA BARRAGEM DE FUNDÃO",
+      "desc": "Seminário destaca lutas e reparações no Alto Rio Doce, com foco nas comunidades.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20SEMIN%C3%81RIO%20-%2010%20ANOS%20DO%20ROMPIMENTO%20DA%20BARRAGEM%20DE%20FUND%C3%83O.jpg?v=1763469357"
+    },
+    {
+      "start": "2025-11-30T17:15:48-03:00",
+      "stop": "2025-11-30T17:20:12-03:00",
+      "title": "(UFG) HORA DO CONTO - O ORGULHOSO",
+      "desc": "O programa Hora do Conto apresenta contos na Língua Brasileira de Sinais (Libras).",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/HORA%20DO%20CONTO%20I%20O%20ORGULHOSO%20LIBRAS.jpg?v=1760553142"
+    },
+    {
+      "start": "2025-11-30T17:20:12-03:00",
+      "stop": "2025-11-30T17:22:40-03:00",
+      "title": "VISIBILIDADE TRANS",
+      "desc": "No Brasil, o Dia da Visibilidade Trans é celebrado no dia 29 de janeiro.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VISIBILIDADE%20TRANS.jpg?v=1762882984"
+    },
+    {
+      "start": "2025-11-30T17:22:40-03:00",
+      "stop": "2025-11-30T17:25:10-03:00",
+      "title": "SE LIGA AÍ - LITERATURA - DOIS IRMÃOS, DE MILTON HATOUM",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20DOIS%20IRM%C3%83OS%2C%20DE%20MILTON%20HATOUM.jpg?v=1762956759"
+    },
+    {
+      "start": "2025-11-30T17:25:10-03:00",
+      "stop": "2025-11-30T17:31:03-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA O QUE É CIÊNCIA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20O%20QUE%20%C3%89%20CI%C3%8ANCIA.jpg?v=1758904147"
+    },
+    {
+      "start": "2025-11-30T17:31:03-03:00",
+      "stop": "2025-11-30T17:50:04-03:00",
+      "title": "VEREDAS (2018) - EP1 - BACIA DO CUSTÓDIO",
+      "desc": "Reflexões sobre o uso consciente dos recursos naturais e as possibilidades do ecoturismo.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEREDAS%20I%20BACIA%20DO%20CUST%C3%93DIO.jpg?v=1759844741"
+    },
+    {
+      "start": "2025-11-30T17:50:04-03:00",
+      "stop": "2025-11-30T17:53:47-03:00",
+      "title": "SE LIGA AÍ - MARACATU - KAREN AGUIAR",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20MARACATU%20-%20KAREN%20AGUIAR.jpg?v=1762956762"
+    },
+    {
+      "start": "2025-11-30T17:53:47-03:00",
+      "stop": "2025-11-30T17:56:51-03:00",
+      "title": "VENHA ESTUDAR COM A GENTE",
+      "desc": "Estudantes, servidores, trabalhadores e professores contam o que a UFOP tem de especial.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VENHA%20ESTUDAR%20COM%20A%20GENTE.jpg?v=1759844646"
+    },
+    {
+      "start": "2025-11-30T17:56:51-03:00",
+      "stop": "2025-11-30T18:00:33-03:00",
+      "title": "RNP - CONFERENCIAWEB",
+      "desc": "ConferênciaWeb, o serviço da RNP que disponibiliza salas virtuais para encontros.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/RNP%20I%20CONFERENCIAWEB.jpg?v=1759842296"
+    },
+    {
+      "start": "2025-11-30T18:00:33-03:00",
+      "stop": "2025-11-30T18:20:54-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP1 - JÚLIA E LÉO",
+      "desc": "Videocast do Cine Vila Rica para refletir sobre o universo cinematográfico.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CLAQU%C3%89TICOS%20%282025%29%20-%20EP2%20-%20J%C3%9ALIA%20E%20L%C3%89O.jpg?v=1759769287"
+    },
+    {
+      "start": "2025-11-30T18:20:54-03:00",
+      "stop": "2025-11-30T18:30:52-03:00",
+      "title": "UFOP EXPLICA - SEMINÁRIO NACIONAL DE DIREITO DO PATRIMÔNIO CULTURAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20PATRIM%C3%94NIO%20CULTURAL%2C%20SEMIN%C3%81RIO%20NACIONAL%20DE%20DIREITO%20DO%20PATRIM%C3%94NIO%20CULTURAL.jpg?v=1762959231"
+    },
+    {
+      "start": "2025-11-30T18:30:52-03:00",
+      "stop": "2025-11-30T19:00:31-03:00",
+      "title": "(FUTURA) ALMANAQUE SAÚDE - DROGAS",
+      "desc": "Temas importantes para a saúde dos brasileiros de forma informativa e descontraída.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ALMANAQUE%20SA%C3%9ADE%20I%20DROGAS.jpg?v=1761242242"
+    },
+    {
+      "start": "2025-11-30T19:00:31-03:00",
+      "stop": "2025-11-30T19:03:30-03:00",
+      "title": "BOLETIM - REFIS MARIANA 2025",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20REFIS%20MARIANA%202025.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-11-30T19:03:30-03:00",
+      "stop": "2025-11-30T19:05:52-03:00",
+      "title": "MAIS UFOP - LETRAS",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20LETRAS.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-11-30T19:05:52-03:00",
+      "stop": "2025-11-30T19:15:42-03:00",
+      "title": "BOLETIM - UFOP OFERECE DOUTORADO INTERINSTITUCIONAL",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20OFERECE%20DOUTORADO%20INTERINSTITUCIONAL.jpg?v=1761053838"
+    },
+    {
+      "start": "2025-11-30T19:15:42-03:00",
+      "stop": "2025-11-30T19:23:09-03:00",
+      "title": "(UFMG) MATERNIDADE ATÍPICA - ROTINA DE CUIDADOS",
+      "desc": "A série aborda os desafios no cuidado de pessoas com deficiência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MATERNIDADE%20ATIPICA%20-%20ROTINA%20DE%20CUIDADOS.jpg?v=1760623682"
+    },
+    {
+      "start": "2025-11-30T19:23:09-03:00",
+      "stop": "2025-11-30T19:30:10-03:00",
+      "title": "UFOP EXPLICA - 07 DICAS PARA COMBATER O SEDENTARISMO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%2007%20DICAS%20PARA%20COMBATER%20O%20SEDENTARISMO.jpg?v=1762959217"
+    },
+    {
+      "start": "2025-11-30T19:30:10-03:00",
+      "stop": "2025-11-30T19:52:44-03:00",
+      "title": "(UFPE) NA ESTRADA - ALAKAZAM",
+      "desc": "A série aborda aspectos relevantes dos campos artístico e cultural de Pernambuco e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/NA%20ESTRADA%20-%20ALAKAZAM.jpg?v=1760630439"
+    },
+    {
+      "start": "2025-11-30T19:52:44-03:00",
+      "stop": "2025-11-30T20:00:19-03:00",
+      "title": "SE LIGA AÍ - COLETIVO MINAS DA VOZ",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20COLETIVO%20MINAS%20DA%20VOZ.jpg?v=1762956757"
+    },
+    {
+      "start": "2025-11-30T20:00:19-03:00",
+      "stop": "2025-11-30T20:42:33-03:00",
+      "title": "ALÉM DOS MUROS (2024) - ARTHUR E RAQUEL",
+      "desc": "Novas formas pedagógicas realizadas através de experiências que unem a educação e o audiovisual.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/AL%C3%89M%20DOS%20MUROS%20I%20ARTHUR%20E%20RAQUEL.jpg?v=1759768609"
+    },
+    {
+      "start": "2025-11-30T20:42:33-03:00",
+      "stop": "2025-11-30T20:50:16-03:00",
+      "title": "UFOP EXPLICA - TRANSFOBIA PROPOSTAS DE POLÍTICAS AFIRMATIVAS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20TRANSFOBIA%20PROPOSTAS%20DE%20POL%C3%8DTICAS%20AFIRMATIVAS.jpg?v=1762959232"
+    },
+    {
+      "start": "2025-11-30T20:50:16-03:00",
+      "stop": "2025-11-30T21:00:13-03:00",
+      "title": "CURTA - PSIU ISSO AQUI TEM GRAÇA",
+      "desc": "Thaís Alessandra do Coletivo Cirandar, traz uma ótica sobre o feminismo através do humor.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20PSIU%20ISSO%20AQUI%20TEM%20GRA%C3%87A.jpg?v=1759769861"
+    },
+    {
+      "start": "2025-11-30T21:00:13-03:00",
+      "stop": "2025-11-30T21:09:27-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-11-30T21:09:27-03:00",
+      "stop": "2025-11-30T21:15:11-03:00",
+      "title": "BOLETIM - PARTICIPE DA AVALIAÇÃO INSTITUCIONAL DA UFOP",
+      "desc": "Comunidade é convidada a participar do Questionário de Avaliação Institucional da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PARTICIPE%20DA%20AVALIA%C3%87%C3%83O%20INSTITUCIONAL%20DA%20UFOP.jpg?v=1762876825"
+    },
+    {
+      "start": "2025-11-30T21:15:11-03:00",
+      "stop": "2025-11-30T21:24:03-03:00",
+      "title": "FLUXOARTE (2025) - EP4 - MARINA AZZE",
+      "desc": "Artistas apresentam e comentam o percurso de seus processos criativos singulares.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FLUXOARTE%20%282025%29%20-%20EP4%20-%20MARINA%20AZZE.jpg?v=1759771325"
+    },
+    {
+      "start": "2025-11-30T21:24:03-03:00",
+      "stop": "2025-11-30T21:26:15-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - O QUE É SUSTENTABILIDADE",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20O%20QUE%20%C3%89%20SUSTENTABILIDADE.jpg?v=1758904150"
+    },
+    {
+      "start": "2025-11-30T21:26:15-03:00",
+      "stop": "2025-11-30T21:29:35-03:00",
+      "title": "POÉTICAS DO CORPO - ENTRE FLUXOS",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20ENTRE%20FLUXOS.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-11-30T21:29:35-03:00",
+      "stop": "2025-11-30T21:39:34-03:00",
+      "title": "PORTUGUÊS DAQUI, PORTUGUÊS DE LÁ - O PORTUGUÊS É REALMENTE UMA LÍNGUA DIFÍCIL?",
+      "desc": "A série pretende desvendar as diversidades, complexidades e práticas da língua portuguesa.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PORTUGU%C3%8AS%20DAQUI%2C%20PORTUGU%C3%8AS%20DE%20L%C3%81%20I%20O%20PORTUGU%C3%8AS%20%C3%89%20REALMENTE%20UMA%20L%C3%8DNGUA%20DIF%C3%8DCIL.jpg?v=1759841114"
+    },
+    {
+      "start": "2025-11-30T21:39:34-03:00",
+      "stop": "2025-11-30T21:50:17-03:00",
+      "title": "UFOP EXPLICA - OVERDOSE DEPENDÊNCIAS QUÍMICAS E TRATAMENTO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20OVERDOSE%20DEPEND%C3%8ANCIAS%20QU%C3%8DMICAS%20E%20TRATAMENTO.jpg?v=1762959229"
+    },
+    {
+      "start": "2025-11-30T21:50:17-03:00",
+      "stop": "2025-11-30T21:55:13-03:00",
+      "title": "CUIDADOS COM A DENGUE",
+      "desc": "Atenção aos cuidados contra a Dengue! Afinal, ninguém quer receber essa visita inesperada, né!?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MONOLOGO%20DENGUE.jpg?v=1759769790"
+    },
+    {
+      "start": "2025-11-30T21:55:13-03:00",
+      "stop": "2025-11-30T21:57:19-03:00",
+      "title": "ANIVERSÁRIO TV UFOP - RONDON",
+      "desc": "Depoimentos e memórias de colaboradores da TV UFOP comemorando o aniversário de 13 anos do canal.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ANIVERS%C3%81RIO%20TV%2024%20I%201%20RONDOM.jpg?v=1759768768"
+    },
+    {
+      "start": "2025-11-30T21:57:19-03:00",
+      "stop": "2025-11-30T22:00:13-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO",
+      "desc": "O que você faria para mudar o mundo? Quais são suas ideias? Seus ideais? Como podemos fazer isso?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20-%204%20.jpg?v=1760550636"
+    },
+    {
+      "start": "2025-11-30T22:00:13-03:00",
+      "stop": "2025-11-30T22:25:55-03:00",
+      "title": "(REDE MINAS) ESTAÇÕES - MONTE AZUL",
+      "desc": "As estações de trem como linha condutora das histórias do povo mineiro.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESTA%C3%87%C3%95ES%20I%20PAI%20PEDRO%2C%20CATUTI%20E%20MONTE%20AZUL.jpg?v=1760620268"
+    },
+    {
+      "start": "2025-11-30T22:25:55-03:00",
+      "stop": "2025-11-30T22:30:47-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - DJANIRA DA MOTTA E SILVA",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20DJANIRA%20DA%20MOTTA%20E%20SILVA.jpg?v=1762956763"
+    },
+    {
+      "start": "2025-11-30T22:30:47-03:00",
+      "stop": "2025-11-30T23:00:12-03:00",
+      "title": "(UERN) VEM VER - TURISMO VERDE",
+      "desc": "As belezas do estado do Rio Grande do Norte para além dos pontos turísticos já conhecidos.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEM%20VER%20-%20EPIS%C3%93DIO%2011%20-%20TURISMO%20VERDE%20.jpg?v=1760707949"
+    },
+    {
+      "start": "2025-11-30T23:00:12-03:00",
+      "stop": "2025-11-30T23:09:54-03:00",
+      "title": "REPORTAGEM - HACKATRAMPO REÚNE TALENTOS EM OURO PRETO",
+      "desc": "As reportagens expõem, analisam ou interpretam informações do cotidiano.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20HACKATRAMPO%20RE%C3%9ANE%20TALENTOS%20EM%20OURO%20PRETO.jpg?v=1762192921"
+    },
+    {
+      "start": "2025-11-30T23:09:54-03:00",
+      "stop": "2025-11-30T23:15:30-03:00",
+      "title": "BOLETIM - PROJETO CANTO COLETIVO DA UFOP",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20PROJETO%20CANTO%20COLETIVO.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-11-30T23:15:30-03:00",
+      "stop": "2025-11-30T23:21:36-03:00",
+      "title": "A CENA MUDA (2015) - EP4 - CORTANDO CEBOLA",
+      "desc": "A Cena Muda é um programa inspirado no show antológico da cantora Maria Bethânia.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/A%20CENA%20MUDA%20I%20CORTADOR%20CEBOLA.jpg?v=1759768567"
+    },
+    {
+      "start": "2025-11-30T23:21:36-03:00",
+      "stop": "2025-11-30T23:30:16-03:00",
+      "title": "UFOP EXPLICA - ÁGUA: UM BEM DE USO COMUM",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20%C3%81GUA%20%C3%89%20DE%20TODOS.jpg?v=1762959219"
+    },
+    {
+      "start": "2025-11-30T23:30:16-03:00",
+      "stop": "2025-11-30T23:47:54-03:00",
+      "title": "CONGADEIROS (2018) - EP2 - ORIGENS DO CONGADO",
+      "desc": "A cultura do Congado em Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CONGADEIROS%20I%20EPIS%C3%93DIO%202.jpg?v=1759769412"
+    },
+    {
+      "start": "2025-11-30T23:47:54-03:00",
+      "stop": "2025-11-30T23:51:16-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - DENGUE E PREVENÇÃO",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20DENGUE%20E%20PREVEN%C3%87%C3%83O.jpg?v=1758904148"
+    },
+    {
+      "start": "2025-11-30T23:51:16-03:00",
+      "stop": "2025-11-30T23:54:52-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM FARMACÊUTICAS",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20-%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20CI%C3%8ANCIAS%20FARMAC%C3%8AUTICAS.jpg?v=1762960518"
+    },
+    {
+      "start": "2025-11-30T23:54:52-03:00",
+      "stop": "2025-11-30T23:57:12-03:00",
+      "title": "DIORAMA (2012) - ENGENHEIRO CORREA",
+      "desc": "Esta série apresenta os aspectos históricos e culturais da região de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIORAMA%20I%20ENGENHEIRO%20CORREA.jpg?v=1759769963"
+    },
+    {
+      "start": "2025-11-30T23:57:12-03:00",
+      "stop": "2025-11-30T23:59:00-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - NÚCLEO DE INVESTIGAÇÕES FEMINISTAS  - NINFEIAS",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20N%C3%9ACLEO%20DE%20INVESTIGA%C3%87%C3%95ES%20FEMINISTAS%20-%20NINFEIAS.jpg?v=1762956765"
+    },
+    {
+      "start": "2025-12-01T00:00:01-03:00",
+      "stop": "2025-12-01T00:12:36-03:00",
+      "title": "(FUTURA) CANAL DA HISTÓRIA - LEILA DINIZ",
+      "desc": "Clara e Neto usam uma máquina do tempo para conversar com importantes figuras da nossa História.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CANAL%20DA%20HIST%C3%93RIA%20I%20LEILA%20DINIZ.jpg?v=1760618254"
+    },
+    {
+      "start": "2025-12-01T00:12:36-03:00",
+      "stop": "2025-12-01T00:17:25-03:00",
+      "title": "VENHA ESTUDAR COM A GENTE",
+      "desc": "Estudantes, servidores, trabalhadores e professores contam o que a UFOP tem de especial.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VENHA%20ESTUDAR%20COM%20A%20GENTE.jpg?v=1759844646"
+    },
+    {
+      "start": "2025-12-01T00:17:25-03:00",
+      "stop": "2025-12-01T00:20:06-03:00",
+      "title": "MUTATIS MUTANDIS - O POVO FALA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20O%20POVO%20FALA.jpg?v=1758904148"
+    },
+    {
+      "start": "2025-12-01T00:20:06-03:00",
+      "stop": "2025-12-01T00:27:08-03:00",
+      "title": "UFOP EXPLICA - EDUCAÇÃO ALIMENTAR",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20EDUCA%C3%87%C3%83O%20ALIMENTAR.jpg?v=1762959223"
+    },
+    {
+      "start": "2025-12-01T00:27:08-03:00",
+      "stop": "2025-12-01T00:30:19-03:00",
+      "title": "MAIS UFOP - MÚSICA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20M%C3%9ASICA.jpg?v=1762960482"
+    },
+    {
+      "start": "2025-12-01T00:30:19-03:00",
+      "stop": "2025-12-01T00:47:38-03:00",
+      "title": "PERIPATÉTICOS (2013) - EP2 - AMOR E DESEJO",
+      "desc": "A filosofia está mais presente no nosso dia a dia do que imaginamos.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PERIPATETICOS%20I%20AMOR%20E%20DESEJO.jpg?v=1759840943"
+    },
+    {
+      "start": "2025-12-01T00:47:38-03:00",
+      "stop": "2025-12-01T00:53:22-03:00",
+      "title": "UFOP EXPLICA - A IMPORTÂNCIA DO BOLSA FAMÍLIA",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20A%20IMPORT%C3%82NCIA%20DO%20BOLSA%20FAM%C3%8DLIA.jpg?v=1762959217"
+    },
+    {
+      "start": "2025-12-01T00:53:22-03:00",
+      "stop": "2025-12-01T00:57:43-03:00",
+      "title": "POÉTICAS DO CORPO - JAZZ",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20JAZZ.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-12-01T00:57:43-03:00",
+      "stop": "2025-12-01T01:00:11-03:00",
+      "title": "PLANO DE CULTURA DA UFOP",
+      "desc": "Diretrizes da Política de Cultura da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PLANO%20DE%20CULTURA%20DA%20UFOP.jpg?v=1759841014"
+    },
+    {
+      "start": "2025-12-01T01:00:11-03:00",
+      "stop": "2025-12-01T01:05:42-03:00",
+      "title": "BOLETIM - SIMPÓSIO DE EMPREENDEDORISMO DA UFOP",
+      "desc": "Simpósio abre inscrições e promove ideias em inovação, sustentabilidade e desenvolvimento.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20SIMP%C3%93SIO%20DE%20EMPREENDEDORISMO%20DA%20UFOP.jpg?v=1763554954"
+    },
+    {
+      "start": "2025-12-01T01:05:42-03:00",
+      "stop": "2025-12-01T01:15:31-03:00",
+      "title": "REPORTAGEM - UFOP HOMENAGEIA SERVIDORES",
+      "desc": "Solenidades da UFOP têm posses, medalhas e homenagem à ex-reitora Cláudia Marliére.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20UFOP%20HOMENAGEIA%20SERVIDORES.jpg?v=1764246034"
+    },
+    {
+      "start": "2025-12-01T01:15:31-03:00",
+      "stop": "2025-12-01T01:17:33-03:00",
+      "title": "UFOP EXPLICA - TRANSFOBIA, NOME SOCIAL E RETIFICAÇÃO SOCIAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20TRANSFOBIA%20NOME%20SOCIAL%20E%20RETIFICA%C3%87%C3%83O%20SOCIAL.jpg?v=1762959232"
+    },
+    {
+      "start": "2025-12-01T01:17:33-03:00",
+      "stop": "2025-12-01T01:30:18-03:00",
+      "title": "ENTREVISTA - ECA DIGITAL E A PROTEÇÃO NA INTERNET",
+      "desc": "Entrevista com Nádila Walter, psicóloga especialista em neurodesenvolvimento.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ENTREVISTA%20-%20ECA%20DIGITAL%20E%20A%20PROTE%C3%87%C3%83O%20NA%20INTERNET.jpg?v=1763040387"
+    },
+    {
+      "start": "2025-12-01T01:30:18-03:00",
+      "stop": "2025-12-01T01:40:16-03:00",
+      "title": "PÉ DA LETRA (2014) - PÉ D'ÁGUA",
+      "desc": "Primeiro programa infantil criado pela TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/P%C3%89%20DA%20LETRA%20I%20P%C3%89%20D%27%C3%81GUA.jpg?v=1759840886"
+    },
+    {
+      "start": "2025-12-01T01:40:16-03:00",
+      "stop": "2025-12-01T01:45:51-03:00",
+      "title": "UFOP EXPLICA - O QUE É O BOLSA FAMÍLIA?",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20O%20QUE%20%C3%89%20O%20BOLSA%20FAM%C3%8DLIA.jpg?v=1762959228"
+    },
+    {
+      "start": "2025-12-01T01:45:51-03:00",
+      "stop": "2025-12-01T01:49:24-03:00",
+      "title": "(FUTURA) QUE CORPO É ESSE? - AUTONOMIA ONLINE",
+      "desc": "A série animada nos alerta sobre o conhecimento do próprio corpo e sobre o direito à sexualidade.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/QUE%20CORPO%20%C3%89%20ESSE%20I%20T2%20I%20EPIS%C3%93DIO%209%20I%20USO%20CONSCIENTE%20E%20AUTONOMIA%20ONLINE.jpg?v=1760542203"
+    },
+    {
+      "start": "2025-12-01T01:49:24-03:00",
+      "stop": "2025-12-01T01:51:55-03:00",
+      "title": "MAIS UFOP - PEDAGOGIA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20PEDAGOGIA.jpg?v=1759775375"
+    },
+    {
+      "start": "2025-12-01T01:51:55-03:00",
+      "stop": "2025-12-01T01:57:08-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - MORENA NASCIMENTO",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20MORENA%20NASCIMENTO.jpg?v=1762956765"
+    },
+    {
+      "start": "2025-12-01T01:57:08-03:00",
+      "stop": "2025-12-01T02:00:33-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA LUISA CARDOSO",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20LUISA%20CARDOSO.jpg?v=1758904146"
+    },
+    {
+      "start": "2025-12-01T02:00:33-03:00",
+      "stop": "2025-12-01T02:52:30-03:00",
+      "title": "(FUTURA) ESCOLAS INOVADORAS - RITAHARJU SCHOOL",
+      "desc": "Descubra a inovação escolar e propostas inspiradoras para transformar o dia a dia da sala de aula.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESCOLAS%20INOVADORAS%20I%20RITAHARJU%20SCHOOL%20%28FINL%C3%82NDIA%29.jpg?v=1760620068"
+    },
+    {
+      "start": "2025-12-01T02:52:30-03:00",
+      "stop": "2025-12-01T03:00:29-03:00",
+      "title": "UFOP EXPLICA - USO DE ENERGIAS RENOVÁVEIS NA INDÚSTRIA ALIMENTÍCIA",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20USO%20DE%20ENERGIAS%20RENOV%C3%81VEIS%20NA%20IND%C3%9ASTRIA%20ALIMENT%C3%8DCIA.jpg?v=1762959233"
+    },
+    {
+      "start": "2025-12-01T03:00:29-03:00",
+      "stop": "2025-12-01T03:01:52-03:00",
+      "title": "BOLETIM - MARIANA REALIZA MUTIRÃO CONTRA A DENGUE",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20MUTIR%C3%83O%20DENGUE%20MARIANA.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-12-01T03:01:52-03:00",
+      "stop": "2025-12-01T03:07:22-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA O QUE É CIÊNCIA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20O%20QUE%20%C3%89%20CI%C3%8ANCIA.jpg?v=1758904147"
+    },
+    {
+      "start": "2025-12-01T03:07:22-03:00",
+      "stop": "2025-12-01T03:15:35-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-12-01T03:15:35-03:00",
+      "stop": "2025-12-01T03:52:10-03:00",
+      "title": "(UFCA) VOZES DO CARIRI (2025) - RIQUEZAS CULTURAIS",
+      "desc": "Conheça costumes, saberes e manifestações culturais do Cariri Cearense.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VOZES%20DO%20CARIRI%20%282025%29%20-%20EP1%20-%20BLOCO%201.jpg?v=1764246401"
+    },
+    {
+      "start": "2025-12-01T03:56:58-03:00",
+      "stop": "2025-12-01T04:00:20-03:00",
+      "title": "MAIS UFOP - MATEMÁTICA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20MATEM%C3%81TICA.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-12-01T04:00:20-03:00",
+      "stop": "2025-12-01T04:57:13-03:00",
+      "title": "(CANAL SAÚDE) SALA DE CONVIDADOS - INCLUSÃO",
+      "desc": "Programa do Canal Saúde que debate assuntos de saúde pública com especialistas e o público.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SALA%20DE%20CONVIDADOS%20-%20EDUCA%C3%87%C3%83O%20INCLUSIVA%20E%20O%20PL%203035.jpg?v=1760972600"
+    },
+    {
+      "start": "2025-12-01T04:57:13-03:00",
+      "stop": "2025-12-01T05:00:17-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - O QUE É ENERGIA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20O%20QUE%20%C3%89%20ENERGIA.jpg?v=1758904149"
+    },
+    {
+      "start": "2025-12-01T05:00:17-03:00",
+      "stop": "2025-12-01T05:04:30-03:00",
+      "title": "BOLETIM - ACESSO MEDIAÇÃO COMUNITÁRIA",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20ACESSO%20MEDIA%C3%87%C3%83O%20COMUNIT%C3%81RIA.jpg?v=1761053835"
+    },
+    {
+      "start": "2025-12-01T05:04:30-03:00",
+      "stop": "2025-12-01T05:15:40-03:00",
+      "title": "REPORTAGEM - UFOP CONCEDE SUA MAIOR HONRARIA A PERSONALIDADES",
+      "desc": "UFOP homenageia Angelo Oswaldo, Macaé Evaristo e Nilmário com título Honoris Causa.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20UFOP%20CONCEDE%20SUA%20MAIOR%20HONRARIA%20A%20PERSONALIDADES.jpg?v=1764287476"
+    },
+    {
+      "start": "2025-12-01T05:15:40-03:00",
+      "stop": "2025-12-01T05:26:26-03:00",
+      "title": "(UFMG) UNIVERSO CULTURA - ARTISTA BRUNA LUBAMBO",
+      "desc": "Os artistas, seus diferentes ofícios, e suas variadas formas de expressão artística.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UNIVERSO%20CULTURA%20-%20ILUSTRADORA%20BRUNA%20LUBAMBO.jpg?v=1760722479"
+    },
+    {
+      "start": "2025-12-01T05:26:26-03:00",
+      "stop": "2025-12-01T05:29:47-03:00",
+      "title": "MUSEUS UNIVERSITÁRIOS, PATRIMÔNIO DE TODOS OS BRASILEIROS",
+      "desc": "As Universidades Federais mantém mais de 150 museus. Visite e defenda esse patrimônio público.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUSEUS%20UNIVERSIT%C3%81RIOS%2C%20PATRIM%C3%94NIO%20DE%20TODOS%20OS%20BRASILEIROS.jpg?v=1759840614"
+    },
+    {
+      "start": "2025-12-01T05:29:47-03:00",
+      "stop": "2025-12-01T06:00:02-03:00",
+      "title": "(EBC) INCLUSÃO PARA VALER - EP4 - MARINA ROSA",
+      "desc": "Mariana Rosa nos convida para um bate-papo sobre a inclusão escolar de pessoas com deficiência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/INCLUS%C3%83O%20PARA%20VALER%20-%20EP%2004.jpg?v=1761657835"
+    },
+    {
+      "start": "2025-12-01T06:00:02-03:00",
+      "stop": "2025-12-01T06:21:05-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP2 - JÚLIA E LÉO",
+      "desc": "Videocast do Cine Vila Rica para refletir sobre o universo cinematográfico.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CLAQU%C3%89TICOS%20%282025%29%20-%20EP1%20-%20J%C3%9ALIA%20E%20L%C3%89O.jpg?v=1759769287"
+    },
+    {
+      "start": "2025-12-01T06:21:05-03:00",
+      "stop": "2025-12-01T06:36:22-03:00",
+      "title": "UFOP EXPLICA - DIREITOS E DEVERES DO CONSUMIDOR",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20DIREITOS%20E%20DEVERES%20DO%20CONSUMIDOR.jpg?v=1762961731"
+    },
+    {
+      "start": "2025-12-01T06:36:22-03:00",
+      "stop": "2025-12-01T06:44:57-03:00",
+      "title": "CURTA - SÓ SEI QUE FOI ASSIM",
+      "desc": "Curta em animação, idealizado, ilustrado e dirigido por Giovanna Muzel pela UFPEL.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20S%C3%93%20SEI%20QUE%20FOI%20ASSIM.jpg?v=1759769881"
+    },
+    {
+      "start": "2025-12-01T06:44:57-03:00",
+      "stop": "2025-12-01T06:52:50-03:00",
+      "title": "DIA D (2023) - EP1 - PREVENÇÃO E SAÚDE",
+      "desc": "Informações, pesquisas e discussões relacionadas à promoção da saúde em nosso país.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIA%20D%20I%20PREVEN%C3%87%C3%83O%20E%20SA%C3%9ADE.jpg?v=1762867231"
+    },
+    {
+      "start": "2025-12-01T06:52:50-03:00",
+      "stop": "2025-12-01T06:56:19-03:00",
+      "title": "UFOP EXPLICA - TRANSFOBIA, REPRESENTATIVIDADE E O FENÔMENO DA TOKENIZAÇÃO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20TRANSFOBIA%2C%20REPRESENTATIVIDADE%20E%20O%20FEN%C3%94MENO%20DA%20TOKENIZA%C3%87%C3%83O.jpg?v=1762959233"
+    },
+    {
+      "start": "2025-12-01T06:56:19-03:00",
+      "stop": "2025-12-01T07:00:10-03:00",
+      "title": "SE LIGA AÍ - LITERATURA - A PESTE DE ALBERT CAMUS",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20A%20PESTE%20DE%20ALBERT%20CAMUS.jpg?v=1762956759"
+    },
+    {
+      "start": "2025-12-01T07:00:10-03:00",
+      "stop": "2025-12-01T07:08:31-03:00",
+      "title": "REPORTAGEM - SEMINÁRIO: 10 ANOS DO ROMPIMENTO DA BARRAGEM DE FUNDÃO",
+      "desc": "Seminário destaca lutas e reparações no Alto Rio Doce, com foco nas comunidades.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20SEMIN%C3%81RIO%20-%2010%20ANOS%20DO%20ROMPIMENTO%20DA%20BARRAGEM%20DE%20FUND%C3%83O.jpg?v=1763469357"
+    },
+    {
+      "start": "2025-12-01T07:08:31-03:00",
+      "stop": "2025-12-01T07:15:23-03:00",
+      "title": "REPORTAGEM - HACKATRAMPO REÚNE TALENTOS EM OURO PRETO",
+      "desc": "As reportagens expõem, analisam ou interpretam informações do cotidiano.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20HACKATRAMPO%20RE%C3%9ANE%20TALENTOS%20EM%20OURO%20PRETO.jpg?v=1762192921"
+    },
+    {
+      "start": "2025-12-01T07:15:23-03:00",
+      "stop": "2025-12-01T07:20:45-03:00",
+      "title": "A CENA MUDA (2015) - EP1 - GUARDADOR DE REBANHOS",
+      "desc": "A Cena Muda é um programa inspirado no show antológico da cantora Maria Bethânia.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/A%20CENA%20MUDA%20I%20GUARDADOR%20DE%20REBANHOS.jpg?v=1759768566"
+    },
+    {
+      "start": "2025-12-01T07:20:45-03:00",
+      "stop": "2025-12-01T07:29:21-03:00",
+      "title": "UFOP EM CASA - A FÁBULA DO PÉ DE SABIÚ",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%204.jpg?v=1762959117"
+    },
+    {
+      "start": "2025-12-01T07:29:21-03:00",
+      "stop": "2025-12-01T07:46:32-03:00",
+      "title": "VEREDAS (2018) - EP4 - GÔGÔ",
+      "desc": "Reflexões sobre o uso consciente dos recursos naturais e as possibilidades do ecoturismo.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEREDAS%20I%20G%C3%94G%C3%94.jpg?v=1759844741"
+    },
+    {
+      "start": "2025-12-01T07:46:32-03:00",
+      "stop": "2025-12-01T07:48:37-03:00",
+      "title": "MAMBEMBE (2013) - DA APRESENTAÇÃO",
+      "desc": "Conheça o “Mambembe”, uma cia. de teatro itinerante que faz parte de projeto de extensão da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAMBEMBE%20I%20DA%20APRESENTA%C3%87%C3%83O.jpg?v=1759776850"
+    },
+    {
+      "start": "2025-12-01T07:48:37-03:00",
+      "stop": "2025-12-01T07:57:20-03:00",
+      "title": "UFOP EXPLICA - INDÍGENAS - INVISIBILIDADE E REEDUCAÇÃO SOCIAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20IND%C3%8DGENAS%20-%20INVISIBILIDADE%20E%20REEDUCA%C3%87%C3%83O%20SOCIAL.jpg?v=1762959225"
+    },
+    {
+      "start": "2025-12-01T07:57:20-03:00",
+      "stop": "2025-12-01T08:00:28-03:00",
+      "title": "PROGRAMA DE FOMENTO À CULTURA",
+      "desc": "Diretrizes da Política de Cultura da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PROGRAMA%20DE%20FOMENTO%20%C3%80%20CULTURA.jpg?v=1759841258"
+    },
+    {
+      "start": "2025-12-01T08:00:28-03:00",
+      "stop": "2025-12-01T08:08:20-03:00",
+      "title": "SABOR DE MEMÓRIA (2018) - EP4 - MARA LÚCIA",
+      "desc": "Um olhar para os pratos culinários como forma de reconhecimento da nossa cultura e memória.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SABOR%20DE%20MEM%C3%93RIA%20I%20MARA%20L%C3%9ACIA.jpg?v=1762956889"
+    },
+    {
+      "start": "2025-12-01T08:08:20-03:00",
+      "stop": "2025-12-01T08:11:39-03:00",
+      "title": "MAIS UFOP - MEDICINA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20MEDICINA.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-12-01T08:11:39-03:00",
+      "stop": "2025-12-01T08:29:25-03:00",
+      "title": "UFOP EM CASA - A PESTE ESTÁ POR VIR",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20A%20PESTE%20EST%C3%81%20POR%20VIR.jpg?v=1762959118"
+    },
+    {
+      "start": "2025-12-01T08:29:25-03:00",
+      "stop": "2025-12-01T08:38:46-03:00",
+      "title": "CONCERTOS DIDÁTICOS (2017) - ARCO MUSICAL",
+      "desc": "Série que busca valorizar a música erudita clássica e seus reflexos na música contemporânea.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CONCERTOS%20DID%C3%81TICOS%20I%20HOMEING%20E%20JUST%20BE.jpg?v=1759769379"
+    },
+    {
+      "start": "2025-12-01T08:38:46-03:00",
+      "stop": "2025-12-01T08:42:44-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO",
+      "desc": "O que você faria para mudar o mundo? Quais são suas ideias? Seus ideais? Como podemos fazer isso?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20-%204%20.jpg?v=1760550636"
+    },
+    {
+      "start": "2025-12-01T08:42:44-03:00",
+      "stop": "2025-12-01T08:45:59-03:00",
+      "title": "SE LIGA AÍ - MARACATU - FEMININO CORAÇÃO NAZARENO",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20MARACATU%20-%20MARACATU%20FEMININO%20CORA%C3%87%C3%83O%20NAZARENO.jpg?v=1762956761"
+    },
+    {
+      "start": "2025-12-01T08:45:59-03:00",
+      "stop": "2025-12-01T08:52:07-03:00",
+      "title": "POÉTICAS DO CORPO - CONTATO IMPROVISAÇÃO",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20CONTATO%20IMPROVISA%C3%87%C3%83O.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-12-01T08:52:07-03:00",
+      "stop": "2025-12-01T08:56:35-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM LETRAS - ESTUDOS DE LINGUAGEM",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20LETRAS%20-%20ESTUDOS%20DE%20LINGUAGEM.jpg?v=1762960519"
+    },
+    {
+      "start": "2025-12-01T08:56:35-03:00",
+      "stop": "2025-12-01T09:00:14-03:00",
+      "title": "UFOP EM CASA - O PÁSSARO QUE ENGANOU O GATO",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%2012.jpg?v=1762959123"
+    },
+    {
+      "start": "2025-12-01T09:00:14-03:00",
+      "stop": "2025-12-01T09:03:12-03:00",
+      "title": "BOLETIM - REFIS MARIANA 2025",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20REFIS%20MARIANA%202025.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-12-01T09:03:12-03:00",
+      "stop": "2025-12-01T09:05:59-03:00",
+      "title": "MAIS UFOP - ENGENHARIA MINAS",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ENGENHARIA%20MINAS.jpg?v=1762960479"
+    },
+    {
+      "start": "2025-12-01T09:05:59-03:00",
+      "stop": "2025-12-01T09:15:25-03:00",
+      "title": "REPORTAGEM - ENCONTRO DE SABERES 2025",
+      "desc": "Edição 2025 reúne milhares e debate como a universidade impulsiona mudanças sociais.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20ENCONTRO%20DE%20SABERES%202025.jpg?v=1763123798"
+    },
+    {
+      "start": "2025-12-01T09:15:25-03:00",
+      "stop": "2025-12-01T09:31:08-03:00",
+      "title": "MINHA VOZ, MINHA VEZ (2018) - DIEGO FERNANDES",
+      "desc": "O programa busca valorizar a cultura negra da região de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MINHA%20VOZ%20MINHA%20VEZ%20I%20DIEGO%20FERNANDES.jpg?v=1764005587"
+    },
+    {
+      "start": "2025-12-01T09:31:08-03:00",
+      "stop": "2025-12-01T09:43:45-03:00",
+      "title": "PORTUGUÊS DAQUI, PORTUGUÊS DE LÁ I UM VERDADEIRO DÉJA VU DO PASSADO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-12-01T09:43:45-03:00",
+      "stop": "2025-12-01T09:46:46-03:00",
+      "title": "UFOP EM CASA - THAIZ CANTASINI E JULIANA LIMA",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%209.jpg?v=1762959125"
+    },
+    {
+      "start": "2025-12-01T09:46:46-03:00",
+      "stop": "2025-12-01T09:50:15-03:00",
+      "title": "SE LIGA AÍ - MARACATU - JOANA CAVALCANTE",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20MARACATU%20-%20JOANA%20CAVALCANTE.jpg?v=1762956761"
+    },
+    {
+      "start": "2025-12-01T09:50:15-03:00",
+      "stop": "2025-12-01T09:55:42-03:00",
+      "title": "UFOP EXPLICA - TRANSFOBIA PROPOSTAS DE POLÍTICAS AFIRMATIVAS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20TRANSFOBIA%20PROPOSTAS%20DE%20POL%C3%8DTICAS%20AFIRMATIVAS.jpg?v=1762959232"
+    },
+    {
+      "start": "2025-12-01T09:55:42-03:00",
+      "stop": "2025-12-01T10:00:39-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM FÍSICA DE MATERIAIS",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S%20GRADUA%C3%87%C3%83O%20EM%20F%C3%8DSICA%20DE%20MATERIAIS.jpg?v=1762960518"
+    },
+    {
+      "start": "2025-12-01T10:00:39-03:00",
+      "stop": "2025-12-01T10:32:29-03:00",
+      "title": "(UFPB) CENA PARAHYBA - EP1 - ANAYDE",
+      "desc": "Programa que rememora obras da dramaturgia paraibana com convidados especiais.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CENA%20PARAHYBA%20-%20EP1%20-%20ANAYDE.jpg?v=1760544800"
+    },
+    {
+      "start": "2025-12-01T10:32:29-03:00",
+      "stop": "2025-12-01T10:57:00-03:00",
+      "title": "(UERN) VEM VER - CERRO CORÁ E LAGOA NOVA",
+      "desc": "As belezas do estado do Rio Grande do Norte para além dos pontos turísticos já conhecidos.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEM%20VER%20-%20EPIS%C3%93DIO%201%20-%20CERRO%20COR%C3%81%20E%20LAGOA%20NOVA.jpg?v=1760707933"
+    },
+    {
+      "start": "2025-12-01T10:57:00-03:00",
+      "stop": "2025-12-01T11:00:18-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM QUÍMICA",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20QU%C3%8DMICA.jpg?v=1762960519"
+    },
+    {
+      "start": "2025-12-01T11:00:18-03:00",
+      "stop": "2025-12-01T11:07:56-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-12-01T11:07:56-03:00",
+      "stop": "2025-12-01T11:11:19-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO",
+      "desc": "O que você faria para mudar o mundo? Quais são suas ideias? Seus ideais? Como podemos fazer isso?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20I%202%20.jpg?v=1760550627"
+    },
+    {
+      "start": "2025-12-01T11:11:19-03:00",
+      "stop": "2025-12-01T11:15:30-03:00",
+      "title": "BOLETIM - ACESSO MEDIAÇÃO COMUNITÁRIA",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20ACESSO%20MEDIA%C3%87%C3%83O%20COMUNIT%C3%81RIA.jpg?v=1761053835"
+    },
+    {
+      "start": "2025-12-01T11:15:30-03:00",
+      "stop": "2025-12-01T11:48:36-03:00",
+      "title": "(UnB) IAGORA - IA PARA PROFESSORES E GESTORES",
+      "desc": "Projeto inovador coordenado pela Profa. Isabela Oliveira, da Universidade de Brasília (UnB).",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/IAGORA%20ENTREVISTA%20-%20IA%20PARA%20PROFESSORES%20E%20GESTORES%20EDUCACIONAIS%20%28BLOCO%201%29%20.jpg?v=1760536894"
+    },
+    {
+      "start": "2025-12-01T11:48:36-03:00",
+      "stop": "2025-12-01T11:56:42-03:00",
+      "title": "UFOP EXPLICA - A UTILIZAÇÃO DAS ENERGIAS RENOVÁVEIS AO REDOR DO GLOBO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20A%20UTILIZA%C3%87%C3%83O%20DAS%20ENERGIAS%20RENOV%C3%81VEIS%20AO%20REDOR%20DO%20GLOBO.jpg?v=1762959218"
+    },
+    {
+      "start": "2025-12-01T11:56:42-03:00",
+      "stop": "2025-12-01T11:59:00-03:00",
+      "title": "PLANO DE CULTURA DA UFOP",
+      "desc": "Diretrizes da Política de Cultura da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PLANO%20DE%20CULTURA%20DA%20UFOP.jpg?v=1759841014"
+    },
+    {
+      "start": "2025-12-01T12:00:01-03:00",
+      "stop": "2025-12-01T12:12:36-03:00",
+      "title": "(FUTURA) CANAL DA HISTÓRIA - LEILA DINIZ",
+      "desc": "Clara e Neto usam uma máquina do tempo para conversar com importantes figuras da nossa História.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CANAL%20DA%20HIST%C3%93RIA%20I%20LEILA%20DINIZ.jpg?v=1760618254"
+    },
+    {
+      "start": "2025-12-01T12:12:36-03:00",
+      "stop": "2025-12-01T12:17:25-03:00",
+      "title": "VENHA ESTUDAR COM A GENTE",
+      "desc": "Estudantes, servidores, trabalhadores e professores contam o que a UFOP tem de especial.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VENHA%20ESTUDAR%20COM%20A%20GENTE.jpg?v=1759844646"
+    },
+    {
+      "start": "2025-12-01T12:17:25-03:00",
+      "stop": "2025-12-01T12:20:06-03:00",
+      "title": "MUTATIS MUTANDIS - O POVO FALA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20O%20POVO%20FALA.jpg?v=1758904148"
+    },
+    {
+      "start": "2025-12-01T12:20:06-03:00",
+      "stop": "2025-12-01T12:27:08-03:00",
+      "title": "UFOP EXPLICA - EDUCAÇÃO ALIMENTAR",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20EDUCA%C3%87%C3%83O%20ALIMENTAR.jpg?v=1762959223"
+    },
+    {
+      "start": "2025-12-01T12:27:08-03:00",
+      "stop": "2025-12-01T12:30:19-03:00",
+      "title": "MAIS UFOP - MÚSICA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20M%C3%9ASICA.jpg?v=1762960482"
+    },
+    {
+      "start": "2025-12-01T12:30:19-03:00",
+      "stop": "2025-12-01T12:47:38-03:00",
+      "title": "PERIPATÉTICOS (2013) - EP2 - AMOR E DESEJO",
+      "desc": "A filosofia está mais presente no nosso dia a dia do que imaginamos.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PERIPATETICOS%20I%20AMOR%20E%20DESEJO.jpg?v=1759840943"
+    },
+    {
+      "start": "2025-12-01T12:47:38-03:00",
+      "stop": "2025-12-01T12:53:22-03:00",
+      "title": "UFOP EXPLICA - A IMPORTÂNCIA DO BOLSA FAMÍLIA",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20A%20IMPORT%C3%82NCIA%20DO%20BOLSA%20FAM%C3%8DLIA.jpg?v=1762959217"
+    },
+    {
+      "start": "2025-12-01T12:53:22-03:00",
+      "stop": "2025-12-01T12:57:43-03:00",
+      "title": "POÉTICAS DO CORPO - JAZZ",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20JAZZ.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-12-01T12:57:43-03:00",
+      "stop": "2025-12-01T13:00:11-03:00",
+      "title": "PLANO DE CULTURA DA UFOP",
+      "desc": "Diretrizes da Política de Cultura da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PLANO%20DE%20CULTURA%20DA%20UFOP.jpg?v=1759841014"
+    },
+    {
+      "start": "2025-12-01T13:00:11-03:00",
+      "stop": "2025-12-01T13:05:42-03:00",
+      "title": "BOLETIM - SIMPÓSIO DE EMPREENDEDORISMO DA UFOP",
+      "desc": "Simpósio abre inscrições e promove ideias em inovação, sustentabilidade e desenvolvimento.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20SIMP%C3%93SIO%20DE%20EMPREENDEDORISMO%20DA%20UFOP.jpg?v=1763554954"
+    },
+    {
+      "start": "2025-12-01T13:05:42-03:00",
+      "stop": "2025-12-01T13:15:31-03:00",
+      "title": "REPORTAGEM - UFOP HOMENAGEIA SERVIDORES",
+      "desc": "Solenidades da UFOP têm posses, medalhas e homenagem à ex-reitora Cláudia Marliére.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20UFOP%20HOMENAGEIA%20SERVIDORES.jpg?v=1764246034"
+    },
+    {
+      "start": "2025-12-01T13:15:31-03:00",
+      "stop": "2025-12-01T13:17:33-03:00",
+      "title": "UFOP EXPLICA - TRANSFOBIA, NOME SOCIAL E RETIFICAÇÃO SOCIAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20TRANSFOBIA%20NOME%20SOCIAL%20E%20RETIFICA%C3%87%C3%83O%20SOCIAL.jpg?v=1762959232"
+    },
+    {
+      "start": "2025-12-01T13:17:33-03:00",
+      "stop": "2025-12-01T13:30:18-03:00",
+      "title": "ENTREVISTA - ECA DIGITAL E A PROTEÇÃO NA INTERNET",
+      "desc": "Entrevista com Nádila Walter, psicóloga especialista em neurodesenvolvimento.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ENTREVISTA%20-%20ECA%20DIGITAL%20E%20A%20PROTE%C3%87%C3%83O%20NA%20INTERNET.jpg?v=1763040387"
+    },
+    {
+      "start": "2025-12-01T13:30:18-03:00",
+      "stop": "2025-12-01T13:40:16-03:00",
+      "title": "PÉ DA LETRA (2014) - PÉ D'ÁGUA",
+      "desc": "Primeiro programa infantil criado pela TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/P%C3%89%20DA%20LETRA%20I%20P%C3%89%20D%27%C3%81GUA.jpg?v=1759840886"
+    },
+    {
+      "start": "2025-12-01T13:40:16-03:00",
+      "stop": "2025-12-01T13:45:51-03:00",
+      "title": "UFOP EXPLICA - O QUE É O BOLSA FAMÍLIA?",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20O%20QUE%20%C3%89%20O%20BOLSA%20FAM%C3%8DLIA.jpg?v=1762959228"
+    },
+    {
+      "start": "2025-12-01T13:45:51-03:00",
+      "stop": "2025-12-01T13:49:24-03:00",
+      "title": "(FUTURA) QUE CORPO É ESSE? - AUTONOMIA ONLINE",
+      "desc": "A série animada nos alerta sobre o conhecimento do próprio corpo e sobre o direito à sexualidade.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/QUE%20CORPO%20%C3%89%20ESSE%20I%20T2%20I%20EPIS%C3%93DIO%209%20I%20USO%20CONSCIENTE%20E%20AUTONOMIA%20ONLINE.jpg?v=1760542203"
+    },
+    {
+      "start": "2025-12-01T13:49:24-03:00",
+      "stop": "2025-12-01T13:51:55-03:00",
+      "title": "MAIS UFOP - PEDAGOGIA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20PEDAGOGIA.jpg?v=1759775375"
+    },
+    {
+      "start": "2025-12-01T13:51:55-03:00",
+      "stop": "2025-12-01T13:57:08-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - MORENA NASCIMENTO",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20MORENA%20NASCIMENTO.jpg?v=1762956765"
+    },
+    {
+      "start": "2025-12-01T13:57:08-03:00",
+      "stop": "2025-12-01T14:00:33-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA LUISA CARDOSO",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20LUISA%20CARDOSO.jpg?v=1758904146"
+    },
+    {
+      "start": "2025-12-01T14:00:33-03:00",
+      "stop": "2025-12-01T14:52:30-03:00",
+      "title": "(FUTURA) ESCOLAS INOVADORAS - RITAHARJU SCHOOL",
+      "desc": "Descubra a inovação escolar e propostas inspiradoras para transformar o dia a dia da sala de aula.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/ESCOLAS%20INOVADORAS%20I%20RITAHARJU%20SCHOOL%20%28FINL%C3%82NDIA%29.jpg?v=1760620068"
+    },
+    {
+      "start": "2025-12-01T14:52:30-03:00",
+      "stop": "2025-12-01T15:00:29-03:00",
+      "title": "UFOP EXPLICA - USO DE ENERGIAS RENOVÁVEIS NA INDÚSTRIA ALIMENTÍCIA",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20USO%20DE%20ENERGIAS%20RENOV%C3%81VEIS%20NA%20IND%C3%9ASTRIA%20ALIMENT%C3%8DCIA.jpg?v=1762959233"
+    },
+    {
+      "start": "2025-12-01T15:00:29-03:00",
+      "stop": "2025-12-01T15:01:52-03:00",
+      "title": "BOLETIM - MARIANA REALIZA MUTIRÃO CONTRA A DENGUE",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20MUTIR%C3%83O%20DENGUE%20MARIANA.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-12-01T15:01:52-03:00",
+      "stop": "2025-12-01T15:07:22-03:00",
+      "title": "MUTATIS MUTANDIS - ENTREVISTA O QUE É CIÊNCIA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20ENTREVISTA%20O%20QUE%20%C3%89%20CI%C3%8ANCIA.jpg?v=1758904147"
+    },
+    {
+      "start": "2025-12-01T15:07:22-03:00",
+      "stop": "2025-12-01T15:15:35-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-12-01T15:15:35-03:00",
+      "stop": "2025-12-01T15:52:10-03:00",
+      "title": "(UFCA) VOZES DO CARIRI (2025) - RIQUEZAS CULTURAIS",
+      "desc": "Conheça costumes, saberes e manifestações culturais do Cariri Cearense.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VOZES%20DO%20CARIRI%20%282025%29%20-%20EP1%20-%20BLOCO%201.jpg?v=1764246401"
+    },
+    {
+      "start": "2025-12-01T15:56:58-03:00",
+      "stop": "2025-12-01T16:00:20-03:00",
+      "title": "MAIS UFOP - MATEMÁTICA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20MATEM%C3%81TICA.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-12-01T16:00:20-03:00",
+      "stop": "2025-12-01T16:57:13-03:00",
+      "title": "(CANAL SAÚDE) SALA DE CONVIDADOS - INCLUSÃO",
+      "desc": "Programa do Canal Saúde que debate assuntos de saúde pública com especialistas e o público.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SALA%20DE%20CONVIDADOS%20-%20EDUCA%C3%87%C3%83O%20INCLUSIVA%20E%20O%20PL%203035.jpg?v=1760972600"
+    },
+    {
+      "start": "2025-12-01T16:57:13-03:00",
+      "stop": "2025-12-01T17:00:17-03:00",
+      "title": "MUTATIS MUTANDIS - POVO FALA - O QUE É ENERGIA",
+      "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20O%20QUE%20%C3%89%20ENERGIA.jpg?v=1758904149"
+    },
+    {
+      "start": "2025-12-01T17:00:17-03:00",
+      "stop": "2025-12-01T17:04:30-03:00",
+      "title": "BOLETIM - ACESSO MEDIAÇÃO COMUNITÁRIA",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20ACESSO%20MEDIA%C3%87%C3%83O%20COMUNIT%C3%81RIA.jpg?v=1761053835"
+    },
+    {
+      "start": "2025-12-01T17:04:30-03:00",
+      "stop": "2025-12-01T17:15:40-03:00",
+      "title": "REPORTAGEM - UFOP CONCEDE SUA MAIOR HONRARIA A PERSONALIDADES",
+      "desc": "UFOP homenageia Angelo Oswaldo, Macaé Evaristo e Nilmário com título Honoris Causa.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20UFOP%20CONCEDE%20SUA%20MAIOR%20HONRARIA%20A%20PERSONALIDADES.jpg?v=1764287476"
+    },
+    {
+      "start": "2025-12-01T17:15:40-03:00",
+      "stop": "2025-12-01T17:26:26-03:00",
+      "title": "(UFMG) UNIVERSO CULTURA - ARTISTA BRUNA LUBAMBO",
+      "desc": "Os artistas, seus diferentes ofícios, e suas variadas formas de expressão artística.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UNIVERSO%20CULTURA%20-%20ILUSTRADORA%20BRUNA%20LUBAMBO.jpg?v=1760722479"
+    },
+    {
+      "start": "2025-12-01T17:26:26-03:00",
+      "stop": "2025-12-01T17:29:47-03:00",
+      "title": "MUSEUS UNIVERSITÁRIOS, PATRIMÔNIO DE TODOS OS BRASILEIROS",
+      "desc": "As Universidades Federais mantém mais de 150 museus. Visite e defenda esse patrimônio público.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MUSEUS%20UNIVERSIT%C3%81RIOS%2C%20PATRIM%C3%94NIO%20DE%20TODOS%20OS%20BRASILEIROS.jpg?v=1759840614"
+    },
+    {
+      "start": "2025-12-01T17:29:47-03:00",
+      "stop": "2025-12-01T18:00:02-03:00",
+      "title": "(EBC) INCLUSÃO PARA VALER - EP4 - MARINA ROSA",
+      "desc": "Mariana Rosa nos convida para um bate-papo sobre a inclusão escolar de pessoas com deficiência.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/INCLUS%C3%83O%20PARA%20VALER%20-%20EP%2004.jpg?v=1761657835"
+    },
+    {
+      "start": "2025-12-01T18:00:02-03:00",
+      "stop": "2025-12-01T18:21:05-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP2 - JÚLIA E LÉO",
+      "desc": "Videocast do Cine Vila Rica para refletir sobre o universo cinematográfico.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CLAQU%C3%89TICOS%20%282025%29%20-%20EP1%20-%20J%C3%9ALIA%20E%20L%C3%89O.jpg?v=1759769287"
+    },
+    {
+      "start": "2025-12-01T18:21:05-03:00",
+      "stop": "2025-12-01T18:36:22-03:00",
+      "title": "UFOP EXPLICA - DIREITOS E DEVERES DO CONSUMIDOR",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20DIREITOS%20E%20DEVERES%20DO%20CONSUMIDOR.jpg?v=1762961731"
+    },
+    {
+      "start": "2025-12-01T18:36:22-03:00",
+      "stop": "2025-12-01T18:44:57-03:00",
+      "title": "CURTA - SÓ SEI QUE FOI ASSIM",
+      "desc": "Curta em animação, idealizado, ilustrado e dirigido por Giovanna Muzel pela UFPEL.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CURTA%20I%20S%C3%93%20SEI%20QUE%20FOI%20ASSIM.jpg?v=1759769881"
+    },
+    {
+      "start": "2025-12-01T18:44:57-03:00",
+      "stop": "2025-12-01T18:52:50-03:00",
+      "title": "DIA D (2023) - EP1 - PREVENÇÃO E SAÚDE",
+      "desc": "Informações, pesquisas e discussões relacionadas à promoção da saúde em nosso país.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIA%20D%20I%20PREVEN%C3%87%C3%83O%20E%20SA%C3%9ADE.jpg?v=1762867231"
+    },
+    {
+      "start": "2025-12-01T18:52:50-03:00",
+      "stop": "2025-12-01T18:56:19-03:00",
+      "title": "UFOP EXPLICA - TRANSFOBIA, REPRESENTATIVIDADE E O FENÔMENO DA TOKENIZAÇÃO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20TRANSFOBIA%2C%20REPRESENTATIVIDADE%20E%20O%20FEN%C3%94MENO%20DA%20TOKENIZA%C3%87%C3%83O.jpg?v=1762959233"
+    },
+    {
+      "start": "2025-12-01T18:56:19-03:00",
+      "stop": "2025-12-01T19:00:10-03:00",
+      "title": "SE LIGA AÍ - LITERATURA - A PESTE DE ALBERT CAMUS",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20A%20PESTE%20DE%20ALBERT%20CAMUS.jpg?v=1762956759"
+    },
+    {
+      "start": "2025-12-01T19:00:10-03:00",
+      "stop": "2025-12-01T19:08:31-03:00",
+      "title": "REPORTAGEM - SEMINÁRIO: 10 ANOS DO ROMPIMENTO DA BARRAGEM DE FUNDÃO",
+      "desc": "Seminário destaca lutas e reparações no Alto Rio Doce, com foco nas comunidades.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20SEMIN%C3%81RIO%20-%2010%20ANOS%20DO%20ROMPIMENTO%20DA%20BARRAGEM%20DE%20FUND%C3%83O.jpg?v=1763469357"
+    },
+    {
+      "start": "2025-12-01T19:08:31-03:00",
+      "stop": "2025-12-01T19:15:23-03:00",
+      "title": "REPORTAGEM - HACKATRAMPO REÚNE TALENTOS EM OURO PRETO",
+      "desc": "As reportagens expõem, analisam ou interpretam informações do cotidiano.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20HACKATRAMPO%20RE%C3%9ANE%20TALENTOS%20EM%20OURO%20PRETO.jpg?v=1762192921"
+    },
+    {
+      "start": "2025-12-01T19:15:23-03:00",
+      "stop": "2025-12-01T19:20:45-03:00",
+      "title": "A CENA MUDA (2015) - EP1 - GUARDADOR DE REBANHOS",
+      "desc": "A Cena Muda é um programa inspirado no show antológico da cantora Maria Bethânia.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/A%20CENA%20MUDA%20I%20GUARDADOR%20DE%20REBANHOS.jpg?v=1759768566"
+    },
+    {
+      "start": "2025-12-01T19:20:45-03:00",
+      "stop": "2025-12-01T19:29:21-03:00",
+      "title": "UFOP EM CASA - A FÁBULA DO PÉ DE SABIÚ",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%204.jpg?v=1762959117"
+    },
+    {
+      "start": "2025-12-01T19:29:21-03:00",
+      "stop": "2025-12-01T19:46:32-03:00",
+      "title": "VEREDAS (2018) - EP4 - GÔGÔ",
+      "desc": "Reflexões sobre o uso consciente dos recursos naturais e as possibilidades do ecoturismo.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEREDAS%20I%20G%C3%94G%C3%94.jpg?v=1759844741"
+    },
+    {
+      "start": "2025-12-01T19:46:32-03:00",
+      "stop": "2025-12-01T19:48:37-03:00",
+      "title": "MAMBEMBE (2013) - DA APRESENTAÇÃO",
+      "desc": "Conheça o “Mambembe”, uma cia. de teatro itinerante que faz parte de projeto de extensão da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAMBEMBE%20I%20DA%20APRESENTA%C3%87%C3%83O.jpg?v=1759776850"
+    },
+    {
+      "start": "2025-12-01T19:48:37-03:00",
+      "stop": "2025-12-01T19:57:20-03:00",
+      "title": "UFOP EXPLICA - INDÍGENAS - INVISIBILIDADE E REEDUCAÇÃO SOCIAL",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20IND%C3%8DGENAS%20-%20INVISIBILIDADE%20E%20REEDUCA%C3%87%C3%83O%20SOCIAL.jpg?v=1762959225"
+    },
+    {
+      "start": "2025-12-01T19:57:20-03:00",
+      "stop": "2025-12-01T20:00:28-03:00",
+      "title": "PROGRAMA DE FOMENTO À CULTURA",
+      "desc": "Diretrizes da Política de Cultura da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PROGRAMA%20DE%20FOMENTO%20%C3%80%20CULTURA.jpg?v=1759841258"
+    },
+    {
+      "start": "2025-12-01T20:00:28-03:00",
+      "stop": "2025-12-01T20:08:20-03:00",
+      "title": "SABOR DE MEMÓRIA (2018) - EP4 - MARA LÚCIA",
+      "desc": "Um olhar para os pratos culinários como forma de reconhecimento da nossa cultura e memória.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SABOR%20DE%20MEM%C3%93RIA%20I%20MARA%20L%C3%9ACIA.jpg?v=1762956889"
+    },
+    {
+      "start": "2025-12-01T20:08:20-03:00",
+      "stop": "2025-12-01T20:11:39-03:00",
+      "title": "MAIS UFOP - MEDICINA",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20MEDICINA.jpg?v=1762960481"
+    },
+    {
+      "start": "2025-12-01T20:11:39-03:00",
+      "stop": "2025-12-01T20:29:25-03:00",
+      "title": "UFOP EM CASA - A PESTE ESTÁ POR VIR",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20A%20PESTE%20EST%C3%81%20POR%20VIR.jpg?v=1762959118"
+    },
+    {
+      "start": "2025-12-01T20:29:25-03:00",
+      "stop": "2025-12-01T20:38:46-03:00",
+      "title": "CONCERTOS DIDÁTICOS (2017) - ARCO MUSICAL",
+      "desc": "Série que busca valorizar a música erudita clássica e seus reflexos na música contemporânea.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CONCERTOS%20DID%C3%81TICOS%20I%20HOMEING%20E%20JUST%20BE.jpg?v=1759769379"
+    },
+    {
+      "start": "2025-12-01T20:38:46-03:00",
+      "stop": "2025-12-01T20:42:44-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO",
+      "desc": "O que você faria para mudar o mundo? Quais são suas ideias? Seus ideais? Como podemos fazer isso?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20-%204%20.jpg?v=1760550636"
+    },
+    {
+      "start": "2025-12-01T20:42:44-03:00",
+      "stop": "2025-12-01T20:45:59-03:00",
+      "title": "SE LIGA AÍ - MARACATU - FEMININO CORAÇÃO NAZARENO",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20MARACATU%20-%20MARACATU%20FEMININO%20CORA%C3%87%C3%83O%20NAZARENO.jpg?v=1762956761"
+    },
+    {
+      "start": "2025-12-01T20:45:59-03:00",
+      "stop": "2025-12-01T20:52:07-03:00",
+      "title": "POÉTICAS DO CORPO - CONTATO IMPROVISAÇÃO",
+      "desc": "Danças que interagem com os diferentes cenários de Ouro Preto e região.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PO%C3%89TICAS%20DO%20CORPO%20I%20CONTATO%20IMPROVISA%C3%87%C3%83O.jpg?v=1762520732"
+    },
+    {
+      "start": "2025-12-01T20:52:07-03:00",
+      "stop": "2025-12-01T20:56:35-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM LETRAS - ESTUDOS DE LINGUAGEM",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20LETRAS%20-%20ESTUDOS%20DE%20LINGUAGEM.jpg?v=1762960519"
+    },
+    {
+      "start": "2025-12-01T20:56:35-03:00",
+      "stop": "2025-12-01T21:00:14-03:00",
+      "title": "UFOP EM CASA - O PÁSSARO QUE ENGANOU O GATO",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%2012.jpg?v=1762959123"
+    },
+    {
+      "start": "2025-12-01T21:00:14-03:00",
+      "stop": "2025-12-01T21:03:12-03:00",
+      "title": "BOLETIM - REFIS MARIANA 2025",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20REFIS%20MARIANA%202025.jpg?v=1761053837"
+    },
+    {
+      "start": "2025-12-01T21:03:12-03:00",
+      "stop": "2025-12-01T21:05:59-03:00",
+      "title": "MAIS UFOP - ENGENHARIA MINAS",
+      "desc": "O programa mostra os cursos de graduação oferecidos pela Universidade Federal de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20ENGENHARIA%20MINAS.jpg?v=1762960479"
+    },
+    {
+      "start": "2025-12-01T21:05:59-03:00",
+      "stop": "2025-12-01T21:15:25-03:00",
+      "title": "REPORTAGEM - ENCONTRO DE SABERES 2025",
+      "desc": "Edição 2025 reúne milhares e debate como a universidade impulsiona mudanças sociais.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/REPORTAGEM%20-%20ENCONTRO%20DE%20SABERES%202025.jpg?v=1763123798"
+    },
+    {
+      "start": "2025-12-01T21:15:25-03:00",
+      "stop": "2025-12-01T21:31:08-03:00",
+      "title": "MINHA VOZ, MINHA VEZ (2018) - DIEGO FERNANDES",
+      "desc": "O programa busca valorizar a cultura negra da região de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MINHA%20VOZ%20MINHA%20VEZ%20I%20DIEGO%20FERNANDES.jpg?v=1764005587"
+    },
+    {
+      "start": "2025-12-01T21:31:08-03:00",
+      "stop": "2025-12-01T21:43:45-03:00",
+      "title": "PORTUGUÊS DAQUI, PORTUGUÊS DE LÁ I UM VERDADEIRO DÉJA VU DO PASSADO",
+      "desc": "",
+      "rating": "Livre",
+      "thumb": ""
+    },
+    {
+      "start": "2025-12-01T21:43:45-03:00",
+      "stop": "2025-12-01T21:46:46-03:00",
+      "title": "UFOP EM CASA - THAIZ CANTASINI E JULIANA LIMA",
+      "desc": "Série desenvolvida por dezenas de voluntários durante a pandemia de Covid-19.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EM%20CASA%20I%20EPIS%C3%93DIO%209.jpg?v=1762959125"
+    },
+    {
+      "start": "2025-12-01T21:46:46-03:00",
+      "stop": "2025-12-01T21:50:15-03:00",
+      "title": "SE LIGA AÍ - MARACATU - JOANA CAVALCANTE",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20MARACATU%20-%20JOANA%20CAVALCANTE.jpg?v=1762956761"
+    },
+    {
+      "start": "2025-12-01T21:50:15-03:00",
+      "stop": "2025-12-01T21:55:42-03:00",
+      "title": "UFOP EXPLICA - TRANSFOBIA PROPOSTAS DE POLÍTICAS AFIRMATIVAS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20TRANSFOBIA%20PROPOSTAS%20DE%20POL%C3%8DTICAS%20AFIRMATIVAS.jpg?v=1762959232"
+    },
+    {
+      "start": "2025-12-01T21:55:42-03:00",
+      "stop": "2025-12-01T22:00:39-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM FÍSICA DE MATERIAIS",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S%20GRADUA%C3%87%C3%83O%20EM%20F%C3%8DSICA%20DE%20MATERIAIS.jpg?v=1762960518"
+    },
+    {
+      "start": "2025-12-01T22:00:39-03:00",
+      "stop": "2025-12-01T22:32:29-03:00",
+      "title": "(UFPB) CENA PARAHYBA - EP1 - ANAYDE",
+      "desc": "Programa que rememora obras da dramaturgia paraibana com convidados especiais.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CENA%20PARAHYBA%20-%20EP1%20-%20ANAYDE.jpg?v=1760544800"
+    },
+    {
+      "start": "2025-12-01T22:32:29-03:00",
+      "stop": "2025-12-01T22:57:00-03:00",
+      "title": "(UERN) VEM VER - CERRO CORÁ E LAGOA NOVA",
+      "desc": "As belezas do estado do Rio Grande do Norte para além dos pontos turísticos já conhecidos.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEM%20VER%20-%20EPIS%C3%93DIO%201%20-%20CERRO%20COR%C3%81%20E%20LAGOA%20NOVA.jpg?v=1760707933"
+    },
+    {
+      "start": "2025-12-01T22:57:00-03:00",
+      "stop": "2025-12-01T23:00:18-03:00",
+      "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM QUÍMICA",
+      "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S-GRADUA%C3%87%C3%83O%20EM%20QU%C3%8DMICA.jpg?v=1762960519"
+    },
+    {
+      "start": "2025-12-01T23:00:18-03:00",
+      "stop": "2025-12-01T23:07:56-03:00",
+      "title": "BOLETIM - UFOP GANHA NOVO CAMPUS EM IPATINGA",
+      "desc": "MEC credencia novo campus da UFOP em Ipatinga; reitor Luciano Campos detalha implantação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20UFOP%20GANHA%20NOVO%20CAMPUS%20EM%20IPATINGA.jpg?v=1764352921"
+    },
+    {
+      "start": "2025-12-01T23:07:56-03:00",
+      "stop": "2025-12-01T23:11:19-03:00",
+      "title": "FORMAS DE MUDAR O MUNDO",
+      "desc": "O que você faria para mudar o mundo? Quais são suas ideias? Seus ideais? Como podemos fazer isso?",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/FORMAS%20DE%20MUDAR%20O%20MUNDO%20I%202%20.jpg?v=1760550627"
+    },
+    {
+      "start": "2025-12-01T23:11:19-03:00",
+      "stop": "2025-12-01T23:15:30-03:00",
+      "title": "BOLETIM - ACESSO MEDIAÇÃO COMUNITÁRIA",
+      "desc": "Informe-se através dos Boletins jornalísticos da TV UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/BOLETIM%20-%20ACESSO%20MEDIA%C3%87%C3%83O%20COMUNIT%C3%81RIA.jpg?v=1761053835"
+    },
+    {
+      "start": "2025-12-01T23:15:30-03:00",
+      "stop": "2025-12-01T23:48:36-03:00",
+      "title": "(UnB) IAGORA - IA PARA PROFESSORES E GESTORES",
+      "desc": "Projeto inovador coordenado pela Profa. Isabela Oliveira, da Universidade de Brasília (UnB).",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/IAGORA%20ENTREVISTA%20-%20IA%20PARA%20PROFESSORES%20E%20GESTORES%20EDUCACIONAIS%20%28BLOCO%201%29%20.jpg?v=1760536894"
+    },
+    {
+      "start": "2025-12-01T23:48:36-03:00",
+      "stop": "2025-12-01T23:56:42-03:00",
+      "title": "UFOP EXPLICA - A UTILIZAÇÃO DAS ENERGIAS RENOVÁVEIS AO REDOR DO GLOBO",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20A%20UTILIZA%C3%87%C3%83O%20DAS%20ENERGIAS%20RENOV%C3%81VEIS%20AO%20REDOR%20DO%20GLOBO.jpg?v=1762959218"
+    },
+    {
+      "start": "2025-12-01T23:56:42-03:00",
+      "stop": "2025-12-01T23:59:00-03:00",
+      "title": "PLANO DE CULTURA DA UFOP",
+      "desc": "Diretrizes da Política de Cultura da UFOP.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/PLANO%20DE%20CULTURA%20DA%20UFOP.jpg?v=1759841014"
     }
   ]
 }
