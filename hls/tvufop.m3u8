@@ -1,0 +1,4 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:BANDWIDTH=3000000
+https://customer-bxj0pbwaaik2la0k.cloudflarestream.com/ca1b1e1ff14cb63ab9366872afd3539b/manifest/video.m3u8
