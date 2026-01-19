@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T13:18:01.352713-03:00",
+  "generated_at": "2026-01-19T14:17:01.252498-03:00",
   "schedule": [
     {
       "start": "2026-01-19T00:00:01-03:00",
@@ -107,14 +107,14 @@
     },
     {
       "start": "2026-01-19T01:43:00-03:00",
-      "stop": "2026-01-19T01:45:26-03:00",
+      "stop": "2026-01-19T01:45:12-03:00",
       "title": "MUTATIS MUTANDIS - POVO FALA - O QUE É SUSTENTABILIDADE",
       "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/thumbs/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20O%20QUE%20%C3%89%20SUSTENTABILIDADE.jpg"
     },
     {
-      "start": "2026-01-19T01:45:26-03:00",
+      "start": "2026-01-19T01:45:12-03:00",
       "stop": "2026-01-19T01:52:34-03:00",
       "title": "UFOP EXPLICA - CYBERBULLYING",
       "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
@@ -683,14 +683,14 @@
     },
     {
       "start": "2026-01-19T13:43:00-03:00",
-      "stop": "2026-01-19T13:45:26-03:00",
+      "stop": "2026-01-19T13:45:12-03:00",
       "title": "MUTATIS MUTANDIS - POVO FALA - O QUE É SUSTENTABILIDADE",
       "desc": "O programa \"Mutatis Mutandis: à procura do saber\" tenta desvendar o que é ciência.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/thumbs/MUTATIS%20MUTANDIS%20I%20POVO%20FALA%20O%20QUE%20%C3%89%20SUSTENTABILIDADE.jpg"
     },
     {
-      "start": "2026-01-19T13:45:26-03:00",
+      "start": "2026-01-19T13:45:12-03:00",
       "stop": "2026-01-19T13:52:34-03:00",
       "title": "UFOP EXPLICA - CYBERBULLYING",
       "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
