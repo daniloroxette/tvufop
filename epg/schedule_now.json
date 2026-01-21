@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-21T10:38:01.287838-03:00",
+  "generated_at": "2026-01-21T11:21:01.833625-03:00",
   "schedule": [
     {
       "start": "2026-01-21T00:00:01-03:00",
@@ -2816,6 +2816,86 @@
       "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20X%C3%8ANIA%20FRAN%C3%87A.jpg"
+    },
+    {
+      "start": "2026-01-26T00:00:01-03:00",
+      "stop": "2026-01-26T00:30:35-03:00",
+      "title": "(UFPB) CENA PARAHYBA - EP8 - AS VELHAS",
+      "desc": "Programa que rememora obras da dramaturgia paraibana com convidados especiais.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CENA%20PARAHYBA%20-%20EP8%20-%20AS%20VELHAS.jpg"
+    },
+    {
+      "start": "2026-01-26T00:30:35-03:00",
+      "stop": "2026-01-26T01:00:34-03:00",
+      "title": "(UERN) VEM VER - SOL E MAR III",
+      "desc": "As belezas do estado do Rio Grande do Norte para além dos pontos turísticos já conhecidos.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEM%20VER%20-%20EPIS%C3%93DIO%2010%20-%20SOL%20E%20MAR%20III%20.jpg"
+    },
+    {
+      "start": "2026-01-26T01:00:34-03:00",
+      "stop": "2026-01-26T01:23:50-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP3 - A REPRESENTATIVIDADE NO CINEMA",
+      "desc": "Videocast do Cine Vila Rica para refletir sobre o universo cinematográfico.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CLAQU%C3%89TICOS%20%282025%29%20-%20EP3%20-%20BEN%20E%20GRACY.jpg"
+    },
+    {
+      "start": "2026-01-26T01:23:50-03:00",
+      "stop": "2026-01-26T01:25:52-03:00",
+      "title": "DIORAMA (2012) - LAVRAS NOVAS",
+      "desc": "Esta série apresenta os aspectos históricos e culturais da região de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIORAMA%20I%20LAVRAS%20NOVAS%20P2.jpg"
+    },
+    {
+      "start": "2026-01-26T01:25:52-03:00",
+      "stop": "2026-01-26T11:59:00-03:00",
+      "title": "UFOP EXPLICA - TEORIA DAS FILAS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20TEORIA%20DAS%20FILAS.jpg"
+    },
+    {
+      "start": "2026-01-26T12:00:01-03:00",
+      "stop": "2026-01-26T12:30:35-03:00",
+      "title": "(UFPB) CENA PARAHYBA - EP8 - AS VELHAS",
+      "desc": "Programa que rememora obras da dramaturgia paraibana com convidados especiais.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CENA%20PARAHYBA%20-%20EP8%20-%20AS%20VELHAS.jpg"
+    },
+    {
+      "start": "2026-01-26T12:30:35-03:00",
+      "stop": "2026-01-26T13:00:34-03:00",
+      "title": "(UERN) VEM VER - SOL E MAR III",
+      "desc": "As belezas do estado do Rio Grande do Norte para além dos pontos turísticos já conhecidos.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/VEM%20VER%20-%20EPIS%C3%93DIO%2010%20-%20SOL%20E%20MAR%20III%20.jpg"
+    },
+    {
+      "start": "2026-01-26T13:00:34-03:00",
+      "stop": "2026-01-26T13:23:50-03:00",
+      "title": "CLAQUÉTICOS (2025) - EP3 - A REPRESENTATIVIDADE NO CINEMA",
+      "desc": "Videocast do Cine Vila Rica para refletir sobre o universo cinematográfico.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/CLAQU%C3%89TICOS%20%282025%29%20-%20EP3%20-%20BEN%20E%20GRACY.jpg"
+    },
+    {
+      "start": "2026-01-26T13:23:50-03:00",
+      "stop": "2026-01-26T13:25:52-03:00",
+      "title": "DIORAMA (2012) - LAVRAS NOVAS",
+      "desc": "Esta série apresenta os aspectos históricos e culturais da região de Ouro Preto.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/DIORAMA%20I%20LAVRAS%20NOVAS%20P2.jpg"
+    },
+    {
+      "start": "2026-01-26T13:25:52-03:00",
+      "stop": "2026-01-26T23:59:00-03:00",
+      "title": "UFOP EXPLICA - TEORIA DAS FILAS",
+      "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20-%20TEORIA%20DAS%20FILAS.jpg"
     }
   ]
 }
