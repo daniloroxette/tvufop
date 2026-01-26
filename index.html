@@ -309,17 +309,22 @@
 	
   </style>
 
-	<script>
+<script>
 (function () {
   function isLowResDesktop() {
-    const w = window.innerWidth  || document.documentElement.clientWidth  || 0;
-    const h = window.innerHeight || document.documentElement.clientHeight || 0;
-
-    // “desktop” = ponteiro fino + hover (evita pegar smartphones)
+    // “desktop” = ponteiro fino + hover (evita pegar smartphones/tablets)
     const isDesktop = window.matchMedia &&
       window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    return isDesktop && (w < 1920 || h < 1080);
+    if (!isDesktop) return false;
+
+    // Usa "tela" (screen) e converte para pixels físicos (considera escala do Windows)
+    const dpr = window.devicePixelRatio || 1;
+    const physW = (screen.width  || 0) * dpr;
+    const physH = (screen.height || 0) * dpr;
+
+    // Só aplica exceção quando a TELA for menor que 1920×1080
+    return (physW < 1920 || physH < 1080);
   }
 
   function apply() {
@@ -329,7 +334,8 @@
   window.addEventListener('DOMContentLoaded', apply);
   window.addEventListener('resize', apply);
 })();
-	</script>
+</script>
+
 
 	
 </head>
