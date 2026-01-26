@@ -504,17 +504,43 @@
   <!-- EPG – scroll único no #epg-viewport; cabeçalho sticky; “Agora” com offset -->
   <script>
   (function(){
+    const viewport = document.getElementById('epg-viewport');
+    const root     = document.getElementById('tvufop-epg');
+    if (!viewport || !root) return;
+
     const lowResDesktop = document.documentElement.classList.contains('low-res-desktop');
 
-  Object.assign(viewport.style, {
-    maxHeight: lowResDesktop
-      ? 'calc(100svh - var(--header-h,0px) - 24px)'  // dá mais área para a programação
-      : 'calc(100svh - var(--header-h,0px) - var(--player-h,0px) - 28px)',
-    overflowY: 'auto',
-    overscrollBehavior: 'contain',
-    borderRadius: '12px',
-    WebkitOverflowScrolling: 'touch',
-    touchAction: 'pan-y'
+    const isDesktop = window.matchMedia &&
+      window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    const dpr   = window.devicePixelRatio || 1;
+    const physW = (screen.width  || 0) * dpr;
+    const physH = (screen.height || 0) * dpr;
+
+    const isFullHD = isDesktop && !lowResDesktop &&
+      Math.abs(physW - 1920) < 50 && Math.abs(physH - 1080) < 50;
+
+    const TOP_BELOW_PLAYER =
+      'calc(var(--header-h,0px) + var(--gap-top,6px) + var(--player-h,0px) + 10px)';
+
+    const MAX_BELOW_PLAYER =
+      'calc(100svh - (var(--header-h,0px) + var(--gap-top,6px) + var(--player-h,0px) + 10px) - 12px)';
+
+    Object.assign(viewport.style, {
+      position: lowResDesktop ? 'static' : 'sticky',
+      top:      lowResDesktop ? 'auto'   : TOP_BELOW_PLAYER,
+      zIndex:   lowResDesktop ? 'auto'   : '5',
+      background: '#fff',
+
+      maxHeight: lowResDesktop
+        ? 'calc(100svh - var(--header-h,0px) - 24px)'
+        : (isFullHD ? ('min(400px, ' + MAX_BELOW_PLAYER + ')') : MAX_BELOW_PLAYER),
+
+      overflowY: 'auto',
+      overscrollBehavior: 'contain',
+      borderRadius: '12px',
+      WebkitOverflowScrolling: 'touch',
+      touchAction: 'pan-y'
     });
 
     const SAFE_OFFSET = 125;
