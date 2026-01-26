@@ -295,8 +295,43 @@
 	  display:block;
 	  clear:both;
 	}
+	  /* Ajuste SOMENTE para desktop com viewport < 1920×1080 */
+	.low-res-desktop .player{
+	  position: relative;   /* “destrava” o sticky */
+	  top: auto;
+	  z-index: auto;
+
+	  /* deixa o player menor sem afetar mobile nem 1920×1080+ */
+	  max-width: 720px;
+	  margin: 0 auto 12px;
+	}
+
 	
   </style>
+
+	<script>
+(function () {
+  function isLowResDesktop() {
+    const w = window.innerWidth  || document.documentElement.clientWidth  || 0;
+    const h = window.innerHeight || document.documentElement.clientHeight || 0;
+
+    // “desktop” = ponteiro fino + hover (evita pegar smartphones)
+    const isDesktop = window.matchMedia &&
+      window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    return isDesktop && (w < 1920 || h < 1080);
+  }
+
+  function apply() {
+    document.documentElement.classList.toggle('low-res-desktop', isLowResDesktop());
+  }
+
+  window.addEventListener('DOMContentLoaded', apply);
+  window.addEventListener('resize', apply);
+})();
+	</script>
+
+	
 </head>
 <body>
   <h1>TV UFOP</h1>
@@ -463,16 +498,17 @@
   <!-- EPG – scroll único no #epg-viewport; cabeçalho sticky; “Agora” com offset -->
   <script>
   (function(){
-    const viewport = document.getElementById('epg-viewport');
-    const root     = document.getElementById('tvufop-epg');
+    const lowResDesktop = document.documentElement.classList.contains('low-res-desktop');
 
-    Object.assign(viewport.style, {
-      maxHeight: 'calc(100svh - var(--header-h,0px) - var(--player-h,0px) - 28px)',
-      overflowY: 'auto',
-      overscrollBehavior: 'contain',
-      borderRadius: '12px',
-      WebkitOverflowScrolling: 'touch',
-      touchAction: 'pan-y'
+  Object.assign(viewport.style, {
+    maxHeight: lowResDesktop
+      ? 'calc(100svh - var(--header-h,0px) - 24px)'  // dá mais área para a programação
+      : 'calc(100svh - var(--header-h,0px) - var(--player-h,0px) - 28px)',
+    overflowY: 'auto',
+    overscrollBehavior: 'contain',
+    borderRadius: '12px',
+    WebkitOverflowScrolling: 'touch',
+    touchAction: 'pan-y'
     });
 
     const SAFE_OFFSET = 125;
