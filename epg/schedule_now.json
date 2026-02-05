@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-05T10:59:01.210716-03:00",
+  "generated_at": "2026-02-05T11:47:01.776008-03:00",
   "schedule": [
     {
       "start": "2026-02-05T00:00:01-03:00",
@@ -91,19 +91,19 @@
     },
     {
       "start": "2026-02-05T01:48:32-03:00",
-      "stop": "2026-02-05T01:54:01-03:00",
-      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - DUDUDE HERRMANN",
-      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
-      "rating": "Livre",
-      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20DUDUDE%20HERRMANN.jpg"
-    },
-    {
-      "start": "2026-02-05T01:54:01-03:00",
-      "stop": "2026-02-05T01:57:21-03:00",
+      "stop": "2026-02-05T01:51:36-03:00",
       "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM QUÍMICA MULTICÊNTRICO",
       "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S%20GRADUA%C3%87%C3%83O%20EM%20QU%C3%8DMICA%20MULTIC%C3%8ANTRICO.jpg"
+    },
+    {
+      "start": "2026-02-05T01:51:36-03:00",
+      "stop": "2026-02-05T01:57:21-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - DUDUDE HERRMANN",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20DUDUDE%20HERRMANN.jpg"
     },
     {
       "start": "2026-02-05T01:57:21-03:00",
@@ -683,19 +683,19 @@
     },
     {
       "start": "2026-02-05T13:48:32-03:00",
-      "stop": "2026-02-05T13:54:01-03:00",
-      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - DUDUDE HERRMANN",
-      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
-      "rating": "Livre",
-      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20DUDUDE%20HERRMANN.jpg"
-    },
-    {
-      "start": "2026-02-05T13:54:01-03:00",
-      "stop": "2026-02-05T13:57:21-03:00",
+      "stop": "2026-02-05T13:51:36-03:00",
       "title": "MAIS UFOP - PÓS-GRADUAÇÃO EM QUÍMICA MULTICÊNTRICO",
       "desc": "O programa mostra os cursos de pós graduação, de níveis mestrado e doutorado, oferecidos pela UFOP.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/MAIS%20UFOP%20I%20P%C3%93S%20GRADUA%C3%87%C3%83O%20EM%20QU%C3%8DMICA%20MULTIC%C3%8ANTRICO.jpg"
+    },
+    {
+      "start": "2026-02-05T13:51:36-03:00",
+      "stop": "2026-02-05T13:57:21-03:00",
+      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - DUDUDE HERRMANN",
+      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
+      "rating": "Livre",
+      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20DUDUDE%20HERRMANN.jpg"
     },
     {
       "start": "2026-02-05T13:57:21-03:00",
