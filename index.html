@@ -351,7 +351,6 @@
           playsinline
           webkit-playsinline
           autoplay
-          muted
         ></video>
 
         <!-- “barra de progresso” fixa com a bolinha colada à direita -->
@@ -635,256 +634,373 @@
   })();
   </script>
 
-  <!-- Player HLS: autoplay mudo + controles customizados -->
-  <script>
-    (function () {
-      const video = document.getElementById("tvufop-video");
-      const container = document.getElementById("player-container");
 
-      const playPauseBtn = document.getElementById("btn-play-pause");
-      const muteBtn = document.getElementById("btn-mute");
-      const volumeRange = document.getElementById("volume-range");
-      const fullscreenBtn = document.getElementById("btn-fullscreen");
 
-      const streamUrl = "https://app.tvufop.com.br/hls/tvufop.m3u8";
+	
+    <!-- Player HLS: autoplay mudo + controles customizados -->
+<script>
+(function () {
+  const video = document.getElementById("tvufop-video");
+  const container = document.getElementById("player-container");
+
+  const playPauseBtn = document.getElementById("btn-play-pause");
+  const muteBtn = document.getElementById("btn-mute");
+  const volumeRange = document.getElementById("volume-range");
+  const fullscreenBtn = document.getElementById("btn-fullscreen");
+
+  const streamUrl = "https://app.tvufop.com.br/hls/tvufop.m3u8";
+
+  const STORAGE_KEYS = {
+    muted: "tvufop-muted",
+    volume: "tvufop-volume"
+  };
 
       // Controle de visibilidade do overlay
-      let uiVisible = true;
-      let hideUiTimeout = null;
+  let hlsInstance = null;
+  let uiVisible = true;
+  let hideUiTimeout = null;
+  let autoplayStartedMuted = false;
+  let initialAutoplayTried = false;
 
-      function hideUI() {
-        container.classList.add("ui-hidden");
-        uiVisible = false;
-      }
+  function getSavedVolume() {
+    const v = parseFloat(localStorage.getItem(STORAGE_KEYS.volume));
+    if (Number.isFinite(v)) {
+      return Math.max(0, Math.min(1, v));
+    }
+    return 0.8;
+  }
 
-      function showUI() {
-        container.classList.remove("ui-hidden");
-        uiVisible = true;
-        resetHideTimer();
-      }
+  function getSavedMuted() {
+    return localStorage.getItem(STORAGE_KEYS.muted) === "true";
+  }
 
-      function resetHideTimer() {
-        if (hideUiTimeout) {
-          clearTimeout(hideUiTimeout);
-        }
+  function saveAudioPrefs() {
+    try {
+      localStorage.setItem(STORAGE_KEYS.muted, String(video.muted));
+      localStorage.setItem(STORAGE_KEYS.volume, String(video.volume));
+    } catch (e) {
+      console.warn("Não foi possível salvar preferências de áudio.", e);
+    }
+  }
+
+  function hideUI() {
+    container.classList.add("ui-hidden");
+    uiVisible = false;
+  }
+
+  function showUI() {
+    container.classList.remove("ui-hidden");
+    uiVisible = true;
+    resetHideTimer();
+  }
+
+  function resetHideTimer() {
+    if (hideUiTimeout) {
+      clearTimeout(hideUiTimeout);
+    }
+
         // Não esconder automaticamente se o vídeo estiver pausado
-        if (video.paused) {
-          return;
-        }
-        hideUiTimeout = setTimeout(hideUI, 3000); // 3s após a última interação
-      }
+    if (video.paused) return;
+    hideUiTimeout = setTimeout(hideUI, 3000);
+  }
 
       // Qualquer atividade do usuário no container "acorda" o overlay
-      function registerUserActivity() {
-        showUI();
-      }
+  function registerUserActivity() {
+    showUI();
+  }
 
       // Desktop: mover o mouse sobre o player
-      container.addEventListener("mousemove", registerUserActivity);
-
       // Mobile / toque: início do toque em qualquer parte do player
-      container.addEventListener(
-        "touchstart",
-        function () {
-          registerUserActivity();
-        },
-        { passive: true }
-      );
+  container.addEventListener("mousemove", registerUserActivity);
+  container.addEventListener(
+    "touchstart",
+    function () {
+      registerUserActivity();
+    },
+    { passive: true }
+  );
+
 
       // --------- FULLSCREEN (com fallbacks) ---------
-      function isFullscreen() {
-        return (
-          document.fullscreenElement ||
-          document.webkitFullscreenElement ||
-          document.mozFullScreenElement ||
-          document.msFullscreenElement
-        );
-      }
+  function isFullscreen() {
+    return (
+      document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.mozFullScreenElement ||
+      document.msFullscreenElement
+    );
+  }
 
-      function enterFullscreen() {
-        const el = document.getElementById("player-box");
+  function enterFullscreen() {
+    const el = document.getElementById("player-box");
 
         // Fullscreen API padrão
-        if (el.requestFullscreen) {
-          const p = el.requestFullscreen();
-          if (p && p.catch) {
-            p.catch(err => {
-              console.warn("Falha em requestFullscreen:", err);
+    if (el.requestFullscreen) {
+      const p = el.requestFullscreen();
+      if (p && p.catch) {
+        p.catch(err => {
+          console.warn("Falha em requestFullscreen:", err);
               // Fallback para iOS/Safari
-              if (video.webkitEnterFullscreen) {
-                video.webkitEnterFullscreen();
-              }
-            });
+          if (video.webkitEnterFullscreen) {
+            video.webkitEnterFullscreen();
           }
-          return;
-        }
+        });
+      }
+      return;
+    }
 
         // Prefixados
-        if (el.webkitRequestFullscreen) {
-          el.webkitRequestFullscreen();
-          return;
-        }
-        if (el.mozRequestFullScreen) {
-          el.mozRequestFullScreen();
-          return;
-        }
-        if (el.msRequestFullscreen) {
-          el.msRequestFullscreen();
-          return;
-        }
+    if (el.webkitRequestFullscreen) {
+      el.webkitRequestFullscreen();
+      return;
+    }
+    if (el.mozRequestFullScreen) {
+      el.mozRequestFullScreen();
+      return;
+    }
+    if (el.msRequestFullscreen) {
+      el.msRequestFullscreen();
+      return;
+    }
 
         // Fallback iOS (modo fullscreen só do vídeo)
-        if (video.webkitEnterFullscreen) {
-          video.webkitEnterFullscreen();
-        }
-      }
+    if (video.webkitEnterFullscreen) {
+      video.webkitEnterFullscreen();
+    }
+  }
 
-      function exitFullscreen() {
-        if (document.exitFullscreen) {
-          document.exitFullscreen().catch?.(err => {
-            console.warn("Falha em exitFullscreen:", err);
-          });
-          return;
-        }
-        if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-          return;
-        }
-        if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-          return;
-        }
-        if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-          return;
-        }
-      }
-
-      function toggleFullscreen() {
-        if (isFullscreen()) {
-          exitFullscreen();
-        } else {
-          enterFullscreen();
-        }
-      }
-
-      ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach(ev => {
-        document.addEventListener(ev, () => {
-          // reservado para reagir a entrar/sair de tela cheia, se necessário
-        });
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen().catch?.(err => {
+        console.warn("Falha em exitFullscreen:", err);
       });
+      return;
+    }
+    if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+      return;
+    }
+    if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+      return;
+    }
+    if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+      return;
+    }
+  }
 
+  function toggleFullscreen() {
+    if (isFullscreen()) {
+      exitFullscreen();
+    } else {
+      enterFullscreen();
+    }
+  }
+
+  ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach(ev => {
+    document.addEventListener(ev, () => {});
+  });
+
+  function updatePlayPauseIcon() {
+    playPauseBtn.textContent = video.paused ? "▶" : "❚❚";
+  }
+
+  function updateMuteIcon() {
+    muteBtn.textContent = video.muted || video.volume === 0 ? "🔇" : "🔊";
+  }
+
+  function syncVolumeUI() {
+    volumeRange.value = String(video.volume);
+  }
+
+  function applySavedAudioState() {
+    const savedVolume = getSavedVolume();
+    const savedMuted = getSavedMuted();
+
+    video.volume = savedVolume;
+    video.muted = savedMuted;
+    syncVolumeUI();
+    updateMuteIcon();
+  }
       // --------- FIM FULLSCREEN ---------
 
       // Carregar HLS
-      function initPlayer() {
-        if (video.canPlayType("application/vnd.apple.mpegurl")) {
+  function initPlayer() {
+    if (video.canPlayType("application/vnd.apple.mpegurl")) {
           // Safari / iOS com suporte nativo
-          video.src = streamUrl;
-        } else if (window.Hls && window.Hls.isSupported()) {
-          const hls = new Hls({
-            liveDurationInfinity: true
-          });
-          hls.loadSource(streamUrl);
-          hls.attachMedia(video);
-        } else {
-          console.warn("HLS não suportado neste navegador.");
-        }
-      }
+      video.src = streamUrl;
+    } else if (window.Hls && window.Hls.isSupported()) {
+      hlsInstance = new Hls({
+        liveDurationInfinity: true
+      });
+      hlsInstance.loadSource(streamUrl);
+      hlsInstance.attachMedia(video);
+    } else {
+      console.warn("HLS não suportado neste navegador.");
+    }
+  }
 
-      // Tentar autoplay muted
-      function tryAutoplay() {
-        video.muted = true;
-        const promise = video.play();
-        if (promise && promise.catch) {
-          promise.catch(function (err) {
-            console.log("Autoplay bloqueado; aguardando interação do usuário.", err);
-          });
+  async function tryInitialAutoplay() {
+    if (initialAutoplayTried) return;
+    initialAutoplayTried = true;
+
+    applySavedAudioState();
+
+    try {
+      await video.play();
+      autoplayStartedMuted = video.muted;
+      updatePlayPauseIcon();
+      updateMuteIcon();
+      resetHideTimer();
+      return;
+    } catch (err) {
+      console.log("Autoplay com áudio bloqueado. Tentando iniciar mudo.", err);
+    }
+
+    try {
+      video.muted = true;
+      updateMuteIcon();
+      await video.play();
+      autoplayStartedMuted = true;
+      updatePlayPauseIcon();
+      resetHideTimer();
+    } catch (err2) {
+      console.log("Autoplay também falhou em modo mudo.", err2);
+      updatePlayPauseIcon();
+      showUI();
+    }
+  }
+
+  async function unlockAudioAfterGesture() {
+    if (!autoplayStartedMuted) return;
+    if (getSavedMuted()) return;
+
+    try {
+      if (video.volume === 0) {
+        video.volume = getSavedVolume();
+      }
+      video.muted = false;
+      await video.play();
+      autoplayStartedMuted = false;
+      updateMuteIcon();
+      saveAudioPrefs();
+    } catch (err) {
+      console.warn("Não foi possível liberar áudio após interação.", err);
+    }
+  }
+
+  function registerUnlockListeners() {
+    const onceHandler = () => {
+      unlockAudioAfterGesture();
+    };
+
+    document.addEventListener("click", onceHandler, { once: true });
+    document.addEventListener("touchstart", onceHandler, { once: true, passive: true });
+    document.addEventListener("keydown", onceHandler, { once: true });
+  }
+
+  playPauseBtn.addEventListener("click", async function (event) {
+    event.stopPropagation();
+
+    if (video.paused) {
+      if (!getSavedMuted()) {
+        video.muted = false;
+        if (video.volume === 0) {
+          video.volume = getSavedVolume();
         }
       }
+      try {
+        await video.play();
+      } catch (err) {
+        console.warn("Falha ao reproduzir:", err);
+      }
+    } else {
+      video.pause();
+    }
 
       // Atualizar ícone de play/pause
-      function updatePlayPauseIcon() {
-        if (video.paused) {
-          playPauseBtn.textContent = "▶";
-        } else {
-          playPauseBtn.textContent = "❚❚";
-        }
+    updatePlayPauseIcon();
+    updateMuteIcon();
+    saveAudioPrefs();
+    showUI();
+  });
+
+  muteBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+
+    if (video.muted) {
+      video.muted = false;
+      if (video.volume === 0) {
+        video.volume = getSavedVolume() || 0.8;
       }
+    } else {
+      video.muted = true;
+    }
 
-      // Atualizar ícone de mute
-      function updateMuteIcon() {
-        muteBtn.textContent = video.muted || video.volume === 0 ? "🔇" : "🔊";
-      }
+    autoplayStartedMuted = video.muted;
+    updateMuteIcon();
+    saveAudioPrefs();
+    showUI();
+  });
 
-      // Controles
-      playPauseBtn.addEventListener("click", function (event) {
-        event.stopPropagation();
-        if (video.paused) {
-          video.play();
-        } else {
-          video.pause();
-        }
-        showUI();
-      });
+  volumeRange.addEventListener("input", function (event) {
+    event.stopPropagation();
 
-      muteBtn.addEventListener("click", function (event) {
-        event.stopPropagation();
-        if (video.muted) {
-          video.muted = false;
-          if (video.volume === 0) {
-            video.volume = parseFloat(volumeRange.value) || 0.8;
-          }
-        } else {
-          video.muted = true;
-        }
-        updateMuteIcon();
-        showUI();
-      });
+    const vol = parseFloat(volumeRange.value);
+    video.volume = vol;
 
-      volumeRange.addEventListener("input", function (event) {
-        event.stopPropagation();
-        const vol = parseFloat(volumeRange.value);
-        video.volume = vol;
-        if (vol > 0 && video.muted) {
-          video.muted = false;
-        }
-        updateMuteIcon();
-        showUI();
-      });
+    if (vol > 0 && video.muted) {
+      video.muted = false;
+    }
+    if (vol === 0) {
+      video.muted = true;
+    }
 
-      fullscreenBtn.addEventListener("click", function (event) {
-        event.stopPropagation();
-        toggleFullscreen();
-        showUI();
-      });
+    autoplayStartedMuted = video.muted;
+    updateMuteIcon();
+    saveAudioPrefs();
+    showUI();
+  });
+
+  fullscreenBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    toggleFullscreen();
+    showUI();
+  });
 
       // Eventos do vídeo
-      video.addEventListener("play", function () {
-        updatePlayPauseIcon();
-        resetHideTimer();
-      });
+  video.addEventListener("play", function () {
+    updatePlayPauseIcon();
+    resetHideTimer();
+  });
 
-      video.addEventListener("pause", function () {
-        updatePlayPauseIcon();
+  video.addEventListener("pause", function () {
+    updatePlayPauseIcon();
         // Em pausa, mantém os controles visíveis
-        showUI();
-      });
+    showUI();
+  });
 
-      // Garante que ícones fiquem coerentes
-      video.addEventListener("volumechange", updateMuteIcon);
+  video.addEventListener("volumechange", function () {
+    updateMuteIcon();
+    syncVolumeUI();
+    saveAudioPrefs();
+  });
 
       // Inicialização
-      initPlayer();
-
+  initPlayer();
+  applySavedAudioState();
       // UI começa visível
-      showUI();
+  showUI();
+  registerUnlockListeners();
 
       // Tentar autoplay ao carregar a página e assim que o vídeo estiver pronto
-      window.addEventListener("load", tryAutoplay);
-      video.addEventListener("canplay", tryAutoplay);
-    })();
-  </script>
+  window.addEventListener("load", tryInitialAutoplay);
+  video.addEventListener("canplay", tryInitialAutoplay, { once: true });
+})();
+</script>
+
+	
 
   <!-- Service Worker -->
   <script>
