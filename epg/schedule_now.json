@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-16T14:55:01.973482-03:00",
+  "generated_at": "2026-03-16T15:52:01.424084-03:00",
   "schedule": [
     {
       "start": "2026-03-16T00:00:01-03:00",
@@ -171,35 +171,19 @@
     },
     {
       "start": "2026-03-16T03:15:44-03:00",
-      "stop": "2026-03-16T03:33:05-03:00",
+      "stop": "2026-03-16T03:47:11-03:00",
       "title": "(UFCA) VOZES DO CARIRI (2023) - CARIRIAÇU",
       "desc": "Conheça costumes, saberes e manifestações culturais do Cariri Cearense.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/VOZES%20DO%20CARIRI%20%282023%29%20-%20EP7%20-%20BLOCO%201.jpg"
     },
     {
-      "start": "2026-03-16T03:33:05-03:00",
-      "stop": "2026-03-16T03:40:11-03:00",
+      "start": "2026-03-16T03:47:11-03:00",
+      "stop": "2026-03-16T03:55:27-03:00",
       "title": "UFOP EXPLICA - ESQUIZOFRENIA",
       "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20ESQUIZOFRENIA.jpg"
-    },
-    {
-      "start": "2026-03-16T03:40:11-03:00",
-      "stop": "2026-03-16T03:43:00-03:00",
-      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - NÚCLEO DE INVESTIGAÇÕES FEMINISTAS  - NINFEIAS",
-      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
-      "rating": "Livre",
-      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20N%C3%9ACLEO%20DE%20INVESTIGA%C3%87%C3%95ES%20FEMINISTAS%20-%20NINFEIAS.jpg"
-    },
-    {
-      "start": "2026-03-16T03:43:00-03:00",
-      "stop": "2026-03-16T03:55:27-03:00",
-      "title": "(UFCA) VOZES DO CARIRI (2023) - CARIRIAÇU",
-      "desc": "Conheça costumes, saberes e manifestações culturais do Cariri Cearense.",
-      "rating": "Livre",
-      "thumb": "https://app.tvufop.com.br/epg/VOZES%20DO%20CARIRI%20%282023%29%20-%20EP7%20-%20BLOCO%203.jpg"
     },
     {
       "start": "2026-03-16T03:55:27-03:00",
@@ -747,35 +731,19 @@
     },
     {
       "start": "2026-03-16T15:15:44-03:00",
-      "stop": "2026-03-16T15:33:05-03:00",
+      "stop": "2026-03-16T15:47:11-03:00",
       "title": "(UFCA) VOZES DO CARIRI (2023) - CARIRIAÇU",
       "desc": "Conheça costumes, saberes e manifestações culturais do Cariri Cearense.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/VOZES%20DO%20CARIRI%20%282023%29%20-%20EP7%20-%20BLOCO%201.jpg"
     },
     {
-      "start": "2026-03-16T15:33:05-03:00",
-      "stop": "2026-03-16T15:40:11-03:00",
+      "start": "2026-03-16T15:47:11-03:00",
+      "stop": "2026-03-16T15:55:27-03:00",
       "title": "UFOP EXPLICA - ESQUIZOFRENIA",
       "desc": "Série em que docentes da UFOP abordam, com linguagem acessível e rigor acadêmico, temas relevantes.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/UFOP%20EXPLICA%20I%20ESQUIZOFRENIA.jpg"
-    },
-    {
-      "start": "2026-03-16T15:40:11-03:00",
-      "stop": "2026-03-16T15:43:00-03:00",
-      "title": "SE LIGA AÍ - PERSONALIDADES FEMININAS - NÚCLEO DE INVESTIGAÇÕES FEMINISTAS  - NINFEIAS",
-      "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
-      "rating": "Livre",
-      "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20PERSONALIDADES%20FEMININAS%20-%20N%C3%9ACLEO%20DE%20INVESTIGA%C3%87%C3%95ES%20FEMINISTAS%20-%20NINFEIAS.jpg"
-    },
-    {
-      "start": "2026-03-16T15:43:00-03:00",
-      "stop": "2026-03-16T15:55:27-03:00",
-      "title": "(UFCA) VOZES DO CARIRI (2023) - CARIRIAÇU",
-      "desc": "Conheça costumes, saberes e manifestações culturais do Cariri Cearense.",
-      "rating": "Livre",
-      "thumb": "https://app.tvufop.com.br/epg/VOZES%20DO%20CARIRI%20%282023%29%20-%20EP7%20-%20BLOCO%203.jpg"
     },
     {
       "start": "2026-03-16T15:55:27-03:00",
