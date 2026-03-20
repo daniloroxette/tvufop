@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="epg/epg.css">
 
   <!-- HLS.js para navegadores que não tocam HLS nativamente -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
 
   <style>
     :root {
@@ -832,26 +832,18 @@
       video.src = streamUrl;
     } else if (window.Hls && window.Hls.isSupported()) {
   hlsInstance = new Hls({
-    liveDurationInfinity: true,
-
-    // Mantém uma folga maior do "ao vivo" (menos rebuffer, mais atraso)
-    liveSyncDurationCount: 8,         // fica ~8 segmentos atrás do live edge
-    liveMaxLatencyDurationCount: 16,  // tolera até ~16 segmentos atrás antes de tentar "correr" para o ao vivo
-
-    // Buffer maior (reduz "buffering.../playing" em oscilações)
-    maxBufferLength: 60,              // segundos no buffer (alvo)
-    maxMaxBufferLength: 120,          // teto (quando a rede permitir)
-
-    // Ajuda em micro-buracos de segmentos/latência
-    maxBufferHole: 1.0,
-
-    // Mantém um pouco de histórico; pode reduzir uso de memória se diminuir
-    backBufferLength: 30
+    maxBufferLength: 30,
+    maxMaxBufferLength: 60,
+    backBufferLength: 20
   });
 
   hlsInstance.loadSource(streamUrl);
   hlsInstance.attachMedia(video);
-   } else {
+
+  hlsInstance.on(Hls.Events.ERROR, function (event, data) {
+    console.error("HLS.js error:", data);
+  });
+} else {
       console.warn("HLS não suportado neste navegador.");
     }
   }
