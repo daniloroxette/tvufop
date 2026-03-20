@@ -26,11 +26,39 @@
   <link rel="stylesheet" href="epg/epg.css">
 
   <style>
-    :root { --bordo:#8C1B2B; }
-    *{box-sizing:border-box}
-    body{ font-family: Arial, sans-serif; margin:0; padding:0; background:#fff; text-align:center; }
-    h1{ margin:0; padding:16px 12px; background:var(--bordo); color:#fff; font-size:20px; letter-spacing:.3px; position: sticky; top: 0; z-index: 1000; }
-    .wrap{ width:min(100%, 960px); margin:16px auto; padding:0 8px; }
+    :root {
+      --bordo:#8C1B2B;
+      --now-thumb-width:144px;
+      --now-thumb-gap:8px;
+    }
+
+    * { box-sizing:border-box; }
+
+    body{
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background:#fff;
+      text-align:center;
+    }
+
+    h1{
+      margin:0;
+      padding:16px 12px;
+      background:var(--bordo);
+      color:#fff;
+      font-size:20px;
+      letter-spacing:.3px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .wrap{
+      width:min(100%, 960px);
+      margin:16px auto;
+      padding:0 8px;
+    }
 
     /* PLAYER COM OVERLAY INTERNO */
     .player{
@@ -43,6 +71,7 @@
       top: calc(var(--header-h, 0px) + var(--gap-top, 6px));
       z-index: 999;
     }
+
     .player iframe{
       width:100%;
       height:100%;
@@ -51,64 +80,164 @@
       background:#000;
     }
 
-    /* -------- Overlay Eduplay (carregando + play “pass-thru”) -------- */
+    /* Overlay Eduplay */
     .eduplay-overlay{
-      position:absolute; inset:0;
-      display:flex; align-items:center; justify-content:center;
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       background:rgba(0,0,0,.55);
       color:#fff;
       transition: opacity .18s ease, visibility 0s linear .18s;
-      opacity:1; visibility:visible;
-      pointer-events:auto;                 /* bloqueia enquanto carrega */
+      opacity:1;
+      visibility:visible;
+      pointer-events:auto;
     }
+
     .eduplay-overlay.is-hidden{
-      opacity:0; visibility:hidden;
+      opacity:0;
+      visibility:hidden;
       pointer-events:none;
     }
-    /* Pronto para interação: deixa o clique passar para o iframe */
+
     .eduplay-overlay.is-ready{
-      pointer-events:none;                 /* clique passa para o iframe */
+      pointer-events:none;
     }
 
     .eduplay-overlay .overlay-content{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:10px 14px; border-radius:12px;
-      background:rgba(0,0,0,.35); backdrop-filter: blur(2px);
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 14px;
+      border-radius:12px;
+      background:rgba(0,0,0,.35);
+      backdrop-filter: blur(2px);
       font-size:1rem;
     }
+
     .eduplay-overlay .spinner{
-      width:16px; height:16px; border-radius:50%;
-      border:2px solid #bbb; border-top-color:#8C1B2B;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      border:2px solid #bbb;
+      border-top-color:#8C1B2B;
       animation: spin 1s linear infinite;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Ícone de play (decorativo; clique passa através) */
-    .eduplay-overlay .overlay-play{
-      position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-      /* antes havia: width:84px; height:84px; background:rgba(255,255,255,.92); box-shadow:... */
-      display:none; align-items:center; justify-content:center;
-      pointer-events:none;
-
-      /* remoções/overrides do círculo: */
-      background: none !important;
-      box-shadow: none !important;
-      width: auto;               /* deixa o tamanho do SVG mandar */
-      height: auto;
-      border-radius: 0;
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
-    .eduplay-overlay .overlay-play svg{ width:60px; height:60px; display:block; }
 
-    /* Estados visuais */
+    .eduplay-overlay .overlay-play{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;
+      background:none !important;
+      box-shadow:none !important;
+      width:auto;
+      height:auto;
+      border-radius:0;
+    }
+
+    .eduplay-overlay .overlay-play svg{
+      width:60px;
+      height:60px;
+      display:block;
+    }
+
     .eduplay-overlay.is-loading .overlay-content{ display:inline-flex; }
     .eduplay-overlay.is-loading .overlay-play{ display:none; }
 
     .eduplay-overlay.is-ready .overlay-content{ display:none; }
     .eduplay-overlay.is-ready .overlay-play{ display:inline-flex; }
 
-    .logos{ margin:28px 0 40px; }
-    .logos img{ margin:10px; vertical-align:middle; }
-    .sep{ margin:18px 0; opacity:.3; }
+    .logos{
+      margin:28px 0 40px;
+    }
+
+    .logos img{
+      margin:10px;
+      vertical-align:middle;
+    }
+
+    .sep{
+      margin:18px 0;
+      opacity:.3;
+    }
+
+    /* Card "Em exibição agora" */
+    #epg-inline-now-mobile{
+      margin:0 0 16px;
+      text-align:left;
+      font-family:Arial,sans-serif;
+    }
+
+    #epg-inline-now-mobile .now-card{
+      background:#fafafa;
+      border:1px solid #e0e0e0;
+      border-radius:12px;
+      padding:12px 12px 14px;
+      max-width:100%;
+      box-shadow:0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    #epg-inline-now-mobile .now-header{
+      font-size:12px;
+      font-weight:600;
+      margin:0 0 8px;
+      color:#555;
+    }
+
+    #epg-inline-now-mobile .now-main{
+      font-size:13px;
+      line-height:1.35;
+      position:relative;
+    }
+
+    #epg-inline-now-mobile .thumb-wrap{
+      float:left;
+      width:var(--now-thumb-width);
+      margin-right:var(--now-thumb-gap);
+      margin-bottom:6px;
+      border-radius:8px;
+      overflow:hidden;
+      background:#e0e0e0;
+    }
+
+    #epg-inline-now-mobile .thumb-wrap img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
+    #epg-inline-now-mobile .now-text{
+      font-size:13px;
+    }
+
+    #epg-inline-now-mobile .now-title{
+      font-size:15px;
+      font-weight:700;
+      margin:0 0 4px;
+    }
+
+    #epg-inline-now-mobile .now-desc{
+      margin:0;
+      font-size:13px;
+      color:#444;
+      text-align:justify;
+    }
+
+    #epg-inline-now-mobile .now-main::after{
+      content:"";
+      display:block;
+      clear:both;
+    }
   </style>
 </head>
 <body>
@@ -127,14 +256,19 @@
         tabindex="0">
       </iframe>
 
-      <!-- Overlay: mostra spinner enquanto carrega; depois, ícone de play “pass-thru” -->
-      <div id="eduplay-overlay" class="eduplay-overlay is-loading" role="dialog" aria-label="Controle de reprodução" aria-live="polite" aria-busy="true">
+      <div
+        id="eduplay-overlay"
+        class="eduplay-overlay is-loading"
+        role="dialog"
+        aria-label="Controle de reprodução"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div class="overlay-content">
           <span class="spinner" aria-hidden="true"></span>
           <span class="msg">Carregando o player…</span>
         </div>
 
-        <!-- Ícone de play (decorativo). O clique passa para o iframe. -->
         <div class="overlay-play" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48">
             <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="#8C1B2B"/>
@@ -151,38 +285,116 @@
       <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
     </div>
 
-    <!-- Viewport rolável só da programação -->
+    <div id="epg-inline-now-mobile"></div>
+
     <div id="epg-viewport" role="region" aria-label="Programação">
       <div id="tvufop-epg"></div>
     </div>
   </div>
 
-  <!-- Calcula alturas do cabeçalho e do player para layout sticky -->
+  <!-- Calcula alturas do cabeçalho e do player -->
   <script>
   (function(){
     const header = document.querySelector('h1');
     const player = document.getElementById('eduplay-box');
+
     function updateVars(){
-      if (header) document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+      if (header) {
+        document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+      }
       if (player) {
         const r = player.getBoundingClientRect();
         document.documentElement.style.setProperty('--player-h', r.height + 'px');
       }
       document.documentElement.style.setProperty('--gap-top', '6px');
     }
+
     window.addEventListener('load', updateVars);
     window.addEventListener('resize', updateVars);
+  })();
+  </script>
+
+  <!-- Card "Em exibição agora" -->
+  <script>
+  (function () {
+    var ENDPOINT   = "https://app.tvufop.com.br/epg/now_next.json";
+    var REFRESH_MS = 30000;
+    var rootId     = "epg-inline-now-mobile";
+
+    function $(id){
+      return document.getElementById(id);
+    }
+
+    function esc(s){
+      return String(s || "").replace(/[&<>"']/g, function (c) {
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          "\"": "&quot;",
+          "'": "&#39;"
+        }[c];
+      });
+    }
+
+    function render(data){
+      var box = $(rootId);
+      if (!box) return;
+
+      var c = data && data.current ? data.current : null;
+      var html = '<div class="now-card">';
+      html += '<div class="now-header">Em exibição agora:</div>';
+
+      if (c){
+        html += '<div class="now-main">';
+
+        if (c.thumb){
+          html += '<div class="thumb-wrap">';
+          html += '<img src="' + esc(c.thumb) + '" alt="' + esc(c.title || "") + '" loading="lazy">';
+          html += '</div>';
+        }
+
+        html += '<div class="now-text">';
+        html += '<p class="now-title">' + esc(c.title || "") + '</p>';
+
+        if (c.desc){
+          html += '<p class="now-desc">' + esc(c.desc) + '</p>';
+        }
+
+        html += '</div>';
+        html += '</div>';
+      } else {
+        html += '<div class="now-main"><p class="now-title">—</p></div>';
+      }
+
+      html += '</div>';
+      box.innerHTML = html;
+    }
+
+    function load(){
+      var box = $(rootId);
+      if (!box || !window.fetch) return;
+
+      fetch(ENDPOINT, { cache: "no-store" })
+        .then(function (r){ return r.json(); })
+        .then(render)
+        .catch(function(){});
+    }
+
+    load();
+    setInterval(load, REFRESH_MS);
   })();
   </script>
 
   <!-- Carrega EPG -->
   <script src="epg/epg.js"></script>
 
-  <!-- EPG – scroll único no #epg-viewport; cabeçalho sticky; “Agora” funcional c/ offset -->
+  <!-- EPG -->
   <script>
   (function(){
     const viewport = document.getElementById('epg-viewport');
     const root     = document.getElementById('tvufop-epg');
+    if (!viewport || !root) return;
 
     Object.assign(viewport.style, {
       maxHeight: 'calc(100svh - var(--header-h,0px) - var(--player-h,0px) - 28px)',
@@ -198,46 +410,73 @@
 
     const q  = (sel, el=root) => el.querySelector(sel);
     const qa = (sel, el=root) => Array.from(el.querySelectorAll(sel));
+
     const relTop = (el, container=viewport) => {
       const e = el.getBoundingClientRect();
       const c = container.getBoundingClientRect();
       return (e.top - c.top) + container.scrollTop;
     };
 
-    function firstItem(){ return q('li, .epg-item, tr, .row, .program, article'); }
+    function firstItem(){
+      return q('li, .epg-item, tr, .row, .program, article');
+    }
 
     function findNow(){
       const sels = ['.is-now','.now','[data-now="true"]','[aria-current="true"]','[data-state~="now"]'];
-      for (const s of sels){ const el = q(s); if (el) return el; }
+      for (const s of sels){
+        const el = q(s);
+        if (el) return el;
+      }
+
       const items = qa('li, .epg-item, tr, .row, .program, article')
         .filter(el => /\b\d{2}:\d{2}\b/.test(el.textContent));
+
       if (!items.length) return null;
+
       const now = new Date();
-      const nowMin = now.getHours()*60 + now.getMinutes();
-      let best=null, bestVal=-1;
+      const nowMin = now.getHours() * 60 + now.getMinutes();
+      let best = null;
+      let bestVal = -1;
+
       for (const el of items){
         const m = el.textContent.match(/\b(\d{2}):(\d{2})\b/);
         if (!m) continue;
-        const t = (+m[1])*60 + (+m[2]);
-        const val = (t<=nowMin)? t : (t-1440);
-        if (val>bestVal){bestVal=val; best=el;}
+
+        const t = (+m[1]) * 60 + (+m[2]);
+        const val = (t <= nowMin) ? t : (t - 1440);
+
+        if (val > bestVal){
+          bestVal = val;
+          best = el;
+        }
       }
+
       return best;
     }
 
     function stickHeader(){
       const header = root.firstElementChild;
       if (!header) return 0;
-      Object.assign(header.style, { position: 'sticky', top: '0', zIndex: '2', background: '#fff' });
+
+      Object.assign(header.style, {
+        position: 'sticky',
+        top: '0',
+        zIndex: '2',
+        background: '#fff'
+      });
+
       return header.getBoundingClientRect().height || 0;
     }
 
     function effectiveGap(){
       const prev = viewport.scrollTop;
       viewport.scrollTop = 0;
+
       const first = firstItem();
       const headerGap = first ? relTop(first) : 0;
+
       viewport.scrollTop = prev;
+
       const gap = Math.max(0, headerGap + SAFE_OFFSET);
       viewport.style.scrollPaddingTop = gap + 'px';
       return gap;
@@ -246,10 +485,15 @@
     function scrollToNow(opts={smooth:false}){
       const nowEl = findNow();
       if (!nowEl) return;
+
       stickHeader();
       const gap = effectiveGap();
       const target = Math.max(0, relTop(nowEl) - gap);
-      viewport.scrollTo({ top: target, behavior: opts.smooth ? 'smooth':'auto' });
+
+      viewport.scrollTo({
+        top: target,
+        behavior: opts.smooth ? 'smooth' : 'auto'
+      });
     }
 
     function squashInnerScrollers(){
@@ -261,19 +505,24 @@
     }
 
     let done = false;
+
     function initAlign(){
       if (done) return;
       squashInnerScrollers();
       stickHeader();
-      requestAnimationFrame(() => { scrollToNow({smooth:false}); done = true; });
+      requestAnimationFrame(() => {
+        scrollToNow({ smooth:false });
+        done = true;
+      });
     }
 
     viewport.addEventListener('click', (ev) => {
       const btn = ev.target.closest('button,[role="button"],a');
       if (!btn) return;
+
       if (/agora/i.test(btn.textContent || '')) {
         ev.preventDefault();
-        scrollToNow({smooth:true});
+        scrollToNow({ smooth:true });
       }
     });
 
@@ -281,98 +530,56 @@
     mo.observe(root, { childList:true, subtree:true });
 
     window.addEventListener('load', initAlign);
-    window.addEventListener('resize', () => { done = false; initAlign(); });
+    window.addEventListener('resize', () => {
+      done = false;
+      initAlign();
+    });
   })();
   </script>
 
-  <!-- Overlay: lógica de exibição (primeiro clique já atinge o iframe) -->
+  <!-- Overlay do Eduplay -->
   <script>
-  (function(){
-  const iframe   = document.getElementById('eduplay-iframe');
-  const overlay  = document.getElementById('eduplay-overlay');
-  const playerBx = document.getElementById('eduplay-box');
-  if (!iframe || !overlay || !playerBx) return;
+  (function () {
+    const iframe = document.getElementById('eduplay-iframe');
+    const overlay = document.getElementById('eduplay-overlay');
+    const box = document.getElementById('eduplay-box');
+    const msg = overlay ? overlay.querySelector('.msg') : null;
 
-  // Estado inicial: carregando
-  overlay.classList.remove('is-hidden');
-  overlay.classList.add('is-loading');
-  overlay.setAttribute('aria-busy','true');
-  overlay.querySelector('.msg').textContent = 'Carregando o player…';
+    if (!iframe || !overlay || !box) return;
 
-  // Quando o iframe terminar de carregar, exibe ícone e libera clique "pass-through"
-  iframe.addEventListener('load', () => {
-    overlay.classList.remove('is-loading');
-    overlay.classList.add('is-ready');          // pointer-events:none via CSS
-    overlay.setAttribute('aria-busy','false');
-    overlay.querySelector('.msg').textContent = 'Toque para reproduzir';
-  });
+    let ready = false;
 
-  // Se o src do iframe mudar, volta ao modo carregando
-  new MutationObserver(muts => {
-    for (const m of muts) {
-      if (m.type === 'attributes' && m.attributeName === 'src') {
-        overlay.classList.remove('is-hidden','is-ready');
-        overlay.classList.add('is-loading');
-        overlay.style.pointerEvents = 'auto';
-        overlay.setAttribute('aria-busy','true');
-        overlay.querySelector('.msg').textContent = 'Carregando o player…';
+    function setReady() {
+      if (ready) return;
+      ready = true;
+
+      overlay.classList.remove('is-loading');
+      overlay.classList.add('is-ready');
+      overlay.setAttribute('aria-busy', 'false');
+
+      if (msg) {
+        msg.textContent = 'Toque para interagir';
       }
+
+      setTimeout(function () {
+        overlay.classList.add('is-hidden');
+      }, 1200);
     }
-  }).observe(iframe, { attributes: true, attributeFilter: ['src'] });
 
-  // ---- Correção principal: esconder overlay no pointerdown dentro da área do player ----
-  function insidePlayer(ev){
-    const r = playerBx.getBoundingClientRect();
-    const x = ev.clientX, y = ev.clientY;
-    return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
-  }
-
-  // Captura antes do iframe, não cancela o evento (sem preventDefault)
-  const onDownCapture = (ev) => {
-    if (!overlay.classList.contains('is-ready')) return;
-    if (!insidePlayer(ev)) return;
-    // Esconde no próximo frame, enquanto o mesmo gesto segue para o iframe
-    requestAnimationFrame(() => {
-      overlay.classList.add('is-hidden');
-      overlay.classList.remove('is-ready');
+    iframe.addEventListener('load', function () {
+      setTimeout(setReady, 700);
     });
-  };
 
-  // pointerdown cobre mouse/touch/pen com Pointer Events
-  document.addEventListener('pointerdown', onDownCapture, true);
+    box.addEventListener('pointerdown', function () {
+      setReady();
+    }, { passive: true });
 
-  // Fallbacks auxiliares (mantidos, caso o UA dispare foco/blur):
-  iframe.addEventListener('focus', () => {
-    if (overlay.classList.contains('is-ready')) {
-      overlay.classList.add('is-hidden');
-      overlay.classList.remove('is-ready');
-    }
-  });
-  window.addEventListener('blur', () => {
-    if (overlay.classList.contains('is-ready')) {
-      overlay.classList.add('is-hidden');
-      overlay.classList.remove('is-ready');
-    }
-  });
+    window.addEventListener('pageshow', function () {
+      setTimeout(setReady, 900);
+    });
 
-  // Mensagem de segurança se demorar demais
-  setTimeout(() => {
-    if (overlay.classList.contains('is-loading')) {
-      overlay.querySelector('.msg').textContent = 'Carregando o player… (verifique a conexão)';
-    }
-  }, 12000);
-
-  // (Opcional) Se ainda precisar, ative o bump de autoplay:
-  // document.addEventListener('pointerdown', (ev) => {
-  //   if (!insidePlayer(ev)) return;
-  //   try{
-  //     const u = new URL(iframe.src, location.href);
-  //     if (!u.searchParams.has('autoplay')) u.searchParams.set('autoplay','1');
-  //     u.searchParams.set('_ts', Date.now().toString());
-  //     iframe.src = u.toString();
-  //   }catch(e){}
-  // }, {capture:true, once:true});
-})();
+    setTimeout(setReady, 5000);
+  })();
   </script>
 
   <!-- Service Worker -->
