@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24T11:14:01.781424-03:00",
+  "generated_at": "2026-03-24T12:56:01.557739-03:00",
   "schedule": [
     {
       "start": "2026-03-24T00:00:01-03:00",
@@ -515,30 +515,30 @@
     },
     {
       "start": "2026-03-24T11:09:53-03:00",
-      "stop": "2026-03-24T11:15:39-03:00",
+      "stop": "2026-03-24T11:15:15-03:00",
       "title": "SE LIGA AÍ - COLETIVO MINAS DA VOZ",
       "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20COLETIVO%20MINAS%20DA%20VOZ.jpg"
     },
     {
-      "start": "2026-03-24T11:15:39-03:00",
-      "stop": "2026-03-24T11:22:40-03:00",
+      "start": "2026-03-24T11:15:15-03:00",
+      "stop": "2026-03-24T11:22:08-03:00",
       "title": "(UNESP) ASTROLAB - CONSTELAÇÕES DE VERÃO",
       "desc": "Programa da TV Unesp em parceria com o Observatório Astronômico Lionel José Andriatto.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/ASTROLAB%20I%20CONSTELA%C3%87%C3%95ES%20DE%20VER%C3%83O.jpg"
     },
     {
-      "start": "2026-03-24T11:22:40-03:00",
-      "stop": "2026-03-24T11:30:13-03:00",
+      "start": "2026-03-24T11:22:08-03:00",
+      "stop": "2026-03-24T11:30:05-03:00",
       "title": "SE LIGA AÍ - LITERATURA - GRADA KILOMBA",
       "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20GRADA%20KILOMBA.jpg"
     },
     {
-      "start": "2026-03-24T11:30:13-03:00",
+      "start": "2026-03-24T11:30:05-03:00",
       "stop": "2026-03-24T11:59:00-03:00",
       "title": "(TV BRASIL) CONHECENDO MUSEUS - MUQUIFU",
       "desc": "Conheça alguns do principais museus do Brasil.",
@@ -1059,30 +1059,30 @@
     },
     {
       "start": "2026-03-24T23:09:53-03:00",
-      "stop": "2026-03-24T23:15:39-03:00",
+      "stop": "2026-03-24T23:15:15-03:00",
       "title": "SE LIGA AÍ - COLETIVO MINAS DA VOZ",
       "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20COLETIVO%20MINAS%20DA%20VOZ.jpg"
     },
     {
-      "start": "2026-03-24T23:15:39-03:00",
-      "stop": "2026-03-24T23:22:40-03:00",
+      "start": "2026-03-24T23:15:15-03:00",
+      "stop": "2026-03-24T23:22:08-03:00",
       "title": "(UNESP) ASTROLAB - CONSTELAÇÕES DE VERÃO",
       "desc": "Programa da TV Unesp em parceria com o Observatório Astronômico Lionel José Andriatto.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/ASTROLAB%20I%20CONSTELA%C3%87%C3%95ES%20DE%20VER%C3%83O.jpg"
     },
     {
-      "start": "2026-03-24T23:22:40-03:00",
-      "stop": "2026-03-24T23:30:13-03:00",
+      "start": "2026-03-24T23:22:08-03:00",
+      "stop": "2026-03-24T23:30:05-03:00",
       "title": "SE LIGA AÍ - LITERATURA - GRADA KILOMBA",
       "desc": "Websérie da TV UFOP que traz para o público a obra e a vida de mulheres de vários campos de atuação.",
       "rating": "Livre",
       "thumb": "https://app.tvufop.com.br/epg/SE%20LIGA%20A%C3%8D%20I%20LITERATURA%20-%20GRADA%20KILOMBA.jpg"
     },
     {
-      "start": "2026-03-24T23:30:13-03:00",
+      "start": "2026-03-24T23:30:05-03:00",
       "stop": "2026-03-24T23:59:00-03:00",
       "title": "(TV BRASIL) CONHECENDO MUSEUS - MUQUIFU",
       "desc": "Conheça alguns do principais museus do Brasil.",
