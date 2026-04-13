@@ -8,8 +8,6 @@
     // Prioridade: servidor (mais atual) -> Pages -> raw -> local
     const arr = [
       "https://app.tvufop.com.br/epg/schedule_now.json",
-      root + "epg/schedule_now.json",
-      location.origin + "/epg/schedule_now.json",
     ];
     return Array.from(new Set(arr));
   }
