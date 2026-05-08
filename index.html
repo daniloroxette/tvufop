@@ -80,7 +80,9 @@
       background:#000;
     }
 
-    /* Overlay Eduplay */
+    /* Overlay Eduplay
+       Solução: o overlay fica apenas como orientação visual.
+       Ele NÃO captura o clique; o toque atravessa para o iframe do Eduplay. */
     .eduplay-overlay{
       position:absolute;
       inset:0;
@@ -89,19 +91,27 @@
       justify-content:center;
       background:rgba(0,0,0,.55);
       color:#fff;
-      transition: opacity .18s ease, visibility 0s linear .18s;
+      transition: opacity .22s ease, visibility 0s linear .22s;
       opacity:1;
       visibility:visible;
-      pointer-events:auto;
+      pointer-events:none;
     }
 
-    .eduplay-overlay.is-hidden{
+    .eduplay-overlay.is-hidden,
+    .eduplay-overlay.has-user-interacted{
       opacity:0;
       visibility:hidden;
       pointer-events:none;
     }
 
     .eduplay-overlay.is-ready{
+      background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.38),
+        rgba(0,0,0,.18) 35%,
+        rgba(0,0,0,.18) 65%,
+        rgba(0,0,0,.42)
+      );
       pointer-events:none;
     }
 
@@ -135,6 +145,8 @@
       top:50%;
       transform:translate(-50%,-50%);
       display:none;
+      flex-direction:column;
+      gap:10px;
       align-items:center;
       justify-content:center;
       pointer-events:none;
@@ -143,12 +155,26 @@
       width:auto;
       height:auto;
       border-radius:0;
+      text-shadow:0 2px 8px rgba(0,0,0,.85);
     }
 
     .eduplay-overlay .overlay-play svg{
-      width:60px;
-      height:60px;
+      width:76px;
+      height:76px;
       display:block;
+      filter:drop-shadow(0 3px 10px rgba(0,0,0,.75));
+    }
+
+    .eduplay-overlay .overlay-play-label{
+      display:inline-block;
+      max-width:min(86vw, 520px);
+      padding:7px 11px;
+      border-radius:999px;
+      background:rgba(0,0,0,.48);
+      font-size:14px;
+      font-weight:700;
+      line-height:1.25;
+      color:#fff;
     }
 
     .eduplay-overlay.is-loading .overlay-content{ display:inline-flex; }
@@ -274,6 +300,7 @@
             <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="#8C1B2B"/>
             <path d="M45 24 27 14v20z" fill="#fff"/>
           </svg>
+          <span class="overlay-play-label">Toque aqui para iniciar a transmissão</span>
         </div>
       </div>
     </div>
@@ -548,31 +575,70 @@
     if (!iframe || !overlay || !box) return;
 
     let ready = false;
+    let userInteracted = false;
+    let hideTimer = null;
 
     function setReady() {
       if (ready) return;
       ready = true;
 
       overlay.classList.remove('is-loading');
+      overlay.classList.remove('is-hidden');
+      overlay.classList.remove('has-user-interacted');
       overlay.classList.add('is-ready');
       overlay.setAttribute('aria-busy', 'false');
+      overlay.setAttribute('aria-label', 'Toque no centro do player para iniciar a transmissão');
 
       if (msg) {
-        msg.textContent = 'Toque para interagir';
+        msg.textContent = 'Toque para iniciar';
       }
+    }
 
-      setTimeout(function () {
-        overlay.classList.add('is-hidden');
-      }, 1200);
+    function markUserInteraction() {
+      if (userInteracted) return;
+      userInteracted = true;
+      setReady();
+
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () {
+        overlay.classList.add('has-user-interacted');
+      }, 350);
     }
 
     iframe.addEventListener('load', function () {
+      userInteracted = false;
+      clearTimeout(hideTimer);
+      overlay.classList.remove('has-user-interacted');
       setTimeout(setReady, 700);
     });
 
-    box.addEventListener('pointerdown', function () {
-      setReady();
-    }, { passive: true });
+    /*
+      Importante:
+      - O iframe do Eduplay é de outro domínio; por segurança do navegador,
+        esta página não consegue clicar no botão interno nem chamar play() lá dentro.
+      - Por isso, o overlay acima fica com pointer-events:none. O usuário toca no ícone
+        visual, mas o toque atravessa e chega ao player real do Eduplay.
+      - Os eventos abaixo servem apenas para esconder a orientação visual depois da
+        primeira interação provável com o iframe.
+    */
+    iframe.addEventListener('pointerdown', markUserInteraction, { passive: true });
+    iframe.addEventListener('touchstart', markUserInteraction, { passive: true });
+    iframe.addEventListener('mousedown', markUserInteraction, { passive: true });
+    iframe.addEventListener('focus', markUserInteraction);
+
+    document.addEventListener('pointerdown', function (ev) {
+      if (ev.target === iframe) {
+        markUserInteraction();
+      }
+    }, true);
+
+    window.addEventListener('blur', function () {
+      setTimeout(function () {
+        if (document.activeElement === iframe) {
+          markUserInteraction();
+        }
+      }, 80);
+    });
 
     window.addEventListener('pageshow', function () {
       setTimeout(setReady, 900);
