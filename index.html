@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TV UFOP — EDUPLAY</title>
+  <title>TV UFOP</title>
 
   <!-- Evitar barra de tradução do Chrome -->
   <meta name="google" content="notranslate" />
@@ -24,6 +24,9 @@
 
   <!-- EPG CSS -->
   <link rel="stylesheet" href="epg/epg.css">
+
+  <!-- HLS.js para o streaming alternativo em navegadores sem HLS nativo -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
 
   <style>
     :root {
@@ -72,12 +75,76 @@
       z-index: 999;
     }
 
-    .player iframe{
+    .player-source{
+      position:absolute;
+      inset:0;
+      display:none;
+      background:#000;
+    }
+
+    .player-source.is-active{
+      display:block;
+    }
+
+    .player iframe,
+    .player video{
       width:100%;
       height:100%;
       border:0;
       display:block;
       background:#000;
+    }
+
+    .player video{
+      object-fit:contain;
+    }
+
+    .player-actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      margin:10px 0 12px;
+    }
+
+    .player-action{
+      border:1px solid #d2d2d2;
+      border-radius:9px;
+      padding:8px 12px;
+      background:#f5f5f5;
+      color:#222;
+      font:600 13px Arial,sans-serif;
+      cursor:pointer;
+    }
+
+    .player-action:hover{
+      background:#ededed;
+    }
+
+    .player-action.is-active{
+      background:var(--bordo);
+      border-color:var(--bordo);
+      color:#fff;
+    }
+
+    .player-action.refresh{
+      margin-left:4px;
+      background:#fff;
+    }
+
+    .player-action.refresh:hover{
+      background:#f3f3f3;
+    }
+
+    .alt-status{
+      position:absolute;
+      left:12px;
+      right:12px;
+      bottom:14px;
+      color:#fff;
+      font-size:13px;
+      text-shadow:0 1px 4px #000;
+      pointer-events:none;
     }
 
     /* Overlay Eduplay
@@ -184,7 +251,7 @@
     .eduplay-overlay.is-ready .overlay-play{ display:inline-flex; }
 
     .logos{
-      margin:28px 0 40px;
+      margin:20px 0 40px;
     }
 
     .logos img{
@@ -267,43 +334,58 @@
   </style>
 </head>
 <body>
-  <h1>TV UFOP — EDUPLAY</h1>
+  <h1>TV UFOP</h1>
 
   <div class="wrap">
-    <!-- Player Eduplay com overlay interno -->
-    <div class="player" id="eduplay-box">
-      <iframe
-        id="eduplay-iframe"
-        src="https://eduplay.rnp.br/app/tv/embed/ufop"
-        title="Player Eduplay"
-        allow="autoplay *; fullscreen *; picture-in-picture *; encrypted-media *"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-        tabindex="0">
-      </iframe>
+    <!-- Player principal: Eduplay por padrão, com streaming HLS próprio como alternativa -->
+    <div class="player" id="player-box">
+      <div class="player-source is-active" id="eduplay-source">
+        <iframe
+          id="eduplay-iframe"
+          src="https://eduplay.rnp.br/app/tv/embed/ufop"
+          title="Player Eduplay"
+          allow="autoplay *; fullscreen *; picture-in-picture *; encrypted-media *"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          tabindex="0">
+        </iframe>
 
-      <div
-        id="eduplay-overlay"
-        class="eduplay-overlay is-loading"
-        role="dialog"
-        aria-label="Controle de reprodução"
-        aria-live="polite"
-        aria-busy="true"
-      >
-        <div class="overlay-content">
-          <span class="spinner" aria-hidden="true"></span>
-          <span class="msg">Carregando o player…</span>
-        </div>
+        <div
+          id="eduplay-overlay"
+          class="eduplay-overlay is-loading"
+          role="dialog"
+          aria-label="Controle de reprodução"
+          aria-live="polite"
+          aria-busy="true"
+        >
+          <div class="overlay-content">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="msg">Carregando o player…</span>
+          </div>
 
-        <div class="overlay-play" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48">
-            <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="#8C1B2B"/>
-            <path d="M45 24 27 14v20z" fill="#fff"/>
-          </svg>
-          <span class="overlay-play-label">Toque aqui para iniciar a transmissão</span>
+          <div class="overlay-play" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48">
+              <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.6c-2.9.8-4.6 3.3-5.4 6.1C.1 13.0 0 24 0 24s.1 11.0 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.6c2.9-.8 4.6-3.3 5.4-6.2C67.9 35.0 68 24 68 24s-.1-11.0-1.5-16.3z" fill="#8C1B2B"/>
+              <path d="M45 24 27 14v20z" fill="#fff"/>
+            </svg>
+            <span class="overlay-play-label">Toque aqui para iniciar a transmissão</span>
+          </div>
         </div>
       </div>
+
+      <div class="player-source" id="alternate-source">
+        <video id="alternate-video" controls playsinline webkit-playsinline preload="none"></video>
+        <div class="alt-status" id="alternate-status" aria-live="polite"></div>
+      </div>
     </div>
+
+    <div class="player-actions" role="group" aria-label="Fonte de transmissão e atualização da página">
+      <button type="button" class="player-action is-active" id="btn-source-eduplay" aria-pressed="true">Eduplay</button>
+      <button type="button" class="player-action" id="btn-source-alternate" aria-pressed="false">Streaming alternativo</button>
+      <button type="button" class="player-action refresh" id="btn-page-refresh" title="Recarregar a página">↻ Recarregar página</button>
+    </div>
+
+    <div id="epg-inline-now-mobile"></div>
 
     <div class="logos">
       <p><img src="images/logo_tvufop_eduplay.png" alt="TV UFOP Eduplay" height="50"></p>
@@ -311,8 +393,6 @@
       <p><strong>Fundação de Educação, Artes e Cultura</strong></p>
       <p><em>Desde 2022, o trabalho da TV UFOP é mantido através de convênio entre a UFOP e a FUNDAC.</em></p>
     </div>
-
-    <div id="epg-inline-now-mobile"></div>
 
     <div id="epg-viewport" role="region" aria-label="Programação">
       <div id="tvufop-epg"></div>
@@ -323,7 +403,7 @@
   <script>
   (function(){
     const header = document.querySelector('h1');
-    const player = document.getElementById('eduplay-box');
+    const player = document.getElementById('player-box');
 
     function updateVars(){
       if (header) {
@@ -338,6 +418,125 @@
 
     window.addEventListener('load', updateVars);
     window.addEventListener('resize', updateVars);
+  })();
+  </script>
+
+  <!-- Alternância entre Eduplay e streaming próprio + recarregar -->
+  <script>
+  (function () {
+    const EDUPLAY_URL = "https://eduplay.rnp.br/app/tv/embed/ufop";
+    const HLS_URL = "https://app.tvufop.com.br/hls/tvufop.m3u8";
+
+    const eduplaySource = document.getElementById('eduplay-source');
+    const alternateSource = document.getElementById('alternate-source');
+    const iframe = document.getElementById('eduplay-iframe');
+    const overlay = document.getElementById('eduplay-overlay');
+    const video = document.getElementById('alternate-video');
+    const status = document.getElementById('alternate-status');
+    const btnEduplay = document.getElementById('btn-source-eduplay');
+    const btnAlternate = document.getElementById('btn-source-alternate');
+    const btnRefresh = document.getElementById('btn-page-refresh');
+
+    if (!eduplaySource || !alternateSource || !iframe || !video || !btnEduplay || !btnAlternate) return;
+
+    let hls = null;
+    let alternateInitialized = false;
+
+    function setButtons(mode) {
+      const eduplayActive = mode === 'eduplay';
+      btnEduplay.classList.toggle('is-active', eduplayActive);
+      btnAlternate.classList.toggle('is-active', !eduplayActive);
+      btnEduplay.setAttribute('aria-pressed', String(eduplayActive));
+      btnAlternate.setAttribute('aria-pressed', String(!eduplayActive));
+    }
+
+    function stopAlternate() {
+      try { video.pause(); } catch (e) {}
+      if (hls) {
+        try { hls.destroy(); } catch (e) {}
+        hls = null;
+      }
+      video.removeAttribute('src');
+      try { video.load(); } catch (e) {}
+      alternateInitialized = false;
+      if (status) status.textContent = '';
+    }
+
+    function initAlternate() {
+      if (alternateInitialized) return;
+      alternateInitialized = true;
+      if (status) status.textContent = 'Carregando streaming alternativo…';
+
+      if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = HLS_URL;
+        video.addEventListener('canplay', function () {
+          if (status) status.textContent = '';
+        }, { once: true });
+        video.load();
+        // A chamada parte diretamente do clique do usuário, aumentando a chance
+        // de o navegador autorizar o início com áudio.
+        video.play().catch(function () {});
+        return;
+      }
+
+      if (window.Hls && window.Hls.isSupported()) {
+        hls = new Hls({
+          maxBufferLength: 30,
+          maxMaxBufferLength: 60,
+          backBufferLength: 20
+        });
+        hls.loadSource(HLS_URL);
+        hls.attachMedia(video);
+        // Tenta iniciar dentro da própria interação que selecionou a fonte.
+        video.play().catch(function () {});
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+          if (status) status.textContent = '';
+        });
+        hls.on(Hls.Events.ERROR, function (_event, data) {
+          console.error('Erro no streaming alternativo:', data);
+          if (data && data.fatal && status) {
+            status.textContent = 'Não foi possível iniciar o streaming alternativo.';
+          }
+        });
+        return;
+      }
+
+      if (status) status.textContent = 'Este navegador não oferece suporte a HLS.';
+    }
+
+    function showEduplay() {
+      stopAlternate();
+      alternateSource.classList.remove('is-active');
+      eduplaySource.classList.add('is-active');
+      setButtons('eduplay');
+
+      if (iframe.src === 'about:blank' || !iframe.src) {
+        iframe.src = EDUPLAY_URL;
+      }
+      if (overlay) {
+        overlay.classList.remove('is-hidden', 'has-user-interacted');
+      }
+    }
+
+    function showAlternate() {
+      // Esvazia o iframe para garantir que o Eduplay não continue tocando escondido.
+      iframe.src = 'about:blank';
+      eduplaySource.classList.remove('is-active');
+      alternateSource.classList.add('is-active');
+      setButtons('alternate');
+      initAlternate();
+    }
+
+    btnEduplay.addEventListener('click', showEduplay);
+    btnAlternate.addEventListener('click', showAlternate);
+
+    if (btnRefresh) {
+      btnRefresh.addEventListener('click', function () {
+        const url = new URL(window.location.href);
+        url.searchParams.set('_refresh', Date.now().toString());
+        window.location.replace(url.toString());
+      });
+    }
   })();
   </script>
 
@@ -569,7 +768,7 @@
   (function () {
     const iframe = document.getElementById('eduplay-iframe');
     const overlay = document.getElementById('eduplay-overlay');
-    const box = document.getElementById('eduplay-box');
+    const box = document.getElementById('eduplay-source');
     const msg = overlay ? overlay.querySelector('.msg') : null;
 
     if (!iframe || !overlay || !box) return;
