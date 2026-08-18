@@ -22,10 +22,37 @@
 
 #tvufop-epg .scroller{max-height:70vh;overflow:auto;padding-right:6px;margin-top:8px; scroll-behavior:smooth;}
 
-#tvufop-epg .hour-sep{
-  position:sticky;top:0;background:#f6f6f6;border:1px solid #eee;border-left:3px solid #111;
-  border-radius:8px;margin:10px 0 6px;padding:4px 8px;font-weight:700;width:max-content
+#tvufop-epg .hour-group{
+  margin:10px 0 6px;
 }
+
+#tvufop-epg .hour-sep{
+  position:sticky;
+  top:0;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  width:100%;
+  background:#f6f6f6;
+  color:#1b1b1b;
+  border:1px solid #eee;
+  border-left:3px solid #111;
+  border-radius:8px;
+  margin:0 0 6px;
+  padding:7px 10px;
+  font:700 14px system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  text-align:left;
+  cursor:pointer;
+}
+
+#tvufop-epg .hour-sep:hover{background:#ededed}
+#tvufop-epg .hour-sep:focus-visible{outline:2px solid #800020;outline-offset:2px}
+#tvufop-epg .hour-summary{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:.86em;opacity:.72}
+#tvufop-epg .hour-toggle{font-size:16px;line-height:1;min-width:12px;text-align:center}
+#tvufop-epg .hour-programs[hidden]{display:none !important}
+#tvufop-epg .hour-group.is-collapsed .hour-sep{margin-bottom:0}
 
 #tvufop-epg .card{
   display:flex;gap:12px;align-items:center;border:1px solid #e9e9e9;border-radius:12px;
@@ -115,4 +142,3 @@
   #tvufop-epg .m-row{flex-direction:column; align-items:stretch}
   #tvufop-epg .m-thumb{width:100%; aspect-ratio: 89 / 50;}
 }
-
