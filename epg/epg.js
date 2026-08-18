@@ -536,74 +536,143 @@
       els.empty.hidden = kept.length > 0;
 
       const now = new Date();
-      let lastHour = -1;
+      const selectedDay = days[dayIndex] ? onlyDate(days[dayIndex]) : null;
+      const today = onlyDate(now);
 
+      // Agrupa os programas pela hora de início.
+      const byHour = new Map();
       kept.forEach(p => {
         const h = p.start.getHours();
+        if (!byHour.has(h)) byHour.set(h, []);
+        byHour.get(h).push(p);
+      });
 
-        if (h !== lastHour) {
-          lastHour = h;
+      function shouldStartCollapsed(hour, hourRows) {
+        if (!selectedDay) return false;
 
-          const sep = document.createElement("div");
-          sep.className = "hour-sep";
-          sep.textContent = `${pad(h)}:00`;
-          list.appendChild(sep);
-        }
+        // Dias anteriores: todas as faixas já passaram.
+        if (selectedDay < today) return true;
 
-        const card = document.createElement("div");
-        card.className = "card";
-        card.setAttribute("role", "button");
-        card.setAttribute("tabindex", "0");
-        card.dataset.start = p.start.toISOString();
-        card.dataset.stop = p.stop.toISOString();
+        // Dias futuros: nenhuma faixa passou ainda.
+        if (selectedDay > today) return false;
 
-        card.addEventListener("click", () => openModal(p));
+        // Hoje: recolhe apenas horas inteiramente anteriores à hora atual.
+        // Se um programa iniciado na hora anterior ainda estiver no ar, mantém a faixa aberta.
+        const containsCurrentProgram = hourRows.some(p => now >= p.start && now < p.stop);
+        return hour < now.getHours() && !containsCurrentProgram;
+      }
 
-        card.addEventListener("keydown", e => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            openModal(p);
+      function setHourExpanded(group, button, body, expanded) {
+        group.classList.toggle("is-collapsed", !expanded);
+        body.hidden = !expanded;
+        button.setAttribute("aria-expanded", String(expanded));
+
+        const icon = button.querySelector(".hour-toggle");
+        if (icon) icon.textContent = expanded ? "▾" : "▸";
+      }
+
+      byHour.forEach((hourRows, h) => {
+        const group = document.createElement("section");
+        group.className = "hour-group";
+        group.dataset.hour = String(h);
+
+        const sep = document.createElement("button");
+        sep.type = "button";
+        sep.className = "hour-sep";
+        sep.setAttribute("aria-controls", `epg-hour-${dayIndex}-${h}`);
+
+        const label = document.createElement("span");
+        label.className = "hour-label";
+        label.textContent = `${pad(h)}:00`;
+
+        const summary = document.createElement("span");
+        summary.className = "hour-summary";
+
+        const count = document.createElement("span");
+        count.className = "hour-count";
+        count.textContent = `${hourRows.length} ${hourRows.length === 1 ? "programa" : "programas"}`;
+
+        const toggle = document.createElement("span");
+        toggle.className = "hour-toggle";
+        toggle.setAttribute("aria-hidden", "true");
+
+        summary.appendChild(count);
+        summary.appendChild(toggle);
+        sep.appendChild(label);
+        sep.appendChild(summary);
+
+        const body = document.createElement("div");
+        body.className = "hour-programs";
+        body.id = `epg-hour-${dayIndex}-${h}`;
+
+        hourRows.forEach(p => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.setAttribute("role", "button");
+          card.setAttribute("tabindex", "0");
+          card.dataset.start = p.start.toISOString();
+          card.dataset.stop = p.stop.toISOString();
+
+          card.addEventListener("click", () => openModal(p));
+
+          card.addEventListener("keydown", e => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openModal(p);
+            }
+          });
+
+          // Aquecimento rápido: quando o usuário encosta, passa o mouse ou foca,
+          // a miniatura já começa a ser carregada antes do clique definitivo.
+          card.addEventListener("pointerenter", () => warmThumbNow(p), { passive: true });
+          card.addEventListener("touchstart", () => warmThumbNow(p), { passive: true });
+          card.addEventListener("focus", () => warmThumbNow(p));
+
+          const when = document.createElement("div");
+          when.className = "when";
+          when.innerHTML = `<span class="start">${fmtTime(p.start)}</span>`;
+
+          const info = document.createElement("div");
+          info.className = "info";
+
+          const title = document.createElement("div");
+          title.className = "title";
+          title.textContent = p.title || "(Sem título)";
+
+          const meta = document.createElement("div");
+          meta.className = "meta";
+          meta.textContent = `${p.duration ?? "–"} min`;
+
+          info.appendChild(title);
+          info.appendChild(meta);
+
+          card.appendChild(when);
+          card.appendChild(info);
+
+          if (now >= p.start && now < p.stop) {
+            card.classList.add("now");
+
+            const badge = document.createElement("span");
+            badge.className = "badge-now";
+            badge.textContent = "AGORA";
+
+            title.appendChild(badge);
           }
+
+          body.appendChild(card);
         });
 
-        // Aquecimento rápido: quando o usuário encosta, passa o mouse ou foca,
-        // a miniatura já começa a ser carregada antes do clique definitivo.
-        card.addEventListener("pointerenter", () => warmThumbNow(p), { passive: true });
-        card.addEventListener("touchstart", () => warmThumbNow(p), { passive: true });
-        card.addEventListener("focus", () => warmThumbNow(p));
+        group.appendChild(sep);
+        group.appendChild(body);
+        list.appendChild(group);
 
-        const when = document.createElement("div");
-        when.className = "when";
-        when.innerHTML = `<span class="start">${fmtTime(p.start)}</span>`;
+        const collapsed = shouldStartCollapsed(h, hourRows);
+        setHourExpanded(group, sep, body, !collapsed);
 
-        const info = document.createElement("div");
-        info.className = "info";
-
-        const title = document.createElement("div");
-        title.className = "title";
-        title.textContent = p.title || "(Sem título)";
-
-        const meta = document.createElement("div");
-        meta.className = "meta";
-        meta.textContent = `${p.duration ?? "–"} min`;
-
-        info.appendChild(title);
-        info.appendChild(meta);
-
-        card.appendChild(when);
-        card.appendChild(info);
-
-        if (now >= p.start && now < p.stop) {
-          card.classList.add("now");
-
-          const badge = document.createElement("span");
-          badge.className = "badge-now";
-          badge.textContent = "AGORA";
-
-          title.appendChild(badge);
-        }
-
-        list.appendChild(card);
+        sep.addEventListener("click", () => {
+          const expanded = sep.getAttribute("aria-expanded") === "true";
+          setHourExpanded(group, sep, body, !expanded);
+        });
       });
 
       // Ponto principal da otimização:
